@@ -187,13 +187,6 @@
     const modes = new Set(d.legs.map((l) => l.mode));
     const legend = modes.size > 1
       ? `<span class="fm-legend"><span class="key flight"></span>Flights<span class="key drive"></span>Drives</span>` : "";
-    // On phones a long list starts folded so it doesn't push the photos far down.
-    const others = ids.filter((id) => id !== d.home);
-    const fold = width < 600 && others.length > 8 && !el.dataset.expanded ? 6 : Infinity;
-    const list = others.map((id, i) => {
-      const v = d.visits[id] || 0;
-      return `<button type="button" class="fm-place" data-id="${esc(id)}"${i >= fold ? " hidden" : ""}>${esc(d.places[id].name)}${v > 1 ? `<span>×${v}</span>` : ""}</button>`;
-    }).join("") + (others.length > fold ? `<button type="button" class="fm-more">+ ${others.length - fold} more</button>` : "");
 
     el.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Map of this year's travel">
         <path class="fm-coast" d="${path(world.coast) || ""}"/>
@@ -203,7 +196,6 @@
         <g class="fm-dots">${dots}</g>
       </svg>
       <div class="fm-meta"><span class="fm-stats">${statsLine(d)}</span>${legend}</div>
-      <div class="fm-places">${list}</div>
       <div class="fm-tip" hidden></div>`;
 
     const tip = el.querySelector(".fm-tip");
@@ -218,13 +210,12 @@
       tip.style.top = (y - 44 < 0 ? y + 16 : y - 44) + "px";
       el.querySelectorAll(".on").forEach((n) => n.classList.remove("on"));
       dotOf(id)?.classList.add("on");
-      el.querySelector(`.fm-place[data-id="${CSS.escape(id)}"]`)?.classList.add("on");
     };
     const hide = () => { tip.hidden = true; el.querySelectorAll(".on").forEach((n) => n.classList.remove("on")); };
     const restore = () => (pinned ? show(pinned) : hide());
     const toggle = (id) => { pinned = pinned === id ? null : id; restore(); };
 
-    el.querySelectorAll(".fm-dot, .fm-place").forEach((n) => {
+    el.querySelectorAll(".fm-dot").forEach((n) => {
       const id = n.dataset.id;
       n.addEventListener("mouseenter", () => show(id));
       n.addEventListener("mouseleave", restore);
@@ -233,11 +224,6 @@
       n.addEventListener("click", (e) => { e.stopPropagation(); toggle(id); });
     });
     el.querySelector("svg").addEventListener("click", () => { pinned = null; hide(); });
-    el.querySelector(".fm-more")?.addEventListener("click", (e) => {
-      el.dataset.expanded = "1";
-      el.querySelectorAll(".fm-place[hidden]").forEach((b) => { b.hidden = false; });
-      e.currentTarget.remove();
-    });
 
     // Draw the lines in when the map scrolls into view.
     el.querySelectorAll(".fm-arc.flight").forEach((p) => p.style.setProperty("--len", p.getTotalLength().toFixed(0)));
