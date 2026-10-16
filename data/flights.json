@@ -104,6 +104,86 @@
       "name": "Dubai, United Arab Emirates",
       "lat": 25.2,
       "lon": 55.27
+    },
+    "yvr": {
+      "name": "Vancouver, British Columbia",
+      "lat": 49.28,
+      "lon": -123.12
+    },
+    "tyo": {
+      "name": "Tokyo, Japan",
+      "lat": 35.68,
+      "lon": 139.69
+    },
+    "spk": {
+      "name": "Sapporo, Japan",
+      "lat": 43.06,
+      "lon": 141.35
+    },
+    "sfo": {
+      "name": "San Francisco, California",
+      "lat": 37.77,
+      "lon": -122.42
+    },
+    "las": {
+      "name": "Las Vegas, Nevada",
+      "lat": 36.17,
+      "lon": -115.14
+    },
+    "bos": {
+      "name": "Boston, Massachusetts",
+      "lat": 42.36,
+      "lon": -71.06
+    },
+    "onp": {
+      "name": "Olympic National Park",
+      "lat": 47.8,
+      "lon": -123.6
+    },
+    "vis": {
+      "name": "Vancouver Island, British Columbia",
+      "lat": 48.43,
+      "lon": -123.37
+    },
+    "seq": {
+      "name": "Sequoia National Park",
+      "lat": 36.49,
+      "lon": -118.57
+    },
+    "hel": {
+      "name": "Helsinki, Finland",
+      "lat": 60.17,
+      "lon": 24.94
+    },
+    "lof": {
+      "name": "Lofoten Islands, Norway",
+      "lat": 68.23,
+      "lon": 14.57
+    },
+    "bgo": {
+      "name": "Bergen, Norway",
+      "lat": 60.39,
+      "lon": 5.32
+    },
+    "bfl": {
+      "name": "Bakersfield, California",
+      "lat": 35.37,
+      "lon": -119.02
+    },
+    "tel": {
+      "name": "Telluride, Colorado",
+      "lat": 37.94,
+      "lon": -107.81
+    },
+    "sea": {
+      "name": "Seattle, Washington",
+      "lat": 47.61,
+      "lon": -122.33
+    },
+    "sji": {
+      "name": "San Juan Islands, Washington",
+      "lat": 48.53,
+      "lon": -123.02
     }
   },
   "years": {
@@ -272,6 +352,184 @@
         {
           "from": "den",
           "to": "home",
+          "mode": "drive"
+        }
+      ]
+    },
+    "2025": {
+      "home": "home",
+      "legs": [
+        {
+          "from": "den",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "her",
+          "mode": "drive",
+          "times": 24
+        },
+        {
+          "from": "her",
+          "to": "home",
+          "mode": "drive",
+          "times": 24
+        },
+        {
+          "from": "home",
+          "to": "yvr",
+          "mode": "drive"
+        },
+        {
+          "from": "yvr",
+          "to": "tyo"
+        },
+        {
+          "from": "tyo",
+          "to": "spk"
+        },
+        {
+          "from": "spk",
+          "to": "tyo"
+        },
+        {
+          "from": "tyo",
+          "to": "sfo"
+        },
+        {
+          "from": "sfo",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "bli",
+          "mode": "drive"
+        },
+        {
+          "from": "bli",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "las",
+          "times": 3
+        },
+        {
+          "from": "las",
+          "to": "home",
+          "times": 2
+        },
+        {
+          "from": "las",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "bos",
+          "times": 2
+        },
+        {
+          "from": "bos",
+          "to": "home",
+          "times": 2
+        },
+        {
+          "from": "home",
+          "to": "onp",
+          "mode": "drive"
+        },
+        {
+          "from": "onp",
+          "to": "vis",
+          "mode": "drive"
+        },
+        {
+          "from": "vis",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "seq",
+          "mode": "drive"
+        },
+        {
+          "from": "seq",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "hel"
+        },
+        {
+          "from": "hel",
+          "to": "lof"
+        },
+        {
+          "from": "lof",
+          "to": "bgo"
+        },
+        {
+          "from": "bgo",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "bfl",
+          "mode": "drive"
+        },
+        {
+          "from": "bfl",
+          "to": "seq",
+          "mode": "drive"
+        },
+        {
+          "from": "seq",
+          "to": "den",
+          "mode": "drive"
+        },
+        {
+          "from": "den",
+          "to": "tel",
+          "mode": "drive"
+        },
+        {
+          "from": "tel",
+          "to": "bos"
+        },
+        {
+          "from": "bos",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "sea",
+          "mode": "drive"
+        },
+        {
+          "from": "sea",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "sea",
+          "to": "sji",
           "mode": "drive"
         }
       ]

@@ -19,7 +19,8 @@
   "use strict";
 
   const LIBS = ["vendor/map/d3-array.min.js", "vendor/map/d3-geo.min.js", "vendor/map/topojson-client.min.js"];
-  const MIN_SPAN_DEG = 28;     // never zoom in further than this many degrees of longitude
+  const MIN_SPAN_DEG = 9;      // a year's starting view never shows less than this many degrees of longitude
+  const MAX_ZOOM = 10;         // how far people can zoom in past the starting view
   const CURVE = 0.18;          // how much flight lines bow (drives bow less)
   const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -62,18 +63,29 @@
   const norm = (lon) => ((lon % 360) + 540) % 360 - 180;
   const plural = (n, word) => `${n.toLocaleString()} ${word}${n === 1 ? "" : "s"}`;
 
-  // Longitude in the middle of the smallest arc that holds every place,
-  // so trips across the Pacific aren't split at the map's edge.
-  function centerAndSpan(lons) {
+  // Where to put the map's left/right edge: in the widest empty stretch of
+  // longitude that no trip crosses, so e.g. Japan–US flights go over the
+  // Pacific instead of the long way around. Returns the centre longitude and
+  // how many degrees the places span.
+  function centerAndSpan(lons, legs) {
     const s = [...new Set(lons.map(norm))].sort((a, b) => a - b);
     if (s.length === 1) return { center: s[0], span: 0 };
-    let gap = -1, at = 0;
-    for (let i = 0; i < s.length; i++) {
-      const next = i === s.length - 1 ? s[0] + 360 : s[i + 1];
-      if (next - s[i] > gap) { gap = next - s[i]; at = i; }
+    const crossed = (mid) => legs.some(([a, b]) => {
+      const delta = norm(b - a), d = norm(mid - a);
+      return delta > 0 ? d > 0 && d < delta : d < 0 && d > delta;
+    });
+    let best = null;
+    for (const freeOnly of [true, false]) {
+      for (let i = 0; i < s.length; i++) {
+        const next = i === s.length - 1 ? s[0] + 360 : s[i + 1];
+        const gap = next - s[i];
+        if (freeOnly && crossed(norm(s[i] + gap / 2))) continue;
+        if (!best || gap > best.gap) best = { gap, at: i };
+      }
+      if (best) break;
     }
-    const start = s[(at + 1) % s.length];
-    const span = 360 - gap;
+    const start = s[(best.at + 1) % s.length];
+    const span = 360 - best.gap;
     return { center: norm(start + span / 2), span };
   }
 
@@ -127,19 +139,20 @@
   async function draw(el, d) {
     const width = el.clientWidth;
     if (!width) return;
-    const height = Math.round(Math.min(520, Math.max(240, width * (width < 600 ? 0.72 : 0.42))));
-    const pad = Math.max(28, width * 0.06);
+    const height = Math.round(Math.min(560, Math.max(260, width * (width < 600 ? 0.8 : 0.45))));
+    const pad = Math.max(24, width * 0.045);
 
     const ids = d.order;
-    const { center, span } = centerAndSpan(ids.map((id) => d.places[id].lon));
-    const zoomed = span < 70;
-    const [world, states] = await Promise.all([loadWorld(zoomed ? "50m" : "110m"), zoomed ? loadStates() : null]);
+    const { center, span } = centerAndSpan(ids.map((id) => d.places[id].lon),
+      d.legs.map((l) => [d.places[l.from].lon, d.places[l.to].lon]));
+    const regional = span < 70;
+    const [world, states] = await Promise.all([loadWorld(regional ? "50m" : "110m"), regional ? loadStates() : null]);
 
     // Fit the map around the places (not the true great-circle paths, which
     // swing up toward the pole on long flights), then cap the zoom. Extra room
     // on top leaves space for the lines' upward bow.
     const shape = { type: "MultiPoint", coordinates: ids.map((id) => [d.places[id].lon, d.places[id].lat]) };
-    const projection = d3.geoMercator().rotate([-center, 0]).fitExtent([[pad, pad * 1.8], [width - pad, height - pad * 0.8]], shape);
+    const projection = d3.geoMercator().rotate([-center, 0]).fitExtent([[pad, pad * 1.6], [width - pad, height - pad * 0.7]], shape);
     const maxScale = (width - 2 * pad) / (MIN_SPAN_DEG * Math.PI / 180);
     if (projection.scale() > maxScale) {
       const [[x0, y0], [x1, y1]] = d3.geoPath(projection).bounds(shape);
@@ -170,68 +183,190 @@
       return `<path class="fm-arc ${l.mode}" style="--i:${i}" d="M${x1.toFixed(1)},${y1.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}"/>`;
     }).join("");
 
-    // Tap/hover area: as big as possible without covering a neighbouring dot.
-    const hitR = (id) => {
-      let near = Infinity;
-      ids.forEach((o) => { if (o !== id) near = Math.min(near, Math.hypot(P[o][0] - P[id][0], P[o][1] - P[id][1])); });
-      return Math.max(5, Math.min(14, near / 2));
-    };
+    // Distance to the nearest other dot, for sizing tap/hover areas.
+    const near = {};
+    ids.forEach((id) => {
+      near[id] = Infinity;
+      ids.forEach((o) => { if (o !== id) near[id] = Math.min(near[id], Math.hypot(P[o][0] - P[id][0], P[o][1] - P[id][1])); });
+    });
     // Home last so its ring sits on top of nearby dots.
     const dots = [...ids.filter((id) => id !== d.home), ...ids.filter((id) => id === d.home)].map((id) => {
-      const [x, y] = P[id];
       const home = id === d.home;
-      return `<g class="fm-dot${home ? " home" : ""}" data-id="${esc(id)}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})" tabindex="0" role="button" aria-label="${esc(placeLabel(d, id))}">
-        <circle class="hit" r="${hitR(id).toFixed(1)}"/><circle class="halo" r="9"/><circle class="core" r="${home ? 4.5 : 3.6}"/></g>`;
+      return `<g class="fm-dot${home ? " home" : ""}" data-id="${esc(id)}" tabindex="0" role="button" aria-label="${esc(placeLabel(d, id))}">
+        <circle class="hit"/><circle class="halo" r="9"/><circle class="core" r="${home ? 4.5 : 3.6}"/></g>`;
     }).join("");
 
     const modes = new Set(d.legs.map((l) => l.mode));
     const legend = modes.size > 1
       ? `<span class="fm-legend"><span class="key flight"></span>Flights<span class="key drive"></span>Drives</span>` : "";
 
-    el.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Map of this year's travel">
-        <path class="fm-coast" d="${path(world.coast) || ""}"/>
-        <path class="fm-borders" d="${path(world.borders) || ""}"/>
-        ${states ? `<path class="fm-states" d="${path(states) || ""}"/>` : ""}
-        <g class="fm-arcs">${arcs}</g>
-        <g class="fm-dots">${dots}</g>
-      </svg>
+    el.innerHTML = `<div class="fm-frame">
+        <svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Map of this year's travel">
+          <g class="fm-zoom">
+            <path class="fm-coast" d="${path(world.coast) || ""}"/>
+            <path class="fm-borders" d="${path(world.borders) || ""}"/>
+            <path class="fm-states" d="${states ? path(states) || "" : ""}"/>
+            <g class="fm-arcs">${arcs}</g>
+          </g>
+          <g class="fm-dots">${dots}</g>
+        </svg>
+        <div class="fm-controls">
+          <button type="button" data-z="in" aria-label="Zoom in">+</button>
+          <button type="button" data-z="out" aria-label="Zoom out" disabled>&minus;</button>
+          <button type="button" data-z="reset" aria-label="Reset map" hidden>&#8634;</button>
+        </div>
+      </div>
       <div class="fm-meta"><span class="fm-stats">${statsLine(d)}</span>${legend}</div>
       <div class="fm-tip" hidden></div>`;
 
+    const svg = el.querySelector("svg");
+    const zoomG = el.querySelector(".fm-zoom");
     const tip = el.querySelector(".fm-tip");
-    const dotOf = (id) => el.querySelector(`.fm-dot[data-id="${CSS.escape(id)}"]`);
-    let pinned = null;
-    const show = (id) => {
-      const [x, y] = P[id];
+    const frame = el.querySelector(".fm-frame");
+    const dotEls = {};
+    el.querySelectorAll(".fm-dot").forEach((g) => { dotEls[g.dataset.id] = g; });
+
+    // ---- zoom & pan
+    let k = 1, tx = 0, ty = 0, detailed = regional;
+    const screen = (id) => [P[id][0] * k + tx, P[id][1] * k + ty];
+    const clampPan = () => {
+      tx = Math.min(0, Math.max(width - width * k, tx));
+      ty = Math.min(0, Math.max(height - height * k, ty));
+    };
+    const apply = () => {
+      zoomG.setAttribute("transform", `translate(${tx.toFixed(2)},${ty.toFixed(2)}) scale(${k.toFixed(4)})`);
+      ids.forEach((id) => {
+        const [x, y] = screen(id);
+        dotEls[id].setAttribute("transform", `translate(${x.toFixed(1)},${y.toFixed(1)})`);
+        dotEls[id].querySelector(".hit").setAttribute("r", Math.max(5, Math.min(14, (near[id] * k) / 2)).toFixed(1));
+      });
+      el.querySelector('[data-z="out"]').disabled = k <= 1.001;
+      el.querySelector('[data-z="in"]').disabled = k >= MAX_ZOOM - 0.001;
+      el.querySelector('[data-z="reset"]').hidden = k <= 1.001;
+      svg.classList.toggle("zoomed", k > 1.001);
+      if (current) placeTip(current);
+      // Sharper coastlines (and US state lines) once zoomed in on a world-wide map.
+      if (!detailed && k > 2.2) {
+        detailed = true;
+        Promise.all([loadWorld("50m"), loadStates()]).then(([w, st]) => {
+          el.querySelector(".fm-coast").setAttribute("d", path(w.coast) || "");
+          el.querySelector(".fm-borders").setAttribute("d", path(w.borders) || "");
+          if (st) el.querySelector(".fm-states").setAttribute("d", path(st) || "");
+        }).catch(() => {});
+      }
+    };
+    const zoomAt = (factor, cx, cy) => {
+      const nk = Math.max(1, Math.min(MAX_ZOOM, k * factor));
+      tx = cx - (cx - tx) * (nk / k);
+      ty = cy - (cy - ty) * (nk / k);
+      k = nk;
+      clampPan();
+      apply();
+    };
+    const local = (e) => {
+      const r = svg.getBoundingClientRect();
+      return [(e.clientX - r.left) * (width / r.width), (e.clientY - r.top) * (height / r.height)];
+    };
+
+    el.querySelector(".fm-controls").addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      e.stopPropagation();
+      if (b.dataset.z === "in") zoomAt(1.8, width / 2, height / 2);
+      if (b.dataset.z === "out") zoomAt(1 / 1.8, width / 2, height / 2);
+      if (b.dataset.z === "reset") { k = 1; tx = 0; ty = 0; apply(); }
+    });
+    svg.addEventListener("dblclick", (e) => { e.preventDefault(); const [x, y] = local(e); zoomAt(2, x, y); });
+    // Trackpad pinch (and Ctrl/⌘ + scroll) zooms; plain scrolling still scrolls the page.
+    svg.addEventListener("wheel", (e) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const [x, y] = local(e);
+      zoomAt(Math.exp(-e.deltaY * 0.01), x, y);
+    }, { passive: false });
+
+    // Drag to pan when zoomed; two fingers to pinch-zoom.
+    const pointers = new Map();
+    let last = null, moved = 0;
+    svg.addEventListener("pointerdown", (e) => {
+      pointers.set(e.pointerId, local(e));
+      if (pointers.size === 1) moved = 0;
+      last = null;
+    });
+    svg.addEventListener("pointermove", (e) => {
+      if (!pointers.has(e.pointerId)) return;
+      const prev = pointers.get(e.pointerId);
+      const now = local(e);
+      pointers.set(e.pointerId, now);
+      if (pointers.size >= 2) {
+        const [a, b] = [...pointers.values()];
+        const dist = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+        if (last) {
+          tx += mid[0] - last.mid[0]; ty += mid[1] - last.mid[1];
+          zoomAt(dist / last.dist, mid[0], mid[1]);
+        }
+        last = { dist, mid };
+        moved += 10;
+      } else if (k > 1.001) {
+        tx += now[0] - prev[0]; ty += now[1] - prev[1];
+        moved += Math.abs(now[0] - prev[0]) + Math.abs(now[1] - prev[1]);
+        clampPan(); apply();
+      }
+    });
+    const up = (e) => { pointers.delete(e.pointerId); last = null; };
+    svg.addEventListener("pointerup", up);
+    svg.addEventListener("pointercancel", up);
+    svg.addEventListener("pointerleave", up);
+
+    // ---- place names
+    let pinned = null, current = null;
+    const placeTip = (id) => {
+      const [x, y] = screen(id);
+      const r = svg.getBoundingClientRect(), f = r.width / width;
       tip.textContent = placeLabel(d, id);
       tip.hidden = false;
       const tw = tip.offsetWidth;
-      tip.style.left = Math.max(4, Math.min(width - tw - 4, x - tw / 2)) + "px";
-      tip.style.top = (y - 44 < 0 ? y + 16 : y - 44) + "px";
-      el.querySelectorAll(".on").forEach((n) => n.classList.remove("on"));
-      dotOf(id)?.classList.add("on");
+      const left = x * f, top = y * f;
+      tip.hidden = left < -10 || left > r.width + 10 || top < -10 || top > r.height + 10;
+      tip.style.left = Math.max(4, Math.min(r.width - tw - 4, left - tw / 2)) + "px";
+      tip.style.top = (top - 44 < 0 ? top + 16 : top - 44) + "px";
     };
-    const hide = () => { tip.hidden = true; el.querySelectorAll(".on").forEach((n) => n.classList.remove("on")); };
+    const show = (id) => {
+      current = id;
+      placeTip(id);
+      el.querySelectorAll(".fm-dot.on").forEach((n) => n.classList.remove("on"));
+      dotEls[id].classList.add("on");
+    };
+    const hide = () => { current = null; tip.hidden = true; el.querySelectorAll(".fm-dot.on").forEach((n) => n.classList.remove("on")); };
     const restore = () => (pinned ? show(pinned) : hide());
-    const toggle = (id) => { pinned = pinned === id ? null : id; restore(); };
-
-    el.querySelectorAll(".fm-dot").forEach((n) => {
-      const id = n.dataset.id;
-      n.addEventListener("mouseenter", () => show(id));
-      n.addEventListener("mouseleave", restore);
-      n.addEventListener("focus", () => show(id));
-      n.addEventListener("blur", restore);
-      n.addEventListener("click", (e) => { e.stopPropagation(); toggle(id); });
+    Object.entries(dotEls).forEach(([id, g]) => {
+      g.addEventListener("mouseenter", () => show(id));
+      g.addEventListener("mouseleave", restore);
+      g.addEventListener("focus", () => show(id));
+      g.addEventListener("blur", restore);
+      g.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (moved > 6) return; // that was a drag, not a tap
+        pinned = pinned === id ? null : id;
+        restore();
+      });
     });
-    el.querySelector("svg").addEventListener("click", () => { pinned = null; hide(); });
+    svg.addEventListener("click", () => { if (moved > 6) return; pinned = null; hide(); });
+
+    apply();
 
     // Draw the lines in when the map scrolls into view.
     el.querySelectorAll(".fm-arc.flight").forEach((p) => p.style.setProperty("--len", p.getTotalLength().toFixed(0)));
-    if (reduceMotion || el.dataset.drawn) { el.classList.add("drawn", "instant"); return; }
+    const settle = () => el.classList.add("settled");
+    if (reduceMotion || el.dataset.drawn) { el.classList.add("drawn", "instant"); settle(); return; }
     const io = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) { el.classList.add("drawn"); el.dataset.drawn = "1"; io.disconnect(); }
+      if (entries.some((e) => e.isIntersecting)) {
+        el.classList.add("drawn"); el.dataset.drawn = "1"; io.disconnect();
+        setTimeout(settle, 1400 + ordered.length * 70);
+      }
     }, { threshold: 0.25 });
-    io.observe(el);
+    io.observe(frame);
   }
 
   const mounted = new Set();

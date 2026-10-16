@@ -250,6 +250,21 @@ body.no-scroll { overflow: hidden; }
   mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
   mask-composite: intersect;
 }
+.fm-frame { position: relative; }
+.flightmap svg { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.flightmap svg.zoomed { touch-action: none; cursor: grab; }
+.flightmap svg.zoomed:active { cursor: grabbing; }
+.fm-coast, .fm-borders, .fm-states, .fm-arc { vector-effect: non-scaling-stroke; }
+.flightmap.settled .fm-arc.flight { stroke-dasharray: none; }
+.fm-controls { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; gap: 6px; }
+.fm-controls button {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); cursor: pointer;
+  background: rgba(27, 28, 30, .85); color: var(--text); font-size: 18px; line-height: 1;
+  display: grid; place-items: center; transition: border-color .15s, opacity .15s;
+}
+.fm-controls button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.fm-controls button:disabled { opacity: .35; cursor: default; }
+.fm-controls button[hidden] { display: none; }
 .fm-states { fill: none; stroke: rgba(239, 233, 223, .1); stroke-width: .5; stroke-linejoin: round; }
 .fm-coast { fill: none; stroke: rgba(239, 233, 223, .32); stroke-width: .7; stroke-linejoin: round; }
 .fm-borders { fill: none; stroke: rgba(239, 233, 223, .16); stroke-width: .5; stroke-linejoin: round; }
