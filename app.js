@@ -299,28 +299,54 @@
     if (!photos) return;
     const cs = getComputedStyle(grid);
     const width = grid.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-    const gap = 8;
-    const target = window.innerWidth < 600 ? 170 : window.innerWidth < 1100 ? 250 : 320;
-    let html = "", row = [], rowRatio = 0;
-    const flush = (last) => {
-      if (!row.length) return;
-      const avail = width - gap * (row.length - 1);
-      let h = avail / rowRatio;
-      if (last && h > target * 1.25) h = target;
-      html += `<div class="jrow" style="height:${h.toFixed(1)}px">` + row.map(({ p, i }) =>
-        `<button data-i="${i}" style="width:${(h * (p.w / p.h)).toFixed(1)}px" aria-label="Open photo ${i + 1}"><img src="${esc(p.thumb)}" alt="" loading="lazy" onload="this.classList.add('loaded')"></button>`
-      ).join("") + `</div>`;
-      row = []; rowRatio = 0;
-    };
-    photos.forEach((p, i) => {
-      row.push({ p, i });
-      rowRatio += (p.w || 3) / (p.h || 2);
-      if (width / rowRatio <= target) flush(false);
+    const phone = window.innerWidth < 600;
+    const gap = phone ? 6 : 8;
+    const ratio = (p) => (p.w || 3) / (p.h || 2);
+    const rows = [];
+
+    if (phone) {
+      // Phones: big photos, order not kept. Wide shots fill the screen width;
+      // tall and square ones sit two side by side. Alternate them for rhythm.
+      const wide = photos.filter((p) => ratio(p) >= 1.15);
+      const tall = photos.filter((p) => ratio(p) < 1.15);
+      const pairs = [];
+      for (let i = 0; i < tall.length; i += 2) pairs.push(tall.slice(i, i + 2));
+      while (wide.length || pairs.length) {
+        if (wide.length) rows.push([wide.shift()]);
+        if (wide.length && wide.length > pairs.length * 2) rows.push([wide.shift()]);
+        if (pairs.length) rows.push(pairs.shift());
+      }
+    } else {
+      // Larger screens: justified rows in date order.
+      const target = window.innerWidth < 1100 ? 250 : 320;
+      let row = [], rowRatio = 0;
+      photos.forEach((p) => {
+        row.push(p);
+        rowRatio += ratio(p);
+        if (width / rowRatio <= target) { rows.push(row); row = []; rowRatio = 0; }
+      });
+      if (row.length) rows.push(Object.assign(row, { last: true, target }));
+    }
+
+    // Build the rows; `shown` is the on-screen order, which the lightbox follows.
+    const shown = [];
+    let html = "";
+    rows.forEach((row) => {
+      const rowRatio = row.reduce((n, p) => n + ratio(p), 0);
+      let h = (width - gap * (row.length - 1)) / rowRatio;
+      if (row.last && h > row.target * 1.25) h = row.target;
+      if (phone && row.length === 1 && ratio(row[0]) < 1.15) h = Math.min(h, width * 1.25); // lone tall photo
+      html += `<div class="jrow" style="height:${h.toFixed(1)}px;gap:${gap}px;margin-bottom:${gap}px">` + row.map((p) => {
+        const i = shown.push(p) - 1;
+        const w = h * ratio(p);
+        const thumbW = Math.round(ratio(p) >= 1 ? 720 : 720 * ratio(p));
+        const fullW = Math.round(p.w || 2048);
+        return `<button data-i="${i}" style="width:${w.toFixed(1)}px" aria-label="Open photo ${i + 1}"><img src="${esc(p.thumb)}" srcset="${esc(p.thumb)} ${thumbW}w, ${esc(p.file)} ${fullW}w" sizes="${Math.ceil(w)}px" alt="" loading="lazy" onload="this.classList.add('loaded')"></button>`;
+      }).join("") + `</div>`;
     });
-    flush(true);
     grid.innerHTML = html;
     grid.querySelectorAll("img").forEach((img) => { if (img.complete) img.classList.add("loaded"); });
-    grid.querySelectorAll("button[data-i]").forEach((b) => b.addEventListener("click", () => openLightbox(photos, +b.dataset.i)));
+    grid.querySelectorAll("button[data-i]").forEach((b) => b.addEventListener("click", () => openLightbox(shown, +b.dataset.i)));
   }
   let resizeTimer, gridWidth = window.innerWidth;
   window.addEventListener("resize", () => {
