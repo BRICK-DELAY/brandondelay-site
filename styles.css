@@ -253,6 +253,7 @@ body.no-scroll { overflow: hidden; }
 
 /* ---------- Flight maps ---------- */
 .flightmap { position: relative; margin: 0 0 clamp(28px, 3.5vw, 44px); min-height: 240px; }
+.year-body + .flightmap { margin: clamp(32px, 4vw, 56px) 0 0; } /* under the trip tiles */
 .flightmap svg {
   display: block; width: 100%; height: auto; overflow: hidden;
   /* soft edges so the cropped map fades into the page */

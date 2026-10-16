@@ -181,12 +181,21 @@
     if (viewOf(y) === "gallery") return `<div class="justified inset" data-gallery="${y.year}"></div>`;
     return `<div class="cards">${y.trips.map(card).join("")}</div>`;
   }
+  // The travel map sits under the trip tiles in Trips view, and on top in Gallery view.
   function yearSection(y, extraClass) {
+    const gallery = viewOf(y) === "gallery";
     return `<section class="section${extraClass || ""}" data-year-section="${y.year}">
       ${yearHead(y)}
-      ${mapSlot(y.year)}
+      ${gallery ? mapSlot(y.year) : ""}
       <div class="year-body">${yearBody(y)}</div>
+      ${gallery ? "" : mapSlot(y.year)}
     </section>`;
+  }
+  // Move an already-drawn map (keeps its zoom) to match the view.
+  function placeMap(sec, view) {
+    const map = sec.querySelector(".flightmap"), body = sec.querySelector(".year-body");
+    if (!map) return;
+    if (view === "gallery") body.before(map); else body.after(map);
   }
   // Fill in gallery grids and wire up the Trips/Gallery switches inside root.
   function wireYears(root) {
@@ -203,6 +212,7 @@
         sec.querySelectorAll(".view-toggle button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
         const body = sec.querySelector(".year-body");
         body.innerHTML = yearBody(y);
+        placeMap(sec, b.dataset.view);
         wireYears(body);
       }));
     });
