@@ -421,7 +421,7 @@
             <label class="field" style="margin:0"><span>Put these in</span><select data-act="target">${tripOptions(g.target)}</select></label>
             ${g.target === "new" ? `<label class="field" style="margin:0"><span>Trip name</span><input type="text" data-act="name" value="${esc(g.name)}" placeholder="e.g. Kenya, Moose Pass, Alaska"></label>` : ""}
           </div>
-          ${guessed ? `<p class="muted small" style="margin:10px 0 0">${guessed} photo${guessed > 1 ? "s don't" : " doesn't"} say when ${guessed > 1 ? "they were" : "it was"} taken, so the file date was used.</p>` : ""}
+          ${guessed ? `<label class="field" style="margin:12px 0 0"><span>${guessed} photo${guessed > 1 ? "s don't" : " doesn't"} say when ${guessed > 1 ? "they were" : "it was"} taken. When was this trip?</span><input type="date" data-act="date" value="${esc(g.manualDate || "")}"></label>` : ""}
           <div class="thumbs">${g.items.map((p) => `<div class="thumb"><img src="${p.preview}" alt=""><button class="x" data-act="remove" data-id="${p.id}" aria-label="Remove this photo">×</button></div>`).join("")}</div>
         </section>`;
       }).join("")}
@@ -437,6 +437,19 @@
       sec.querySelector('[data-act="target"]').addEventListener("change", (e) => { g.target = e.target.value; renderGroups(); });
       const nameInput = sec.querySelector('[data-act="name"]');
       if (nameInput) nameInput.addEventListener("input", (e) => { g.name = e.target.value; });
+      sec.querySelector('[data-act="date"]')?.addEventListener("change", (e) => {
+        const day = e.target.value;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) return;
+        g.manualDate = day;
+        // Keep the order the photos were picked in by spacing them a second apart.
+        g.items.filter((p) => p.guessedDate).forEach((p, i) => { p.date = `${day}T12:${pad(Math.floor(i / 60) % 60)}:${pad(i % 60)}`; });
+        g.items.sort((a, b) => a.date.localeCompare(b.date));
+        g.start = g.items[0].date; g.end = g.items[g.items.length - 1].date;
+        const match = liveTrips.find((t) =>
+          dayOf(g.start) <= dayOf(t.end) + MATCH_SLACK_DAYS * DAY && dayOf(g.end) >= dayOf(t.start) - MATCH_SLACK_DAYS * DAY);
+        g.target = match ? match.id : "new";
+        renderGroups();
+      });
       sec.querySelectorAll('[data-act="remove"]').forEach((b) => b.addEventListener("click", () => {
         g.items = g.items.filter((p) => p.id !== b.dataset.id);
         pending = pending.filter((p) => p.id !== b.dataset.id);
@@ -457,6 +470,12 @@
   }
 
   async function publish() {
+    const undated = groups.find((g) => g.items.every((p) => p.guessedDate) && !g.manualDate);
+    if (undated) {
+      toast("Pick the date for photos that don't have one, so they land in the right year.", true);
+      document.querySelector(`.group[data-g="${groups.indexOf(undated)}"] [data-act="date"]`)?.focus();
+      return;
+    }
     const unnamed = groups.find((g) => g.target === "new" && !g.name.trim());
     if (unnamed) {
       toast("Give each new trip a name first.", true);
