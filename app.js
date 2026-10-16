@@ -64,6 +64,12 @@
     years = [...byYear.entries()].sort((a, b) => b[0] - a[0])
       .map(([year, list]) => ({ year, trips: list.sort((a, b) => rank(a) - rank(b) || (b.start || "").localeCompare(a.start || "")) }));
     trips = years.flatMap((y) => y.trips);
+    // Years with a travel map but no photos yet still get a section.
+    Object.keys((flights && flights.years) || {}).forEach((key) => {
+      const year = Number(key);
+      if (year && !byYear.has(year) && window.FlightMaps && FlightMaps.hasYear(flights, key)) years.push({ year, trips: [] });
+    });
+    years.sort((a, b) => b.year - a.year);
   }
 
   // ---------- chrome ----------
@@ -78,7 +84,7 @@
         <button class="nav-year" aria-expanded="false" aria-haspopup="true">${y.year}${chev}</button>
         <div class="dropdown" role="menu">
           ${y.trips.map((t) => `<a role="menuitem" href="#/trip/${encodeURIComponent(t.id)}">${esc(t.name)}<span class="when">${monthLabel(t)}</span></a>`).join("")}
-          <a class="all" role="menuitem" href="#/year/${y.year}">All of ${y.year}</a>
+          <a class="all" role="menuitem" href="#/year/${y.year}">${y.trips.length ? `All of ${y.year}` : "Travel map"}</a>
         </div>
       </div>`;
     }
@@ -145,6 +151,7 @@
 
   // A flight map goes under each year's heading when data/flights.json has flights for it.
   const mapSlot = (year) => (window.FlightMaps && FlightMaps.hasYear(flights, year) ? `<div class="flightmap" data-year="${year}"></div>` : "");
+  const tripCount = (y) => (y.trips.length ? `${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}` : "Photos coming soon");
   const mountMaps = () => { if (window.FlightMaps) FlightMaps.mount(app, flights); };
 
   function heroFile() {
@@ -168,8 +175,8 @@
     }
     for (const y of years) {
       html += `<section class="section">
-        <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
-        <div class="cards">${y.trips.map(card).join("")}</div>
+        <div class="section-head"><h2>${y.year}</h2><span>${tripCount(y)}</span></div>
+        ${y.trips.length ? `<div class="cards">${y.trips.map(card).join("")}</div>` : ""}
         ${mapSlot(y.year)}
       </section>`;
     }
@@ -188,8 +195,8 @@
     const y = years.find((x) => String(x.year) === String(year));
     if (!y) return renderNotFound();
     app.innerHTML = `<section class="section page">
-      <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
-      <div class="cards">${y.trips.map(card).join("")}</div>
+      <div class="section-head"><h2>${y.year}</h2><span>${tripCount(y)}</span></div>
+      ${y.trips.length ? `<div class="cards">${y.trips.map(card).join("")}</div>` : ""}
       ${mapSlot(y.year)}
     </section>`;
     mountMaps();
