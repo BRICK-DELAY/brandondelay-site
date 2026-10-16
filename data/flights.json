@@ -257,11 +257,13 @@
         },
         {
           "from": "boi",
-          "to": "den"
+          "to": "den",
+          "mode": "drive"
         },
         {
           "from": "den",
-          "to": "home"
+          "to": "home",
+          "mode": "drive"
         }
       ]
     }
