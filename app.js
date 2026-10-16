@@ -80,6 +80,7 @@
   }
 
   // ---------- chrome ----------
+  const igHandle = () => String(site.instagram || "").replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "");
   function renderChrome() {
     const name = site.name || "Brandon DeLay";
     document.getElementById("brand").textContent = name;
@@ -99,6 +100,11 @@
     for (const l of site.links || []) {
       if (l && l.label && l.url) html += `<a class="nav-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`;
     }
+    if (site.instagram) {
+      html += `<a class="nav-link nav-ig" href="https://instagram.com/${esc(igHandle())}" target="_blank" rel="noopener" aria-label="Instagram @${esc(igHandle())}">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@${esc(igHandle())}</span></a>`;
+    }
     nav.innerHTML = html;
 
     nav.querySelectorAll(".nav-year").forEach((btn) => {
@@ -114,7 +120,7 @@
     const links = [];
     if (site.email) links.push(`<a href="mailto:${esc(site.email)}">Email</a>`);
     if (site.instagram) {
-      const handle = String(site.instagram).replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "");
+      const handle = igHandle();
       links.push(`<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">Instagram</a>`);
     }
     footer.innerHTML = `<span>© ${new Date().getFullYear()} ${esc(name)}. All photos are mine; please ask before using them.</span><span class="links">${links.join("")}</span>`;
@@ -380,7 +386,7 @@
     const contact = [];
     if (site.email) contact.push(`<a class="btn" href="mailto:${esc(site.email)}">Email me</a>`);
     if (site.instagram) {
-      const handle = String(site.instagram).replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "");
+      const handle = igHandle();
       contact.push(`<a class="btn" href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">Instagram</a>`);
     }
     app.innerHTML = `<section class="section page about">

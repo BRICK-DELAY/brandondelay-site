@@ -79,6 +79,8 @@ button { font: inherit; color: inherit; }
 .dropdown .all { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 10px; color: var(--muted); font-size: 13px; }
 .dropdown .all:first-child { border-top: 0; margin-top: 0; padding-top: 9px; }
 
+.nav-ig span { display: none; } /* icon only in the top bar; handle shows in the phone menu */
+@media (max-width: 820px) { .nav-ig span { display: inline; text-transform: none; letter-spacing: .02em; } .nav-ig { justify-content: flex-start !important; gap: 10px !important; } }
 .menu-toggle { display: none; }
 
 @media (max-width: 820px) {
