@@ -36,7 +36,8 @@
   const thumbFor = (t, file) => { const p = t.photos.find((x) => x.file === file); return p ? p.thumb : file; };
 
   async function getJSON(url) {
-    const res = await fetch(url, { cache: "no-cache" });
+    // A unique address each time skips any saved copy, so new photos and trips show up right away.
+    const res = await fetch(url + (url.includes("?") ? "&" : "?") + "t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(url + " " + res.status);
     return res.json();
   }
