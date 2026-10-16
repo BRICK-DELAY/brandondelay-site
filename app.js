@@ -147,11 +147,28 @@
     if (y) nav.querySelector(`.nav-item[data-year="${y}"] .nav-year`)?.classList.add("active");
   }
 
+  // ---------- lazy loading ----------
+  // Photos start loading only when they're about a screen away, show a soft
+  // placeholder until then, and fade in once loaded.
+  const lazyObserver = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { lazyObserver.unobserve(e.target); startLoad(e.target); } });
+  }, { rootMargin: "100% 0px" }) : null;
+  function startLoad(img) {
+    img.addEventListener("load", () => img.classList.add("loaded"), { once: true });
+    img.addEventListener("error", () => img.classList.add("loaded"), { once: true });
+    if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+  }
+  function lazyLoad(root) {
+    root.querySelectorAll("img[data-src]").forEach((img) => (lazyObserver ? lazyObserver.observe(img) : startLoad(img)));
+  }
+
   // ---------- pages ----------
   function card(t) {
     const cover = coverOf(t);
     return `<a class="card" href="#/trip/${encodeURIComponent(t.id)}">
-      <div class="card-img"><img src="${esc(thumbFor(t, cover))}" alt="${esc(t.name)}" loading="lazy">${t.credit ? `<span class="card-credit">${esc(t.credit)}</span>` : ""}</div>
+      <div class="card-img"><img data-src="${esc(thumbFor(t, cover))}" alt="${esc(t.name)}">${t.credit ? `<span class="card-credit">${esc(t.credit)}</span>` : ""}</div>
       <div class="card-meta"><h3>${esc(t.name)}</h3><span>${monthRange(t)}</span></div>
     </a>`;
   }
@@ -221,6 +238,7 @@
         body.innerHTML = yearBody(y);
         placeMap(sec, b.dataset.view);
         wireYears(body);
+        lazyLoad(body);
       }));
     });
   }
@@ -249,6 +267,7 @@
     html += `</div>`;
     app.innerHTML = html;
     wireYears(app);
+    lazyLoad(app);
     mountMaps();
     app.querySelector("[data-scroll]")?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -263,6 +282,7 @@
     if (!y) return renderNotFound();
     app.innerHTML = yearSection(y, " page");
     wireYears(app);
+    lazyLoad(app);
     mountMaps();
     document.title = `${y.year} · ${site.name || "Brandon DeLay"}`;
   }
@@ -341,11 +361,11 @@
         const w = h * ratio(p);
         const thumbW = Math.round(ratio(p) >= 1 ? 720 : 720 * ratio(p));
         const fullW = Math.round(p.w || 2048);
-        return `<button data-i="${i}" style="width:${w.toFixed(1)}px" aria-label="Open photo ${i + 1}"><img src="${esc(p.thumb)}" srcset="${esc(p.thumb)} ${thumbW}w, ${esc(p.file)} ${fullW}w" sizes="${Math.ceil(w)}px" alt="" loading="lazy" onload="this.classList.add('loaded')"></button>`;
+        return `<button data-i="${i}" style="width:${w.toFixed(1)}px" aria-label="Open photo ${i + 1}"><img data-src="${esc(p.thumb)}" data-srcset="${esc(p.thumb)} ${thumbW}w, ${esc(p.file)} ${fullW}w" sizes="${Math.ceil(w)}px" alt=""></button>`;
       }).join("") + `</div>`;
     });
     grid.innerHTML = html;
-    grid.querySelectorAll("img").forEach((img) => { if (img.complete) img.classList.add("loaded"); });
+    lazyLoad(grid);
     grid.querySelectorAll("button[data-i]").forEach((b) => b.addEventListener("click", () => openLightbox(shown, +b.dataset.i)));
   }
   let resizeTimer, gridWidth = window.innerWidth;
