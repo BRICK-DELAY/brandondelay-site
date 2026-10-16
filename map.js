@@ -1,18 +1,26 @@
-// Flight maps: one per year, drawn from data/flights.json.
+// Travel maps: one per year, drawn from data/flights.json.
 //
 // data/flights.json looks like:
 //   {
 //     "places": { "anc": { "name": "Anchorage, Alaska", "lat": 61.17, "lon": -149.99 }, ... },
-//     "years":  { "2024": { "home": "den", "flights": [["den", "anc"], ["anc", "den"]] } }
+//     "years": {
+//       "2024": {
+//         "home": "pdx",
+//         "legs": [
+//           { "from": "pdx", "to": "anc" },                              // a flight (the default)
+//           { "from": "pdx", "to": "her", "mode": "drive", "times": 19 } // a drive, done 19 times
+//         ]
+//       }
+//     }
 //   }
-// Each map crops itself to the places flown to that year.
+// Each map crops itself to the places visited that year.
 
 (function () {
   "use strict";
 
   const LIBS = ["vendor/map/d3-array.min.js", "vendor/map/d3-geo.min.js", "vendor/map/topojson-client.min.js"];
   const MIN_SPAN_DEG = 28;     // never zoom in further than this many degrees of longitude
-  const CURVE = 0.18;          // how much flight lines bow
+  const CURVE = 0.18;          // how much flight lines bow (drives bow less)
   const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let libsReady = null;
@@ -52,6 +60,7 @@
 
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const norm = (lon) => ((lon % 360) + 540) % 360 - 180;
+  const plural = (n, word) => `${n.toLocaleString()} ${word}${n === 1 ? "" : "s"}`;
 
   // Longitude in the middle of the smallest arc that holds every place,
   // so trips across the Pacific aren't split at the map's edge.
@@ -77,23 +86,43 @@
 
   function yearData(data, year) {
     const y = data && data.years && data.years[year];
-    if (!y || !Array.isArray(y.flights) || !y.flights.length) return null;
+    const raw = y && (y.legs || y.flights);
+    if (!Array.isArray(raw) || !raw.length) return null;
     const places = data.places || {};
-    const flights = y.flights
-      .map((f) => (Array.isArray(f) ? { from: f[0], to: f[1] } : f))
-      .filter((f) => places[f.from] && places[f.to] && f.from !== f.to);
-    if (!flights.length) return null;
-    return { home: y.home, flights, places };
+    const legs = raw
+      .map((l) => (Array.isArray(l) ? { from: l[0], to: l[1] } : l))
+      .map((l) => ({ from: l.from, to: l.to, mode: l.mode === "drive" ? "drive" : "flight", times: Math.max(1, Number(l.times) || 1) }))
+      .filter((l) => places[l.from] && places[l.to] && l.from !== l.to);
+    if (!legs.length) return null;
+    // Places in the order they were first visited; how often each was arrived at.
+    const order = [], visits = {};
+    legs.forEach((l) => {
+      [l.from, l.to].forEach((id) => { if (!order.includes(id)) order.push(id); });
+      visits[l.to] = (visits[l.to] || 0) + l.times;
+    });
+    return { home: y.home, legs, places, order, visits };
   }
 
   function statsLine(d) {
-    const dest = new Set();
-    let total = 0;
-    d.flights.forEach((f) => { if (f.to !== d.home) dest.add(f.to); total += miles(d.places[f.from], d.places[f.to]); });
-    const n = d.flights.length;
-    const roundMiles = total >= 1000 ? Math.round(total / 100) * 100 : Math.round(total);
-    return `${n} flight${n === 1 ? "" : "s"} · ${dest.size} place${dest.size === 1 ? "" : "s"} · ${roundMiles.toLocaleString()} miles`;
+    let flights = 0, roadTrips = 0, flown = 0;
+    d.legs.forEach((l) => {
+      if (l.mode === "flight") { flights += l.times; flown += miles(d.places[l.from], d.places[l.to]) * l.times; }
+      else if (l.from === d.home) roadTrips += l.times;
+    });
+    const places = d.order.filter((id) => id !== d.home).length;
+    const parts = [];
+    if (flights) parts.push(plural(flights, "flight"));
+    if (roadTrips) parts.push(plural(roadTrips, "road trip"));
+    parts.push(plural(places, "place"));
+    if (flown) parts.push(`${(flown >= 1000 ? Math.round(flown / 100) * 100 : Math.round(flown)).toLocaleString()} miles flown`);
+    return parts.join(" · ");
   }
+
+  const placeLabel = (d, id) => {
+    const v = d.visits[id] || 0;
+    if (id === d.home) return `${d.places[id].name} · home`;
+    return d.places[id].name + (v > 1 ? ` · ${v} visits` : "");
+  };
 
   async function draw(el, d) {
     const width = el.clientWidth;
@@ -101,21 +130,19 @@
     const height = Math.round(Math.min(520, Math.max(240, width * (width < 600 ? 0.72 : 0.42))));
     const pad = Math.max(28, width * 0.06);
 
-    const ids = [...new Set(d.flights.flatMap((f) => [f.from, f.to]))];
-    const pts = ids.map((id) => d.places[id]);
-    const { center, span } = centerAndSpan(pts.map((p) => p.lon));
+    const ids = d.order;
+    const { center, span } = centerAndSpan(ids.map((id) => d.places[id].lon));
     const zoomed = span < 70;
     const [world, states] = await Promise.all([loadWorld(zoomed ? "50m" : "110m"), zoomed ? loadStates() : null]);
 
-    // Fit the map around the places (and the arcs between them), then cap the zoom.
-    const shape = { type: "FeatureCollection", features: [
-      ...d.flights.map((f) => ({ type: "Feature", geometry: { type: "LineString", coordinates: [[d.places[f.from].lon, d.places[f.from].lat], [d.places[f.to].lon, d.places[f.to].lat]] } })),
-    ] };
-    const projection = d3.geoMercator().rotate([-center, 0]).fitExtent([[pad, pad * 1.1], [width - pad, height - pad * 0.8]], shape);
+    // Fit the map around the places (not the true great-circle paths, which
+    // swing up toward the pole on long flights), then cap the zoom. Extra room
+    // on top leaves space for the lines' upward bow.
+    const shape = { type: "MultiPoint", coordinates: ids.map((id) => [d.places[id].lon, d.places[id].lat]) };
+    const projection = d3.geoMercator().rotate([-center, 0]).fitExtent([[pad, pad * 1.8], [width - pad, height - pad * 0.8]], shape);
     const maxScale = (width - 2 * pad) / (MIN_SPAN_DEG * Math.PI / 180);
     if (projection.scale() > maxScale) {
-      const path0 = d3.geoPath(projection);
-      const [[x0, y0], [x1, y1]] = path0.bounds(shape);
+      const [[x0, y0], [x1, y1]] = d3.geoPath(projection).bounds(shape);
       const ratio = maxScale / projection.scale();
       const [tx, ty] = projection.translate();
       const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
@@ -126,14 +153,21 @@
     const P = {};
     ids.forEach((id) => { P[id] = projection([d.places[id].lon, d.places[id].lat]); });
 
-    const arcs = d.flights.map((f, i) => {
-      const [x1, y1] = P[f.from], [x2, y2] = P[f.to];
+    // One line per route and mode (there-and-back trips share a line). Drives sit under flights.
+    const routes = new Map();
+    d.legs.forEach((l) => {
+      const key = [l.from, l.to].sort().join("|") + "|" + l.mode;
+      if (!routes.has(key)) routes.set(key, l);
+    });
+    const ordered = [...routes.values()].sort((a, b) => (a.mode === "drive" ? 0 : 1) - (b.mode === "drive" ? 0 : 1));
+    const arcs = ordered.map((l, i) => {
+      const [x1, y1] = P[l.from], [x2, y2] = P[l.to];
       const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
       let nx = dy / len, ny = -dx / len;
       if (ny > 0) { nx = -nx; ny = -ny; } // always bow upward
-      const bow = Math.min(len * CURVE, 120);
+      const bow = Math.min(len * (l.mode === "drive" ? CURVE / 2 : CURVE), 120);
       const cx = (x1 + x2) / 2 + nx * bow, cy = (y1 + y2) / 2 + ny * bow;
-      return `<path class="fm-arc" style="--i:${i}" d="M${x1.toFixed(1)},${y1.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}"/>`;
+      return `<path class="fm-arc ${l.mode}" style="--i:${i}" d="M${x1.toFixed(1)},${y1.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}"/>`;
     }).join("");
 
     // Tap/hover area: as big as possible without covering a neighbouring dot.
@@ -142,49 +176,72 @@
       ids.forEach((o) => { if (o !== id) near = Math.min(near, Math.hypot(P[o][0] - P[id][0], P[o][1] - P[id][1])); });
       return Math.max(5, Math.min(14, near / 2));
     };
-    const dots = ids.map((id) => {
+    // Home last so its ring sits on top of nearby dots.
+    const dots = [...ids.filter((id) => id !== d.home), ...ids.filter((id) => id === d.home)].map((id) => {
       const [x, y] = P[id];
       const home = id === d.home;
-      return `<g class="fm-dot${home ? " home" : ""}" data-id="${esc(id)}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})" tabindex="0" role="button" aria-label="${esc(d.places[id].name)}${home ? " (home)" : ""}">
+      return `<g class="fm-dot${home ? " home" : ""}" data-id="${esc(id)}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})" tabindex="0" role="button" aria-label="${esc(placeLabel(d, id))}">
         <circle class="hit" r="${hitR(id).toFixed(1)}"/><circle class="halo" r="9"/><circle class="core" r="${home ? 4.5 : 3.6}"/></g>`;
     }).join("");
 
-    el.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Map of flights">
+    const modes = new Set(d.legs.map((l) => l.mode));
+    const legend = modes.size > 1
+      ? `<span class="fm-legend"><span class="key flight"></span>Flights<span class="key drive"></span>Drives</span>` : "";
+    // On phones a long list starts folded so it doesn't push the photos far down.
+    const others = ids.filter((id) => id !== d.home);
+    const fold = width < 600 && others.length > 8 && !el.dataset.expanded ? 6 : Infinity;
+    const list = others.map((id, i) => {
+      const v = d.visits[id] || 0;
+      return `<button type="button" class="fm-place" data-id="${esc(id)}"${i >= fold ? " hidden" : ""}>${esc(d.places[id].name)}${v > 1 ? `<span>×${v}</span>` : ""}</button>`;
+    }).join("") + (others.length > fold ? `<button type="button" class="fm-more">+ ${others.length - fold} more</button>` : "");
+
+    el.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Map of this year's travel">
         <path class="fm-coast" d="${path(world.coast) || ""}"/>
         <path class="fm-borders" d="${path(world.borders) || ""}"/>
         ${states ? `<path class="fm-states" d="${path(states) || ""}"/>` : ""}
         <g class="fm-arcs">${arcs}</g>
         <g class="fm-dots">${dots}</g>
       </svg>
-      <div class="fm-stats">${statsLine(d)}</div>
+      <div class="fm-meta"><span class="fm-stats">${statsLine(d)}</span>${legend}</div>
+      <div class="fm-places">${list}</div>
       <div class="fm-tip" hidden></div>`;
 
     const tip = el.querySelector(".fm-tip");
+    const dotOf = (id) => el.querySelector(`.fm-dot[data-id="${CSS.escape(id)}"]`);
     let pinned = null;
-    const show = (g) => {
-      const id = g.dataset.id;
+    const show = (id) => {
       const [x, y] = P[id];
-      tip.textContent = d.places[id].name + (id === d.home ? " · home" : "");
+      tip.textContent = placeLabel(d, id);
       tip.hidden = false;
       const tw = tip.offsetWidth;
       tip.style.left = Math.max(4, Math.min(width - tw - 4, x - tw / 2)) + "px";
       tip.style.top = (y - 44 < 0 ? y + 16 : y - 44) + "px";
-      el.querySelectorAll(".fm-dot.on").forEach((n) => n.classList.remove("on"));
-      g.classList.add("on");
+      el.querySelectorAll(".on").forEach((n) => n.classList.remove("on"));
+      dotOf(id)?.classList.add("on");
+      el.querySelector(`.fm-place[data-id="${CSS.escape(id)}"]`)?.classList.add("on");
     };
-    const hide = () => { tip.hidden = true; el.querySelectorAll(".fm-dot.on").forEach((n) => n.classList.remove("on")); };
-    el.querySelectorAll(".fm-dot").forEach((g) => {
-      g.addEventListener("mouseenter", () => show(g));
-      g.addEventListener("mouseleave", () => { if (pinned !== g) { pinned ? show(pinned) : hide(); } });
-      g.addEventListener("focus", () => show(g));
-      g.addEventListener("blur", () => { if (pinned !== g) hide(); });
-      g.addEventListener("click", (e) => { e.stopPropagation(); pinned = pinned === g ? null : g; pinned ? show(g) : hide(); });
+    const hide = () => { tip.hidden = true; el.querySelectorAll(".on").forEach((n) => n.classList.remove("on")); };
+    const restore = () => (pinned ? show(pinned) : hide());
+    const toggle = (id) => { pinned = pinned === id ? null : id; restore(); };
+
+    el.querySelectorAll(".fm-dot, .fm-place").forEach((n) => {
+      const id = n.dataset.id;
+      n.addEventListener("mouseenter", () => show(id));
+      n.addEventListener("mouseleave", restore);
+      n.addEventListener("focus", () => show(id));
+      n.addEventListener("blur", restore);
+      n.addEventListener("click", (e) => { e.stopPropagation(); toggle(id); });
     });
     el.querySelector("svg").addEventListener("click", () => { pinned = null; hide(); });
+    el.querySelector(".fm-more")?.addEventListener("click", (e) => {
+      el.dataset.expanded = "1";
+      el.querySelectorAll(".fm-place[hidden]").forEach((b) => { b.hidden = false; });
+      e.currentTarget.remove();
+    });
 
-    // Draw the flight lines in when the map scrolls into view.
-    el.querySelectorAll(".fm-arc").forEach((p) => { const L = p.getTotalLength(); p.style.setProperty("--len", L.toFixed(0)); });
-    if (reduceMotion || el.dataset.drawn) { el.classList.add("drawn"); return; }
+    // Draw the lines in when the map scrolls into view.
+    el.querySelectorAll(".fm-arc.flight").forEach((p) => p.style.setProperty("--len", p.getTotalLength().toFixed(0)));
+    if (reduceMotion || el.dataset.drawn) { el.classList.add("drawn", "instant"); return; }
     const io = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) { el.classList.add("drawn"); el.dataset.drawn = "1"; io.disconnect(); }
     }, { threshold: 0.25 });
@@ -192,14 +249,16 @@
   }
 
   const mounted = new Set();
-  let resizeTimer;
+  let resizeTimer, lastWidth = window.innerWidth;
   window.addEventListener("resize", () => {
+    if (window.innerWidth === lastWidth) return; // ignore phone toolbars sliding in and out
+    lastWidth = window.innerWidth;
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => mounted.forEach((m) => { if (document.body.contains(m.el)) draw(m.el, m.d); else mounted.delete(m); }), 200);
   });
 
   window.FlightMaps = {
-    // Which years have flights, for deciding where to leave room for a map.
+    // Whether a year has anything to map, for deciding where to leave room.
     hasYear: (data, year) => !!yearData(data, year),
     // Draws every .flightmap[data-year] inside root.
     async mount(root, data) {

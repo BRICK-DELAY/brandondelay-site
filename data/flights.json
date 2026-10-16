@@ -1,4 +1,269 @@
 {
-  "places": {},
-  "years": {}
+  "places": {
+    "home": {
+      "name": "Portland & Albany, Oregon",
+      "lat": 45.52,
+      "lon": -122.68
+    },
+    "den": {
+      "name": "Denver, Colorado",
+      "lat": 39.74,
+      "lon": -104.99
+    },
+    "cen": {
+      "name": "Centralia, Washington",
+      "lat": 46.716,
+      "lon": -122.954
+    },
+    "bli": {
+      "name": "Bellingham, Washington",
+      "lat": 48.75,
+      "lon": -122.48
+    },
+    "nca": {
+      "name": "North Cascades National Park",
+      "lat": 48.7,
+      "lon": -121.2
+    },
+    "her": {
+      "name": "Hermiston, Oregon",
+      "lat": 45.84,
+      "lon": -119.29
+    },
+    "whi": {
+      "name": "Whistler, British Columbia",
+      "lat": 50.116,
+      "lon": -122.957
+    },
+    "bre": {
+      "name": "Breckenridge, Colorado",
+      "lat": 39.48,
+      "lon": -106.04
+    },
+    "tpa": {
+      "name": "Tampa Bay, Florida",
+      "lat": 27.95,
+      "lon": -82.46
+    },
+    "anc": {
+      "name": "Anchorage, Alaska",
+      "lat": 61.22,
+      "lon": -149.9
+    },
+    "fra": {
+      "name": "Frankfurt, Germany",
+      "lat": 50.11,
+      "lon": 8.68
+    },
+    "cai": {
+      "name": "Cairo, Egypt",
+      "lat": 30.04,
+      "lon": 31.24
+    },
+    "nbo": {
+      "name": "Nairobi, Kenya",
+      "lat": -1.29,
+      "lon": 36.82
+    },
+    "sez": {
+      "name": "Seychelles",
+      "lat": -4.62,
+      "lon": 55.45
+    },
+    "rai": {
+      "name": "Mount Rainier National Park",
+      "lat": 46.85,
+      "lon": -121.76
+    },
+    "rbl": {
+      "name": "Red Bluff, California",
+      "lat": 40.18,
+      "lon": -122.24
+    },
+    "pip": {
+      "name": "Pippin Hill Farm, Virginia",
+      "lat": 37.95,
+      "lon": -78.63
+    },
+    "dca": {
+      "name": "Washington, D.C.",
+      "lat": 38.9,
+      "lon": -77.04
+    },
+    "jnu": {
+      "name": "Juneau, Alaska",
+      "lat": 58.3,
+      "lon": -134.42
+    },
+    "boi": {
+      "name": "Boise, Idaho",
+      "lat": 43.62,
+      "lon": -116.2
+    }
+  },
+  "years": {
+    "2024": {
+      "home": "home",
+      "legs": [
+        {
+          "from": "home",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "cen",
+          "mode": "drive",
+          "times": 17
+        },
+        {
+          "from": "cen",
+          "to": "home",
+          "mode": "drive",
+          "times": 17
+        },
+        {
+          "from": "home",
+          "to": "bli",
+          "mode": "drive"
+        },
+        {
+          "from": "bli",
+          "to": "nca",
+          "mode": "drive"
+        },
+        {
+          "from": "nca",
+          "to": "her",
+          "mode": "drive"
+        },
+        {
+          "from": "her",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "whi",
+          "mode": "drive"
+        },
+        {
+          "from": "whi",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "bre"
+        },
+        {
+          "from": "bre",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "tpa"
+        },
+        {
+          "from": "tpa",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "her",
+          "mode": "drive",
+          "times": 19
+        },
+        {
+          "from": "her",
+          "to": "home",
+          "mode": "drive",
+          "times": 19
+        },
+        {
+          "from": "home",
+          "to": "anc"
+        },
+        {
+          "from": "anc",
+          "to": "fra"
+        },
+        {
+          "from": "fra",
+          "to": "cai"
+        },
+        {
+          "from": "cai",
+          "to": "nbo"
+        },
+        {
+          "from": "nbo",
+          "to": "sez"
+        },
+        {
+          "from": "sez",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "rai",
+          "mode": "drive"
+        },
+        {
+          "from": "rai",
+          "to": "home",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "rbl",
+          "mode": "drive",
+          "times": 3
+        },
+        {
+          "from": "rbl",
+          "to": "home",
+          "mode": "drive",
+          "times": 3
+        },
+        {
+          "from": "home",
+          "to": "pip"
+        },
+        {
+          "from": "pip",
+          "to": "dca",
+          "mode": "drive"
+        },
+        {
+          "from": "dca",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "jnu"
+        },
+        {
+          "from": "jnu",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "boi",
+          "mode": "drive"
+        },
+        {
+          "from": "boi",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "home"
+        }
+      ]
+    }
+  }
 }
