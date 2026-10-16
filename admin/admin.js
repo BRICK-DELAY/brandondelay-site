@@ -11,6 +11,9 @@
   const STORE_KEY = "bd-uploader";
   const FULL_EDGE = 2048;   // longest side of the photo people see full-screen
   const THUMB_EDGE = 720;   // longest side of grid thumbnails
+  const FULL_QUALITY = 0.8;
+  const THUMB_QUALITY = 0.75;
+  const SITE_LIMIT_MB = 1000; // GitHub Pages' size limit for one site
   const TRIP_GAP_DAYS = 3;  // photos more than this many days apart start a new trip
   const MATCH_SLACK_DAYS = 2; // how close to an existing trip's dates counts as "same trip"
   const PHOTOS_PER_SAVE = 25;
@@ -264,6 +267,7 @@
   let pending = [];  // photos chosen but not saved yet
   let groups = [];   // auto-made trip groups for the pending photos
   let liveTrips = []; // trips already on the site (for matching)
+  let repoMB = 0;     // roughly how much of the site's space is used
 
   function renderAdd() {
     if (pending.length) return renderGroups();
@@ -276,9 +280,14 @@
         <span class="muted small">On a computer you can also drag photos here</span>
         <input type="file" id="fileInput" accept="image/*,.heic,.heif" multiple>
       </label>
+      <button class="btn big" id="fromDrive" style="margin-top:12px">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#0066da" d="M3.3 19.6l1 1.7c.2.4.5.6.8.8l3.6-6.2H1.5c0 .4.1.8.3 1.2z"/><path fill="#00ac47" d="M12 8.4L8.4 2.2c-.4.2-.6.5-.8.8L1.8 13.1c-.2.4-.3.8-.3 1.2h7.2z"/><path fill="#ea4335" d="M19.8 22.1c.4-.2.6-.5.8-.8l.4-.7 2-3.4c.2-.4.3-.8.3-1.2h-7.2l1.5 3z"/><path fill="#00832d" d="M12 8.4l3.6-6.2c-.4-.2-.8-.3-1.2-.3H9.6c-.4 0-.8.1-1.2.3z"/><path fill="#2684fc" d="M15.6 15.9H8.4l-3.6 6.2c.4.2.8.3 1.2.3h12c.4 0 .8-.1 1.2-.3z"/><path fill="#ffba00" d="M19.8 9l-3.3-5.8c-.2-.4-.5-.6-.8-.8L12 8.4l3.6 6.2h7.2c0-.4-.1-.8-.3-1.2z"/></svg>
+        From a Google Drive folder
+      </button>
       <p class="muted small" style="margin-top:16px">Tip for iPhone: when picking photos, tap <b>Options</b> at the top and make sure <b>Location</b> is on. That lets this page name new trips for you.</p>`;
     const input = document.getElementById("fileInput");
     input.addEventListener("change", () => { if (input.files.length) addFiles([...input.files]); });
+    document.getElementById("fromDrive").addEventListener("click", () => renderDrive());
     const drop = document.getElementById("drop");
     ["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
     ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
@@ -310,15 +319,20 @@
       if (label) label.textContent = `${done} of ${items.length}`;
     }
     lock.release();
+    await finishAdding();
+  }
+
+  async function finishAdding() {
     const failed = pending.filter((p) => p.status === "failed");
     pending = pending.filter((p) => p.status === "ready");
+    try { repoMB = ((await gh("GET", repoPath())).size || 0) / 1024; } catch (e) { /* unknown */ }
 
     // Skip photos that are already on the site (e.g. picking the same folder again after an interruption).
     const seen = new Set();
     liveTrips.forEach((t) => t.photos.forEach((p) => { if (p.key) seen.add(p.key); }));
     let dupes = 0;
     pending = pending.filter((p) => {
-      if (seen.has(p.key)) { dupes++; URL.revokeObjectURL(p.preview); return false; }
+      if (seen.has(p.key)) { dupes++; if (p.preview.startsWith("blob:")) URL.revokeObjectURL(p.preview); return false; }
       seen.add(p.key);
       return true;
     });
@@ -360,7 +374,18 @@
     } finally { URL.revokeObjectURL(url); }
   }
 
-  function resize(source, edge, quality) {
+  // MozJPEG makes files about a third smaller than the browser's own JPEG
+  // encoder at the same visual quality, so many more photos fit on the site.
+  let mozEncode = null;
+  async function getEncoder() {
+    if (mozEncode === null) {
+      try { mozEncode = (await import("../vendor/jsquash-jpeg/encode.js")).default; }
+      catch (e) { console.warn("MozJPEG unavailable, using browser encoder", e); mozEncode = false; }
+    }
+    return mozEncode;
+  }
+
+  async function resize(source, edge, quality) {
     const w = source.width, h = source.height;
     const s = Math.min(1, edge / Math.max(w, h));
     const cw = Math.round(w * s), chh = Math.round(h * s);
@@ -369,6 +394,13 @@
     const ctx = c.getContext("2d");
     ctx.imageSmoothingQuality = "high";
     ctx.drawImage(source, 0, 0, cw, chh);
+    const enc = await getEncoder();
+    if (enc) {
+      try {
+        const buf = await enc(ctx.getImageData(0, 0, cw, chh), { quality: Math.round(quality * 100) });
+        return { blob: new Blob([buf], { type: "image/jpeg" }), w: cw, h: chh };
+      } catch (e) { console.warn("MozJPEG failed, using browser encoder", e); }
+    }
     return new Promise((resolve, reject) => c.toBlob((b) => b ? resolve({ blob: b, w: cw, h: chh }) : reject(new Error("encode failed")), "image/jpeg", quality));
   }
 
@@ -397,7 +429,7 @@
     }
     // Only the small preview is made now; the full-size copy is made while
     // publishing, so hundreds of photos at once don't run the device out of memory.
-    const thumb = await resize(source, THUMB_EDGE, 0.8);
+    const thumb = await resize(source, THUMB_EDGE, THUMB_QUALITY);
     const s = Math.min(1, FULL_EDGE / Math.max(source.width, source.height));
     it.w = Math.round(source.width * s); it.h = Math.round(source.height * s);
     if (source.close) source.close();
@@ -406,10 +438,21 @@
     it.file = null;
   }
 
-  async function makeFull(it) {
-    const source = await decode(it.src);
-    try { return await resize(source, FULL_EDGE, 0.85); }
-    finally { if (source.close) source.close(); }
+  // Makes the full-size (and, for Drive photos, the thumbnail) copy at publish time.
+  async function makeImages(it, blob) {
+    let source;
+    try { source = await decode(blob); }
+    catch (e) {
+      if (!isHeic({ type: blob.type || (it.drive && it.drive.mime) || "", name: (it.drive && it.drive.name) || "" })) throw e;
+      const heic2any = await loadHeic2any();
+      const jpg = await heic2any({ blob, toType: "image/jpeg", quality: 0.92 });
+      source = await decode(Array.isArray(jpg) ? jpg[0] : jpg);
+    }
+    try {
+      const full = await resize(source, FULL_EDGE, FULL_QUALITY);
+      const thumb = it.thumb || (await resize(source, THUMB_EDGE, THUMB_QUALITY)).blob;
+      return { full, thumb };
+    } finally { if (source.close) source.close(); }
   }
 
   function hash(str) {
@@ -463,6 +506,180 @@
     return name;
   }
 
+  // ---------------------------------------------------------------- Google Drive
+  // Reads a Drive folder shared as "Anyone with the link" using a Google API key
+  // saved in data/site.json. The key only works from this website and only for
+  // Google Drive, and it can only see files that are already shared publicly.
+  const DRIVE = "https://www.googleapis.com/drive/v3/files";
+  let driveKey = null;
+
+  async function loadDriveKey() {
+    if (driveKey === null) {
+      try { driveKey = (await readJSON("data/site.json")).googleApiKey || ""; } catch (e) { driveKey = ""; }
+    }
+    return driveKey;
+  }
+
+  function folderIdFrom(link) {
+    const s = String(link).trim();
+    const m = s.match(/\/folders\/([\w-]{10,})/) || s.match(/[?&]id=([\w-]{10,})/) || s.match(/^([\w-]{20,})$/);
+    return m ? m[1] : null;
+  }
+
+  async function driveJSON(url) {
+    let res;
+    try { res = await fetch(url); } catch (e) { throw new Error("Couldn't reach Google Drive. Check your internet connection."); }
+    if (res.ok) return res.json();
+    let reason = "", message = "";
+    try { const j = await res.json(); reason = (j.error && j.error.errors && j.error.errors[0] && j.error.errors[0].reason) || ""; message = (j.error && j.error.message) || ""; } catch (e) { /* ignore */ }
+    if (res.status === 404) throw new Error("Couldn't open that folder. In Google Drive, share it as \"Anyone with the link\" and copy the link again.");
+    if (/keyInvalid|API key not valid/i.test(reason + message)) throw new Error("Google didn't accept the Drive key. Check it under Settings → Google Drive.");
+    if (/accessNotConfigured|has not been used|disabled/i.test(reason + message)) throw new Error("The Google Drive API isn't turned on for your key yet. Turn it on in Google Cloud (step 2 of the key setup), wait a minute, and try again.");
+    if (/referer|referrer/i.test(reason + message)) throw new Error("Your Drive key isn't allowed on this web address. Add this site to the key's website list in Google Cloud.");
+    throw new Error(`Google Drive error ${res.status}${message ? ": " + message : ""}`);
+  }
+
+  async function listDriveFolder(folderId, onFound, depth = 0) {
+    const images = [];
+    const fields = "nextPageToken,files(id,name,mimeType,size,thumbnailLink,imageMediaMetadata(time,location,width,height,rotation))";
+    let pageToken = "";
+    do {
+      const q = encodeURIComponent(`'${folderId}' in parents and trashed = false`);
+      const url = `${DRIVE}?q=${q}&fields=${encodeURIComponent(fields)}&pageSize=1000&supportsAllDrives=true&includeItemsFromAllDrives=true&key=${encodeURIComponent(driveKey)}${pageToken ? "&pageToken=" + encodeURIComponent(pageToken) : ""}`;
+      const j = await driveJSON(url);
+      for (const f of j.files || []) {
+        if (f.mimeType === "application/vnd.google-apps.folder") {
+          if (depth < 4) images.push(...await listDriveFolder(f.id, onFound, depth + 1));
+        } else if (/^image\//.test(f.mimeType) || /\.hei[cf]$/i.test(f.name)) {
+          images.push(f);
+          onFound();
+        }
+      }
+      pageToken = j.nextPageToken || "";
+    } while (pageToken);
+    return images;
+  }
+
+  function driveItem(f) {
+    const m = f.imageMediaMetadata || {};
+    const it = { id: rand() + rand(), status: "ready", drive: { id: f.id, name: f.name, mime: f.mimeType } };
+    const t = /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})/.exec(m.time || "");
+    if (t && t[1] !== "0000") { it.date = `${t[1]}-${t[2]}-${t[3]}T${t[4]}:${t[5]}:${t[6]}`; it.guessedDate = false; }
+    else { it.date = localISO(new Date()); it.guessedDate = true; }
+    if (m.location && typeof m.location.latitude === "number" && (m.location.latitude || m.location.longitude)) {
+      it.lat = m.location.latitude; it.lon = m.location.longitude;
+    }
+    let w = m.width || 3, h = m.height || 2;
+    if (m.rotation === 1 || m.rotation === 3) [w, h] = [h, w];
+    const s = Math.min(1, FULL_EDGE / Math.max(w, h));
+    it.w = Math.round(w * s); it.h = Math.round(h * s);
+    it.preview = f.thumbnailLink ? f.thumbnailLink.replace(/=s\d+$/, "=s400") : "";
+    it.key = hash(`${f.name}|${f.size}|${it.guessedDate ? "" : it.date}`);
+    return it;
+  }
+
+  async function driveDownload(d) {
+    const url = `${DRIVE}/${encodeURIComponent(d.id)}?alt=media&supportsAllDrives=true&key=${encodeURIComponent(driveKey)}`;
+    for (let attempt = 0; ; attempt++) {
+      try {
+        const res = await fetch(url);
+        if (res.ok) return await res.blob();
+        if (attempt >= 4 || (res.status !== 429 && res.status < 500 && res.status !== 403)) throw new Error(`Couldn't download "${d.name}" from Google Drive (error ${res.status}).`);
+      } catch (e) {
+        if (attempt >= 4) throw e.message && e.message.startsWith("Couldn't") ? e : new Error(`Couldn't download "${d.name}" from Google Drive. Check your internet connection.`);
+      }
+      await sleep(2000 * 2 ** attempt);
+    }
+  }
+
+  async function renderDrive(errMsg) {
+    view.innerHTML = `<h1>From Google Drive</h1><p class="muted">Loading…</p>`;
+    await loadDriveKey();
+    if (!driveKey) return renderDriveKeySetup();
+    view.innerHTML = `
+      <p><button class="btn link" id="back">← Back</button></p>
+      <h1>From Google Drive</h1>
+      <div class="panel">
+        <ol class="steps">
+          <li>In <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a>, right-click the folder and choose <b>Share</b>.</li>
+          <li>Under <b>General access</b>, choose <b>Anyone with the link</b>, then click <b>Copy link</b> and <b>Done</b>.</li>
+          <li>Paste the link here. Photos in folders inside it are included too.</li>
+        </ol>
+        <form id="driveForm">
+          <label class="field"><span>Folder link</span><input type="url" id="folderLink" placeholder="https://drive.google.com/drive/folders/…" required autocapitalize="none" spellcheck="false"></label>
+          ${errMsg ? `<p style="color:var(--danger)">${esc(errMsg)}</p>` : ""}
+          <button class="btn primary big" type="submit">Get photos</button>
+        </form>
+      </div>
+      <p class="muted small">Photos come straight from Drive to your website, full quality, without filling up this device. Big folders upload best from a computer on Wi-Fi.</p>`;
+    document.getElementById("back").addEventListener("click", renderAdd);
+    document.getElementById("driveForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const id = folderIdFrom(document.getElementById("folderLink").value);
+      if (!id) return renderDrive("That doesn't look like a Google Drive folder link. It should contain /folders/ followed by letters and numbers.");
+      addDriveFolder(id);
+    });
+  }
+
+  function renderDriveKeySetup(errMsg) {
+    const here = location.origin;
+    view.innerHTML = `
+      <p><button class="btn link" id="back">← Back</button></p>
+      <h1>Connect Google Drive</h1>
+      <p class="muted">One-time setup, about 5 minutes. It's free, and you won't need a credit card.</p>
+      <div class="panel">
+        <ol class="steps">
+          <li>Open <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">Google Cloud → New project</a> and sign in with your Google account. Name it <code>Brandon DeLay site</code> and click <b>Create</b>. Accept the terms if asked.</li>
+          <li>Open <a href="https://console.cloud.google.com/apis/library/drive.googleapis.com" target="_blank" rel="noopener">Google Drive API</a>. Make sure your new project is selected at the top, then click <b>Enable</b>.</li>
+          <li>Open <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Credentials</a>, click <b>+ Create credentials</b> → <b>API key</b>, and copy the key it shows (it starts with <code>AIza</code>).</li>
+          <li>Recommended: click <b>Edit API key</b>. Under <b>Application restrictions</b> pick <b>Websites</b> and add <code>${esc(here)}/*</code>, <code>https://brandondelay.com/*</code> and <code>https://www.brandondelay.com/*</code>. Under <b>API restrictions</b> pick <b>Restrict key</b> → <b>Google Drive API</b>. Click <b>Save</b>.</li>
+        </ol>
+        <form id="keyForm">
+          <label class="field"><span>Paste the key</span><input type="text" id="apiKey" placeholder="AIza…" required autocapitalize="none" spellcheck="false"></label>
+          ${errMsg ? `<p style="color:var(--danger)">${esc(errMsg)}</p>` : ""}
+          <button class="btn primary big" type="submit">Save key</button>
+        </form>
+      </div>
+      <p class="muted small">The key is saved with your website so every phone and computer can use it. It can only read Drive folders you've shared with "Anyone with the link", and only from your website.</p>`;
+    document.getElementById("back").addEventListener("click", renderAdd);
+    document.getElementById("keyForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const key = document.getElementById("apiKey").value.trim();
+      if (!/^AIza[\w-]{30,}$/.test(key)) return renderDriveKeySetup("That doesn't look like a Google API key. It should start with AIza.");
+      const btn = e.target.querySelector("button");
+      btn.disabled = true; btn.textContent = "Saving…";
+      try {
+        await save("Connect Google Drive", (photos, site) => { site.googleApiKey = key; });
+        driveKey = key;
+        toast("Google Drive connected!");
+        renderDrive();
+      } catch (err) { renderDriveKeySetup(err.message); }
+    });
+  }
+
+  async function addDriveFolder(folderId) {
+    busy = true;
+    view.innerHTML = `
+      <h1>Looking through your folder…</h1>
+      <p class="muted" id="prepLabel">Found 0 photos</p>
+      <div class="progress"><div id="prepBar" style="width:30%"></div></div>`;
+    let found = 0;
+    try {
+      try { liveTrips = (await readJSON("data/photos.json")).trips || []; } catch (e) { liveTrips = []; }
+      const files = await listDriveFolder(folderId, () => {
+        found++;
+        const label = document.getElementById("prepLabel");
+        if (label && found % 25 === 0) label.textContent = `Found ${found} photos`;
+      });
+      if (!files.length) { busy = false; return renderDrive("No photos found in that folder."); }
+      pending.push(...files.map(driveItem));
+    } catch (err) {
+      busy = false;
+      return renderDrive(err.message);
+    }
+    await finishAdding();
+  }
+
   function tripOptions(selected) {
     const sorted = [...liveTrips].sort((a, b) => b.start.localeCompare(a.start));
     return `<option value="new"${selected === "new" ? " selected" : ""}>➕ New trip</option>` +
@@ -476,6 +693,7 @@
     view.innerHTML = `
       <h1>Check your trips</h1>
       <p class="muted">${total} photo${total > 1 ? "s" : ""}, sorted into ${groups.length} trip${groups.length > 1 ? "s" : ""} by date. Fix any names, then tap <b>Publish</b>.</p>
+      ${storageNote(total)}
       ${groups.map((g, gi) => {
         const match = g.target !== "new" && liveTrips.find((t) => t.id === g.target);
         const guessed = g.items.filter((p) => p.guessedDate).length;
@@ -489,7 +707,7 @@
             ${g.target === "new" ? `<label class="field" style="margin:0"><span>Trip name</span><input type="text" data-act="name" value="${esc(g.name)}" placeholder="e.g. Kenya, Moose Pass, Alaska"></label>` : ""}
           </div>
           ${guessed ? `<label class="field" style="margin:12px 0 0"><span>${guessed} photo${guessed > 1 ? "s don't" : " doesn't"} say when ${guessed > 1 ? "they were" : "it was"} taken. When was this trip?</span><input type="date" data-act="date" value="${esc(g.manualDate || "")}"></label>` : ""}
-          <div class="thumbs">${g.items.map((p) => `<div class="thumb"><img src="${p.preview}" alt=""><button class="x" data-act="remove" data-id="${p.id}" aria-label="Remove this photo">×</button></div>`).join("")}</div>
+          <div class="thumbs">${g.items.map((p) => `<div class="thumb"><img src="${esc(p.preview)}" alt="" loading="lazy" referrerpolicy="no-referrer"><button class="x" data-act="remove" data-id="${p.id}" aria-label="Remove this photo">×</button></div>`).join("")}</div>
         </section>`;
       }).join("")}
       <p><button class="btn link" id="addMore">+ Add more photos</button></p>
@@ -581,15 +799,22 @@
           const chunk = g.items.slice(i, i + PHOTOS_PER_SAVE).filter((p) => !p.saved);
           if (!chunk.length) continue;
           const files = [];
-          for (const p of chunk) {
+          for (let j = 0; j < chunk.length; j++) {
+            const p = chunk[j];
+            // Start downloading the next Drive photo while this one is processed.
+            const next = chunk[j + 1] || g.items[i + PHOTOS_PER_SAVE];
+            if (next && next.drive && !next.dl) next.dl = driveDownload(next.drive);
+            if (p.drive && !p.dl) p.dl = driveDownload(p.drive);
+            const blob = p.drive ? await p.dl : p.src;
+            p.dl = null;
             const base = `${p.date.slice(0, 10).replace(/-/g, "")}-${p.date.slice(11, 19).replace(/:/g, "")}-${rand()}`;
             const year = p.date.slice(0, 4);
             p.path = `photos/${year}/${base}.jpg`;
             p.thumbPath = `thumbs/${year}/${base}.jpg`;
-            const full = await makeFull(p);
+            const { full, thumb } = await makeImages(p, blob);
             p.w = full.w; p.h = full.h;
             files.push({ path: p.path, sha: await createBlob(full.blob) });
-            files.push({ path: p.thumbPath, sha: await createBlob(p.thumb) });
+            files.push({ path: p.thumbPath, sha: await createBlob(thumb) });
             setProgress(++uploaded - 0.5);
           }
           const owner = g.mergeInto || g;
@@ -643,6 +868,19 @@
         <button class="btn primary" id="again">Add more</button>
       </p></div>`;
     document.getElementById("again").addEventListener("click", renderAdd);
+  }
+
+  // About 0.5 MB per photo (full size + thumbnail) after compression.
+  const MB_PER_PHOTO = 0.5;
+  function storageNote(adding) {
+    if (!repoMB) return "";
+    const after = repoMB + adding * MB_PER_PHOTO;
+    if (after < SITE_LIMIT_MB * 0.8) return "";
+    const roomFor = Math.max(0, Math.floor((SITE_LIMIT_MB * 0.95 - repoMB) / MB_PER_PHOTO));
+    return `<div class="panel" style="border-color:var(--accent)"><b>Your site is getting full.</b>
+      <p class="muted small" style="margin:6px 0 0">${after > SITE_LIMIT_MB * 0.95
+        ? `There's room for about ${roomFor} more photos, and this batch has ${adding}. Remove some from this batch, or ask Claude to add extra photo storage (it's free).`
+        : `After this batch about ${Math.round(after / SITE_LIMIT_MB * 100)}% of your site's space is used. Ask Claude to add extra photo storage when you get close (it's free).`}</p></div>`;
   }
 
   function tidyTrip(trip) {
@@ -818,7 +1056,17 @@
         ${site.heroPhoto ? `<p class="muted small">Homepage photo: chosen by you. <button type="button" class="btn link" id="resetHero">Go back to automatic (newest trip)</button></p>` : `<p class="muted small">Homepage photo: automatic (cover of your newest trip). To choose one, open a trip under <b>Trips</b> and tap a photo.</p>`}
         <button class="btn primary big" type="submit">Save</button>
       </form>
+      <div class="panel"><h2>Space used</h2><p class="muted small" id="space">Checking…</p></div>
+      <div class="panel"><h2>Google Drive</h2>
+        <p class="muted small">${site.googleApiKey ? "Connected. You can add photos from shared Drive folders." : "Not connected yet. Use <b>Add photos → From a Google Drive folder</b> to set it up."}</p>
+        ${site.googleApiKey ? `<button type="button" class="btn" id="changeKey">Change Drive key</button>` : ""}</div>
       ${disconnectHTML()}`;
+    gh("GET", repoPath()).then((r) => {
+      const mb = (r.size || 0) / 1024;
+      const el = document.getElementById("space");
+      if (el) el.textContent = `About ${Math.round(mb)} MB of ${SITE_LIMIT_MB.toLocaleString()} MB (${Math.round(mb / SITE_LIMIT_MB * 100)}%). Room for roughly ${Math.max(0, Math.floor((SITE_LIMIT_MB * 0.95 - mb) / MB_PER_PHOTO)).toLocaleString()} more photos.`;
+    }).catch(() => {});
+    document.getElementById("changeKey")?.addEventListener("click", () => { tab = "add"; tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.tab === "add")); renderDriveKeySetup(); });
     document.getElementById("siteForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const f = new FormData(e.target);
