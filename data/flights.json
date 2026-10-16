@@ -442,6 +442,7 @@
       ]
     },
     "2025": {
+      "hidden": true,
       "home": "home",
       "legs": [
         {
@@ -620,6 +621,7 @@
       ]
     },
     "2026": {
+      "hidden": true,
       "home": [
         "home",
         "den"

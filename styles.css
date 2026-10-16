@@ -153,6 +153,17 @@ button { font: inherit; color: inherit; }
 .page { padding-top: calc(var(--topbar-h) + clamp(32px, 5vw, 64px)); }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
 .section-head h2 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4vw, 48px); line-height: 1; }
+/* Trips | Gallery switch */
+.view-toggle { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+.view-toggle button {
+  border: 0; background: none; cursor: pointer; padding: 6px 14px; border-radius: 999px;
+  color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+.view-toggle button:hover { color: var(--text); }
+.view-toggle button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.section-head { align-items: center; }
+.justified.inset { padding: 0; max-width: none; }
 .section-head a, .section-head span { color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
 .section-head a:hover { color: var(--text); }
 
@@ -241,7 +252,7 @@ button { font: inherit; color: inherit; }
 body.no-scroll { overflow: hidden; }
 
 /* ---------- Flight maps ---------- */
-.flightmap { position: relative; margin: clamp(32px, 4vw, 56px) 0 0; min-height: 240px; }
+.flightmap { position: relative; margin: 0 0 clamp(28px, 3.5vw, 44px); min-height: 240px; }
 .flightmap svg {
   display: block; width: 100%; height: auto; overflow: hidden;
   /* soft edges so the cropped map fades into the page */

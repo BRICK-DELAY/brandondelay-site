@@ -23,7 +23,7 @@ The first time you use the admin page on a device, it asks for a GitHub "key". T
 ## How it works (for the curious)
 
 - `index.html`, `styles.css`, `app.js`: the public website.
-- `map.js` + `data/flights.json`: the travel map under each year. `flights.json` lists places (name, lat, lon) and, per year, a `home` (one place id, or a list after a move) and `legs` (`from`, `to`, optional `"mode": "drive"`, optional `times` for repeat trips). A year with legs but no photos still gets a section. Map libraries and outlines live in `vendor/map/`.
+- `map.js` + `data/flights.json`: the travel map under each year. `flights.json` lists places (name, lat, lon) and, per year, a `home` (one place id, or a list after a move) and `legs` (`from`, `to`, optional `"mode": "drive"`, optional `times` for repeat trips). A year with legs but no photos still gets a section. `"hidden": true` on a year keeps its data but shows no map. Map libraries and outlines live in `vendor/map/`.
 - `data/photos.json`: the list of trips and photos. The admin page keeps it up to date.
 - `data/site.json`: your name, headline, About text and links.
 - `photos/<year>/` (full size, 2048px) and `thumbs/<year>/` (720px): the photos. They're shrunk in your browser before uploading, so the site stays fast.

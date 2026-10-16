@@ -98,7 +98,8 @@
 
   function yearData(data, year) {
     const y = data && data.years && data.years[year];
-    const raw = y && (y.legs || y.flights);
+    if (!y || y.hidden) return null; // "hidden": true keeps a year's data but shows no map
+    const raw = y.legs || y.flights;
     if (!Array.isArray(raw) || !raw.length) return null;
     const places = data.places || {};
     const legs = raw

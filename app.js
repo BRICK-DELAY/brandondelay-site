@@ -149,9 +149,64 @@
     </a>`;
   }
 
-  // A flight map goes under each year's heading when data/flights.json has flights for it.
+  // A travel map goes at the top of each year when data/flights.json has (unhidden) trips for it.
   const mapSlot = (year) => (window.FlightMaps && FlightMaps.hasYear(flights, year) ? `<div class="flightmap" data-year="${year}"></div>` : "");
   const tripCount = (y) => (y.trips.length ? `${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}` : "Photos coming soon");
+
+  // Every photo from a year for the Gallery view, oldest first. Trips with a
+  // photo credit (taken by someone else) are left out.
+  const galleryPhotos = (y) => y.trips.filter((t) => !t.credit)
+    .flatMap((t) => t.photos.map((p) => ({ ...p, tripName: t.name })))
+    .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+
+  // Which view each year is showing; remembered on this device.
+  const VIEW_KEY = "bd-year-view";
+  let yearView = {};
+  try { yearView = JSON.parse(localStorage.getItem(VIEW_KEY)) || {}; } catch (e) { yearView = {}; }
+  const viewOf = (y) => (yearView[y.year] === "gallery" && galleryPhotos(y).length ? "gallery" : "trips");
+
+  function yearHead(y) {
+    const canGallery = y.trips.length && galleryPhotos(y).length;
+    const v = viewOf(y);
+    const right = canGallery
+      ? `<div class="view-toggle" role="group" aria-label="Show ${y.year} as">
+          <button type="button" data-view="trips" aria-pressed="${v === "trips"}">${tripCount(y)}</button>
+          <button type="button" data-view="gallery" aria-pressed="${v === "gallery"}">Gallery</button>
+        </div>`
+      : `<span>${tripCount(y)}</span>`;
+    return `<div class="section-head"><h2>${y.year}</h2>${right}</div>`;
+  }
+  function yearBody(y) {
+    if (!y.trips.length) return "";
+    if (viewOf(y) === "gallery") return `<div class="justified inset" data-gallery="${y.year}"></div>`;
+    return `<div class="cards">${y.trips.map(card).join("")}</div>`;
+  }
+  function yearSection(y, extraClass) {
+    return `<section class="section${extraClass || ""}" data-year-section="${y.year}">
+      ${yearHead(y)}
+      ${mapSlot(y.year)}
+      <div class="year-body">${yearBody(y)}</div>
+    </section>`;
+  }
+  // Fill in gallery grids and wire up the Trips/Gallery switches inside root.
+  function wireYears(root) {
+    root.querySelectorAll("[data-gallery]").forEach((el) => {
+      const y = years.find((x) => String(x.year) === el.dataset.gallery);
+      if (y) setGrid(el, galleryPhotos(y));
+    });
+    root.querySelectorAll("[data-year-section]").forEach((sec) => {
+      const y = years.find((x) => String(x.year) === sec.dataset.yearSection);
+      sec.querySelectorAll(".view-toggle button").forEach((b) => b.addEventListener("click", () => {
+        if (viewOf(y) === b.dataset.view) return;
+        yearView[y.year] = b.dataset.view;
+        try { localStorage.setItem(VIEW_KEY, JSON.stringify(yearView)); } catch (e) { /* private mode */ }
+        sec.querySelectorAll(".view-toggle button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        const body = sec.querySelector(".year-body");
+        body.innerHTML = yearBody(y);
+        wireYears(body);
+      }));
+    });
+  }
   const mountMaps = () => { if (window.FlightMaps) FlightMaps.mount(app, flights); };
 
   function heroFile() {
@@ -173,15 +228,10 @@
     if (!years.length) {
       html += `<section class="section"><p class="empty-note">No photos yet. Add your first trip from the uploader at <code>/admin</code>.</p></section>`;
     }
-    for (const y of years) {
-      html += `<section class="section">
-        <div class="section-head"><h2>${y.year}</h2><span>${tripCount(y)}</span></div>
-        ${y.trips.length ? `<div class="cards">${y.trips.map(card).join("")}</div>` : ""}
-        ${mapSlot(y.year)}
-      </section>`;
-    }
+    for (const y of years) html += yearSection(y);
     html += `</div>`;
     app.innerHTML = html;
+    wireYears(app);
     mountMaps();
     app.querySelector("[data-scroll]")?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -194,20 +244,15 @@
   function renderYear(year) {
     const y = years.find((x) => String(x.year) === String(year));
     if (!y) return renderNotFound();
-    app.innerHTML = `<section class="section page">
-      <div class="section-head"><h2>${y.year}</h2><span>${tripCount(y)}</span></div>
-      ${y.trips.length ? `<div class="cards">${y.trips.map(card).join("")}</div>` : ""}
-      ${mapSlot(y.year)}
-    </section>`;
+    app.innerHTML = yearSection(y, " page");
+    wireYears(app);
     mountMaps();
     document.title = `${y.year} · ${site.name || "Brandon DeLay"}`;
   }
 
-  let currentTrip = null;
   function renderTrip(id) {
     const t = trips.find((x) => x.id === id);
     if (!t) return renderNotFound();
-    currentTrip = t;
     const idx = trips.indexOf(t);
     const newer = trips[idx - 1], older = trips[idx + 1];
     app.innerHTML = `<div class="page">
@@ -222,18 +267,23 @@
         ${newer ? `<a class="next" href="#/trip/${encodeURIComponent(newer.id)}">Next trip →<strong>${esc(newer.name)}</strong></a>` : ""}
       </nav>
     </div>`;
-    layoutGrid();
+    setGrid(document.getElementById("grid"), t.photos.map((p) => ({ ...p, tripName: t.name })));
     document.title = `${t.name} · ${site.name || "Brandon DeLay"}`;
   }
 
   // Justified rows: every row fills the width exactly and photos keep their shape and order.
-  function layoutGrid() {
-    const grid = document.getElementById("grid");
-    if (!grid || !currentTrip) return;
-    const width = grid.clientWidth - parseFloat(getComputedStyle(grid).paddingLeft) * 2;
+  // Used for trip pages and year galleries; each photo carries its trip's name.
+  function setGrid(grid, photos) {
+    grid._photos = photos;
+    layoutGrid(grid);
+  }
+  function layoutGrid(grid) {
+    const photos = grid._photos;
+    if (!photos) return;
+    const cs = getComputedStyle(grid);
+    const width = grid.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     const gap = 8;
     const target = window.innerWidth < 600 ? 170 : window.innerWidth < 1100 ? 250 : 320;
-    const photos = currentTrip.photos;
     let html = "", row = [], rowRatio = 0;
     const flush = (last) => {
       if (!row.length) return;
@@ -253,10 +303,15 @@
     flush(true);
     grid.innerHTML = html;
     grid.querySelectorAll("img").forEach((img) => { if (img.complete) img.classList.add("loaded"); });
-    grid.querySelectorAll("button[data-i]").forEach((b) => b.addEventListener("click", () => openLightbox(+b.dataset.i)));
+    grid.querySelectorAll("button[data-i]").forEach((b) => b.addEventListener("click", () => openLightbox(photos, +b.dataset.i)));
   }
-  let resizeTimer;
-  window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layoutGrid, 120); });
+  let resizeTimer, gridWidth = window.innerWidth;
+  window.addEventListener("resize", () => {
+    if (window.innerWidth === gridWidth) return; // phone toolbars sliding in/out
+    gridWidth = window.innerWidth;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => app.querySelectorAll("#grid, [data-gallery]").forEach(layoutGrid), 120);
+  });
 
   function renderAbout() {
     const contact = [];
@@ -281,20 +336,21 @@
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
   const lbCaption = document.getElementById("lbCaption");
-  let lbIndex = 0;
+  let lbIndex = 0, lbPhotos = [];
 
   function showLightbox(i) {
-    const photos = currentTrip.photos;
+    const photos = lbPhotos;
     lbIndex = (i + photos.length) % photos.length;
     const p = photos[lbIndex];
     lbImg.src = p.file;
     let when = "";
     if (p.date) { const d = parseDay(p.date); when = `${MONTHS_LONG[d.m - 1]} ${d.d}, ${d.y} · `; }
-    lbCaption.textContent = `${currentTrip.name} · ${when}${lbIndex + 1} / ${photos.length}`;
+    lbCaption.textContent = `${p.tripName || ""} · ${when}${lbIndex + 1} / ${photos.length}`;
     // warm up the neighbours so arrowing feels instant
     [lbIndex + 1, lbIndex - 1].forEach((n) => { const q = photos[(n + photos.length) % photos.length]; if (q) new Image().src = q.file; });
   }
-  function openLightbox(i) {
+  function openLightbox(photos, i) {
+    lbPhotos = photos;
     lb.hidden = false;
     document.body.classList.add("no-scroll");
     showLightbox(i);
@@ -333,7 +389,6 @@
     closeDropdowns();
     closeMenu();
     topbar.classList.remove("over-hero");
-    currentTrip = null;
     if (!name) renderHome();
     else if (name === "trip") renderTrip(param);
     else if (name === "year") renderYear(param);
