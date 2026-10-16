@@ -60,18 +60,42 @@
   // ---------------------------------------------------------------- GitHub
   const API = () => cfg.api || "https://api.github.com";
 
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  // Called when GitHub asks us to slow down; big uploads show a countdown.
+  let onPause = (ms) => toast(`GitHub asked us to slow down. Continuing in ${Math.ceil(ms / 60000)} min…`);
+
   async function gh(method, path, body, accept) {
-    const res = await fetch(API() + path, {
-      method,
-      headers: {
-        Authorization: "Bearer " + cfg.token,
-        Accept: accept || "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        ...(body ? { "Content-Type": "application/json" } : {}),
-      },
-      body: body ? JSON.stringify(body) : undefined,
-      cache: "no-store",
-    });
+    let res;
+    for (let tries = 0; ; tries++) {
+      res = await fetch(API() + path, {
+        method,
+        headers: {
+          Authorization: "Bearer " + cfg.token,
+          Accept: accept || "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          ...(body ? { "Content-Type": "application/json" } : {}),
+        },
+        body: body ? JSON.stringify(body) : undefined,
+        cache: "no-store",
+      });
+      if ((res.status === 403 || res.status === 429) && tries < 60) {
+        const retryAfter = +res.headers.get("retry-after");
+        const remaining = res.headers.get("x-ratelimit-remaining");
+        const reset = +res.headers.get("x-ratelimit-reset");
+        let msg = "";
+        try { msg = (await res.clone().json()).message || ""; } catch (e) { /* ignore */ }
+        if (retryAfter || remaining === "0" || /rate limit/i.test(msg)) {
+          let wait = retryAfter ? retryAfter * 1000
+            : remaining === "0" && reset ? reset * 1000 - Date.now() + 2000
+            : 60000 * Math.min(5, tries + 1);
+          wait = Math.max(5000, Math.min(wait, 3600000));
+          onPause(wait);
+          await sleep(wait);
+          continue;
+        }
+      }
+      break;
+    }
     if (!res.ok) {
       let msg = "";
       try { msg = (await res.json()).message || ""; } catch (e) { /* ignore */ }
@@ -275,6 +299,7 @@
       <p class="muted small">Shrinking them to web size and reading when and where each was taken. Keep this page open.</p>`;
     try { liveTrips = (await readJSON("data/photos.json")).trips || []; } catch (e) { liveTrips = []; }
 
+    const lock = await keepAwake();
     let done = 0;
     for (const it of items) {
       try { await prepare(it); it.status = "ready"; }
@@ -284,9 +309,24 @@
       if (bar) bar.style.width = (done / items.length * 100) + "%";
       if (label) label.textContent = `${done} of ${items.length}`;
     }
+    lock.release();
     const failed = pending.filter((p) => p.status === "failed");
     pending = pending.filter((p) => p.status === "ready");
-    if (failed.length) toast(`${failed.length} file${failed.length > 1 ? "s" : ""} couldn't be read and ${failed.length > 1 ? "were" : "was"} skipped.`, true);
+
+    // Skip photos that are already on the site (e.g. picking the same folder again after an interruption).
+    const seen = new Set();
+    liveTrips.forEach((t) => t.photos.forEach((p) => { if (p.key) seen.add(p.key); }));
+    let dupes = 0;
+    pending = pending.filter((p) => {
+      if (seen.has(p.key)) { dupes++; URL.revokeObjectURL(p.preview); return false; }
+      seen.add(p.key);
+      return true;
+    });
+
+    const notes = [];
+    if (failed.length) notes.push(`${failed.length} file${failed.length > 1 ? "s" : ""} couldn't be read and ${failed.length > 1 ? "were" : "was"} skipped.`);
+    if (dupes) notes.push(`${dupes} photo${dupes > 1 ? "s were" : " was"} already on your site and skipped.`);
+    if (notes.length) toast(notes.join(" "), !!failed.length);
     busy = false;
     if (!pending.length) return renderAdd();
     groups = await autoGroup(pending);
@@ -343,20 +383,47 @@
       it.lat = meta.latitude; it.lon = meta.longitude;
     }
 
-    let source;
+    // Fingerprint so the same photo is never added twice.
+    it.key = hash(`${f.name}|${f.size}|${it.guessedDate ? "" : it.date}`);
+
+    let source, src = f;
     try { source = await decode(f); }
     catch (e) {
       if (!isHeic(f)) throw e;
       const heic2any = await loadHeic2any();
       const jpg = await heic2any({ blob: f, toType: "image/jpeg", quality: 0.92 });
-      source = await decode(Array.isArray(jpg) ? jpg[0] : jpg);
+      src = Array.isArray(jpg) ? jpg[0] : jpg;
+      source = await decode(src);
     }
-    const full = await resize(source, FULL_EDGE, 0.85);
+    // Only the small preview is made now; the full-size copy is made while
+    // publishing, so hundreds of photos at once don't run the device out of memory.
     const thumb = await resize(source, THUMB_EDGE, 0.8);
+    const s = Math.min(1, FULL_EDGE / Math.max(source.width, source.height));
+    it.w = Math.round(source.width * s); it.h = Math.round(source.height * s);
     if (source.close) source.close();
-    it.full = full.blob; it.thumb = thumb.blob; it.w = full.w; it.h = full.h;
+    it.src = src; it.thumb = thumb.blob;
     it.preview = URL.createObjectURL(thumb.blob);
-    it.file = null; // let the browser free the big original
+    it.file = null;
+  }
+
+  async function makeFull(it) {
+    const source = await decode(it.src);
+    try { return await resize(source, FULL_EDGE, 0.85); }
+    finally { if (source.close) source.close(); }
+  }
+
+  function hash(str) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+    return (h >>> 0).toString(16).padStart(8, "0");
+  }
+
+  // Asks the device not to dim/lock the screen during long jobs (where supported).
+  async function keepAwake() {
+    try {
+      const lock = await navigator.wakeLock.request("screen");
+      return { release: () => lock.release().catch(() => {}) };
+    } catch (e) { return { release() {} }; }
   }
 
   // Splits photos into trips: anything more than TRIP_GAP_DAYS apart starts a new group.
@@ -488,12 +555,19 @@
       <h1>Publishing…</h1>
       <p class="muted" id="pubLabel">Uploading 0 of ${total}</p>
       <div class="progress"><div id="pubBar"></div></div>
-      <p class="muted small">Keep this page open until it says done.</p>`;
+      <p class="muted small">Keep this page open until it says done.${total > 100 ? " A big batch like this can take a while, and GitHub may ask for a few short breaks along the way. It continues on its own." : ""}</p>`;
     const setProgress = (n) => {
       const bar = document.getElementById("pubBar"), label = document.getElementById("pubLabel");
       if (bar) bar.style.width = (n / total * 100) + "%";
-      if (label) label.textContent = `Uploading ${n} of ${total}`;
+      if (label) label.textContent = `Uploading ${Math.floor(n)} of ${total}`;
     };
+    const defaultPause = onPause;
+    onPause = (ms) => {
+      const label = document.getElementById("pubLabel");
+      const until = new Date(Date.now() + ms).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+      if (label) label.textContent = `Uploaded ${uploaded} of ${total}. GitHub asked for a short break, continuing around ${until}. Keep this page open.`;
+    };
+    const lock = await keepAwake();
 
     const newTripKey = {}; // same new-trip name typed on two groups -> one trip
     let uploaded = 0;
@@ -512,7 +586,9 @@
             const year = p.date.slice(0, 4);
             p.path = `photos/${year}/${base}.jpg`;
             p.thumbPath = `thumbs/${year}/${base}.jpg`;
-            files.push({ path: p.path, sha: await createBlob(p.full) });
+            const full = await makeFull(p);
+            p.w = full.w; p.h = full.h;
+            files.push({ path: p.path, sha: await createBlob(full.blob) });
             files.push({ path: p.thumbPath, sha: await createBlob(p.thumb) });
             setProgress(++uploaded - 0.5);
           }
@@ -529,16 +605,18 @@
               photos.trips.push(trip);
             }
             owner.tripId = trip.id;
-            for (const p of chunk) trip.photos.push({ file: p.path, thumb: p.thumbPath, w: p.w, h: p.h, date: p.date });
+            for (const p of chunk) trip.photos.push({ file: p.path, thumb: p.thumbPath, w: p.w, h: p.h, date: p.date, key: p.key });
             tidyTrip(trip);
             return files;
           });
-          chunk.forEach((p) => { p.saved = true; });
+          chunk.forEach((p) => { p.saved = true; p.src = null; });
           setProgress(uploaded);
         }
       }
     } catch (err) {
       busy = false;
+      onPause = defaultPause;
+      lock.release();
       console.error(err);
       pending = pending.filter((p) => !p.saved);
       groups.forEach((g) => { g.items = g.items.filter((p) => !p.saved); });
@@ -552,6 +630,8 @@
       return;
     }
     busy = false;
+    onPause = defaultPause;
+    lock.release();
     pending.forEach((p) => URL.revokeObjectURL(p.preview));
     pending = []; groups = [];
     view.innerHTML = `<div class="done-box">
