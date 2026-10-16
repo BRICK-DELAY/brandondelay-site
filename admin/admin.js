@@ -1287,6 +1287,7 @@
         if (!trip) return [];
         photos.trips = photos.trips.filter((x) => x.id !== id);
         if (trip.photos.some((p) => p.file === site.heroPhoto)) site.heroPhoto = null;
+        if (trip.photos.some((p) => p.file === site.heroPhotoPhone)) site.heroPhotoPhone = null;
         return trip.photos.flatMap((p) => [{ path: p.file, remove: true }, { path: p.thumb, remove: true }]);
       });
     });
@@ -1299,7 +1300,8 @@
     sheet.innerHTML = `<div class="sheet-card">
       ${imgTag(p.thumb)}
       <button class="btn" data-a="cover">★ Make this the trip's cover</button>
-      <button class="btn" data-a="hero">Use as the big homepage photo</button>
+      <button class="btn" data-a="hero">Homepage photo on computers</button>
+      <button class="btn" data-a="heroPhone">Homepage photo on phones</button>
       ${others.length ? `<label class="field" style="margin:0"><span>Move to another trip</span><select data-a="move"><option value="">Choose a trip…</option>${others.map((o) => `<option value="${esc(o.id)}">${esc(o.name)} · ${o.start.slice(0, 4)}</option>`).join("")}</select></label>` : ""}
       <button class="btn danger" data-a="delete">Delete this photo</button>
       <button class="btn link" data-a="close">Cancel</button>
@@ -1314,7 +1316,11 @@
     });
     sheet.querySelector('[data-a="hero"]').addEventListener("click", () => {
       close();
-      runSave("New homepage photo", (photos, site) => { site.heroPhoto = p.file; }, t.id);
+      runSave("New homepage photo for computers", (photos, site) => { site.heroPhoto = p.file; }, t.id);
+    });
+    sheet.querySelector('[data-a="heroPhone"]').addEventListener("click", () => {
+      close();
+      runSave("New homepage photo for phones", (photos, site) => { site.heroPhotoPhone = p.file; }, t.id);
     });
     sheet.querySelector('[data-a="move"]')?.addEventListener("change", (e) => {
       const dest = e.target.value;
@@ -1341,6 +1347,7 @@
         trip.photos = trip.photos.filter((x) => x.file !== p.file);
         if (trip.photos.length) tidyTrip(trip); else photos.trips = photos.trips.filter((x) => x !== trip);
         if (site.heroPhoto === p.file) site.heroPhoto = null;
+        if (site.heroPhotoPhone === p.file) site.heroPhotoPhone = null;
         return [{ path: p.file, remove: true }, { path: p.thumb, remove: true }];
       }, t.id);
     });
@@ -1371,7 +1378,9 @@
           <label class="field"><span>Menu label</span><input type="text" name="ll${i}" value="${esc(l.label)}" placeholder="Resume"></label>
           <label class="field"><span>Link</span><input type="url" name="lu${i}" value="${esc(l.url)}" placeholder="https://…"></label>
         </div>`).join("")}
-        ${site.heroPhoto ? `<p class="muted small">Homepage photo: chosen by you. <button type="button" class="btn link" id="resetHero">Go back to automatic (newest trip)</button></p>` : `<p class="muted small">Homepage photo: automatic (cover of your newest trip). To choose one, open a trip under <b>Trips</b> and tap a photo.</p>`}
+        <p class="muted small">Homepage photo on computers: ${site.heroPhoto ? `chosen by you. <button type="button" class="btn link" id="resetHero">Go back to automatic (newest trip)</button>` : "automatic (cover of your newest trip)."}</p>
+        <p class="muted small">Homepage photo on phones: ${site.heroPhotoPhone ? `chosen by you. <button type="button" class="btn link" id="resetHeroPhone">Use the computer one</button>` : "same as on computers."}</p>
+        <p class="muted small">To choose either, open a trip under <b>Trips</b> and tap a photo. Tall photos look best on phones, wide ones on computers.</p>
         <button class="btn primary big" type="submit">Save</button>
       </form>
       <div class="panel"><h2>Space used</h2><p class="muted small" id="space">Checking…</p></div>
@@ -1398,6 +1407,7 @@
       settingsSave("Update site settings", (s) => { Object.assign(s, vals); s.links = newLinks; });
     });
     document.getElementById("resetHero")?.addEventListener("click", () => settingsSave("Use automatic homepage photo", (s) => { s.heroPhoto = null; }));
+    document.getElementById("resetHeroPhone")?.addEventListener("click", () => settingsSave("Use the same homepage photo on phones", (s) => { s.heroPhotoPhone = null; }));
     bindDisconnect();
   }
 

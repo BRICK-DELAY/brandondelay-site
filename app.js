@@ -147,7 +147,7 @@
   function renderHome() {
     const hero = heroFile();
     let html = `<section class="hero${hero ? "" : " empty"}">
-      ${hero ? `<img src="${esc(hero)}" alt="">` : ""}
+      ${hero ? `<picture>${site.heroPhotoPhone && site.heroPhotoPhone !== hero ? `<source media="(orientation: portrait)" srcset="${esc(site.heroPhotoPhone)}">` : ""}<img src="${esc(hero)}" alt=""></picture>` : ""}
       <div class="hero-text">
         <h1>${esc(site.tagline || site.name || "Brandon DeLay")}</h1>
         ${site.intro ? `<p>${esc(site.intro)}</p>` : ""}
