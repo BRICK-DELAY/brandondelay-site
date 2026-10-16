@@ -99,6 +99,11 @@
       "name": "Boise, Idaho",
       "lat": 43.62,
       "lon": -116.2
+    },
+    "dxb": {
+      "name": "Dubai, United Arab Emirates",
+      "lat": 25.2,
+      "lon": 55.27
     }
   },
   "years": {
@@ -205,6 +210,10 @@
         },
         {
           "from": "sez",
+          "to": "dxb"
+        },
+        {
+          "from": "dxb",
           "to": "home"
         },
         {
