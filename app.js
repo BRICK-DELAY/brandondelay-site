@@ -55,7 +55,11 @@
       if (!byYear.has(y)) byYear.set(y, []);
       byYear.get(y).push(t);
     }
-    years = [...byYear.entries()].sort((a, b) => b[0] - a[0]).map(([year, list]) => ({ year, trips: list }));
+    // Newest first within each year, except trips set to always show first/last.
+    const rank = (t) => (t.position === "first" ? -1 : t.position === "last" ? 1 : 0);
+    years = [...byYear.entries()].sort((a, b) => b[0] - a[0])
+      .map(([year, list]) => ({ year, trips: list.sort((a, b) => rank(a) - rank(b) || (b.start || "").localeCompare(a.start || "")) }));
+    trips = years.flatMap((y) => y.trips);
   }
 
   // ---------- chrome ----------
@@ -130,7 +134,7 @@
   function card(t) {
     const cover = coverOf(t);
     return `<a class="card" href="#/trip/${encodeURIComponent(t.id)}">
-      <div class="card-img"><img src="${esc(thumbFor(t, cover))}" alt="${esc(t.name)}" loading="lazy"></div>
+      <div class="card-img"><img src="${esc(thumbFor(t, cover))}" alt="${esc(t.name)}" loading="lazy">${t.credit ? `<span class="card-credit">${esc(t.credit)}</span>` : ""}</div>
       <div class="card-meta"><h3>${esc(t.name)}</h3><span>${dateRange(t)}</span></div>
     </a>`;
   }
@@ -191,7 +195,7 @@
       <header class="trip-head">
         <div class="crumbs"><a href="#/year/${yearOf(t)}">${yearOf(t)}</a></div>
         <h1>${esc(t.name)}</h1>
-        <p>${dateRange(t, true)} · ${t.photos.length} ${t.photos.length === 1 ? "photo" : "photos"}</p>
+        <p>${dateRange(t, true)} · ${t.photos.length} ${t.photos.length === 1 ? "photo" : "photos"}${t.credit ? ` · ${esc(t.credit)}` : ""}</p>
       </header>
       <div class="justified" id="grid"></div>
       <nav class="trip-pager">

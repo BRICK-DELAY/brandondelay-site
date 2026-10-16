@@ -1207,7 +1207,8 @@
     catch (err) { view.innerHTML = `<h1>Your trips</h1><p style="color:var(--danger)">${esc(err.message)}</p>`; return; }
     liveTrips = manageData.trips || [];
     if (openId && liveTrips.some((t) => t.id === openId)) return renderTripEditor(openId);
-    const trips = [...liveTrips].sort((a, b) => b.start.localeCompare(a.start));
+    const rank = (t) => (t.position === "first" ? -1 : t.position === "last" ? 1 : 0);
+    const trips = [...liveTrips].sort((a, b) => b.start.slice(0, 4).localeCompare(a.start.slice(0, 4)) || rank(a) - rank(b) || b.start.localeCompare(a.start));
     if (!trips.length) {
       view.innerHTML = `<h1>Your trips</h1><p class="muted">No trips yet. Use <b>Add photos</b> to make your first one.</p>`;
       return;
@@ -1253,7 +1254,13 @@
       <p class="muted">${rangeLabel(t.start, t.end)} · ${t.photos.length} photo${t.photos.length === 1 ? "" : "s"} · shows under <b>${t.start.slice(0, 4)}</b></p>
       <div class="panel">
         <label class="field"><span>Trip name</span><input type="text" id="tripName" value="${esc(t.name)}"></label>
-        <button class="btn primary" id="rename">Save name</button>
+        <label class="field"><span>Photo credit (shows when someone hovers over the trip, e.g. "Taken by Luke Hyce"). Leave blank if they're yours.</span><input type="text" id="tripCredit" value="${esc(t.credit || "")}" placeholder="Taken by …"></label>
+        <label class="field"><span>Where it shows within ${t.start.slice(0, 4)}</span><select id="tripPosition">
+          <option value=""${!t.position ? " selected" : ""}>By date (newest first)</option>
+          <option value="first"${t.position === "first" ? " selected" : ""}>Always first</option>
+          <option value="last"${t.position === "last" ? " selected" : ""}>Always last</option>
+        </select></label>
+        <button class="btn primary" id="rename">Save changes</button>
       </div>
       <p class="muted small">Tap a photo for options. ★ marks the trip's cover photo.</p>
       <div class="thumbs">${t.photos.map((p, i) => `<div class="thumb${p.file === t.cover ? " selected" : ""}">${imgTag(p.thumb)}${p.file === t.cover ? `<span class="tag">★ Cover</span>` : ""}<button class="pick" data-i="${i}" aria-label="Photo options"></button></div>`).join("")}</div>
@@ -1262,10 +1269,15 @@
     document.getElementById("back").addEventListener("click", () => renderManage());
     document.getElementById("rename").addEventListener("click", () => {
       const name = document.getElementById("tripName").value.trim();
+      const credit = document.getElementById("tripCredit").value.trim();
+      const position = document.getElementById("tripPosition").value;
       if (!name) return toast("The name can't be empty.", true);
-      runSave(`Rename trip to ${name}`, (photos) => {
+      runSave(`Update trip ${name}`, (photos) => {
         const trip = photos.trips.find((x) => x.id === id);
-        if (trip) trip.name = name;
+        if (!trip) return;
+        trip.name = name;
+        if (credit) trip.credit = credit; else delete trip.credit;
+        if (position) trip.position = position; else delete trip.position;
       }, id);
     });
     document.getElementById("delTrip").addEventListener("click", () => {

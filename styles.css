@@ -151,7 +151,15 @@ button { font: inherit; color: inherit; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: clamp(16px, 2vw, 28px); }
 .card { text-decoration: none; display: block; }
-.card-img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-raised); border-radius: 4px; }
+.card-img { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-raised); border-radius: 4px; }
+.card-credit {
+  position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; border-radius: 999px;
+  background: rgba(10,10,11,.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  font-size: 13px; letter-spacing: .02em; color: var(--text);
+  opacity: 0; transform: translateY(4px); transition: opacity .25s, transform .25s; pointer-events: none;
+}
+.card:hover .card-credit, .card:focus-visible .card-credit { opacity: 1; transform: none; }
+@media (hover: none) { .card-credit { opacity: 1; transform: none; } }
 .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease, opacity .4s; }
 .card:hover .card-img img { transform: scale(1.035); }
 .card-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 2px 0; }
