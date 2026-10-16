@@ -284,10 +284,15 @@
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#0066da" d="M3.3 19.6l1 1.7c.2.4.5.6.8.8l3.6-6.2H1.5c0 .4.1.8.3 1.2z"/><path fill="#00ac47" d="M12 8.4L8.4 2.2c-.4.2-.6.5-.8.8L1.8 13.1c-.2.4-.3.8-.3 1.2h7.2z"/><path fill="#ea4335" d="M19.8 22.1c.4-.2.6-.5.8-.8l.4-.7 2-3.4c.2-.4.3-.8.3-1.2h-7.2l1.5 3z"/><path fill="#00832d" d="M12 8.4l3.6-6.2c-.4-.2-.8-.3-1.2-.3H9.6c-.4 0-.8.1-1.2.3z"/><path fill="#2684fc" d="M15.6 15.9H8.4l-3.6 6.2c.4.2.8.3 1.2.3h12c.4 0 .8-.1 1.2-.3z"/><path fill="#ffba00" d="M19.8 9l-3.3-5.8c-.2-.4-.5-.6-.8-.8L12 8.4l3.6 6.2h7.2c0-.4-.1-.8-.3-1.2z"/></svg>
         From a Google Drive folder
       </button>
+      <button class="btn big" id="fromPhotos" style="margin-top:12px">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fbbc04" d="M12 2a5 5 0 0 1 5 5v5H12z"/><path fill="#ea4335" d="M22 12a5 5 0 0 1-5 5h-5v-5z"/><path fill="#4285f4" d="M12 22a5 5 0 0 1-5-5v-5h5z"/><path fill="#34a853" d="M2 12a5 5 0 0 1 5-5h5v5z"/></svg>
+        From Google Photos
+      </button>
       <p class="muted small" style="margin-top:16px">Tip for iPhone: when picking photos, tap <b>Options</b> at the top and make sure <b>Location</b> is on. That lets this page name new trips for you.</p>`;
     const input = document.getElementById("fileInput");
     input.addEventListener("change", () => { if (input.files.length) addFiles([...input.files]); });
     document.getElementById("fromDrive").addEventListener("click", () => renderDrive());
+    document.getElementById("fromPhotos").addEventListener("click", () => renderPhotos());
     const drop = document.getElementById("drop");
     ["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
     ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
@@ -680,6 +685,287 @@
     await finishAdding();
   }
 
+  // ---------------------------------------------------------------- Google Photos
+  // Uses Google's Photos Picker: you choose photos inside Google Photos and this
+  // page fetches web-size copies straight from Google, so nothing is stored on
+  // your device. Needs an OAuth client ID (saved in data/site.json; it's public
+  // by design and only works from this website).
+  const PICKER = "https://photospicker.googleapis.com/v1";
+  const GP_SCOPE = "https://www.googleapis.com/auth/photospicker.mediaitems.readonly";
+  let gpClientId = null, gpToken = null, gpTokenExpires = 0, gpSessionId = null, gpPollRun = 0;
+
+  async function loadGpClientId() {
+    if (gpClientId === null) {
+      try { gpClientId = (await readJSON("data/site.json")).googleClientId || ""; } catch (e) { gpClientId = ""; }
+    }
+    return gpClientId;
+  }
+
+  let gisLoader = null;
+  function loadGis() {
+    if (window.google && google.accounts && google.accounts.oauth2) return Promise.resolve();
+    if (!gisLoader) gisLoader = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "https://accounts.google.com/gsi/client";
+      s.onload = resolve;
+      s.onerror = () => { gisLoader = null; reject(new Error("Couldn't load Google sign-in. Check your internet connection.")); };
+      document.head.appendChild(s);
+    });
+    return gisLoader;
+  }
+
+  const gpTokenValid = () => gpToken && Date.now() < gpTokenExpires;
+
+  // Must be called straight from a tap/click so the Google sign-in window isn't blocked.
+  function signInGooglePhotos() {
+    return new Promise((resolve, reject) => {
+      const client = google.accounts.oauth2.initTokenClient({
+        client_id: gpClientId,
+        scope: GP_SCOPE,
+        callback: (r) => {
+          if (r.error) return reject(new Error(r.error === "access_denied" ? "Google Photos access wasn't allowed. Try again and tick the box to allow access." : "Google sign-in didn't finish: " + r.error));
+          gpToken = r.access_token;
+          gpTokenExpires = Date.now() + (Number(r.expires_in || 3600) - 120) * 1000;
+          resolve();
+        },
+        error_callback: (e) => reject(new Error(
+          e && e.type === "popup_failed_to_open" ? "Your browser blocked the Google sign-in window. Allow pop-ups for this site, then try again."
+            : e && e.type === "popup_closed" ? "The Google sign-in window was closed before finishing."
+              : "Google sign-in didn't finish.")),
+      });
+      client.requestAccessToken();
+    });
+  }
+
+  function reauthError() {
+    const err = new Error("Google Photos needs you to sign in again to keep going (Google signs you out after an hour).");
+    err.reauth = true;
+    return err;
+  }
+
+  async function gpFetch(url, opts = {}) {
+    if (!gpTokenValid()) throw reauthError();
+    let res;
+    try { res = await fetch(url, { ...opts, headers: { ...(opts.headers || {}), Authorization: "Bearer " + gpToken } }); }
+    catch (e) { throw new Error("Couldn't reach Google Photos. Check your internet connection."); }
+    if (res.status === 401) throw reauthError();
+    return res;
+  }
+
+  async function gpJSON(url, opts) {
+    const res = await gpFetch(url, opts);
+    if (res.ok) return res.status === 204 ? {} : res.json();
+    let message = "";
+    try { message = ((await res.json()).error || {}).message || ""; } catch (e) { /* ignore */ }
+    if (/has not been used|is disabled|SERVICE_DISABLED/i.test(message)) throw new Error("The Photos Picker API isn't turned on in Google Cloud yet (setup step 2). Turn it on, wait a minute, and try again.");
+    if (res.status === 403) throw new Error("Google Photos said no access: " + (message || "permission denied") + ". Make sure your Gmail is added as a test user (setup step 4).");
+    const err = new Error(`Google Photos error ${res.status}${message ? ": " + message : ""}`);
+    err.status = res.status;
+    throw err;
+  }
+
+  const durationMs = (s, fallback) => { const m = /^([\d.]+)s$/.exec(s || ""); return m ? Number(m[1]) * 1000 : fallback; };
+
+  async function gpListAll(sessionId) {
+    const out = [];
+    let pageToken = "";
+    do {
+      const j = await gpJSON(`${PICKER}/mediaItems?sessionId=${encodeURIComponent(sessionId)}&pageSize=100${pageToken ? "&pageToken=" + encodeURIComponent(pageToken) : ""}`);
+      out.push(...(j.mediaItems || []));
+      pageToken = j.nextPageToken || "";
+    } while (pageToken);
+    return out;
+  }
+
+  function gpItem(m) {
+    const f = m.mediaFile || {};
+    const meta = f.mediaFileMetadata || {};
+    const it = { id: rand() + rand(), status: "ready", gp: { id: m.id, baseUrl: f.baseUrl, name: f.filename || "photo", mime: f.mimeType || "" } };
+    const when = new Date(m.createTime);
+    if (m.createTime && !isNaN(when)) { it.date = localISO(when); it.guessedDate = false; }
+    else { it.date = localISO(new Date()); it.guessedDate = true; }
+    let w = Number(meta.width) || 3, h = Number(meta.height) || 2;
+    const s = Math.min(1, FULL_EDGE / Math.max(w, h));
+    it.w = Math.round(w * s); it.h = Math.round(h * s);
+    it.preview = "";
+    it.key = hash(`gp|${f.filename}|${m.createTime}`);
+    return it;
+  }
+
+  async function gpDownload(it, size) {
+    const url = `${it.gp.baseUrl}=w${size}-h${size}`;
+    for (let attempt = 0; ; attempt++) {
+      const res = await gpFetch(url);
+      if (res.ok) return res.blob();
+      if (res.status === 403) throw reauthError(); // the photo links expire after an hour too
+      if (attempt >= 4 || (res.status !== 429 && res.status < 500)) throw new Error(`Couldn't download "${it.gp.name}" from Google Photos (error ${res.status}).`);
+      await sleep(2000 * 2 ** attempt);
+    }
+  }
+
+  // After signing in again, ask Google for fresh photo links for the same selection.
+  async function gpRefreshLinks() {
+    if (!gpSessionId) throw new Error("Please pick the photos again. Ones already uploaded will be skipped.");
+    let fresh;
+    try { fresh = await gpListAll(gpSessionId); }
+    catch (e) {
+      if (e.reauth) throw e;
+      throw new Error("Google's photo selection expired. Please pick the same photos again. Ones already uploaded will be skipped.");
+    }
+    const byId = new Map(fresh.map((m) => [m.id, m.mediaFile && m.mediaFile.baseUrl]));
+    pending.forEach((p) => { if (p.gp && byId.get(p.gp.id)) p.gp.baseUrl = byId.get(p.gp.id); p.dl = null; });
+  }
+
+  async function loadPreviews(items, onProgress) {
+    let i = 0, done = 0, ok = 0, firstErr = null;
+    const worker = async () => {
+      while (i < items.length) {
+        const it = items[i++];
+        try { it.preview = URL.createObjectURL(await gpDownload(it, 300)); ok++; }
+        catch (e) { if (e.reauth) throw e; firstErr = firstErr || e; }
+        onProgress(++done);
+      }
+    };
+    await Promise.all(Array.from({ length: 6 }, worker));
+    if (!ok && firstErr) throw new Error("Google Photos didn't let this page download your photos. " + firstErr.message);
+  }
+
+  async function renderPhotos(errMsg) {
+    gpPollRun++;
+    view.innerHTML = `<h1>From Google Photos</h1><p class="muted">Loading…</p>`;
+    await loadGpClientId();
+    if (!gpClientId) return renderPhotosSetup();
+    try { await loadGis(); }
+    catch (e) { view.innerHTML = `<h1>From Google Photos</h1><p style="color:var(--danger)">${esc(e.message)}</p>`; return; }
+    view.innerHTML = `
+      <p><button class="btn link" id="back">← Back</button></p>
+      <h1>From Google Photos</h1>
+      <div class="panel">
+        <ol class="steps">
+          <li>Tap <b>Choose from Google Photos</b>${gpTokenValid() ? "" : " and sign in with Google. It may say <b>Google hasn't verified this app</b>. That's expected for your own app: tap <b>Continue</b>"}.</li>
+          <li>Google Photos opens in a new tab. Pick photos. To grab a whole album, open <b>Albums</b>, open the album, and select its photos (up to 2,000 at a time).</li>
+          <li>Tap <b>Done</b> in Google Photos, then come back to this tab.</li>
+        </ol>
+        ${errMsg ? `<p style="color:var(--danger)">${esc(errMsg)}</p>` : ""}
+        <button class="btn primary big" id="gpStart">Choose from Google Photos</button>
+      </div>
+      <p class="muted small">Photos go straight from Google Photos to your website. Nothing is saved on this device. Videos are skipped.</p>`;
+    document.getElementById("back").addEventListener("click", renderAdd);
+    document.getElementById("gpStart").addEventListener("click", async (e) => {
+      const btn = e.currentTarget;
+      btn.disabled = true;
+      try {
+        if (!gpTokenValid()) await signInGooglePhotos();
+        btn.textContent = "Opening Google Photos…";
+        const session = await gpJSON(`${PICKER}/sessions`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pickingConfig: { maxItemCount: "2000" } }) });
+        gpSessionId = session.id;
+        renderPicking(session);
+      } catch (err) {
+        renderPhotos(err.message);
+      }
+    });
+  }
+
+  function renderPicking(session) {
+    const run = ++gpPollRun;
+    const link = session.pickerUri + (/Mobi|Android/i.test(navigator.userAgent) ? "" : "/autoclose");
+    view.innerHTML = `
+      <h1>Pick your photos</h1>
+      <div class="panel">
+        <p>Open Google Photos, select the photos you want, then tap <b>Done</b> and come back here.</p>
+        <a class="btn primary big" id="gpOpen" href="${esc(link)}" target="_blank" rel="noopener">Open Google Photos</a>
+        <p class="muted small" id="gpWait" style="margin-top:14px">Waiting for your selection…</p>
+      </div>
+      <p><button class="btn link" id="gpCancel">Cancel</button></p>`;
+    document.getElementById("gpCancel").addEventListener("click", () => { gpPollRun++; renderAdd(); });
+    const interval = Math.max(2000, durationMs(session.pollingConfig && session.pollingConfig.pollInterval, 4000));
+    const deadline = Date.now() + durationMs(session.pollingConfig && session.pollingConfig.timeoutIn, 30 * 60000);
+    (async () => {
+      while (run === gpPollRun) {
+        await sleep(interval);
+        if (run !== gpPollRun) return;
+        if (Date.now() > deadline) return renderPhotos("Google Photos stopped waiting. Please try again.");
+        try {
+          const s = await gpJSON(`${PICKER}/sessions/${encodeURIComponent(session.id)}`);
+          if (s.mediaItemsSet) { if (run === gpPollRun) addGooglePhotos(session.id); return; }
+        } catch (err) {
+          if (err.reauth) return renderPhotos("Google signed you out. Please try again.");
+          /* network blip: keep waiting */
+        }
+      }
+    })();
+  }
+
+  async function addGooglePhotos(sessionId) {
+    busy = true;
+    view.innerHTML = `
+      <h1>Getting your photos ready…</h1>
+      <p class="muted" id="prepLabel">Reading your selection…</p>
+      <div class="progress"><div id="prepBar"></div></div>
+      <p class="muted small">Loading small previews from Google Photos. Keep this page open.</p>`;
+    try {
+      try { liveTrips = (await readJSON("data/photos.json")).trips || []; } catch (e) { liveTrips = []; }
+      const media = await gpListAll(sessionId);
+      const photos = media.filter((m) => m.type !== "VIDEO" && !/^video\//.test((m.mediaFile || {}).mimeType || ""));
+      const skippedVideos = media.length - photos.length;
+      if (!photos.length) { busy = false; return renderPhotos(skippedVideos ? "Only videos were picked. This site shows photos." : "No photos were picked."); }
+      const items = photos.map(gpItem);
+      // Skip already-published photos before loading their previews.
+      const seen = new Set();
+      liveTrips.forEach((t) => t.photos.forEach((p) => { if (p.key) seen.add(p.key); }));
+      const fresh = items.filter((it) => !seen.has(it.key));
+      await loadPreviews(fresh, (n) => {
+        const bar = document.getElementById("prepBar"), label = document.getElementById("prepLabel");
+        if (bar) bar.style.width = (n / fresh.length * 100) + "%";
+        if (label) label.textContent = `${n} of ${fresh.length}`;
+      });
+      pending.push(...items);
+      if (skippedVideos) toast(`${skippedVideos} video${skippedVideos > 1 ? "s were" : " was"} skipped.`);
+    } catch (err) {
+      busy = false;
+      return renderPhotos(err.message);
+    }
+    await finishAdding();
+  }
+
+  function renderPhotosSetup(errMsg) {
+    const here = location.origin;
+    view.innerHTML = `
+      <p><button class="btn link" id="back">← Back</button></p>
+      <h1>Connect Google Photos</h1>
+      <p class="muted">One-time setup on a computer, about 10–15 minutes. It's free. Do these in Google Cloud, using the same project as before if you made one.</p>
+      <div class="panel">
+        <ol class="steps">
+          <li><b>Pick your project.</b> Open <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> and check that the project name at the top is your site's project (e.g. <code>Brandon DeLay site</code>). No project yet? <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">Create one</a>.</li>
+          <li><b>Turn on the photo picker.</b> Open <a href="https://console.cloud.google.com/apis/library/photospicker.googleapis.com" target="_blank" rel="noopener">Photos Picker API</a> and click <b>Enable</b>.</li>
+          <li><b>Set up the sign-in screen.</b> Open <a href="https://console.cloud.google.com/auth/overview" target="_blank" rel="noopener">Google Auth Platform</a> and click <b>Get started</b>. App name: <code>Brandon DeLay site</code>. Support email: your Gmail. Audience: <b>External</b>. Contact email: your Gmail. Agree, then <b>Create</b>.</li>
+          <li><b>Add yourself as a tester.</b> Open <a href="https://console.cloud.google.com/auth/audience" target="_blank" rel="noopener">Audience</a>. Under <b>Test users</b> click <b>+ Add users</b>, type your Gmail address, and <b>Save</b>.</li>
+          <li><b>Create the client.</b> Open <a href="https://console.cloud.google.com/auth/clients" target="_blank" rel="noopener">Clients</a> → <b>+ Create client</b>. Application type: <b>Web application</b>. Name: <code>Photo uploader</code>. Under <b>Authorized JavaScript origins</b> click <b>+ Add URI</b> three times and enter <code>${esc(here)}</code>, <code>https://brandondelay.com</code> and <code>https://www.brandondelay.com</code> (no slash at the end). Leave redirect URIs empty. Click <b>Create</b>.</li>
+          <li>Copy the <b>Client ID</b> (it ends in <code>.apps.googleusercontent.com</code>) and paste it below. You don't need the client secret.</li>
+        </ol>
+        <form id="clientForm">
+          <label class="field"><span>Client ID</span><input type="text" id="clientId" placeholder="1234…apps.googleusercontent.com" required autocapitalize="none" spellcheck="false"></label>
+          ${errMsg ? `<p style="color:var(--danger)">${esc(errMsg)}</p>` : ""}
+          <button class="btn primary big" type="submit">Save</button>
+        </form>
+      </div>
+      <p class="muted small">The client ID is saved with your website so every device can use it. It only works from your website, and only you (as a test user) can sign in with it.</p>`;
+    document.getElementById("back").addEventListener("click", renderAdd);
+    document.getElementById("clientForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const id = document.getElementById("clientId").value.trim();
+      if (!/^[\w-]+\.apps\.googleusercontent\.com$/.test(id)) return renderPhotosSetup("That doesn't look like a client ID. It should end in .apps.googleusercontent.com.");
+      const btn = e.target.querySelector("button");
+      btn.disabled = true; btn.textContent = "Saving…";
+      try {
+        await save("Connect Google Photos", (photos, site) => { site.googleClientId = id; });
+        gpClientId = id;
+        toast("Google Photos connected!");
+        renderPhotos();
+      } catch (err) { renderPhotosSetup(err.message); }
+    });
+  }
+
   function tripOptions(selected) {
     const sorted = [...liveTrips].sort((a, b) => b.start.localeCompare(a.start));
     return `<option value="new"${selected === "new" ? " selected" : ""}>➕ New trip</option>` +
@@ -754,6 +1040,13 @@
     document.getElementById("publish").addEventListener("click", publish);
   }
 
+  // Starts downloading a Drive/Google Photos original (null for photos already on this device).
+  function fetchRemote(p) {
+    const dl = p.drive ? driveDownload(p.drive) : p.gp ? gpDownload(p, FULL_EDGE) : null;
+    if (dl) dl.catch(() => {}); // errors are handled where it's awaited
+    return dl;
+  }
+
   async function publish() {
     const undated = groups.find((g) => g.items.every((p) => p.guessedDate) && !g.manualDate);
     if (undated) {
@@ -803,9 +1096,9 @@
             const p = chunk[j];
             // Start downloading the next Drive photo while this one is processed.
             const next = chunk[j + 1] || g.items[i + PHOTOS_PER_SAVE];
-            if (next && next.drive && !next.dl) next.dl = driveDownload(next.drive);
-            if (p.drive && !p.dl) p.dl = driveDownload(p.drive);
-            const blob = p.drive ? await p.dl : p.src;
+            if (next && !next.dl) next.dl = fetchRemote(next);
+            if (!p.dl) p.dl = fetchRemote(p);
+            const blob = p.dl ? await p.dl : p.src;
             p.dl = null;
             const base = `${p.date.slice(0, 10).replace(/-/g, "")}-${p.date.slice(11, 19).replace(/:/g, "")}-${rand()}`;
             const year = p.date.slice(0, 4);
@@ -844,9 +1137,22 @@
       lock.release();
       console.error(err);
       pending = pending.filter((p) => !p.saved);
+      pending.forEach((p) => { p.dl = null; });
       groups.forEach((g) => { g.items = g.items.filter((p) => !p.saved); });
-      toast(err.message || "Something went wrong.", true);
       const left = pending.length;
+      if (err.reauth) {
+        view.innerHTML = `<div class="done-box"><h1>Quick sign-in needed</h1>
+          <p class="muted">${esc(err.message)}</p>
+          <p class="muted">${total - left} photo${total - left === 1 ? " was" : "s were"} saved. ${left} still to go.</p>
+          <p id="reauthErr" style="color:var(--danger)"></p>
+          <button class="btn primary big" id="reauth" style="max-width:420px">Sign in and keep going</button></div>`;
+        document.getElementById("reauth").addEventListener("click", async () => {
+          try { await signInGooglePhotos(); await gpRefreshLinks(); publish(); }
+          catch (e) { document.getElementById("reauthErr").textContent = e.message; }
+        });
+        return;
+      }
+      toast(err.message || "Something went wrong.", true);
       view.innerHTML = `<div class="done-box"><h1>Publishing stopped</h1>
         <p class="muted">${esc(err.message || "")}</p>
         <p class="muted">${total - left} photo${total - left === 1 ? " was" : "s were"} saved. ${left} still waiting.</p>
@@ -1057,6 +1363,9 @@
         <button class="btn primary big" type="submit">Save</button>
       </form>
       <div class="panel"><h2>Space used</h2><p class="muted small" id="space">Checking…</p></div>
+      <div class="panel"><h2>Google Photos</h2>
+        <p class="muted small">${site.googleClientId ? "Connected. Use <b>Add photos → From Google Photos</b>." : "Not connected yet. Use <b>Add photos → From Google Photos</b> to set it up."}</p>
+        ${site.googleClientId ? `<button type="button" class="btn" id="changeClient">Change client ID</button>` : ""}</div>
       <div class="panel"><h2>Google Drive</h2>
         <p class="muted small">${site.googleApiKey ? "Connected. You can add photos from shared Drive folders." : "Not connected yet. Use <b>Add photos → From a Google Drive folder</b> to set it up."}</p>
         ${site.googleApiKey ? `<button type="button" class="btn" id="changeKey">Change Drive key</button>` : ""}</div>
@@ -1066,6 +1375,7 @@
       const el = document.getElementById("space");
       if (el) el.textContent = `About ${Math.round(mb)} MB of ${SITE_LIMIT_MB.toLocaleString()} MB (${Math.round(mb / SITE_LIMIT_MB * 100)}%). Room for roughly ${Math.max(0, Math.floor((SITE_LIMIT_MB * 0.95 - mb) / MB_PER_PHOTO)).toLocaleString()} more photos.`;
     }).catch(() => {});
+    document.getElementById("changeClient")?.addEventListener("click", () => { tab = "add"; tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.tab === "add")); renderPhotosSetup(); });
     document.getElementById("changeKey")?.addEventListener("click", () => { tab = "add"; tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.tab === "add")); renderDriveKeySetup(); });
     document.getElementById("siteForm").addEventListener("submit", (e) => {
       e.preventDefault();
