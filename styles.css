@@ -237,3 +237,36 @@ button { font: inherit; color: inherit; }
 }
 
 body.no-scroll { overflow: hidden; }
+
+/* ---------- Flight maps ---------- */
+.flightmap { position: relative; margin: 0 0 clamp(24px, 3vw, 36px); min-height: 240px; }
+.flightmap svg {
+  display: block; width: 100%; height: auto; overflow: hidden;
+  /* soft edges so the cropped map fades into the page */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  mask-composite: intersect;
+}
+.fm-states { fill: none; stroke: rgba(239, 233, 223, .1); stroke-width: .5; stroke-linejoin: round; }
+.fm-coast { fill: none; stroke: rgba(239, 233, 223, .32); stroke-width: .7; stroke-linejoin: round; }
+.fm-borders { fill: none; stroke: rgba(239, 233, 223, .16); stroke-width: .5; stroke-linejoin: round; }
+.fm-arc {
+  fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; opacity: .8;
+  stroke-dasharray: var(--len) var(--len); stroke-dashoffset: var(--len);
+}
+.flightmap.drawn .fm-arc { stroke-dashoffset: 0; transition: stroke-dashoffset 1.3s cubic-bezier(.45, 0, .2, 1) calc(var(--i) * 90ms); }
+.fm-dot { cursor: pointer; outline: none; }
+.fm-dot .hit { fill: transparent; }
+.fm-dot .core { fill: var(--accent); transition: r .15s; }
+.fm-dot .halo { fill: var(--accent); opacity: 0; transition: opacity .2s; }
+.fm-dot.home .core { fill: var(--bg); stroke: var(--accent); stroke-width: 1.8; }
+.fm-dot.on .halo, .fm-dot:hover .halo, .fm-dot:focus-visible .halo { opacity: .25; }
+.fm-dot.on .core, .fm-dot:hover .core { r: 5; }
+.fm-stats { margin-top: 10px; color: var(--muted); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.fm-tip {
+  position: absolute; z-index: 2; pointer-events: none; white-space: nowrap;
+  padding: 6px 12px; border-radius: 999px; font-size: 13px;
+  background: var(--bg-raised); border: 1px solid var(--line); color: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+}

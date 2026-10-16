@@ -14,6 +14,7 @@
   const footer = document.getElementById("footer");
 
   let site = {};
+  let flights = {};
   let trips = [];
   let years = []; // [{year, trips:[...]}], newest first
 
@@ -42,10 +43,12 @@
 
   // ---------- data ----------
   async function load() {
-    const [s, p] = await Promise.all([
+    const [s, p, f] = await Promise.all([
       getJSON("data/site.json").catch(() => ({})),
       getJSON("data/photos.json").catch(() => ({ trips: [] })),
+      getJSON("data/flights.json").catch(() => ({})),
     ]);
+    flights = f || {};
     site = s || {};
     trips = (p.trips || []).filter((t) => t.photos && t.photos.length);
     trips.sort((a, b) => (b.start || "").localeCompare(a.start || ""));
@@ -139,6 +142,10 @@
     </a>`;
   }
 
+  // A flight map goes under each year's heading when data/flights.json has flights for it.
+  const mapSlot = (year) => (window.FlightMaps && FlightMaps.hasYear(flights, year) ? `<div class="flightmap" data-year="${year}"></div>` : "");
+  const mountMaps = () => { if (window.FlightMaps) FlightMaps.mount(app, flights); };
+
   function heroFile() {
     if (site.heroPhoto) return site.heroPhoto;
     return trips[0] ? coverOf(trips[0]) : null;
@@ -161,11 +168,13 @@
     for (const y of years) {
       html += `<section class="section">
         <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
+        ${mapSlot(y.year)}
         <div class="cards">${y.trips.map(card).join("")}</div>
       </section>`;
     }
     html += `</div>`;
     app.innerHTML = html;
+    mountMaps();
     app.querySelector("[data-scroll]")?.addEventListener("click", (e) => {
       e.preventDefault();
       document.getElementById("trips").scrollIntoView({ behavior: "smooth" });
@@ -179,8 +188,10 @@
     if (!y) return renderNotFound();
     app.innerHTML = `<section class="section page">
       <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
+      ${mapSlot(y.year)}
       <div class="cards">${y.trips.map(card).join("")}</div>
     </section>`;
+    mountMaps();
     document.title = `${y.year} · ${site.name || "Brandon DeLay"}`;
   }
 
