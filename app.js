@@ -31,6 +31,13 @@
     if (a.d !== b.d) return `${M[a.m - 1]} ${a.d}–${b.d}, ${a.y}`;
     return `${M[a.m - 1]} ${a.d}, ${a.y}`;
   }
+  // Month and year only, for trip tiles: "June 2024", "June – July 2024", "Dec 2024 – Jan 2025".
+  function monthRange(t) {
+    const a = parseDay(t.start), b = parseDay(t.end || t.start);
+    if (a.y !== b.y) return `${MONTHS[a.m - 1]} ${a.y} – ${MONTHS[b.m - 1]} ${b.y}`;
+    if (a.m !== b.m) return `${MONTHS_LONG[a.m - 1]} – ${MONTHS_LONG[b.m - 1]} ${a.y}`;
+    return `${MONTHS_LONG[a.m - 1]} ${a.y}`;
+  }
   const monthLabel = (t) => MONTHS[parseDay(t.start).m - 1];
   const coverOf = (t) => t.cover || (t.photos[0] && t.photos[0].file);
   const thumbFor = (t, file) => { const p = t.photos.find((x) => x.file === file); return p ? p.thumb : file; };
@@ -145,7 +152,7 @@
     const cover = coverOf(t);
     return `<a class="card" href="#/trip/${encodeURIComponent(t.id)}">
       <div class="card-img"><img src="${esc(thumbFor(t, cover))}" alt="${esc(t.name)}" loading="lazy">${t.credit ? `<span class="card-credit">${esc(t.credit)}</span>` : ""}</div>
-      <div class="card-meta"><h3>${esc(t.name)}</h3><span>${dateRange(t)}</span></div>
+      <div class="card-meta"><h3>${esc(t.name)}</h3><span>${monthRange(t)}</span></div>
     </a>`;
   }
 
