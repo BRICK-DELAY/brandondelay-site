@@ -30,3 +30,5 @@ The first time you use the admin page on a device, it asks for a GitHub "key". T
 - `vendor/`: two small open-source libraries. [exifr](https://github.com/MikeKovarik/exifr) reads photo dates and locations, and [heic2any](https://github.com/alexcorvi/heic2any) opens iPhone HEIC photos on computers that can't.
 
 There's no build step: GitHub Pages serves these files exactly as they are.
+
+When changing `styles.css`, `app.js` or `map.js`, bump the number in `version.json` so visitors' browsers load the new files right away. (The uploader has its own `admin/version.json`, paired with `VERSION` in `admin/admin.js`.)

@@ -168,8 +168,8 @@
     for (const y of years) {
       html += `<section class="section">
         <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
-        ${mapSlot(y.year)}
         <div class="cards">${y.trips.map(card).join("")}</div>
+        ${mapSlot(y.year)}
       </section>`;
     }
     html += `</div>`;
@@ -188,8 +188,8 @@
     if (!y) return renderNotFound();
     app.innerHTML = `<section class="section page">
       <div class="section-head"><h2>${y.year}</h2><span>${y.trips.length} ${y.trips.length === 1 ? "trip" : "trips"}</span></div>
-      ${mapSlot(y.year)}
       <div class="cards">${y.trips.map(card).join("")}</div>
+      ${mapSlot(y.year)}
     </section>`;
     mountMaps();
     document.title = `${y.year} · ${site.name || "Brandon DeLay"}`;

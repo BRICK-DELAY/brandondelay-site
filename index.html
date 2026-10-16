@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <style>html, body { background: #121314; } body { opacity: 0; }</style>
 </head>
 <body>
   <header class="topbar" id="topbar">
@@ -34,7 +34,26 @@
     <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
   </div>
 
-  <script src="map.js?v=4"></script>
-  <script src="app.js?v=5"></script>
+  <script>
+    // Always load the newest published styles and scripts: browsers may keep
+    // this page cached for a while, but version.json is checked fresh each visit.
+    (function () {
+      function boot(v) {
+        var q = "?v=" + encodeURIComponent(v);
+        var css = document.createElement("link");
+        css.rel = "stylesheet"; css.href = "styles.css" + q;
+        document.head.appendChild(css);
+        ["map.js", "app.js"].forEach(function (src) {
+          var s = document.createElement("script");
+          s.src = src + q; s.async = false;
+          document.body.appendChild(s);
+        });
+      }
+      fetch("version.json?t=" + Date.now(), { cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { boot(j.version); })
+        .catch(function () { boot(Date.now()); });
+    })();
+  </script>
 </body>
 </html>

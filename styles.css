@@ -21,6 +21,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  opacity: 1; transition: opacity .2s;
 }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
@@ -239,7 +240,7 @@ button { font: inherit; color: inherit; }
 body.no-scroll { overflow: hidden; }
 
 /* ---------- Flight maps ---------- */
-.flightmap { position: relative; margin: 0 0 clamp(24px, 3vw, 36px); min-height: 240px; }
+.flightmap { position: relative; margin: clamp(32px, 4vw, 56px) 0 0; min-height: 240px; }
 .flightmap svg {
   display: block; width: 100%; height: auto; overflow: hidden;
   /* soft edges so the cropped map fades into the page */
