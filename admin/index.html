@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Photo Uploader · Brandon DeLay</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d9b77e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%2317181a' text-anchor='middle'%3EBD%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="bar-title" href="../" target="_blank" rel="noopener">Brandon DeLay <span>Uploader</span></a>
+    <nav class="tabs" id="tabs" hidden>
+      <button data-tab="add" class="on">Add photos</button>
+      <button data-tab="manage">Trips</button>
+      <button data-tab="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main id="view"></main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../vendor/exifr.lite.umd.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
