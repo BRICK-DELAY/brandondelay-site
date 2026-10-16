@@ -257,7 +257,33 @@
     if (tab === "settings") renderSettings();
     window.scrollTo(0, 0);
   }
+  // The uploader's version. Bump it together with admin/version.json whenever
+  // this page changes, so open pages offer to reload instead of running old code.
+  const VERSION = 9;
+  let updateShown = false;
+  async function checkForUpdate() {
+    if (updateShown) return;
+    try {
+      const res = await fetch("version.json?t=" + Date.now(), { cache: "no-store" });
+      const v = (await res.json()).version;
+      if (v > VERSION) {
+        updateShown = true;
+        const bar = document.createElement("div");
+        bar.className = "panel";
+        bar.style.cssText = "max-width:980px;margin:16px auto 0;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-color:var(--accent)";
+        bar.innerHTML = `<span>A newer version of this page is ready.</span><button class="btn primary" type="button">Reload</button>`;
+        bar.querySelector("button").addEventListener("click", () => {
+          if (busy) return toast("Wait until saving finishes, then reload.");
+          location.reload();
+        });
+        document.body.insertBefore(bar, view);
+      }
+    } catch (e) { /* offline or not published yet */ }
+  }
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) checkForUpdate(); });
+
   function start() {
+    checkForUpdate();
     if (!cfg.token || !cfg.owner || !cfg.repo || !cfg.branch) return renderConnect();
     tabs.hidden = false;
     showTab();
