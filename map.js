@@ -112,16 +112,18 @@
       [l.from, l.to].forEach((id) => { if (!order.includes(id)) order.push(id); });
       visits[l.to] = (visits[l.to] || 0) + l.times;
     });
-    return { home: y.home, legs, places, order, visits };
+    // "home" can be one place or a list (e.g. after moving mid-year).
+    const homes = new Set([].concat(y.home || []));
+    return { isHome: (id) => homes.has(id), legs, places, order, visits };
   }
 
   function statsLine(d) {
     let flights = 0, roadTrips = 0, flown = 0;
     d.legs.forEach((l) => {
       if (l.mode === "flight") { flights += l.times; flown += miles(d.places[l.from], d.places[l.to]) * l.times; }
-      else if (l.from === d.home) roadTrips += l.times;
+      else if (d.isHome(l.from)) roadTrips += l.times;
     });
-    const places = d.order.filter((id) => id !== d.home).length;
+    const places = d.order.filter((id) => !d.isHome(id)).length;
     const parts = [];
     if (flights) parts.push(plural(flights, "flight"));
     if (roadTrips) parts.push(plural(roadTrips, "road trip"));
@@ -132,7 +134,7 @@
 
   const placeLabel = (d, id) => {
     const v = d.visits[id] || 0;
-    if (id === d.home) return `${d.places[id].name} · home`;
+    if (d.isHome(id)) return `${d.places[id].name} · home`;
     return d.places[id].name + (v > 1 ? ` · ${v} visits` : "");
   };
 
@@ -190,8 +192,8 @@
       ids.forEach((o) => { if (o !== id) near[id] = Math.min(near[id], Math.hypot(P[o][0] - P[id][0], P[o][1] - P[id][1])); });
     });
     // Home last so its ring sits on top of nearby dots.
-    const dots = [...ids.filter((id) => id !== d.home), ...ids.filter((id) => id === d.home)].map((id) => {
-      const home = id === d.home;
+    const dots = [...ids.filter((id) => !d.isHome(id)), ...ids.filter((id) => d.isHome(id))].map((id) => {
+      const home = d.isHome(id);
       return `<g class="fm-dot${home ? " home" : ""}" data-id="${esc(id)}" tabindex="0" role="button" aria-label="${esc(placeLabel(d, id))}">
         <circle class="hit"/><circle class="halo" r="9"/><circle class="core" r="${home ? 4.5 : 3.6}"/></g>`;
     }).join("");

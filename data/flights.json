@@ -184,6 +184,91 @@
       "name": "San Juan Islands, Washington",
       "lat": 48.53,
       "lon": -123.02
+    },
+    "mia": {
+      "name": "Miami, Florida",
+      "lat": 25.76,
+      "lon": -80.19
+    },
+    "dfw": {
+      "name": "Dallas, Texas",
+      "lat": 32.78,
+      "lon": -96.8
+    },
+    "bjx": {
+      "name": "Bajío, Mexico",
+      "lat": 21.12,
+      "lon": -101.68
+    },
+    "mex": {
+      "name": "Mexico City, Mexico",
+      "lat": 19.43,
+      "lon": -99.13
+    },
+    "tlx": {
+      "name": "Tlaxcala, Mexico",
+      "lat": 19.32,
+      "lon": -98.24
+    },
+    "kyo": {
+      "name": "Kyoto, Japan",
+      "lat": 35.01,
+      "lon": 135.77
+    },
+    "osa": {
+      "name": "Osaka, Japan",
+      "lat": 34.69,
+      "lon": 135.5
+    },
+    "hij": {
+      "name": "Hiroshima, Japan",
+      "lat": 34.39,
+      "lon": 132.46
+    },
+    "bkk": {
+      "name": "Bangkok, Thailand",
+      "lat": 13.76,
+      "lon": 100.5
+    },
+    "hou": {
+      "name": "Houston, Texas",
+      "lat": 29.76,
+      "lon": -95.37
+    },
+    "gsd": {
+      "name": "Great Sand Dunes National Park",
+      "lat": 37.73,
+      "lon": -105.51
+    },
+    "ice": {
+      "name": "Iceland",
+      "lat": 64.15,
+      "lon": -21.94
+    },
+    "sbs": {
+      "name": "Steamboat Springs, Colorado",
+      "lat": 40.48,
+      "lon": -106.83
+    },
+    "ase": {
+      "name": "Aspen, Colorado",
+      "lat": 39.19,
+      "lon": -106.82
+    },
+    "phx": {
+      "name": "Phoenix, Arizona",
+      "lat": 33.45,
+      "lon": -112.07
+    },
+    "sgu": {
+      "name": "St. George, Utah",
+      "lat": 37.1,
+      "lon": -113.58
+    },
+    "ssm": {
+      "name": "Sweet Springs, Missouri",
+      "lat": 38.96,
+      "lon": -93.42
     }
   },
   "years": {
@@ -530,6 +615,201 @@
         {
           "from": "sea",
           "to": "sji",
+          "mode": "drive"
+        }
+      ]
+    },
+    "2026": {
+      "home": [
+        "home",
+        "den"
+      ],
+      "legs": [
+        {
+          "from": "sea",
+          "to": "mia"
+        },
+        {
+          "from": "mia",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "dfw",
+          "times": 9
+        },
+        {
+          "from": "dfw",
+          "to": "bjx",
+          "times": 9
+        },
+        {
+          "from": "bjx",
+          "to": "dfw",
+          "times": 9
+        },
+        {
+          "from": "dfw",
+          "to": "home",
+          "times": 9
+        },
+        {
+          "from": "bjx",
+          "to": "mex",
+          "mode": "drive"
+        },
+        {
+          "from": "mex",
+          "to": "tlx",
+          "mode": "drive"
+        },
+        {
+          "from": "tlx",
+          "to": "mex",
+          "mode": "drive"
+        },
+        {
+          "from": "mex",
+          "to": "bjx",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "boi",
+          "mode": "drive"
+        },
+        {
+          "from": "home",
+          "to": "yvr",
+          "mode": "drive"
+        },
+        {
+          "from": "yvr",
+          "to": "tyo"
+        },
+        {
+          "from": "tyo",
+          "to": "kyo",
+          "mode": "drive"
+        },
+        {
+          "from": "kyo",
+          "to": "osa",
+          "mode": "drive"
+        },
+        {
+          "from": "osa",
+          "to": "hij",
+          "mode": "drive"
+        },
+        {
+          "from": "hij",
+          "to": "tyo",
+          "mode": "drive"
+        },
+        {
+          "from": "tyo",
+          "to": "bkk"
+        },
+        {
+          "from": "bkk",
+          "to": "sfo"
+        },
+        {
+          "from": "sfo",
+          "to": "home"
+        },
+        {
+          "from": "home",
+          "to": "den",
+          "mode": "drive"
+        },
+        {
+          "from": "den",
+          "to": "hou",
+          "times": 5
+        },
+        {
+          "from": "hou",
+          "to": "bjx",
+          "times": 5
+        },
+        {
+          "from": "bjx",
+          "to": "hou",
+          "times": 5
+        },
+        {
+          "from": "hou",
+          "to": "den",
+          "times": 5
+        },
+        {
+          "from": "den",
+          "to": "gsd",
+          "mode": "drive"
+        },
+        {
+          "from": "gsd",
+          "to": "den",
+          "mode": "drive"
+        },
+        {
+          "from": "den",
+          "to": "ice"
+        },
+        {
+          "from": "ice",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "sbs",
+          "mode": "drive"
+        },
+        {
+          "from": "sbs",
+          "to": "den",
+          "mode": "drive"
+        },
+        {
+          "from": "den",
+          "to": "ase",
+          "mode": "drive"
+        },
+        {
+          "from": "ase",
+          "to": "den",
+          "mode": "drive"
+        },
+        {
+          "from": "den",
+          "to": "her"
+        },
+        {
+          "from": "her",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "phx"
+        },
+        {
+          "from": "phx",
+          "to": "sgu"
+        },
+        {
+          "from": "sgu",
+          "to": "den"
+        },
+        {
+          "from": "den",
+          "to": "ssm",
+          "mode": "drive"
+        },
+        {
+          "from": "ssm",
+          "to": "den",
           "mode": "drive"
         }
       ]
