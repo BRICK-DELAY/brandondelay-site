@@ -32,19 +32,27 @@
               ]
             },
             {
-              "name": "Main",
+              "name": "Main: 3 back + 2 biceps",
               "items": [
                 {
-                  "exercise": "Chest-supported dumbbell row on incline bench",
-                  "detail": "3 x 8-10 @ a comfortable weight per hand, rest 90 sec; neutral grip, keep chest on bench"
+                  "exercise": "Back 1 - Chest-supported dumbbell row",
+                  "detail": "3 x 8-10, rest 75 sec. Lie chest-down on a low-incline bench, feet planted. With palms facing each other, pull elbows toward hips without lifting your chest. Choose a comfortable weight per hand; leave 3 clean reps."
                 },
                 {
-                  "exercise": "Half-kneeling single-arm cable pulldown",
-                  "detail": "3 x 10 / side @ light-to-moderate resistance, rest 60 sec after both sides; single handle at high pulley, elbow toward ribs, no shrugging"
+                  "exercise": "Back 2 - Chest-supported dumbbell reverse fly",
+                  "detail": "2 x 12, rest 60 sec. Stay chest-down on bench. Start very light, 5 lb per hand or no weight if needed. Keep elbows softly bent, raise arms out to sides only within pain-free range, then lower slowly. Do not shrug or force arms above shoulder height."
                 },
                 {
-                  "exercise": "Standing single-arm cable curl",
-                  "detail": "2 x 10-12 / side @ light-to-moderate resistance, rest 60 sec after both sides; lower pulley once after pulldowns, elbows still"
+                  "exercise": "Biceps 1 - Seated dumbbell hammer curl",
+                  "detail": "2 x 10-12, rest 60 sec. Sit on bench, palms facing each other, elbows beside ribs. Curl without rocking, lower for 2 sec. Choose a light weight per hand and leave 3 clean reps."
+                },
+                {
+                  "exercise": "Back 3 - Half-kneeling single-arm cable pulldown",
+                  "detail": "2 x 10 / side, rest 60 sec after both sides. Use a single handle on a high pulley. Kneel on one knee facing the cable, use padding if needed; pull elbow down toward ribs without leaning or shrugging. Light-to-moderate resistance, 3 clean reps left."
+                },
+                {
+                  "exercise": "Biceps 2 - Standing single-arm cable curl",
+                  "detail": "2 x 10-12 / side, rest 60 sec after both sides. Lower pulley once after pulldowns; use single handle, palm facing up, elbow beside ribs. Curl without swinging or moving upper arm; lower slowly. Light-to-moderate resistance, 3 clean reps left."
                 }
               ]
             },
@@ -53,11 +61,7 @@
               "items": [
                 {
                   "exercise": "Single-leg balance beside rack",
-                  "detail": "2 x 30 sec / side @ bodyweight, rest 20 sec; fingertip support as needed, soft knee, level hips, eyes open"
-                },
-                {
-                  "exercise": "Supported standing calf raise",
-                  "detail": "2 x 12 @ bodyweight, rest 45 sec; both feet, lower for 3 sec, no bouncing"
+                  "detail": "1 x 30 sec / side @ bodyweight, rest 15 sec; stand beside rack with fingertip support as needed, soft knee, level hips, eyes open"
                 }
               ]
             },
@@ -65,17 +69,17 @@
               "name": "Cooldown",
               "items": [
                 {
-                  "exercise": "Gentle standing lat stretch",
-                  "detail": "20 sec / side, pain-free range"
+                  "exercise": "Supported lat stretch",
+                  "detail": "Hold 20-30 sec, repeat once. Face the bench and place both palms on it. Step back, soften knees, then push hips back while keeping your back long and letting your chest sink slightly between your arms. Feel a gentle stretch along the sides of your upper back, not a pinch in your shoulders. Breathe normally; use less reach or skip if uncomfortable."
                 },
                 {
-                  "exercise": "Gentle biceps stretch with arm low",
-                  "detail": "20 sec / side, no forcing shoulder backward"
+                  "exercise": "Gentle forearm and biceps stretch",
+                  "detail": "Hold 20 sec / side, repeat once. Stand tall and reach one arm forward below shoulder height, palm up, elbow softly bent. With the other hand, gently guide the fingers downward and back toward you. Feel a mild stretch along the palm-side forearm, possibly toward the biceps. Keep the shoulder relaxed; do not lock the elbow or pull hard. No pain, tingling or numbness."
                 }
               ]
             }
           ],
-          "notes": "About 35-40 minutes. Choose light working weights that leave at least 3 clean reps in reserve. No grinding or failure. Stop any movement that causes shoulder or joint pain. Finish bench/dumbbell work before moving to cables. No barbell setup today.",
+          "notes": "About 40-45 minutes including warm-up and cooldown. Main: 3 back exercises and 2 biceps exercises. Follow the listed order to finish dumbbells/bench before cables. Use weights that leave at least 3 clean reps in reserve; stop any movement that causes joint pain. No cardio or barbell setup today.",
           "date": "2026-10-19",
           "title": "Back and bis",
           "generated_by": "Instinct",
@@ -115,19 +119,27 @@
               ]
             },
             {
-              "name": "Main",
+              "name": "Main: 3 back + 2 biceps",
               "items": [
                 {
-                  "exercise": "Chest-supported dumbbell row on incline bench",
-                  "detail": "3 x 8-10 @ a comfortable weight per hand, rest 90 sec; neutral grip, keep chest on bench"
+                  "exercise": "Back 1 - Chest-supported dumbbell row",
+                  "detail": "3 x 8-10, rest 75 sec. Lie chest-down on a low-incline bench, feet planted. With palms facing each other, pull elbows toward hips without lifting your chest. Choose a comfortable weight per hand; leave 3 clean reps."
                 },
                 {
-                  "exercise": "Half-kneeling single-arm cable pulldown",
-                  "detail": "3 x 10 / side @ light-to-moderate resistance, rest 60 sec after both sides; single handle at high pulley, elbow toward ribs, no shrugging"
+                  "exercise": "Back 2 - Chest-supported dumbbell reverse fly",
+                  "detail": "2 x 12, rest 60 sec. Stay chest-down on bench. Start very light, 5 lb per hand or no weight if needed. Keep elbows softly bent, raise arms out to sides only within pain-free range, then lower slowly. Do not shrug or force arms above shoulder height."
                 },
                 {
-                  "exercise": "Standing single-arm cable curl",
-                  "detail": "2 x 10-12 / side @ light-to-moderate resistance, rest 60 sec after both sides; lower pulley once after pulldowns, elbows still"
+                  "exercise": "Biceps 1 - Seated dumbbell hammer curl",
+                  "detail": "2 x 10-12, rest 60 sec. Sit on bench, palms facing each other, elbows beside ribs. Curl without rocking, lower for 2 sec. Choose a light weight per hand and leave 3 clean reps."
+                },
+                {
+                  "exercise": "Back 3 - Half-kneeling single-arm cable pulldown",
+                  "detail": "2 x 10 / side, rest 60 sec after both sides. Use a single handle on a high pulley. Kneel on one knee facing the cable, use padding if needed; pull elbow down toward ribs without leaning or shrugging. Light-to-moderate resistance, 3 clean reps left."
+                },
+                {
+                  "exercise": "Biceps 2 - Standing single-arm cable curl",
+                  "detail": "2 x 10-12 / side, rest 60 sec after both sides. Lower pulley once after pulldowns; use single handle, palm facing up, elbow beside ribs. Curl without swinging or moving upper arm; lower slowly. Light-to-moderate resistance, 3 clean reps left."
                 }
               ]
             },
@@ -136,11 +148,11 @@
               "items": [
                 {
                   "exercise": "Floor bridge",
-                  "detail": "2 x 12 @ bodyweight, rest 45 sec; pause 2 sec at top, ribs down, do not arch lower back"
+                  "detail": "1 x 12 @ bodyweight; lie on back, knees bent and feet flat. Lift hips while keeping ribs down, pause 2 sec, lower slowly. Do not arch your lower back."
                 },
                 {
                   "exercise": "Single-leg balance beside rack",
-                  "detail": "2 x 30 sec / side @ bodyweight, rest 20 sec; fingertip support as needed, soft knee, level hips, eyes open"
+                  "detail": "1 x 30 sec / side @ bodyweight, rest 15 sec; stand beside rack with fingertip support as needed, soft knee, level hips, eyes open"
                 }
               ]
             },
@@ -148,17 +160,17 @@
               "name": "Cooldown",
               "items": [
                 {
-                  "exercise": "Gentle standing lat stretch",
-                  "detail": "20 sec / side, pain-free range"
+                  "exercise": "Supported lat stretch",
+                  "detail": "Hold 20-30 sec, repeat once. Face the bench and place both palms on it. Step back, soften knees, then push hips back while keeping your back long and letting your chest sink slightly between your arms. Feel a gentle stretch along the sides of your upper back, not a pinch in your shoulders. Breathe normally; use less reach or skip if uncomfortable."
                 },
                 {
-                  "exercise": "Gentle biceps stretch with arm low",
-                  "detail": "20 sec / side, no forcing shoulder backward"
+                  "exercise": "Gentle forearm and biceps stretch",
+                  "detail": "Hold 20 sec / side, repeat once. Stand tall and reach one arm forward below shoulder height, palm up, elbow softly bent. With the other hand, gently guide the fingers downward and back toward you. Feel a mild stretch along the palm-side forearm, possibly toward the biceps. Keep the shoulder relaxed; do not lock the elbow or pull hard. No pain, tingling or numbness."
                 }
               ]
             }
           ],
-          "notes": "About 35-40 minutes. Choose light working weights that leave at least 3 clean reps in reserve. No grinding or failure. Stop any movement that causes shoulder or joint pain. Finish bench/dumbbell work before moving to cables. No barbell setup today.",
+          "notes": "About 40-45 minutes including warm-up and cooldown. Main: 3 back exercises and 2 biceps exercises. Follow the listed order to finish dumbbells/bench before cables. Use weights that leave at least 3 clean reps in reserve; stop any movement that causes joint pain. No cardio or barbell setup today.",
           "date": "2026-10-19",
           "title": "Back and bis",
           "generated_by": "Instinct",
