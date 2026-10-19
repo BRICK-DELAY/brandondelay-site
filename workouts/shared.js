@@ -207,6 +207,19 @@ window.Workouts = (function () {
     return { ...all, years };
   }
 
+  // Days in a row with a finished workout. The current streak counts back from
+  // today, or from yesterday if today's workout isn't done yet (it's still alive).
+  function streak(person, todayKey) {
+    const shift = (key, n) => { const d = new Date(key + "T12:00"); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+    const days = [...new Set(finished(person).map((h) => h.date))].sort();
+    let best = 0, run = 0, prev = null;
+    days.forEach((k) => { run = prev && shift(prev, 1) === k ? run + 1 : 1; best = Math.max(best, run); prev = k; });
+    const have = new Set(days);
+    let day = have.has(todayKey) ? todayKey : shift(todayKey, -1), current = 0;
+    while (have.has(day)) { current++; day = shift(day, -1); }
+    return { current, best };
+  }
+
   // date ("YYYY-MM-DD") -> titles of workouts finished that day.
   function doneDays(person) {
     const seen = new Set(), days = new Map();
@@ -221,5 +234,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();
