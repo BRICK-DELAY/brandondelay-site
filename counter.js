@@ -20,8 +20,13 @@ window.VisitCounter = (function () {
   s.dataset.goatcounter = `${ENDPOINT}/count`;
   document.head.appendChild(s);
 
-  // Total visitors across the whole site.
-  const total = fetch(`${ENDPOINT}/counter/TOTAL.json`, { cache: "no-store" })
+  // Total visitors across the whole site. GoatCounter keeps each counter number
+  // for 4+ hours before recalculating, but stores it separately per "start" date.
+  // So ask with a start date that changes every 10 minutes, always years before
+  // the site existed: the count is the same all-time total, at most 10 minutes old.
+  const bucket = Math.floor(Date.now() / 600000) % 1800;
+  const start = new Date(Date.UTC(2015, 0, 1 + bucket)).toISOString().slice(0, 10);
+  const total = fetch(`${ENDPOINT}/counter/TOTAL.json?start=${start}`, { cache: "no-store" })
     .then((r) => (r.ok ? r.json() : null))
     .then((j) => {
       const n = j && Number(String(j.count).replace(/[^\d]/g, ""));
