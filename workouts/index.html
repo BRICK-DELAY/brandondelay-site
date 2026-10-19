@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Today's Workout</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317181a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23d9b77e' text-anchor='middle'%3EBD%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121314; --bg-raised: #1b1c1e; --line: #2a2b2e;
+      --text: #efe9df; --muted: #a39e95; --accent: #d9b77e;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+    main { max-width: 760px; margin: 0 auto; padding: clamp(28px, 6vw, 64px) 16px calc(64px + env(safe-area-inset-bottom)); }
+    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 9vw, 64px); line-height: 1.02; margin: 8px 0 12px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+    .chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--muted); }
+    .chip b { color: var(--text); font-weight: 600; }
+    .notes { color: #d8d2c8; margin: 16px 0 0; white-space: pre-line; }
+    .stale { margin: 0 0 20px; padding: 12px 14px; border: 1px solid rgba(217,183,126,.4); border-radius: 12px; color: var(--accent); font-size: 14px; }
+    .progress { height: 4px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 24px 0 4px; }
+    .progress div { height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+    .progress-label { font-size: 12px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+    section { margin-top: 32px; }
+    h2 { font-family: var(--serif); font-weight: 600; font-size: 28px; margin: 0 0 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    h2 span { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .sec-note { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+    .item {
+      display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+      padding: 14px 0; border-top: 1px solid var(--line); cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .item:last-child { border-bottom: 1px solid var(--line); }
+    .box { width: 24px; height: 24px; border-radius: 7px; border: 1.5px solid #4a4b4f; display: grid; place-items: center; margin-top: 1px; transition: background .15s, border-color .15s; }
+    .box svg { opacity: 0; transition: opacity .15s; }
+    .item.done .box { background: var(--accent); border-color: var(--accent); }
+    .item.done .box svg { opacity: 1; }
+    .item.done .name, .item.done .spec { opacity: .45; }
+    .item.done .name { text-decoration: line-through; text-decoration-color: rgba(239,233,223,.4); }
+    .name { font-weight: 600; font-size: 17px; }
+    .spec { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 2px; color: var(--muted); font-size: 14px; }
+    .spec .main { color: var(--accent); font-weight: 600; }
+    .inote { margin-top: 4px; font-size: 14px; color: #c9c3b9; }
+    .md h1, .md h2, .md h3 { font-family: var(--serif); font-weight: 600; }
+    .md ul { padding-left: 20px; } .md li { margin: 4px 0; }
+    .empty { margin-top: 18vh; text-align: center; color: var(--muted); }
+    .empty h1 { color: var(--text); }
+    footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+    footer button { background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
+  </style>
+</head>
+<body>
+  <main id="app"><p class="empty">Loading today's workout…</p></main>
+
+  <script>
+    // Today's workout, written each morning by an AI agent to workouts/today.json
+    // (format: workouts/FORMAT.md). Tap an exercise to check it off; checks are
+    // remembered on this device for that day.
+    (function () {
+      "use strict";
+      const app = document.getElementById("app");
+      const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const pad = (n) => String(n).padStart(2, "0");
+      const now = new Date();
+      const todayKey = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+      const prettyDate = (key) => {
+        const [y, m, d] = String(key).split("-").map(Number);
+        return new Date(y, m - 1, d).toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+      };
+
+      // Tiny Markdown for agents that send plain text: # headings, - bullets, **bold**.
+      function markdown(text) {
+        const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+        let html = "", inList = false;
+        String(text).split(/\r?\n/).forEach((line) => {
+          const t = line.trim();
+          if (/^[-*•]\s+/.test(t)) {
+            if (!inList) { html += "<ul>"; inList = true; }
+            html += `<li>${inline(t.replace(/^[-*•]\s+/, ""))}</li>`;
+            return;
+          }
+          if (inList) { html += "</ul>"; inList = false; }
+          const h = /^(#{1,3})\s+(.*)$/.exec(t);
+          if (h) html += `<h${h[1].length + 1}>${inline(h[2])}</h${h[1].length + 1}>`;
+          else if (t) html += `<p>${inline(t)}</p>`;
+        });
+        return html + (inList ? "</ul>" : "");
+      }
+
+      function render(w) {
+        const date = w.date || todayKey;
+        const doneKey = `workout-done-${date}`;
+        let done = {};
+        try { done = JSON.parse(localStorage.getItem(doneKey)) || {}; } catch (e) { done = {}; }
+
+        const chips = [];
+        if (w.focus) chips.push(`<span class="chip">${esc(w.focus)}</span>`);
+        if (w.duration_min) chips.push(`<span class="chip"><b>${esc(w.duration_min)}</b> min</span>`);
+        if (w.location) chips.push(`<span class="chip">${esc(w.location)}</span>`);
+        if (w.intensity) chips.push(`<span class="chip">${esc(w.intensity)}</span>`);
+
+        let total = 0;
+        const sections = (w.sections || []).map((sec, si) => {
+          const items = (sec.items || []).map((it, ii) => {
+            const id = `${si}-${ii}`;
+            total++;
+            const sets = it.sets && it.reps ? `${it.sets} × ${it.reps}` : it.sets ? `${it.sets} sets` : it.reps ? esc(it.reps) : "";
+            const spec = [
+              sets ? `<span class="main">${esc(sets)}</span>` : "",
+              it.duration ? `<span class="main">${esc(it.duration)}</span>` : "",
+              it.distance ? `<span class="main">${esc(it.distance)}</span>` : "",
+              it.weight ? `<span>${esc(it.weight)}</span>` : "",
+              it.tempo ? `<span>Tempo ${esc(it.tempo)}</span>` : "",
+              it.rest ? `<span>Rest ${esc(it.rest)}</span>` : "",
+              it.detail ? `<span>${esc(it.detail)}</span>` : "",
+            ].filter(Boolean).join("");
+            return `<div class="item${done[id] ? " done" : ""}" data-id="${id}" role="checkbox" aria-checked="${!!done[id]}" tabindex="0">
+              <div class="box"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#121314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="name">${esc(it.exercise || it.name || "")}</div>${spec ? `<div class="spec">${spec}</div>` : ""}${it.notes ? `<div class="inote">${esc(it.notes)}</div>` : ""}</div>
+            </div>`;
+          }).join("");
+          return `<section>
+            <h2>${esc(sec.name || "")}${sec.rounds ? `<span>${esc(sec.rounds)} rounds</span>` : ""}</h2>
+            ${sec.notes ? `<p class="sec-note">${esc(sec.notes)}</p>` : ""}
+            ${items}
+          </section>`;
+        }).join("");
+
+        app.innerHTML = `
+          ${date !== todayKey ? `<p class="stale">Today's workout isn't posted yet. This is the one from ${esc(prettyDate(date))}.</p>` : ""}
+          <div class="eyebrow">${esc(prettyDate(date))}</div>
+          <h1>${esc(w.title || "Today's workout")}</h1>
+          ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
+          ${w.notes ? `<p class="notes">${esc(w.notes)}</p>` : ""}
+          ${total ? `<div class="progress"><div id="bar"></div></div><div class="progress-label" id="count"></div>` : ""}
+          ${sections}
+          ${w.markdown ? `<div class="md">${markdown(w.markdown)}</div>` : ""}
+          ${w.cooldown ? `<p class="notes">${esc(w.cooldown)}</p>` : ""}
+          <footer>${w.generated_by ? `Made by ${esc(w.generated_by)} · ` : ""}<button type="button" id="reset">Clear checkmarks</button></footer>`;
+
+        const update = () => {
+          const n = Object.values(done).filter(Boolean).length;
+          const bar = document.getElementById("bar"), count = document.getElementById("count");
+          if (bar) bar.style.width = (total ? (n / total) * 100 : 0) + "%";
+          if (count) count.textContent = n === total ? "All done — nice work" : `${n} of ${total} done`;
+        };
+        const save = () => { try { localStorage.setItem(doneKey, JSON.stringify(done)); } catch (e) { /* private mode */ } };
+        app.querySelectorAll(".item").forEach((el) => {
+          const toggle = () => {
+            done[el.dataset.id] = !done[el.dataset.id];
+            el.classList.toggle("done", done[el.dataset.id]);
+            el.setAttribute("aria-checked", String(done[el.dataset.id]));
+            save(); update();
+          };
+          el.addEventListener("click", toggle);
+          el.addEventListener("keydown", (e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); } });
+        });
+        document.getElementById("reset").addEventListener("click", () => {
+          done = {}; save();
+          app.querySelectorAll(".item.done").forEach((el) => { el.classList.remove("done"); el.setAttribute("aria-checked", "false"); });
+          update();
+        });
+        update();
+        document.title = `${w.title || "Workout"} · ${prettyDate(date)}`;
+      }
+
+      fetch("today.json?t=" + Date.now(), { cache: "no-store" })
+        .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(render)
+        .catch(() => {
+          app.innerHTML = `<div class="empty"><div class="eyebrow">${esc(prettyDate(todayKey))}</div><h1>No workout yet</h1><p>Check back after your morning plan is posted.</p></div>`;
+        });
+    })();
+  </script>
+</body>
+</html>

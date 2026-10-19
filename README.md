@@ -27,6 +27,7 @@ The first time you use the admin page on a device, it asks for a GitHub "key". T
 - `data/photos.json`: the list of trips and photos. The admin page keeps it up to date.
 - `data/site.json`: your name, headline, About text and links.
 - `photos/<year>/` (full size, 2048px) and `thumbs/<year>/` (720px): the photos. They're shrunk in your browser before uploading, so the site stays fast.
+- `workouts/`: an unlinked, not-indexed page at /workouts that shows the day's workout from `workouts/today.json`. An AI agent replaces that file each morning, using the form at /workouts/post or the GitHub API. The format is in `workouts/FORMAT.md`.
 - `admin/`: the uploader. It saves straight to this GitHub repository using your key.
 - `vendor/`: small open-source libraries. [exifr](https://github.com/MikeKovarik/exifr) reads photo dates and locations, and [heic2any](https://github.com/alexcorvi/heic2any) opens iPhone HEIC photos on computers that can't.
 
