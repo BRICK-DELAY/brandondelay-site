@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>Post today's workout</title>
+  <title>Post a workout</title>
   <style>
     :root { --bg: #121314; --panel: #1b1c1e; --line: #2f3034; --text: #efe9df; --muted: #a39e95; --accent: #d9b77e; --danger: #e57a6e; --ok: #8fc79a; }
     * { box-sizing: border-box; }
@@ -14,145 +14,119 @@
     p { margin: 0 0 12px; }
     .muted { color: var(--muted); font-size: 14px; }
     label { display: block; margin: 16px 0 6px; font-size: 14px; color: var(--muted); }
-    input, textarea { width: 100%; padding: 12px 14px; background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 16px; }
-    textarea { min-height: 340px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; line-height: 1.5; }
+    input[type=text], input[type=date], input[type=password], textarea { width: 100%; padding: 12px 14px; background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 16px; }
+    textarea { min-height: 320px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; line-height: 1.5; }
     input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
     .row { display: flex; gap: 12px; flex-wrap: wrap; } .row > * { flex: 1 1 200px; }
-    button { margin-top: 20px; width: 100%; padding: 16px; border: 0; border-radius: 999px; background: var(--accent); color: #1a1408; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; }
-    button[disabled] { opacity: .5; cursor: wait; }
-    #status { margin-top: 16px; font-weight: 600; }
-    #status.ok { color: var(--ok); } #status.err { color: var(--danger); }
-    details { margin-top: 12px; } summary { cursor: pointer; color: var(--accent); font-size: 14px; }
+    .people { display: flex; gap: 10px; }
+    .people label { flex: 1; margin: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); font-size: 16px; cursor: pointer; display: flex; gap: 10px; align-items: center; }
+    .people label:has(input:checked) { border-color: var(--accent); background: rgba(217,183,126,.08); }
+    button.primary { margin-top: 20px; width: 100%; padding: 16px; border: 0; border-radius: 999px; background: var(--accent); color: #1a1408; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; }
+    button.primary[disabled] { opacity: .5; cursor: wait; }
+    #status { margin-top: 16px; font-weight: 600; white-space: pre-line; }
+    #status.ok { color: var(--ok); } #status.err { color: var(--danger); } #status.warn { color: var(--accent); }
+    .panel { margin: 18px 0 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; font-size: 14px; }
+    .panel b { color: var(--text); }
     code { background: var(--panel); padding: 1px 6px; border-radius: 4px; }
+    a { color: var(--accent); }
   </style>
 </head>
 <body>
   <main>
-    <h1>Post today's workout</h1>
-    <p class="muted">Write or paste the workout and press <b>Save workout</b>. It shows at <a href="../" style="color:var(--accent)">brandondelay.com/workouts</a> about a minute later and replaces the previous one.</p>
+    <h1>Post a workout</h1>
+    <p class="muted">Adds a workout for Brandon or Cecelia. Each person sees their oldest unfinished workout at <a href="../">brandondelay.com/workouts</a> until they mark it complete, so a missed day isn't skipped. A person can have at most <span id="max">2</span> unfinished workouts waiting; extra posts are turned away.</p>
+
+    <div class="panel" id="statusPanel"><span class="muted">Current status loads here.</span></div>
 
     <form id="form" autocomplete="off">
+      <label>Who is this workout for?</label>
+      <div class="people" id="people"></div>
+
       <div class="row">
-        <div><label for="date">Date</label><input id="date" name="date" type="date" required></div>
-        <div><label for="title">Title</label><input id="title" name="title" type="text" placeholder="e.g. Upper body strength" required></div>
+        <div><label for="date">Date</label><input id="date" type="date" required></div>
+        <div><label for="title">Title</label><input id="title" type="text" placeholder="e.g. Legs: squat focus" required></div>
       </div>
 
       <label for="workout">Workout (plain text is fine)</label>
-      <textarea id="workout" name="workout" required placeholder="## Warm-up
-- Rowing machine, 5 min easy
-- Arm circles, 20
+      <textarea id="workout" required placeholder="Optional note about the day.
+
+## Warm-up
+- Bike: 5 min easy
+- Leg swings: 10 / side
 
 ## Strength
-- Bench press: 4 x 8 @ 155 lb, rest 2 min
-- Pull-ups: 4 x max
+- Back squat: 5 x 5 @ 225 lb, rest 3 min
+- Romanian deadlift: 3 x 8
 
 ## Cooldown
-- Stretch 5 min"></textarea>
-      <p class="muted" style="margin-top:6px">Use <code>## Heading</code> for sections and <code>- </code> for each exercise; each <code>- </code> line becomes a checkbox. You can also paste the full JSON format from FORMAT.md.</p>
+- Couch stretch: 2 min / side"></textarea>
+      <p class="muted" style="margin-top:6px"><code>## Heading</code> starts a section; each <code>- </code> line is one exercise and becomes a checkbox (<code>- Exercise: sets, reps, weight, rest</code>). You can also paste the JSON format from <a href="../FORMAT.md">FORMAT.md</a>.</p>
 
-      <div id="tokenWrap">
-        <label for="token">GitHub key (only needed the first time on this device)</label>
-        <input id="token" name="token" type="password" placeholder="github_pat_…" autocapitalize="none" spellcheck="false">
+      <div id="keyWrap">
+        <label for="key">GitHub key (only needed the first time on this device)</label>
+        <input id="key" type="password" placeholder="github_pat_…" autocapitalize="none" spellcheck="false">
       </div>
-      <p class="muted" id="tokenSaved" hidden>Using the saved GitHub key on this device. <a href="#" id="forget" style="color:var(--accent)">Forget it</a></p>
+      <p class="muted" id="keySaved" hidden>Using the saved GitHub key on this device. <a href="#" id="forget">Forget it</a></p>
 
-      <button type="submit" id="save">Save workout</button>
+      <button type="submit" class="primary" id="save">Save workout</button>
       <div id="status" role="status" aria-live="polite"></div>
     </form>
   </main>
 
+  <script src="../shared.js"></script>
   <script>
-    // Saves workouts/today.json in the BRICK-DELAY/brandondelay-site repository
-    // through the GitHub API, using a key with "Contents: Read and write".
     (function () {
       "use strict";
-      const REPO = "BRICK-DELAY/brandondelay-site", PATH = "workouts/today.json", BRANCH = "main";
-      const KEY = "workout-poster-token";
-      const $ = (id) => document.getElementById(id);
-      const pad = (n) => String(n).padStart(2, "0");
-      const d = new Date();
-      $("date").value = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+      const W = window.Workouts, esc = W.esc, $ = (id) => document.getElementById(id);
+      $("max").textContent = W.MAX_PENDING;
+      $("date").value = W.today();
+      $("people").innerHTML = Object.entries(W.PEOPLE).map(([id, name], i) =>
+        `<label><input type="radio" name="who" value="${id}"${i === 0 ? " checked" : ""}> ${esc(name)}</label>`).join("");
 
-      let saved = "";
-      try { saved = localStorage.getItem(KEY) || ""; } catch (e) { saved = ""; }
-      const showToken = () => { $("tokenWrap").hidden = !!saved; $("tokenSaved").hidden = !saved; };
-      showToken();
-      $("forget").addEventListener("click", (e) => { e.preventDefault(); saved = ""; try { localStorage.removeItem(KEY); } catch (er) { /* ignore */ } showToken(); });
+      const showKey = () => { const k = W.getKey(); $("keyWrap").hidden = !!k; $("keySaved").hidden = !k; };
+      showKey();
+      $("forget").addEventListener("click", (e) => { e.preventDefault(); W.setKey(""); showKey(); });
 
-      // Plain text -> the page's structured format: "## Section" headings and "- item" lines.
-      function toWorkout(date, title, text) {
-        const t = text.trim();
-        if (t.startsWith("{")) {
-          const j = JSON.parse(t);
-          return { ...j, date: j.date || date, title: j.title || title };
-        }
-        const sections = [];
-        let cur = null, notes = [];
-        t.split(/\r?\n/).forEach((line) => {
-          const s = line.trim();
-          if (!s) return;
-          const h = /^#{1,3}\s+(.*)$/.exec(s) || /^([A-Za-z][^:]{0,40}):$/.exec(s);
-          if (h) { cur = { name: h[1].trim(), items: [] }; sections.push(cur); return; }
-          const b = /^(?:[-*•]|\d+[.)])\s+(.*)$/.exec(s);
-          if (b) {
-            if (!cur) { cur = { name: "Workout", items: [] }; sections.push(cur); }
-            const parts = b[1].split(/\s+[—–-]\s+|:\s+/);
-            cur.items.push(parts.length > 1 ? { exercise: parts[0].trim(), detail: parts.slice(1).join(" · ").trim() } : { exercise: b[1].trim() });
-            return;
-          }
-          if (cur && cur.items.length) cur.items[cur.items.length - 1].notes = ((cur.items[cur.items.length - 1].notes || "") + " " + s).trim();
-          else if (cur) cur.notes = ((cur.notes || "") + " " + s).trim();
-          else notes.push(s);
-        });
-        const out = { date, title, sections, generated_by: "Instinct" };
-        if (notes.length) out.notes = notes.join("\n");
-        if (!sections.length) { delete out.sections; out.markdown = t; }
-        return out;
+      function showStatus(plan) {
+        $("statusPanel").innerHTML = Object.entries(W.PEOPLE).map(([id, name]) => {
+          const p = plan.people[id], waiting = W.pending(p);
+          const last = [...p.queue].reverse().find((x) => x.completed);
+          const state = waiting.length
+            ? `${waiting.length} unfinished: ${waiting.map((w) => `${esc(w.title)} (posted ${esc(w.date)})`).join("; ")}`
+            : "nothing waiting";
+          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.</div>`;
+        }).join("");
       }
-
-      const b64 = (str) => btoa(String.fromCharCode(...new TextEncoder().encode(str)));
-
-      async function gh(method, url, token, body) {
-        const res = await fetch("https://api.github.com/repos/" + REPO + url, {
-          method,
-          headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", ...(body ? { "Content-Type": "application/json" } : {}) },
-          body: body ? JSON.stringify(body) : undefined,
-          cache: "no-store",
-        });
-        if (res.status === 404 && method === "GET") return null;
-        if (!res.ok) {
-          let msg = ""; try { msg = (await res.json()).message || ""; } catch (e) { /* ignore */ }
-          if (res.status === 401) throw new Error("GitHub didn't accept the key. It may have expired. Click 'Forget it' and paste a new one.");
-          if (res.status === 403 || res.status === 404) throw new Error("This key can't save to the site. It needs 'Contents: Read and write' on brandondelay-site.");
-          throw new Error(`GitHub error ${res.status}${msg ? ": " + msg : ""}`);
-        }
-        return res.json();
-      }
+      W.loadPublic().then(showStatus).catch(() => {});
 
       $("form").addEventListener("submit", async (e) => {
         e.preventDefault();
-        const status = $("status");
-        status.className = ""; status.textContent = "";
-        const token = saved || $("token").value.trim();
-        if (!token) { status.className = "err"; status.textContent = "Paste the GitHub key first."; return; }
-        let workout;
-        try { workout = toWorkout($("date").value, $("title").value.trim(), $("workout").value); }
-        catch (er) { status.className = "err"; status.textContent = "That JSON couldn't be read: " + er.message; return; }
+        const st = $("status");
+        st.className = ""; st.textContent = "";
+        const key = W.getKey() || $("key").value.trim();
+        if (!key) { st.className = "err"; st.textContent = "Paste the GitHub key first."; return; }
+        const who = document.querySelector("input[name=who]:checked").value;
+        let body;
+        try { body = W.fromText($("workout").value); }
+        catch (er) { st.className = "err"; st.textContent = "That JSON couldn't be read: " + er.message; return; }
+        const workout = { ...body, date: body.date || $("date").value, title: body.title || $("title").value.trim(), generated_by: body.generated_by || "Instinct" };
         $("save").disabled = true; $("save").textContent = "Saving…";
         try {
-          const content = JSON.stringify(workout, null, 2) + "\n";
-          for (let attempt = 0; attempt < 2; attempt++) {
-            const current = await gh("GET", `/contents/${PATH}?ref=${BRANCH}`, token);
-            try {
-              await gh("PUT", `/contents/${PATH}`, token, { message: `Workout for ${workout.date}`, content: b64(content), branch: BRANCH, ...(current ? { sha: current.sha } : {}) });
-              break;
-            } catch (er) { if (attempt === 1 || !/409|sha/i.test(er.message)) throw er; }
+          const out = await W.addWorkout(key, who, workout);
+          W.setKey(key); showKey();
+          showStatus(out.plan);
+          const name = W.PEOPLE[who];
+          if (out.reason === "full") {
+            st.className = "warn";
+            st.textContent = `Not posted: ${name} already has ${out.waiting.length} unfinished workouts waiting (${out.waiting.map((w) => w.title).join(", ")}). Post again after one is marked complete.`;
+          } else {
+            st.className = "ok";
+            st.textContent = `Saved for ${name}. It shows at brandondelay.com/workouts in about a minute` +
+              (out.waiting.length > 1 ? ` (after ${out.waiting.length - 1} unfinished workout${out.waiting.length > 2 ? "s" : ""}).` : ".");
           }
-          if (!saved) { saved = token; try { localStorage.setItem(KEY, token); } catch (er) { /* ignore */ } showToken(); }
-          status.className = "ok";
-          status.textContent = `Saved. The workout for ${workout.date} will show at brandondelay.com/workouts in about a minute.`;
         } catch (er) {
-          status.className = "err"; status.textContent = er.message;
+          st.className = "err"; st.textContent = er.message;
+          if (/key/i.test(er.message)) { W.setKey(""); showKey(); }
         } finally {
           $("save").disabled = false; $("save").textContent = "Save workout";
         }

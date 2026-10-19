@@ -1,67 +1,83 @@
-# Daily workout: instructions for the AI agent
+# Daily workouts: instructions for the AI agent
 
-Each morning, write today's workout to **`workouts/today.json`** in the GitHub
-repository **BRICK-DELAY/brandondelay-site** (branch `main`), replacing what's
-there. It appears at **https://www.brandondelay.com/workouts** about a minute
-after it's saved. Older workouts stay in the repository's history.
+Brandon and Cecelia each have a short queue of workouts at
+**https://www.brandondelay.com/workouts** (`#brandon` / `#cecelia`). Each of them
+sees their **oldest unfinished** workout until they press **Mark workout complete**,
+so a missed day is never skipped: that workout simply waits.
 
-## Easiest: the posting page
+A person can have at most **2 unfinished** workouts queued. Extra posts are refused
+(nothing is saved) with a message saying so. That's expected; just try again the next day.
 
-Open **https://www.brandondelay.com/workouts/post**, set the date and title,
-paste the workout as plain text, and press **Save workout**. Use `## Heading`
-lines for sections and one `- ` line per exercise (e.g. `- Back squat: 5 x 5 @ 225 lb, rest 3 min`).
-The first time on a device it asks for a GitHub key (Contents: read and write on
-this repository) and remembers it after that.
+## Every morning
 
-## The file
+1. Open **https://www.brandondelay.com/workouts/post** and read the **status box** at the top.
+   It lists each person's unfinished workouts and the last one they finished.
+2. For **each person** (Brandon, then Cecelia):
+   - **If they have 2 unfinished workouts:** post nothing for them today.
+   - **If they finished yesterday's workout or have none waiting:** post the next workout in their plan.
+   - **If they have 1 unfinished workout** (they missed a day): you may post the following workout as "up next". It appears only after they finish the current one. Don't repeat the missed workout; it's still there.
+3. To post: pick the person, set the **date** (today, America/Denver) and a short **title**
+   (e.g. "Legs: squat focus"), paste the workout as plain text, and press **Save workout**.
+   Confirm the message says **Saved**.
 
-The posting page writes this file for you. Agents that use git or the GitHub API
-can write it directly.
+Plain text format:
+
+```
+Optional note about the day (first lines before any heading).
+
+## Warm-up
+- Bike: 5 min easy
+- Leg swings: 10 / side
+
+## Strength
+- Back squat: 5 x 5 @ 225 lb, rest 3 min
+  Optional note for the exercise on the next line
+- Romanian deadlift: 3 x 8
+
+## Cooldown
+- Couch stretch: 2 min / side
+```
+
+`## Heading` starts a section; each `- ` line is one exercise and becomes a checkbox
+(`- Exercise: sets x reps @ weight, rest`).
+
+The first time on a device, the form asks for a GitHub key and remembers it.
+
+## Structured format (optional)
+
+Instead of plain text you can paste JSON:
 
 ```json
 {
-  "date": "2026-10-19",
   "title": "Upper body strength",
   "focus": "Push / pull",
   "duration_min": 55,
   "location": "Gym",
   "intensity": "Moderate",
-  "notes": "Optional note shown under the title.",
+  "notes": "Note under the title.",
   "sections": [
-    {
-      "name": "Warm-up",
+    { "name": "Main", "rounds": 3, "notes": "Section note.",
       "items": [
-        { "exercise": "Rowing machine", "duration": "5 min", "detail": "easy pace" }
-      ]
-    },
-    {
-      "name": "Main",
-      "rounds": 3,
-      "notes": "Optional note for the section.",
-      "items": [
-        { "exercise": "Bench press", "sets": 4, "reps": "6–8", "weight": "185 lb", "rest": "2 min", "notes": "Last set to near failure" },
-        { "exercise": "Run", "distance": "3 mi", "detail": "Zone 2" }
-      ]
-    }
+        { "exercise": "Bench press", "sets": 4, "reps": "6–8", "weight": "185 lb", "rest": "2 min", "notes": "Last set near failure" },
+        { "exercise": "Run", "distance": "3 mi", "detail": "Zone 2" },
+        { "exercise": "Plank", "duration": "45 sec" }
+      ] }
   ],
-  "cooldown": "Optional closing note.",
-  "generated_by": "Claude"
+  "cooldown": "Closing note."
 }
 ```
 
-- **`date`** (required): today's date as `YYYY-MM-DD`, in Brandon's time zone (America/Denver). If it isn't today's date, the page says today's workout hasn't been posted yet.
-- **`title`** (required): a short name for the day.
-- **`sections`**: list of blocks, each with a `name` and `items`. Each item needs `exercise`. Everything else is optional: `sets`, `reps`, `weight`, `duration`, `distance`, `tempo`, `rest`, `detail`, `notes`. Optional section fields are `rounds` and `notes`.
-- **Optional top-level fields**: `focus`, `duration_min`, `location`, `intensity`, `notes`, `cooldown`, `generated_by`.
-- **`markdown`**: instead of (or as well as) `sections`, you can send free text using `#` headings, `-` bullets and `**bold**`. The structured `sections` look better and let Brandon tick off each exercise.
+## Without the form (git or GitHub API)
 
-## How to save it
+Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/brandondelay-site** (branch `main`):
 
-**With git:** commit `workouts/today.json` to `main` and push. The commit message can be `Workout for YYYY-MM-DD`.
+```json
+{ "people": {
+    "brandon": { "name": "Brandon", "queue": [ { "id": "2026-10-19-legs-x1y2", "date": "2026-10-19", "title": "Legs", "sections": [], "completed": null } ] },
+    "cecelia": { "name": "Cecelia", "queue": [] } } }
+```
 
-**With the GitHub API**, using a fine-grained token that has Contents: read and write on this repository:
-
-1. `GET https://api.github.com/repos/BRICK-DELAY/brandondelay-site/contents/workouts/today.json` and read its `sha`.
-2. `PUT` the same URL with JSON body `{"message": "Workout for YYYY-MM-DD", "content": "<base64 of the file>", "sha": "<sha from step 1>", "branch": "main"}`.
-
-Only change `workouts/today.json`. Nothing else in the repository should be touched.
+- To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.
+- Don't add one if that person already has 2 entries with `"completed": null`.
+- `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
+- Read the file (and its `sha`) right before writing, and change nothing else in the repository.

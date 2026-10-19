@@ -1,0 +1,6 @@
+{
+  "people": {
+    "brandon": { "name": "Brandon", "queue": [] },
+    "cecelia": { "name": "Cecelia", "queue": [] }
+  }
+}
