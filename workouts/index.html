@@ -46,6 +46,8 @@
     .item.done .name, .item.done .spec { opacity: .45; }
     .item.done .name { text-decoration: line-through; text-decoration-color: rgba(239,233,223,.4); }
     .name { font-weight: 600; font-size: 17px; }
+    .name a { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+    .name a::after { content: " \25B6"; font-size: 11px; opacity: .6; }
     .spec { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 2px; color: var(--muted); font-size: 14px; }
     .spec .main { color: var(--accent); font-weight: 600; }
     .inote { margin-top: 4px; font-size: 14px; color: #c9c3b9; }
@@ -149,9 +151,12 @@
               it.rest ? `<span>Rest ${esc(it.rest)}</span>` : "",
               it.detail ? `<span>${esc(it.detail)}</span>` : "",
             ].filter(Boolean).join("");
+            const exName = esc(it.exercise || it.name || "");
+            const exLink = typeof it.url === "string" && /^https:\/\//.test(it.url)
+              ? `<a class="exlink" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${exName}</a>` : exName;
             return `<div class="item${doneMap[id] ? " done" : ""}" data-id="${id}" role="checkbox" aria-checked="${!!doneMap[id]}" tabindex="0">
               <div class="box"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#121314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div><div class="name">${esc(it.exercise || it.name || "")}</div>${spec ? `<div class="spec">${spec}</div>` : ""}${it.notes ? `<div class="inote">${esc(it.notes)}</div>` : ""}</div>
+              <div><div class="name">${exLink}</div>${spec ? `<div class="spec">${spec}</div>` : ""}${it.notes ? `<div class="inote">${esc(it.notes)}</div>` : ""}</div>
             </div>`;
           }).join("");
           return `<section><h2>${esc(sec.name || "")}${sec.rounds ? `<span>${esc(sec.rounds)} rounds</span>` : ""}</h2>${sec.notes ? `<p class="sec-note">${esc(sec.notes)}</p>` : ""}${items}</section>`;
@@ -256,6 +261,10 @@
           };
           el.addEventListener("click", toggle);
           el.addEventListener("keydown", (e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); } });
+        });
+        // Demo-video links open in a new tab without ticking the checkbox.
+        app.querySelectorAll(".item a").forEach((a) => {
+          a.addEventListener("click", (e) => e.stopPropagation());
         });
         document.getElementById("reset").addEventListener("click", () => {
           doneMap = {}; save();

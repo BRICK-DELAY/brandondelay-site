@@ -58,7 +58,7 @@ Instead of plain text you can paste JSON:
   "sections": [
     { "name": "Main", "rounds": 3, "notes": "Section note.",
       "items": [
-        { "exercise": "Bench press", "sets": 4, "reps": "6–8", "weight": "185 lb", "rest": "2 min", "notes": "Last set near failure" },
+        { "exercise": "Bench press", "sets": 4, "reps": "6–8", "weight": "185 lb", "rest": "2 min", "notes": "Last set near failure", "url": "https://www.youtube.com/watch?v=example" },
         { "exercise": "Run", "distance": "3 mi", "detail": "Zone 2" },
         { "exercise": "Plank", "duration": "45 sec" }
       ] }
@@ -66,6 +66,8 @@ Instead of plain text you can paste JSON:
   "cooldown": "Closing note."
 }
 ```
+
+`url` is optional on any item: a short demo video for that exercise. When present, the exercise name becomes a tappable link on the workout page. Links only work through the JSON format (or direct `plan.json` edits); the plain-text format has no link syntax.
 
 ## Without the form (git or GitHub API)
 
