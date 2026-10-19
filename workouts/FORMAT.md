@@ -12,11 +12,17 @@ A person can have at most **2 unfinished** workouts queued. Extra posts are refu
 
 1. Open **https://www.brandondelay.com/workouts/post** and read the **status box** at the top.
    It lists each person's unfinished workouts and the last one they finished.
-2. For **each person** (Brandon, then Cecelia):
+2. Under each name, the status box also lists **how their recent workouts felt**: a rating
+   (**Too easy**, **Just right** or **Too hard**) and sometimes a note they typed (sore spots,
+   swaps, requests). Use it when planning: progress when it's "Too easy", hold steady when
+   "Just right", back off when "Too hard", and follow the notes (e.g. avoid an exercise that hurt).
+3. For **each person** (Brandon, then Cecelia):
    - **If they have 2 unfinished workouts:** post nothing for them today.
    - **If they finished yesterday's workout or have none waiting:** post the next workout in their plan.
    - **If they have 1 unfinished workout** (they missed a day): you may post the following workout as "up next". It appears only after they finish the current one. Don't repeat the missed workout; it's still there.
-3. To post: pick the person, set the **date** (today, America/Denver) and a short **title**
+   - **Rest day in their plan:** post nothing for them. A rest day doesn't break their streak
+     as long as nothing is left waiting, so don't post a placeholder.
+4. To post: pick the person, set the **date** (today, America/Denver) and a short **title**
    (e.g. "Legs: squat focus"), paste the workout as plain text, and press **Save workout**.
    Confirm the message says **Saved**.
 
@@ -93,6 +99,7 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 
 - To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.
 - Don't add one if that person already has 2 entries with `"completed": null`.
-- Each person may also have a `history` list of finished workouts (for the calendar and running totals). Leave it alone.
+- Each person may also have a `history` list of finished workouts (for the calendar, totals and streaks). Leave it alone.
+- A finished workout may have `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`, written by the page. Read it when planning; don't change it.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
 - Read the file (and its `sha`) right before writing, and change nothing else in the repository.

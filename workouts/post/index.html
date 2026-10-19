@@ -73,7 +73,7 @@
     </form>
   </main>
 
-  <script src="../shared.js?v=2"></script>
+  <script src="../shared.js?v=5"></script>
   <script>
     (function () {
       "use strict";
@@ -94,7 +94,11 @@
           const state = waiting.length
             ? `${waiting.length} unfinished: ${waiting.map((w) => `${esc(w.title)} (posted ${esc(w.date)})`).join("; ")}`
             : "nothing waiting";
-          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.</div>`;
+          // How their last few finished workouts felt, newest first, for planning the next one.
+          const felt = (W.finished ? W.finished(p) : []).filter((h) => h.feedback).slice(-3).reverse().map((h) =>
+            `<li>${esc(h.title)} (${esc(h.date)}): ${h.feedback.rating ? `<b>${esc(W.RATINGS[h.feedback.rating])}</b>` : "no rating"}${h.feedback.note ? `. “${esc(h.feedback.note)}”` : ""}</li>`).join("");
+          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.`
+            + `${felt ? `<div class="muted" style="margin-top:4px">How recent workouts felt:</div><ul style="margin:4px 0 10px;padding-left:20px">${felt}</ul>` : ""}</div>`;
         }).join("");
       }
       W.loadPublic().then(showStatus).catch(() => {});

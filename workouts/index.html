@@ -112,6 +112,20 @@
     .row .v b { color: var(--text); font-size: 16px; font-weight: 600; }
     .row.lead .rk, .row.lead .v b { color: var(--accent); }
     .board-note { font-size: 12px; color: var(--muted); margin-top: 8px; text-align: center; }
+    .feel { margin-top: 32px; }
+    .feel-q { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0 0 10px; }
+    .feel-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .feel-opts button { padding: 10px 4px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--text); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .feel-opts button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #1a1408; }
+    .feel textarea { width: 100%; margin-top: 10px; min-height: 76px; padding: 10px 12px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 12px; font: inherit; font-size: 15px; resize: vertical; }
+    .feel textarea::placeholder { color: #77736c; }
+    .feel-hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .donebox .feel { margin: 22px auto 0; max-width: 360px; text-align: left; }
+    .donebox .feel-q { font-size: 20px; text-align: center; }
+    .feel-save { margin-top: 10px; width: 100%; padding: 11px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
+    .feel-save[disabled] { opacity: .5; cursor: wait; }
+    .feel-said { margin-top: 14px; font-size: 14px; color: var(--muted); }
+    .feel-said b { color: var(--accent); font-weight: 600; }
     .keypanel { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
@@ -126,7 +140,7 @@
   </main>
 
   <script src="/counter.js"></script>
-  <script src="shared.js?v=4"></script>
+  <script src="shared.js?v=5"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -233,18 +247,18 @@
         });
       }
 
-      async function saveCompleted(id, done) {
+      async function saveCompleted(id, done, feedback) {
         const btn = document.getElementById("complete") || document.getElementById("undo");
         const key = W.getKey();
-        if (!key) return askKey(() => saveCompleted(id, done));
+        if (!key) return askKey(() => saveCompleted(id, done, feedback));
         if (btn) btn.disabled = true;
         try {
-          const out = await W.setCompleted(key, who, id, done);
+          const out = await W.setCompleted(key, who, id, done, feedback);
           plan = out.plan;
           render(done ? id : null);
         } catch (e) {
           if (btn) btn.disabled = false;
-          if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveCompleted(id, done), e.message); }
+          if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveCompleted(id, done, feedback), e.message); }
           else document.getElementById("keyslot").innerHTML = `<div class="err">${esc(e.message)}</div>`;
         }
       }
@@ -284,6 +298,62 @@
           <div class="tot-sub">All time, since ${esc(prettyDate(t.since, { month: "short", day: "numeric", year: "numeric" }))}</div>
           ${years.length > 1 ? `<div class="tot-years">${years.map(([y, v]) => `<div><b>${y}</b><span>${plural(v.workouts, "workout")} · ${plural(v.reps, "rep")}</span></div>`).join("")}</div>` : ""}
         </div>`;
+      }
+
+      // ---- "How did it feel?": saved with the workout for Instinct to read when planning.
+      const feelStore = (id) => `workout-feel-${id}`;
+      function loadFeel(id) { try { return JSON.parse(localStorage.getItem(feelStore(id))) || {}; } catch (e) { return {}; } }
+      function keepFeel(id, f) { try { localStorage.setItem(feelStore(id), JSON.stringify(f)); } catch (e) { /* ignore */ } }
+      function feelHTML(f, question, withSave) {
+        return `<div class="feel" id="feel">
+          <p class="feel-q">${esc(question)}</p>
+          <div class="feel-opts">${Object.entries(W.RATINGS || {}).map(([k, label]) => `<button type="button" data-r="${k}" aria-pressed="${f.rating === k}">${esc(label)}</button>`).join("")}</div>
+          <textarea id="feelNote" maxlength="500" placeholder="Anything Instinct should know? Sore spots, swaps… (optional)">${esc(f.note || "")}</textarea>
+          ${withSave ? `<button type="button" class="feel-save" id="feelSave">Save for Instinct</button>` : `<div class="feel-hint">Optional. Saved when you mark the workout complete, and Instinct reads it before planning the next one.</div>`}
+        </div>`;
+      }
+      // Wires the rating buttons and note; onChange gets the current { rating, note }.
+      function wireFeel(f, onChange) {
+        const box = document.getElementById("feel");
+        if (!box) return;
+        box.querySelectorAll(".feel-opts button").forEach((b) => b.addEventListener("click", () => {
+          f.rating = f.rating === b.dataset.r ? undefined : b.dataset.r;
+          box.querySelectorAll(".feel-opts button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.r === f.rating)));
+          onChange(f);
+        }));
+        document.getElementById("feelNote").addEventListener("input", (e) => { f.note = e.target.value; onChange(f); });
+      }
+      // On the done screen: what you said about today's workout (or a prompt to say it).
+      const editingFeel = {};
+      function doneFeelHTML(lastDone) {
+        const fb = lastDone.feedback;
+        if (fb && !editingFeel[lastDone.id]) {
+          return `<p class="feel-said">You told Instinct: ${fb.rating ? `<b>${esc(W.RATINGS[fb.rating])}</b>` : ""}${fb.rating && fb.note ? " · " : ""}${fb.note ? `“${esc(fb.note)}”` : ""}
+            <button type="button" class="linkish" id="feelEdit">Change</button></p>`;
+        }
+        return feelHTML(fb ? { ...fb } : loadFeel(lastDone.id), `How did ${lastDone.title || "it"} feel?`, true);
+      }
+      function wireDoneFeel(lastDone) {
+        document.getElementById("feelEdit")?.addEventListener("click", () => { editingFeel[lastDone.id] = true; render(); });
+        const btn = document.getElementById("feelSave");
+        if (!btn) return;
+        const f = lastDone.feedback ? { ...lastDone.feedback } : loadFeel(lastDone.id);
+        wireFeel(f, (x) => keepFeel(lastDone.id, x));
+        const send = async () => {
+          const key = W.getKey();
+          if (!key) return askKey(send);
+          btn.disabled = true; btn.textContent = "Saving…";
+          try {
+            plan = (await W.setFeedback(key, who, lastDone.id, f)).plan;
+            editingFeel[lastDone.id] = false;
+            render();
+          } catch (e) {
+            btn.disabled = false; btn.textContent = "Save for Instinct";
+            if (/key/i.test(e.message)) { W.setKey(""); askKey(send, e.message); }
+            else document.getElementById("keyslot").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+          }
+        };
+        btn.addEventListener("click", send);
       }
 
       // ---- Leaderboard: Brandon vs Cecelia, ranked by workouts (reps break ties, then Cecelia goes first)
@@ -383,6 +453,7 @@
             <div class="donebox">
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
+              ${finishedToday && W.setFeedback ? doneFeelHTML(lastDone) : ""}
               ${totalsHTML(person)}
               ${leaderboardHTML()}
               ${calendarHTML(person)}
@@ -392,6 +463,7 @@
           if (window.VisitCounter) VisitCounter.fill(app);
           wireCalendar();
           wireBoard();
+          if (finishedToday && W.setFeedback) wireDoneFeel(lastDone);
           document.getElementById("undo")?.addEventListener("click", () => saveCompleted(lastDone.id, false));
           document.getElementById("early")?.addEventListener("click", () => { startEarly[who] = true; render(); });
           document.title = `Workouts · ${name}`;
@@ -409,6 +481,7 @@
           ${late ? `<p class="carry">Carried over from ${esc(prettyDate(w.date, { weekday: "long", month: "short", day: "numeric" }))}: still to do, so you don't skip it.</p>` : ""}
           <div class="eyebrow">${esc(prettyDate(todayKey))} · ${esc(name)}</div>
           ${html}
+          ${W.RATINGS ? feelHTML(loadFeel(w.id), "How did it feel?", false) : ""}
           <button type="button" class="complete" id="complete">Mark workout complete</button>
           ${waiting.length > 1 ? `<p class="upnext">Up next: ${waiting.slice(1).map((x) => esc(x.title)).join(", ")}</p>` : ""}
           <div id="keyslot"></div>
@@ -442,7 +515,9 @@
           app.querySelectorAll(".item.done").forEach((el) => { el.classList.remove("done"); el.setAttribute("aria-checked", "false"); });
           update();
         });
-        document.getElementById("complete").addEventListener("click", () => saveCompleted(w.id, true));
+        const feel = loadFeel(w.id);
+        wireFeel(feel, (x) => keepFeel(w.id, x));
+        document.getElementById("complete").addEventListener("click", () => saveCompleted(w.id, true, feel));
         update();
         document.title = `${w.title} · ${name}`;
       }

@@ -140,16 +140,42 @@ window.Workouts = (function () {
     });
   }
 
-  function setCompleted(key, who, id, done) {
+  // How a workout felt, for the agent to read: { rating: "easy" | "right" | "hard", note }.
+  const RATINGS = { easy: "Too easy", right: "Just right", hard: "Too hard" };
+  function cleanFeedback(f) {
+    if (!f) return null;
+    const out = {};
+    if (f.rating in RATINGS) out.rating = f.rating;
+    const note = String(f.note || "").trim().slice(0, 500);
+    if (note) out.note = note;
+    return Object.keys(out).length ? out : null;
+  }
+
+  // Marks a workout finished (with optional feedback) or not finished.
+  function setCompleted(key, who, id, done, feedback) {
     return update(key, `${PEOPLE[who]} ${done ? "finished" : "un-finished"} a workout`, (plan) => {
       const w = plan.people[who].queue.find((x) => x.id === id);
       if (!w) return { skip: true, reason: "missing" };
       w.completed = done ? today() : null;
-      // A lasting record of finished days for the calendar (the queue only keeps recent workouts).
+      const fb = cleanFeedback(feedback);
+      if (done && fb) w.feedback = fb;
+      // A lasting record of finished workouts for the calendar, totals and streaks
+      // (the queue only keeps recent workouts).
       const person = plan.people[who];
       person.history = (person.history || []).filter((h) => h.id !== id);
-      if (done) person.history.push({ id, date: w.completed, title: w.title, reps: countReps(w) });
+      if (done) person.history.push({ id, date: w.completed, planned: w.date, title: w.title, reps: countReps(w), ...(w.feedback ? { feedback: w.feedback } : {}) });
       prune(person);
+      return {};
+    });
+  }
+
+  // Adds or changes the feedback on a finished workout.
+  function setFeedback(key, who, id, feedback) {
+    return update(key, `${PEOPLE[who]} rated a workout`, (plan) => {
+      const person = plan.people[who], fb = cleanFeedback(feedback);
+      const w = person.queue.find((x) => x.id === id), h = (person.history || []).find((x) => x.id === id);
+      if (!w && !h) return { skip: true, reason: "missing" };
+      [w, h].forEach((x) => { if (!x) return; if (fb) x.feedback = fb; else delete x.feedback; });
       return {};
     });
   }
@@ -182,7 +208,8 @@ window.Workouts = (function () {
     }, 0);
   }
 
-  // Every finished workout, oldest first: { id, date, title, reps }.
+  // Every finished workout, oldest first: { id, date, planned, title, reps, feedback }.
+  // `planned` is the day it was posted for (older entries: the date at the start of the id).
   function finished(person) {
     const byId = new Map();
     (person.history || []).forEach((h) => { if (h.date) byId.set(h.id, { ...h }); });
@@ -190,8 +217,11 @@ window.Workouts = (function () {
       if (!w.completed) return;
       const h = byId.get(w.id) || { id: w.id, date: w.completed, title: w.title };
       if (h.reps == null) h.reps = countReps(w);
+      if (!h.planned) h.planned = w.date;
+      if (!h.feedback && w.feedback) h.feedback = w.feedback;
       byId.set(w.id, h);
     });
+    byId.forEach((h) => { if (!h.planned) h.planned = (/^\d{4}-\d{2}-\d{2}/.exec(String(h.id)) || [h.date])[0]; });
     return [...byId.values()].sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
   }
 
@@ -207,17 +237,26 @@ window.Workouts = (function () {
     return { ...all, years };
   }
 
-  // Days in a row with a finished workout. The current streak counts back from
-  // today, or from yesterday if today's workout isn't done yet (it's still alive).
+  // Day streaks. A day with a finished workout adds 1. A day with nothing waiting
+  // (a rest day: the agent posted nothing, and nothing earlier was left unfinished)
+  // is skipped over without breaking the streak. A day where a workout was waiting
+  // and none got finished ends it. Today never ends it, since there's still time.
   function streak(person, todayKey) {
     const shift = (key, n) => { const d = new Date(key + "T12:00"); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
-    const days = [...new Set(finished(person).map((h) => h.date))].sort();
-    let best = 0, run = 0, prev = null;
-    days.forEach((k) => { run = prev && shift(prev, 1) === k ? run + 1 : 1; best = Math.max(best, run); prev = k; });
-    const have = new Set(days);
-    let day = have.has(todayKey) ? todayKey : shift(todayKey, -1), current = 0;
-    while (have.has(day)) { current++; day = shift(day, -1); }
-    return { current, best };
+    const done = finished(person);
+    if (!done.length) return { current: 0, best: 0 };
+    const doneDays = new Set(done.map((h) => h.date));
+    // Every workout's [posted, finished) window; unfinished ones are still open.
+    const spans = done.map((h) => [h.planned || h.date, h.date])
+      .concat(pending(person).map((w) => [w.date || todayKey, null]));
+    const waiting = (day) => spans.some(([from, to]) => from <= day && (to === null || to > day));
+    let run = 0, best = 0;
+    for (let day = done[0].date; day <= todayKey; day = shift(day, 1)) {
+      if (doneDays.has(day)) run++;
+      else if (day !== todayKey && waiting(day)) run = 0;
+      best = Math.max(best, run);
+    }
+    return { current: run, best };
   }
 
   // date ("YYYY-MM-DD") -> titles of workouts finished that day.
@@ -234,5 +273,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();
