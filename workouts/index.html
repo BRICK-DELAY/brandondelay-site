@@ -109,7 +109,7 @@
   </main>
 
   <script src="/counter.js"></script>
-  <script src="shared.js"></script>
+  <script src="shared.js?v=2"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -255,6 +255,7 @@
       }
       // ---- All-time totals (and a row per year once there's more than one)
       function totalsHTML(person) {
+        if (!W.totals) return ""; // an older cached shared.js
         const t = W.totals(person);
         if (!t.workouts) return "";
         const n = (x) => x.toLocaleString();
@@ -371,6 +372,7 @@
       }
 
       window.addEventListener("hashchange", () => { if (location.hash.slice(1) in W.PEOPLE) { who = location.hash.slice(1); if (plan) render(); } });
+      // When the page changes, bump ?v= on shared.js above so phones don't pair it with an old cached copy.
       W.loadPublic().then((p) => { plan = p; render(); }).catch((e) => {
         app.innerHTML = `<div class="empty"><h1>Couldn't load</h1><p>${esc(e.message)}</p></div>`;
       });
