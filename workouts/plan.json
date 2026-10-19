@@ -57,11 +57,15 @@
               ]
             },
             {
-              "name": "Ski balance",
+              "name": "Ski strength: eccentric control",
               "items": [
                 {
-                  "exercise": "Single-leg balance beside rack",
-                  "detail": "1 x 30 sec / side @ bodyweight, rest 15 sec; stand beside rack with fingertip support as needed, soft knee, level hips, eyes open"
+                  "exercise": "Supported dumbbell split squat - slow lowering",
+                  "detail": "2 x 6 / leg, rest 30 sec between legs and 45 sec between rounds. Stand in a staggered stance on the floor, feet hip-width apart side-to-side, rear heel lifted. Lightly hold the rack with one hand and a dumbbell by your other side. Lower straight down for 4 sec, pause 1 sec, then stand smoothly. Keep front heel down, pelvis level and front knee tracking over middle toes; use a pain-free depth. Choose a load that makes the final 2 reps challenging while leaving 3 clean reps in reserve. Start bodyweight to check control, then add weight; no wobbling or grinding. This is controlled leg loading, not a balance test."
+                },
+                {
+                  "exercise": "Ski-position wall sit",
+                  "detail": "1 x 45-60 sec @ bodyweight, rest as needed afterward. Put your back flat against a clear wall, walk feet forward about hip-width apart, then slide down until thighs are roughly 45-60 degrees below standing (not forced to parallel). Keep heels planted, knees over middle toes and hands off thighs. Choose a depth that makes the last 10-15 sec hard while you can still breathe and hold position; stop before form breaks. Press through both feet to slide back up. Skip if knee or back pain; muscle fatigue is the target, not joint pain."
                 }
               ]
             },
@@ -79,7 +83,7 @@
               ]
             }
           ],
-          "notes": "About 40-45 minutes including warm-up and cooldown. Main: 3 back exercises and 2 biceps exercises. Follow the listed order to finish dumbbells/bench before cables. Use weights that leave at least 3 clean reps in reserve; stop any movement that causes joint pain. No cardio or barbell setup today.",
+          "notes": "About 40-45 minutes including warm-up and cooldown. Main: 3 back exercises and 2 biceps exercises. Finish dumbbells/bench before cables, then do the stationary ski-strength block. Use weights that leave at least 3 clean reps in reserve; stop any movement that causes joint pain. For time, keep reverse fly and both curl exercises to 2 sets as listed. No cardio or barbell setup today.",
           "date": "2026-10-19",
           "title": "Back and bis",
           "generated_by": "Instinct",
