@@ -95,6 +95,21 @@
     .tot-years { grid-column: 1 / -1; text-align: left; font-size: 13px; color: var(--muted); }
     .tot-years div { display: flex; justify-content: space-between; padding: 6px 2px; border-top: 1px solid var(--line); }
     .tot-years b { color: var(--text); font-weight: 600; }
+    .board { max-width: 360px; margin: 26px auto 0; text-align: left; }
+    .board-head { display: grid; gap: 10px; margin-bottom: 8px; }
+    .board-head .t { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .periods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; }
+    .periods button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 12px; font-weight: 600; padding: 6px 4px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+    .periods button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+    .row { display: grid; grid-template-columns: 22px 1fr auto auto; align-items: baseline; gap: 12px; padding: 10px 2px; border-top: 1px solid var(--line); }
+    .row:last-child { border-bottom: 1px solid var(--line); }
+    .row .rk { font-size: 15px; font-weight: 600; color: var(--muted); }
+    .row .nm { font-weight: 600; }
+    .row .nm small { font-weight: 500; font-size: 11px; color: var(--muted); margin-left: 6px; letter-spacing: .08em; text-transform: uppercase; }
+    .row .v { font-size: 13px; color: var(--muted); text-align: right; white-space: nowrap; }
+    .row .v b { color: var(--text); font-size: 16px; font-weight: 600; }
+    .row.lead .rk, .row.lead .v b { color: var(--accent); }
+    .board-note { font-size: 12px; color: var(--muted); margin-top: 8px; text-align: center; }
     .keypanel { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
@@ -109,7 +124,7 @@
   </main>
 
   <script src="/counter.js"></script>
-  <script src="shared.js?v=2"></script>
+  <script src="shared.js?v=3"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -269,6 +284,55 @@
         </div>`;
       }
 
+      // ---- Leaderboard: Brandon vs Cecelia, ranked by workouts (reps break ties)
+      const PERIODS = { week: "Week", month: "Month", year: "Year", all: "All time" };
+      let period = (() => { try { return localStorage.getItem("workout-board") || "week"; } catch (e) { return "week"; } })();
+      if (!(period in PERIODS)) period = "week";
+      function periodStart(p) {
+        const d = new Date(todayKey + "T12:00");
+        if (p === "week") d.setDate(d.getDate() - d.getDay()); // since Sunday, like the calendar
+        else if (p === "month") d.setDate(1);
+        else if (p === "year") d.setMonth(0, 1);
+        else return "";
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      }
+      function leaderboardHTML() {
+        if (!W.finished) return "";
+        const from = periodStart(period);
+        const rows = Object.keys(W.PEOPLE).map((id) => {
+          const list = W.finished(plan.people[id]).filter((h) => h.date >= from);
+          return { id, workouts: list.length, reps: list.reduce((n, h) => n + (h.reps || 0), 0) };
+        }).sort((a, b) => b.workouts - a.workouts || b.reps - a.reps);
+        const [a, b] = rows;
+        const tied = a.workouts === b.workouts && a.reps === b.reps;
+        const n = (x) => x.toLocaleString();
+        const note = !a.workouts ? "No workouts yet. First one takes the lead."
+          : tied ? "Dead even."
+            : a.workouts > b.workouts ? `${W.PEOPLE[a.id]} leads by ${a.workouts - b.workouts} workout${a.workouts - b.workouts === 1 ? "" : "s"}.`
+              : `Tied on workouts; ${W.PEOPLE[a.id]} leads by ${n(a.reps - b.reps)} reps.`;
+        return `<div class="board" id="board">
+          <div class="board-head"><span class="t">Leaderboard</span>
+            <div class="periods">${Object.entries(PERIODS).map(([k, label]) => `<button type="button" data-p="${k}" aria-pressed="${k === period}">${label}</button>`).join("")}</div>
+          </div>
+          ${rows.map((r, i) => `<div class="row${a.workouts && !tied && i === 0 ? " lead" : ""}">
+            <span class="rk">${tied ? "–" : i + 1}</span>
+            <span class="nm">${esc(W.PEOPLE[r.id])}${r.id === who ? "<small>You</small>" : ""}</span>
+            <span class="v"><b>${n(r.workouts)}</b> workout${r.workouts === 1 ? "" : "s"}</span>
+            <span class="v"><b>${n(r.reps)}</b> reps</span>
+          </div>`).join("")}
+          <div class="board-note">${esc(note)}</div>
+        </div>`;
+      }
+      function wireBoard() {
+        app.querySelectorAll(".periods button").forEach((btn) => btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          period = btn.dataset.p;
+          try { localStorage.setItem("workout-board", period); } catch (err) { /* ignore */ }
+          document.getElementById("board").outerHTML = leaderboardHTML();
+          wireBoard();
+        }));
+      }
+
       function wireCalendar() {
         const cal = app.querySelector(".cal");
         if (!cal) return;
@@ -310,12 +374,14 @@
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
               ${totalsHTML(person)}
+              ${leaderboardHTML()}
               ${calendarHTML(person)}
               ${finishedToday && w ? `<button type="button" class="linkish" id="early">Up next: ${esc(w.title)}. Start it early</button><br>` : ""}
               ${finishedToday ? `<button type="button" class="linkish" id="undo">Oops, it's not done yet</button>` : ""}
             </div><div id="keyslot"></div><footer><span data-visits hidden></span></footer>`;
           if (window.VisitCounter) VisitCounter.fill(app);
           wireCalendar();
+          wireBoard();
           document.getElementById("undo")?.addEventListener("click", () => saveCompleted(lastDone.id, false));
           document.getElementById("early")?.addEventListener("click", () => { startEarly[who] = true; render(); });
           document.title = `Workouts · ${name}`;
