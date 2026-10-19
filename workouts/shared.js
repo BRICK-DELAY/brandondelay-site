@@ -148,12 +148,63 @@ window.Workouts = (function () {
       // A lasting record of finished days for the calendar (the queue only keeps recent workouts).
       const person = plan.people[who];
       person.history = (person.history || []).filter((h) => h.id !== id);
-      if (done) person.history.push({ id, date: w.completed, title: w.title });
-      const cutoff = new Date(Date.now() - 400 * 86400000).toISOString().slice(0, 10);
-      person.history = person.history.filter((h) => h.date >= cutoff);
+      if (done) person.history.push({ id, date: w.completed, title: w.title, reps: countReps(w) });
       prune(person);
       return {};
     });
+  }
+
+  // Reps in a workout, read from each exercise's sets and reps: "3 x 8-10" is 24
+  // (the low end of a range), "2 x 10 / side" is 40, "10 reps" is 10, and a
+  // section with "rounds" multiplies its exercises. Timed or distance work
+  // ("45 sec", "3 mi") adds no reps.
+  function itemReps(it) {
+    const perSide = (rest) => (/^\s*(?:reps?\s*)?(?:\/|per|each)\s*(?:side|leg|arm)/i.test(rest) ? 2 : 1);
+    const timed = (rest) => /^\s*(?:s|sec|secs|seconds?|min|mins|minutes?|m|mi|miles?|km|yd|yards?|meters?|cal|steps?)\b/i.test(rest);
+    if (it.reps != null && !it.duration) {
+      const r = String(it.reps), m = /^\s*(\d+)(?:\s*[-–]\s*\d+)?(.*)$/.exec(r);
+      if (m && !timed(m[2])) {
+        const sets = Number(it.sets) > 0 ? Number(it.sets) : 1;
+        return sets * Number(m[1]) * Math.max(perSide(m[2]), perSide(String(it.detail || "")));
+      }
+    }
+    const d = String(it.detail || "");
+    let m = /^\s*(\d+)\s*[x×]\s*(\d+)(?:\s*[-–]\s*\d+)?(.*)$/i.exec(d);
+    if (m) return timed(m[3]) ? 0 : Number(m[1]) * Number(m[2]) * perSide(m[3]);
+    m = /^\s*(\d+)(?:\s*[-–]\s*\d+)?(\s*(?:reps?\b|(?:\/|per|each)\s*(?:side|leg|arm)).*)$/i.exec(d);
+    if (m) return Number(m[1]) * perSide(m[2]);
+    return 0;
+  }
+  function countReps(w) {
+    return (w.sections || []).reduce((sum, sec) => {
+      const rounds = Number(sec.rounds) > 0 ? Number(sec.rounds) : 1;
+      return sum + rounds * (sec.items || []).reduce((n, it) => n + itemReps(it), 0);
+    }, 0);
+  }
+
+  // Every finished workout, oldest first: { id, date, title, reps }.
+  function finished(person) {
+    const byId = new Map();
+    (person.history || []).forEach((h) => { if (h.date) byId.set(h.id, { ...h }); });
+    person.queue.forEach((w) => {
+      if (!w.completed) return;
+      const h = byId.get(w.id) || { id: w.id, date: w.completed, title: w.title };
+      if (h.reps == null) h.reps = countReps(w);
+      byId.set(w.id, h);
+    });
+    return [...byId.values()].sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+  }
+
+  // Running totals: all time and per year.
+  function totals(person) {
+    const all = { workouts: 0, reps: 0, since: null }, years = new Map();
+    finished(person).forEach((h) => {
+      const y = h.date.slice(0, 4);
+      if (!years.has(y)) years.set(y, { workouts: 0, reps: 0 });
+      [all, years.get(y)].forEach((t) => { t.workouts++; t.reps += h.reps || 0; });
+      if (!all.since) all.since = h.date;
+    });
+    return { ...all, years };
   }
 
   // date ("YYYY-MM-DD") -> titles of workouts finished that day.
@@ -170,5 +221,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, totals, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();

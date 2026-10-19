@@ -87,6 +87,14 @@
     .cal-day.today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px rgba(239,233,223,.7); }
     .cal-day.on, .cal-day:hover { transform: scale(1.08); border-color: var(--text); }
     .cal-tip { position: absolute; z-index: 2; pointer-events: none; white-space: nowrap; padding: 6px 12px; border-radius: 999px; font-size: 13px; background: var(--bg-raised); border: 1px solid var(--line); color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+    .totals { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 360px; margin: 24px auto 0; }
+    .tot { padding: 14px 10px 12px; border: 1px solid var(--line); border-radius: 12px; }
+    .tot b { display: block; font-family: var(--serif); font-size: 34px; font-weight: 600; line-height: 1; color: var(--accent); }
+    .tot span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .tot-sub { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
+    .tot-years { grid-column: 1 / -1; text-align: left; font-size: 13px; color: var(--muted); }
+    .tot-years div { display: flex; justify-content: space-between; padding: 6px 2px; border-top: 1px solid var(--line); }
+    .tot-years b { color: var(--text); font-weight: 600; }
     .keypanel { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
@@ -245,6 +253,21 @@
           <div class="cal">${heads}${cells}<div class="cal-tip" hidden></div></div>
         </div>`;
       }
+      // ---- All-time totals (and a row per year once there's more than one)
+      function totalsHTML(person) {
+        const t = W.totals(person);
+        if (!t.workouts) return "";
+        const n = (x) => x.toLocaleString();
+        const plural = (x, word) => `${n(x)} ${word}${x === 1 ? "" : "s"}`;
+        const years = [...t.years.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1));
+        return `<div class="totals">
+          <div class="tot"><b>${n(t.workouts)}</b><span>Workout${t.workouts === 1 ? "" : "s"}</span></div>
+          <div class="tot"><b>${n(t.reps)}</b><span>Reps</span></div>
+          <div class="tot-sub">All time, since ${esc(prettyDate(t.since, { month: "short", day: "numeric", year: "numeric" }))}</div>
+          ${years.length > 1 ? `<div class="tot-years">${years.map(([y, v]) => `<div><b>${y}</b><span>${plural(v.workouts, "workout")} · ${plural(v.reps, "rep")}</span></div>`).join("")}</div>` : ""}
+        </div>`;
+      }
+
       function wireCalendar() {
         const cal = app.querySelector(".cal");
         if (!cal) return;
@@ -285,6 +308,7 @@
             <div class="donebox">
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
+              ${totalsHTML(person)}
               ${calendarHTML(person)}
               ${finishedToday && w ? `<button type="button" class="linkish" id="early">Up next: ${esc(w.title)}. Start it early</button><br>` : ""}
               ${finishedToday ? `<button type="button" class="linkish" id="undo">Oops, it's not done yet</button>` : ""}

@@ -67,6 +67,18 @@ Instead of plain text you can paste JSON:
 }
 ```
 
+## Writing sets and reps (for the rep counter)
+
+The page keeps a running total of workouts and reps for each person. Reps are counted
+from each exercise when a workout is marked complete, so **start each exercise's
+details with its sets and reps**:
+
+- `3 x 8-10` counts 24 reps (the low end of a range).
+- `2 x 10 / side` (or `/ leg`, `/ arm`, `each side`) counts both sides: 40.
+- `10 reps` or `6 / side` (one set) counts 10 or 12.
+- In JSON, `"sets": 3, "reps": "8-10"` works the same way, and a section's `rounds` multiplies its exercises.
+- Timed or distance work (`45 sec`, `1 x 45-60 sec`, `3 mi`) adds no reps, which is expected.
+
 `url` is optional on any item: a short demo video for that exercise. When present, the exercise name becomes a tappable link on the workout page. Links only work through the JSON format (or direct `plan.json` edits); the plain-text format has no link syntax.
 
 ## Without the form (git or GitHub API)
@@ -81,6 +93,6 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 
 - To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.
 - Don't add one if that person already has 2 entries with `"completed": null`.
-- Each person may also have a `history` list of finished days (for the 30-day calendar). Leave it alone.
+- Each person may also have a `history` list of finished workouts (for the calendar and running totals). Leave it alone.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
 - Read the file (and its `sha`) right before writing, and change nothing else in the repository.
