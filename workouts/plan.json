@@ -85,7 +85,86 @@
     },
     "cecelia": {
       "name": "Cecelia",
-      "queue": []
+      "queue": [
+        {
+          "id": "2026-10-19-back-and-bis-57r0",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "detail": "6 / side, slow and controlled"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "detail": "10 reps"
+                },
+                {
+                  "exercise": "Shoulder-blade squeezes",
+                  "detail": "10 reps, hold 2 sec without shrugging"
+                },
+                {
+                  "exercise": "Light chest-supported dumbbell row",
+                  "detail": "2 x 10, very light, rest 30 sec; total warm-up about 5 min"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Chest-supported dumbbell row on incline bench",
+                  "detail": "3 x 8-10 @ a comfortable weight per hand, rest 90 sec; neutral grip, keep chest on bench"
+                },
+                {
+                  "exercise": "Half-kneeling single-arm cable pulldown",
+                  "detail": "3 x 10 / side @ light-to-moderate resistance, rest 60 sec after both sides; single handle at high pulley, elbow toward ribs, no shrugging"
+                },
+                {
+                  "exercise": "Standing single-arm cable curl",
+                  "detail": "2 x 10-12 / side @ light-to-moderate resistance, rest 60 sec after both sides; lower pulley once after pulldowns, elbows still"
+                }
+              ]
+            },
+            {
+              "name": "Control and balance",
+              "items": [
+                {
+                  "exercise": "Floor bridge",
+                  "detail": "2 x 12 @ bodyweight, rest 45 sec; pause 2 sec at top, ribs down, do not arch lower back"
+                },
+                {
+                  "exercise": "Single-leg balance beside rack",
+                  "detail": "2 x 30 sec / side @ bodyweight, rest 20 sec; fingertip support as needed, soft knee, level hips, eyes open"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Gentle standing lat stretch",
+                  "detail": "20 sec / side, pain-free range"
+                },
+                {
+                  "exercise": "Gentle biceps stretch with arm low",
+                  "detail": "20 sec / side, no forcing shoulder backward"
+                }
+              ]
+            }
+          ],
+          "notes": "About 35-40 minutes. Choose light working weights that leave at least 3 clean reps in reserve. No grinding or failure. Stop any movement that causes shoulder or joint pain. Finish bench/dumbbell work before moving to cables. No barbell setup today.",
+          "date": "2026-10-19",
+          "title": "Back and bis",
+          "generated_by": "Instinct",
+          "completed": null
+        }
+      ]
     }
   }
 }
