@@ -123,7 +123,8 @@
       const handle = igHandle();
       links.push(`<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">Instagram</a>`);
     }
-    footer.innerHTML = `<span>© ${new Date().getFullYear()} ${esc(name)}. All photos are mine; please ask before using them.</span><span class="links">${links.join("")}</span>`;
+    footer.innerHTML = `<span>© ${new Date().getFullYear()} ${esc(name)}. All photos are mine; please ask before using them.</span><span class="links">${links.join("")}<span class="visits" data-visits hidden></span></span>`;
+    if (window.VisitCounter) VisitCounter.fill(footer);
   }
 
   function closeDropdowns() {

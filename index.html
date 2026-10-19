@@ -43,7 +43,7 @@
         var css = document.createElement("link");
         css.rel = "stylesheet"; css.href = "styles.css" + q;
         document.head.appendChild(css);
-        ["map.js", "app.js"].forEach(function (src) {
+        ["counter.js", "map.js", "app.js"].forEach(function (src) {
           var s = document.createElement("script");
           s.src = src + q; s.async = false;
           document.body.appendChild(s);

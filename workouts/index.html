@@ -80,6 +80,7 @@
     <div id="app"><p class="empty">Loading…</p></div>
   </main>
 
+  <script src="/counter.js"></script>
   <script src="shared.js"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
@@ -214,7 +215,8 @@
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off. The next workout shows up after it's posted.</p>
                 <button type="button" class="linkish" id="undo">Oops, it's not done yet</button>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
-            </div><div id="keyslot"></div>`;
+            </div><div id="keyslot"></div><footer><span data-visits hidden></span></footer>`;
+          if (window.VisitCounter) VisitCounter.fill(app);
           document.getElementById("undo")?.addEventListener("click", () => saveCompleted(lastDone.id, false));
           document.title = `Workouts · ${name}`;
           return;
@@ -234,7 +236,8 @@
           <button type="button" class="complete" id="complete">Mark workout complete</button>
           ${waiting.length > 1 ? `<p class="upnext">Up next: ${waiting.slice(1).map((x) => esc(x.title)).join(", ")}</p>` : ""}
           <div id="keyslot"></div>
-          <footer><button type="button" class="linkish" id="reset">Clear checkmarks</button></footer>`;
+          <footer><button type="button" class="linkish" id="reset">Clear checkmarks</button><span data-visits hidden style="margin-left:14px"></span></footer>`;
+        if (window.VisitCounter) VisitCounter.fill(app);
 
         const update = () => {
           const n = Object.values(doneMap).filter(Boolean).length;
