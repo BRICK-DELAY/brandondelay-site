@@ -286,7 +286,7 @@
         </div>`;
       }
 
-      // ---- Leaderboard: Brandon vs Cecelia, ranked by workouts (reps break ties)
+      // ---- Leaderboard: Brandon vs Cecelia, ranked by workouts (reps break ties, then Cecelia goes first)
       const PERIODS = { week: "Week", month: "Month", year: "Year", all: "All time" };
       let period = (() => { try { return localStorage.getItem("workout-board") || "week"; } catch (e) { return "week"; } })();
       if (!(period in PERIODS)) period = "week";
@@ -305,7 +305,7 @@
           const list = W.finished(plan.people[id]).filter((h) => h.date >= from);
           const st = W.streak ? W.streak(plan.people[id], todayKey) : null;
           return { id, st, workouts: list.length, reps: list.reduce((n, h) => n + (h.reps || 0), 0) };
-        }).sort((a, b) => b.workouts - a.workouts || b.reps - a.reps);
+        }).sort((a, b) => b.workouts - a.workouts || b.reps - a.reps || (a.id === "cecelia" ? -1 : b.id === "cecelia" ? 1 : 0)); // a full tie lists Cecelia first
         const [a, b] = rows;
         const tied = a.workouts === b.workouts && a.reps === b.reps;
         const n = (x) => x.toLocaleString();
