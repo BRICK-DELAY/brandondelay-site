@@ -73,6 +73,20 @@
     .donebox { margin-top: 18px; padding: 22px; border: 1px solid var(--line); border-radius: 16px; text-align: center; }
     .donebox .big { font-family: var(--serif); font-size: 30px; }
     .linkish { background: none; border: 0; color: var(--muted); text-decoration: underline; font: inherit; font-size: 13px; cursor: pointer; padding: 0; }
+    .cal-wrap { margin: 26px auto 18px; max-width: 360px; text-align: left; }
+    .cal-title { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .cal-title span { color: var(--accent); letter-spacing: .08em; }
+    .cal { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .cal-head { text-align: center; font-size: 11px; color: var(--muted); padding-bottom: 2px; }
+    .cal-day {
+      aspect-ratio: 1; border-radius: 6px; border: 1px solid rgba(239,233,223,.32); background: var(--bg);
+      color: rgba(239,233,223,.45); font: inherit; font-size: 11px; cursor: pointer; padding: 0;
+      display: grid; place-items: center; transition: transform .12s, border-color .12s;
+    }
+    .cal-day.done { background: var(--accent); border-color: var(--accent); color: #1a1408; font-weight: 600; }
+    .cal-day.today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px rgba(239,233,223,.7); }
+    .cal-day.on, .cal-day:hover { transform: scale(1.08); border-color: var(--text); }
+    .cal-tip { position: absolute; z-index: 2; pointer-events: none; white-space: nowrap; padding: 6px 12px; border-radius: 999px; font-size: 13px; background: var(--bg-raised); border: 1px solid var(--line); color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
     .keypanel { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
@@ -210,6 +224,52 @@
         }
       }
 
+      // ---- 30-day calendar of finished workouts
+      const startEarly = {};
+      function calendarHTML(person) {
+        const days = W.doneDays(person);
+        const end = new Date(todayKey + "T12:00");
+        const start = new Date(end); start.setDate(start.getDate() - 29);
+        const keyOf = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+        let cells = "", count = 0;
+        for (let i = 0; i < start.getDay(); i++) cells += `<span class="cal-blank"></span>`;
+        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+          const k = keyOf(d), titles = days.get(k);
+          if (titles) count++;
+          const label = d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }) + (titles ? " · " + titles.join(" + ") : "");
+          cells += `<button type="button" class="cal-day${titles ? " done" : ""}${k === todayKey ? " today" : ""}" data-tip="${esc(label)}" aria-label="${esc(label)}"><span>${d.getDate()}</span></button>`;
+        }
+        const heads = ["S", "M", "T", "W", "T", "F", "S"].map((h) => `<span class="cal-head">${h}</span>`).join("");
+        return `<div class="cal-wrap">
+          <div class="cal-title">Last 30 days <span>${count} workout day${count === 1 ? "" : "s"}</span></div>
+          <div class="cal">${heads}${cells}<div class="cal-tip" hidden></div></div>
+        </div>`;
+      }
+      function wireCalendar() {
+        const cal = app.querySelector(".cal");
+        if (!cal) return;
+        const tip = cal.querySelector(".cal-tip");
+        let pinned = null;
+        const show = (b) => {
+          tip.textContent = b.dataset.tip;
+          tip.hidden = false;
+          const cr = cal.getBoundingClientRect(), br = b.getBoundingClientRect();
+          const tw = tip.offsetWidth;
+          tip.style.left = Math.max(0, Math.min(cr.width - tw, br.left - cr.left + br.width / 2 - tw / 2)) + "px";
+          tip.style.top = (br.top - cr.top - tip.offsetHeight - 8) + "px";
+          cal.querySelectorAll(".cal-day.on").forEach((x) => x.classList.remove("on"));
+          b.classList.add("on");
+        };
+        const hide = () => { tip.hidden = true; cal.querySelectorAll(".cal-day.on").forEach((x) => x.classList.remove("on")); };
+        cal.querySelectorAll(".cal-day").forEach((b) => {
+          b.addEventListener("mouseenter", () => show(b));
+          b.addEventListener("mouseleave", () => (pinned ? show(pinned) : hide()));
+          b.addEventListener("focus", () => show(b));
+          b.addEventListener("click", (e) => { e.stopPropagation(); pinned = pinned === b ? null : b; pinned ? show(b) : hide(); });
+        });
+        document.addEventListener("click", () => { pinned = null; hide(); });
+      }
+
       function render(justFinishedId) {
         renderWho();
         const person = plan.people[who];
@@ -217,16 +277,22 @@
         const w = W.current(person);
         const lastDone = [...person.queue].reverse().find((x) => x.completed);
 
-        if (!w) {
-          const finishedToday = lastDone && lastDone.completed === todayKey;
+        const finishedToday = lastDone && lastDone.completed === todayKey;
+        // After finishing today's workout, show the "done" screen with the calendar
+        // (the next queued workout is one tap away).
+        if (!w || (finishedToday && !startEarly[who])) {
           app.innerHTML = `<div class="eyebrow">${esc(prettyDate(todayKey))} · ${esc(name)}</div>
             <div class="donebox">
-              ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off. The next workout shows up after it's posted.</p>
-                <button type="button" class="linkish" id="undo">Oops, it's not done yet</button>`
+              ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
+              ${calendarHTML(person)}
+              ${finishedToday && w ? `<button type="button" class="linkish" id="early">Up next: ${esc(w.title)}. Start it early</button><br>` : ""}
+              ${finishedToday ? `<button type="button" class="linkish" id="undo">Oops, it's not done yet</button>` : ""}
             </div><div id="keyslot"></div><footer><span data-visits hidden></span></footer>`;
           if (window.VisitCounter) VisitCounter.fill(app);
+          wireCalendar();
           document.getElementById("undo")?.addEventListener("click", () => saveCompleted(lastDone.id, false));
+          document.getElementById("early")?.addEventListener("click", () => { startEarly[who] = true; render(); });
           document.title = `Workouts · ${name}`;
           return;
         }

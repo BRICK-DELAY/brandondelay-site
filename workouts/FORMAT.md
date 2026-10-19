@@ -81,5 +81,6 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 
 - To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.
 - Don't add one if that person already has 2 entries with `"completed": null`.
+- Each person may also have a `history` list of finished days (for the 30-day calendar). Leave it alone.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
 - Read the file (and its `sha`) right before writing, and change nothing else in the repository.

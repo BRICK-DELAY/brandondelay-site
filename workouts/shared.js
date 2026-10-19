@@ -145,10 +145,30 @@ window.Workouts = (function () {
       const w = plan.people[who].queue.find((x) => x.id === id);
       if (!w) return { skip: true, reason: "missing" };
       w.completed = done ? today() : null;
-      prune(plan.people[who]);
+      // A lasting record of finished days for the calendar (the queue only keeps recent workouts).
+      const person = plan.people[who];
+      person.history = (person.history || []).filter((h) => h.id !== id);
+      if (done) person.history.push({ id, date: w.completed, title: w.title });
+      const cutoff = new Date(Date.now() - 400 * 86400000).toISOString().slice(0, 10);
+      person.history = person.history.filter((h) => h.date >= cutoff);
+      prune(person);
       return {};
     });
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  // date ("YYYY-MM-DD") -> titles of workouts finished that day.
+  function doneDays(person) {
+    const seen = new Set(), days = new Map();
+    const add = (id, date, title) => {
+      if (!date || seen.has(id)) return;
+      seen.add(id);
+      if (!days.has(date)) days.set(date, []);
+      days.get(date).push(title || "Workout");
+    };
+    (person.history || []).forEach((h) => add(h.id, h.date, h.title));
+    person.queue.forEach((w) => add(w.id, w.completed, w.title));
+    return days;
+  }
+
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();
