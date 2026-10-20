@@ -533,10 +533,25 @@
           ],
           "date": "2026-10-19",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-19",
+          "feedback": {
+            "rating": "hard",
+            "note": "Skipped goblet squat, heels elevated; not counted in reps."
+          }
         }
       ],
-      "history": []
+      "history": [
+        {
+          "id": "2026-10-19-lower-strength-plyos-qoxs",
+          "date": "2026-10-19",
+          "title": "Lower Strength + Plyos",
+          "reps": 424,
+          "feedback": {
+            "rating": "hard",
+            "note": "Skipped goblet squat, heels elevated; not counted in reps."
+          }
+        }
+      ]
     }
   }
 }
