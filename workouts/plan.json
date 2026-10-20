@@ -233,6 +233,11 @@
           "reps": 212
         }
       ]
+    },
+    "jose": {
+      "name": "Jose",
+      "queue": [],
+      "history": []
     }
   }
 }
