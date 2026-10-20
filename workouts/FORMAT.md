@@ -1,7 +1,7 @@
 # Daily workouts: instructions for the AI agent
 
-Brandon and Cecelia each have a short queue of workouts at
-**https://www.brandondelay.com/workouts** (`#brandon` / `#cecelia`). Each of them
+Brandon, Cecelia and Jose each have a short queue of workouts at
+**https://www.brandondelay.com/workouts** (`#brandon` / `#cecelia` / `#jose`). Each of them
 sees their **oldest unfinished** workout until they press **Mark workout complete**,
 so a missed day is never skipped: that workout simply waits.
 
@@ -16,7 +16,7 @@ A person can have at most **2 unfinished** workouts queued. Extra posts are refu
    (**Too easy**, **Just right** or **Too hard**) and sometimes a note they typed (sore spots,
    swaps, requests). Use it when planning: progress when it's "Too easy", hold steady when
    "Just right", back off when "Too hard", and follow the notes (e.g. avoid an exercise that hurt).
-3. For **each person** (Brandon, then Cecelia):
+3. For **each person** you plan for (Brandon, Cecelia, Jose):
    - **If they have 2 unfinished workouts:** post nothing for them today.
    - **If they finished yesterday's workout or have none waiting:** post the next workout in their plan.
    - **If they have 1 unfinished workout** (they missed a day): you may post the following workout as "up next". It appears only after they finish the current one. Don't repeat the missed workout; it's still there.
@@ -94,7 +94,8 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 ```json
 { "people": {
     "brandon": { "name": "Brandon", "queue": [ { "id": "2026-10-19-legs-x1y2", "date": "2026-10-19", "title": "Legs", "sections": [], "completed": null } ] },
-    "cecelia": { "name": "Cecelia", "queue": [] } } }
+    "cecelia": { "name": "Cecelia", "queue": [] },
+    "jose": { "name": "Jose", "queue": [] } } }
 ```
 
 - To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.

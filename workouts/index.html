@@ -140,7 +140,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=5"></script>
+  <script src="shared.js?v=6"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -356,7 +356,7 @@
         btn.addEventListener("click", send);
       }
 
-      // ---- Leaderboard: Brandon vs Cecelia, ranked by workouts (reps break ties, then Cecelia goes first)
+      // ---- Leaderboard: everyone in W.PEOPLE, ranked by workouts (reps break ties; a full tie shares a rank, Cecelia listed first)
       const PERIODS = { week: "Week", month: "Month", year: "Year", all: "All time" };
       let period = (() => { try { return localStorage.getItem("workout-board") || "week"; } catch (e) { return "week"; } })();
       if (!(period in PERIODS)) period = "week";
@@ -377,18 +377,21 @@
           return { id, st, workouts: list.length, reps: list.reduce((n, h) => n + (h.reps || 0), 0) };
         }).sort((a, b) => b.workouts - a.workouts || b.reps - a.reps || (a.id === "cecelia" ? -1 : b.id === "cecelia" ? 1 : 0)); // a full tie lists Cecelia first
         const [a, b] = rows;
-        const tied = a.workouts === b.workouts && a.reps === b.reps;
+        const same = (x, y) => x.workouts === y.workouts && x.reps === y.reps;
+        const tied = same(a, b);
+        // Shared ranks on a full tie: 1, 1, 3 or 1, 2, 2.
+        rows.forEach((r, i) => { r.rank = i && same(r, rows[i - 1]) ? rows[i - 1].rank : i + 1; });
         const n = (x) => x.toLocaleString();
         const note = !a.workouts ? "No workouts yet. First one takes the lead."
-          : tied ? "Dead even."
+          : tied ? (rows.every((r) => same(r, a)) ? "Dead even." : `Tied for first: ${rows.filter((r) => same(r, a)).map((r) => W.PEOPLE[r.id]).join(" and ")}.`)
             : a.workouts > b.workouts ? `${W.PEOPLE[a.id]} leads by ${a.workouts - b.workouts} workout${a.workouts - b.workouts === 1 ? "" : "s"}.`
               : `Tied on workouts; ${W.PEOPLE[a.id]} leads by ${n(a.reps - b.reps)} reps.`;
         return `<div class="board" id="board">
           <div class="board-head"><span class="t">Leaderboard</span>
             <div class="periods">${Object.entries(PERIODS).map(([k, label]) => `<button type="button" data-p="${k}" aria-pressed="${k === period}">${label}</button>`).join("")}</div>
           </div>
-          ${rows.map((r, i) => `<div class="row${a.workouts && !tied && i === 0 ? " lead" : ""}">
-            <span class="rk">${tied ? "–" : i + 1}</span>
+          ${rows.map((r) => `<div class="row${a.workouts && same(r, a) ? " lead" : ""}">
+            <span class="rk">${r.rank}</span>
             <span class="nm">${esc(W.PEOPLE[r.id])}${r.id === who ? "<small>You</small>" : ""}</span>
             <span class="v"><b>${n(r.workouts)}</b> workout${r.workouts === 1 ? "" : "s"}</span>
             <span class="v"><b>${n(r.reps)}</b> reps</span>
