@@ -212,7 +212,11 @@
           ],
           "date": "2026-10-20",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-20",
+          "feedback": {
+            "rating": "right",
+            "note": "Left shoulder got a little sore after the chest portion but weights were good and i like the format of name, sets, weight and rest. Also like that you hit all parts of the pec muscles"
+          }
         }
       ],
       "history": [
@@ -224,6 +228,17 @@
           "feedback": {
             "rating": "easy",
             "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+          }
+        },
+        {
+          "id": "2026-10-20-chest-and-tris-xwkl",
+          "date": "2026-10-20",
+          "planned": "2026-10-20",
+          "title": "Chest and tris",
+          "reps": 176,
+          "feedback": {
+            "rating": "right",
+            "note": "Left shoulder got a little sore after the chest portion but weights were good and i like the format of name, sets, weight and rest. Also like that you hit all parts of the pec muscles"
           }
         }
       ]
