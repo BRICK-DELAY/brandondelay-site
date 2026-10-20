@@ -106,6 +106,113 @@
             "rating": "easy",
             "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
+        },
+        {
+          "id": "2026-10-20-chest-and-tris-xwkl",
+          "title": "Chest and tris",
+          "notes": "Yesterday felt easy, so the main lifts move up to 3 sets today. About 40-45 minutes including warm-up. Bench press is the one big lift: stop every set with about 3 clean reps left, no grinding. Follow the listed order to finish the bench before cables.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "notes": "Straight arms; slide shoulder blades apart and together",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Incline push-ups on bench",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=Z0bRiVhnO8Q"
+                },
+                {
+                  "exercise": "Light rope face pull",
+                  "sets": 1,
+                  "reps": "15",
+                  "weight": "very light",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell bench press",
+                  "sets": 3,
+                  "reps": "5-6",
+                  "weight": "135 lb",
+                  "rest": "2.5 min",
+                  "notes": "Warm up with empty bar 2 x 8, then 95 lb x 3, then the work sets",
+                  "url": "https://www.youtube.com/watch?v=CjHIKDQ4RQo"
+                },
+                {
+                  "exercise": "Incline dumbbell press",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "40 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=OC7Qs_SAO2E"
+                },
+                {
+                  "exercise": "Low-to-high cable fly",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "15-20 lb / side",
+                  "rest": "75 sec",
+                  "url": "https://www.youtube.com/watch?v=eQ_NBB6OBH4"
+                },
+                {
+                  "exercise": "Rope triceps pushdown",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=pfUB77aCMFM"
+                },
+                {
+                  "exercise": "Overhead dumbbell triceps extension",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "weight": "30-35 lb",
+                  "rest": "60 sec",
+                  "notes": "Both hands on one dumbbell",
+                  "url": "https://www.youtube.com/watch?v=bRJWHiu_J4k"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Single-leg dumbbell Romanian deadlift",
+                  "sets": 2,
+                  "reps": "8 / leg",
+                  "weight": "20-25 lb",
+                  "rest": "60 sec",
+                  "notes": "3-sec lowering, hips square, soft knee; the slow lower and balance are the point",
+                  "url": "https://www.youtube.com/watch?v=pJewPISyHjw"
+                },
+                {
+                  "exercise": "Isometric lateral lunge hold",
+                  "sets": 2,
+                  "duration": "20-30 sec / side",
+                  "notes": "Sink into a side lunge and hold the bottom, hips low, chest tall; hold a light dumbbell at your chest if 30 sec is easy",
+                  "url": "https://www.youtube.com/watch?v=4NlJdSzHeUg"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-20",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
