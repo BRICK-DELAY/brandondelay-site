@@ -330,6 +330,118 @@
           "title": "Back and bis",
           "generated_by": "Instinct",
           "completed": "2026-10-19"
+        },
+        {
+          "id": "2026-10-20-legs-wtbt",
+          "title": "Legs",
+          "notes": "About 40-45 minutes including warm-up and cooldown. Back squat is the one big lift today: stop every set with about 3 clean reps left. Follow the listed order: barbell first, then dumbbells, then floor work.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front-to-back and side-to-side",
+                  "sets": 1,
+                  "reps": "10 / leg each way",
+                  "notes": "Hold the rack for balance, swing from the hip",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Floor glute bridge",
+                  "sets": 1,
+                  "reps": "12",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "95 lb",
+                  "rest": "2 min",
+                  "notes": "Warm up with empty bar 2 x 8, then 65 lb x 3, then the work sets",
+                  "url": "https://www.youtube.com/watch?v=-bJIpOq-LWk"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "25 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Dumbbell reverse lunge",
+                  "sets": 2,
+                  "reps": "8 / leg",
+                  "weight": "15 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
+                },
+                {
+                  "exercise": "Dumbbell hip thrust, shoulders on bench",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "weight": "40 lb",
+                  "rest": "90 sec",
+                  "notes": "Pause and squeeze at the top",
+                  "url": "https://www.youtube.com/watch?v=DsNibQKmm3Q"
+                },
+                {
+                  "exercise": "Side-lying hip abduction",
+                  "sets": 2,
+                  "reps": "12 / side",
+                  "rest": "45 sec",
+                  "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "duration": "45 sec / side",
+                  "notes": "Lie on your back, cross one ankle over the opposite knee, pull the thigh gently toward your chest; feel it in the glute of the crossed leg; back off if the knee complains",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "duration": "45 sec / side",
+                  "notes": "Kneel facing away from the bench, back foot up on it, hips tall, shift gently forward; feel it in the front of the hip and thigh",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                },
+                {
+                  "exercise": "90/90 hip stretch",
+                  "sets": 2,
+                  "duration": "45 sec / side",
+                  "notes": "Sit with both knees bent 90 degrees, one leg in front and one to the side; chest tall, lean gently over the front shin; feel it in the outer hip",
+                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-20",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
