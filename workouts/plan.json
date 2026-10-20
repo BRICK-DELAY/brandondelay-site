@@ -470,7 +470,72 @@
     },
     "jose": {
       "name": "Jose",
-      "queue": [],
+      "queue": [
+        {
+          "id": "2026-10-19-lower-strength-plyos-qoxs",
+          "title": "Lower Strength + Plyos",
+          "sections": [
+            {
+              "name": "Lower",
+              "items": [
+                {
+                  "exercise": "Band TKE",
+                  "sets": 2,
+                  "reps": "15 / side"
+                },
+                {
+                  "exercise": "Squat jumps (bodyweight)",
+                  "sets": 4,
+                  "reps": "4"
+                },
+                {
+                  "exercise": "Back squat",
+                  "sets": 4,
+                  "reps": "6-8"
+                },
+                {
+                  "exercise": "Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8-10"
+                },
+                {
+                  "exercise": "Standing banded hip abduction",
+                  "sets": 3,
+                  "reps": "12 / side"
+                },
+                {
+                  "exercise": "Banded clamshells",
+                  "sets": 3,
+                  "reps": "15 / side"
+                },
+                {
+                  "exercise": "Copenhagen plank",
+                  "sets": 3,
+                  "reps": "20s / side"
+                },
+                {
+                  "exercise": "Single-leg calf raise",
+                  "sets": 3,
+                  "reps": "15 / leg"
+                },
+                {
+                  "exercise": "Pallof press",
+                  "sets": 2,
+                  "reps": "12 / side"
+                },
+                {
+                  "exercise": "Goblet squat, heels elevated",
+                  "sets": 3,
+                  "reps": "10-12"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-19",
+          "generated_by": "Instinct",
+          "completed": null
+        }
+      ],
       "history": []
     }
   }
