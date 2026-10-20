@@ -441,7 +441,11 @@
           ],
           "date": "2026-10-20",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-20",
+          "feedback": {
+            "rating": "right",
+            "note": "Dumbbell glute bridges were too light"
+          }
         }
       ],
       "history": [
@@ -450,6 +454,17 @@
           "date": "2026-10-19",
           "title": "Back and bis",
           "reps": 212
+        },
+        {
+          "id": "2026-10-20-legs-wtbt",
+          "date": "2026-10-20",
+          "planned": "2026-10-20",
+          "title": "Legs",
+          "reps": 206,
+          "feedback": {
+            "rating": "right",
+            "note": "Dumbbell glute bridges were too light"
+          }
         }
       ]
     },
