@@ -140,7 +140,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=6"></script>
+  <script src="shared.js?v=7"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -236,6 +236,7 @@
           <p class="sec-note" style="margin-top:6px">Paste the GitHub key for the workout page so it can save your progress. It's remembered on this device.</p>
           <input type="password" id="keyIn" placeholder="github_pat_…" autocapitalize="none" spellcheck="false">
           <button type="button" id="keyGo">Save key and continue</button>
+          <p class="sec-note" style="margin-top:10px">No key? Tell your Instinct you finished (and how it felt), and it gets checked off here.</p>
           ${errMsg ? `<div class="err">${esc(errMsg)}</div>` : ""}
         </div>`;
         document.getElementById("keyGo").addEventListener("click", () => {

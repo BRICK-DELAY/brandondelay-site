@@ -94,6 +94,15 @@ window.Workouts = (function () {
   function prune(person) {
     const done = person.queue.filter((w) => w.completed);
     const drop = new Set(done.slice(0, Math.max(0, done.length - KEEP_DONE)));
+    // Workouts checked off straight in plan.json (by the agent) may have no history
+    // entry yet: record them before they leave the queue, so totals keep them.
+    person.history = person.history || [];
+    drop.forEach((w) => {
+      const h = person.history.find((x) => x.id === w.id);
+      const entry = { id: w.id, date: w.completed, planned: w.date, title: w.title, reps: countReps(w), ...(w.feedback ? { feedback: w.feedback } : {}) };
+      if (!h) person.history.push(entry);
+      else if (h.reps == null) Object.assign(h, { reps: entry.reps, planned: h.planned || w.date });
+    });
     person.queue = person.queue.filter((w) => !drop.has(w));
   }
 

@@ -103,4 +103,19 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 - Each person may also have a `history` list of finished workouts (for the calendar, totals and streaks). Leave it alone.
 - A finished workout may have `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`, written by the page. Read it when planning; don't change it.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
+  The one exception is below: checking off a workout for someone who tells you they finished it.
 - Read the file (and its `sha`) right before writing, and change nothing else in the repository.
+
+## Checking off a workout for someone (e.g. Jose)
+
+Someone without a key (Jose) tells their own agent when they finish, and it passes that on to you.
+Only do this when the person (or their agent) says they finished. Then, in `plan.json`:
+
+1. In that person's `queue`, find their **oldest** entry with `"completed": null` (the one their page shows).
+   If they name a different workout, use that one.
+2. Set `"completed"` to the day they finished, as `"YYYY-MM-DD"` (America/Denver). Usually today.
+3. If they said how it felt, add `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`
+   ("Too easy" = `easy`, "Just right" = `right`, "Too hard" = `hard`; the note is optional, in their words).
+4. Don't touch `history` and don't remove the entry. The page works out their reps, calendar,
+   streak and leaderboard spot from the queue.
+5. Commit with a message like `Jose finished a workout`.
