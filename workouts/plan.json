@@ -567,6 +567,118 @@
             "rating": "right",
             "note": "Dumbbell glute bridges were too light"
           }
+        },
+        {
+          "id": "2026-10-21-chest-and-tris-6q8a",
+          "title": "Chest and tris",
+          "notes": "About 40-45 minutes including warm-up and cooldown. Bench press is the one big lift today: stop every set with about 3 clean reps left. Follow the listed order to finish the bench before cables.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "notes": "Straight arms; slide shoulder blades apart and together",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Incline push-ups on bench",
+                  "sets": 1,
+                  "reps": "8-10",
+                  "url": "https://www.youtube.com/watch?v=Z0bRiVhnO8Q"
+                },
+                {
+                  "exercise": "Light rope face pull",
+                  "sets": 1,
+                  "reps": "15",
+                  "weight": "very light",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell bench press",
+                  "sets": 3,
+                  "reps": "6-8",
+                  "weight": "65 lb",
+                  "rest": "2 min",
+                  "notes": "Warm up with empty bar 2 x 8, then 55 lb x 3, then the work sets",
+                  "url": "https://www.youtube.com/watch?v=CjHIKDQ4RQo"
+                },
+                {
+                  "exercise": "Incline dumbbell press",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "15 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=OC7Qs_SAO2E"
+                },
+                {
+                  "exercise": "Low-to-high cable fly",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "weight": "10 lb / side",
+                  "rest": "75 sec",
+                  "url": "https://www.youtube.com/watch?v=eQ_NBB6OBH4"
+                },
+                {
+                  "exercise": "Rope triceps pushdown",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=pfUB77aCMFM"
+                },
+                {
+                  "exercise": "Overhead dumbbell triceps extension",
+                  "sets": 2,
+                  "reps": "10-12",
+                  "weight": "15 lb",
+                  "rest": "60 sec",
+                  "notes": "Both hands on one dumbbell",
+                  "url": "https://www.youtube.com/watch?v=bRJWHiu_J4k"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Doorway pec stretch",
+                  "sets": 2,
+                  "duration": "45 sec / side",
+                  "notes": "Forearm on the door frame at shoulder height, step through gently until you feel it across the chest; keep it easy, no pulling on the shoulder",
+                  "url": "https://www.youtube.com/watch?v=jRY9-4VTCcw"
+                },
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Draw one straight arm across your chest, hug it in with the other arm; feel it in the back of the shoulder; back off if the joint pinches",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Overhead triceps stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Reach one arm overhead, bend the elbow behind your head, press gently with the other hand; feel it along the back of the upper arm",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-21",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
