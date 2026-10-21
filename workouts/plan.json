@@ -834,7 +834,7 @@
           ],
           "date": "2026-10-20",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-20"
         }
       ],
       "history": [
@@ -847,6 +847,12 @@
             "rating": "hard",
             "note": "Skipped goblet squat, heels elevated; not counted in reps."
           }
+        },
+        {
+          "id": "2026-10-20-upper-push-conditioning-erwp",
+          "date": "2026-10-20",
+          "title": "Upper Push + Conditioning",
+          "reps": 177
         }
       ]
     }
