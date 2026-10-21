@@ -217,6 +217,112 @@
             "rating": "right",
             "note": "Left shoulder got a little sore after the chest portion but weights were good and i like the format of name, sets, weight and rest. Also like that you hit all parts of the pec muscles"
           }
+        },
+        {
+          "id": "2026-10-21-legs-jfit",
+          "title": "Legs",
+          "notes": "Legs today, so your shoulder gets a full rest after Tuesday's soreness. About 40-45 minutes including warm-up. Back squat is the one big lift: stop every set with about 3 clean reps left. Follow the listed order: barbell work first, then dumbbells, then the floor.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front-to-back and side-to-side",
+                  "sets": 1,
+                  "reps": "10 / leg each way",
+                  "notes": "Hold the rack for balance, swing from the hip",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Floor glute bridge",
+                  "sets": 1,
+                  "reps": "12",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                },
+                {
+                  "exercise": "Lateral lunge",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=4NlJdSzHeUg"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "sets": 3,
+                  "reps": "5-6",
+                  "weight": "185 lb",
+                  "rest": "3 min",
+                  "notes": "Warm up with empty bar 2 x 8, then 135 lb x 3, then the work sets",
+                  "url": "https://www.youtube.com/watch?v=-bJIpOq-LWk"
+                },
+                {
+                  "exercise": "Barbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "135 lb",
+                  "rest": "2 min",
+                  "notes": "One light set of 8 with 95 lb first to groove the hinge",
+                  "url": "https://www.youtube.com/watch?v=u87dwyD3EL0"
+                },
+                {
+                  "exercise": "Bulgarian split squat, rear foot on bench",
+                  "sets": 2,
+                  "reps": "8 / leg",
+                  "weight": "20 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=4Qnfw1FqWxQ"
+                },
+                {
+                  "exercise": "Standing dumbbell calf raise",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "25 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Full stretch at the bottom, pause at the top",
+                  "url": "https://www.youtube.com/watch?v=hPA98_r-6e4"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Weighted wall sit",
+                  "sets": 2,
+                  "duration": "40 sec",
+                  "weight": "25-35 lb dumbbell on thighs",
+                  "notes": "Thighs parallel to the floor, back flat on the wall; hold, don't bounce",
+                  "url": "https://www.youtube.com/watch?v=6Li55TURhVg"
+                },
+                {
+                  "exercise": "Tibialis raise, back against wall",
+                  "sets": 2,
+                  "reps": "15",
+                  "notes": "Heels planted a foot from the wall, lift toes toward shins; the shin burn is the point",
+                  "url": "https://www.youtube.com/watch?v=RXC7tE6IQcc"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-21",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
