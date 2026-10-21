@@ -678,7 +678,11 @@
           ],
           "date": "2026-10-21",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-21",
+          "feedback": {
+            "rating": "easy",
+            "note": "The barbell bench press was too light. I did one set with the bar, one set with 75 pounds, the next with 100 pounds. The 100 pounds was about my max for 6 reps. Also the incline dumbbell bench press was too light. I used 20 pound dumbbells. Two sets of an exercise seems too few, i prefer 3. I have about 35 minutes max to do these workouts. This was an appropriate length."
+          }
         }
       ],
       "history": [
@@ -697,6 +701,17 @@
           "feedback": {
             "rating": "right",
             "note": "Dumbbell glute bridges were too light"
+          }
+        },
+        {
+          "id": "2026-10-21-chest-and-tris-6q8a",
+          "date": "2026-10-21",
+          "planned": "2026-10-21",
+          "title": "Chest and tris",
+          "reps": 135,
+          "feedback": {
+            "rating": "easy",
+            "note": "The barbell bench press was too light. I did one set with the bar, one set with 75 pounds, the next with 100 pounds. The 100 pounds was about my max for 6 reps. Also the incline dumbbell bench press was too light. I used 20 pound dumbbells. Two sets of an exercise seems too few, i prefer 3. I have about 35 minutes max to do these workouts. This was an appropriate length."
           }
         }
       ]
