@@ -786,6 +786,55 @@
             "rating": "hard",
             "note": "Skipped goblet squat, heels elevated; not counted in reps."
           }
+        },
+        {
+          "id": "2026-10-20-upper-push-conditioning-erwp",
+          "title": "Upper Push + Conditioning",
+          "sections": [
+            {
+              "name": "Upper Push",
+              "items": [
+                {
+                  "exercise": "Band TKE",
+                  "sets": 1,
+                  "reps": "15 / side"
+                },
+                {
+                  "exercise": "Bench press",
+                  "sets": 4,
+                  "reps": "6-8"
+                },
+                {
+                  "exercise": "Incline bench press",
+                  "sets": 3,
+                  "reps": "6-8"
+                },
+                {
+                  "exercise": "Seated dumbbell overhead press",
+                  "sets": 3,
+                  "reps": "6-8"
+                },
+                {
+                  "exercise": "Decline push-ups",
+                  "sets": 3,
+                  "reps": "14"
+                },
+                {
+                  "exercise": "Band face pull",
+                  "sets": 3,
+                  "reps": "15"
+                },
+                {
+                  "exercise": "Low-impact conditioning (bike or row)",
+                  "duration": "30s hard / 90s easy",
+                  "detail": "Optional: 5-6 rounds"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-20",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
