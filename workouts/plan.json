@@ -322,7 +322,11 @@
           ],
           "date": "2026-10-21",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-21",
+          "feedback": {
+            "rating": "right",
+            "note": "Need more volume on calf raises to feel anything but the rest was good"
+          }
         }
       ],
       "history": [
@@ -345,6 +349,17 @@
           "feedback": {
             "rating": "right",
             "note": "Left shoulder got a little sore after the chest portion but weights were good and i like the format of name, sets, weight and rest. Also like that you hit all parts of the pec muscles"
+          }
+        },
+        {
+          "id": "2026-10-21-legs-jfit",
+          "date": "2026-10-21",
+          "planned": "2026-10-21",
+          "title": "Legs",
+          "reps": 195,
+          "feedback": {
+            "rating": "right",
+            "note": "Need more volume on calf raises to feel anything but the rest was good"
           }
         }
       ]
