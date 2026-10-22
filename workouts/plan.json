@@ -327,6 +327,113 @@
             "rating": "right",
             "note": "Need more volume on calf raises to feel anything but the rest was good"
           }
+        },
+        {
+          "id": "2026-10-22-back-and-bis-ztzt",
+          "title": "Back and bis",
+          "notes": "Rated easy last time, so every main lift is 3 sets now and the loads step up. About 40-45 minutes including warm-up. Follow the listed order to finish dumbbells/bench before cables. Stop every set with about 3 clean reps left.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Shoulder-blade squeezes",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=p1UZuTf8ZEo"
+                },
+                {
+                  "exercise": "Light chest-supported dumbbell row",
+                  "sets": 1,
+                  "reps": "10",
+                  "weight": "20 lb / hand",
+                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Chest-supported dumbbell row",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "50 lb / hand",
+                  "rest": "90 sec",
+                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                },
+                {
+                  "exercise": "Half-kneeling single-arm cable pulldown",
+                  "sets": 3,
+                  "reps": "10 / side",
+                  "rest": "75 sec",
+                  "url": "https://www.youtube.com/watch?v=56blbOF9JoE"
+                },
+                {
+                  "exercise": "Chest-supported dumbbell reverse fly",
+                  "sets": 2,
+                  "reps": "12",
+                  "weight": "15 lb / hand",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=G4KcUxqcXO8"
+                },
+                {
+                  "exercise": "Seated dumbbell hammer curl",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "25-30 lb / hand",
+                  "rest": "75 sec",
+                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
+                },
+                {
+                  "exercise": "Standing single-arm cable curl",
+                  "sets": 2,
+                  "reps": "10-12 / side",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=njLoCel5lUI"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Single-leg step-down off the box, slow lower",
+                  "sets": 2,
+                  "reps": "6 / leg",
+                  "notes": "Stand on the box edge, lower the free heel to the floor over 3-4 seconds, light toe touch, drive back up; hold the rack upright only if balance goes",
+                  "url": "https://www.youtube.com/watch?v=Or4C-UQ63Xc"
+                },
+                {
+                  "exercise": "Single-leg wall sit",
+                  "sets": 2,
+                  "duration": "20 sec / leg",
+                  "notes": "Back flat on the wall, one leg lifted, hold the bottom position; this should burn",
+                  "url": "https://www.youtube.com/watch?v=7jNA-3RbnEc"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-22",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
