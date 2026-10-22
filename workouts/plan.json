@@ -808,38 +808,36 @@
         },
         {
           "id": "2026-10-22-legs-hafd",
-          "title": "Legs",
-          "notes": "Built to fit your ~35-40 minute window. Barbell hip thrust is the one big lift today - you said the light versions were too easy, so it starts at 135 lb. Stop every set with about 3 clean reps left. Follow the listed order: bench work, then barbell, then dumbbells, then floor.",
+          "title": "Shoulders and abs",
+          "notes": "Swapped in for today - no leg day today. About 35-40 minutes including warm-up and cooldown. Seated overhead press is the one bigger lift: stop every set with about 3 clean reps left. Follow the listed order: bench first, then cables, then floor.",
           "sections": [
             {
               "name": "Warm-up",
               "items": [
                 {
-                  "exercise": "Leg swings, front-to-back and side-to-side",
-                  "sets": 1,
-                  "reps": "10 / leg each way",
-                  "notes": "Hold the rack for balance, swing from the hip",
-                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
                 },
                 {
-                  "exercise": "Unweighted hip hinges",
+                  "exercise": "Scap push-ups",
                   "sets": 1,
                   "reps": "10",
-                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                  "notes": "Straight arms; slide shoulder blades apart and together",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
                 },
                 {
-                  "exercise": "Floor glute bridge with dumbbell",
+                  "exercise": "Standing thoracic rotations",
                   "sets": 1,
-                  "reps": "12",
-                  "weight": "20 lb on hips",
-                  "notes": "Heavier than last time on purpose",
-                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
                 },
                 {
-                  "exercise": "Bodyweight squat",
+                  "exercise": "Light rope face pull",
                   "sets": 1,
-                  "reps": "10",
-                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                  "reps": "15",
+                  "weight": "very light",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
                 }
               ]
             },
@@ -847,46 +845,55 @@
               "name": "Main",
               "items": [
                 {
-                  "exercise": "Barbell hip thrust, shoulders on bench",
+                  "exercise": "Seated dumbbell overhead press",
                   "sets": 3,
                   "reps": "8",
-                  "weight": "135 lb",
+                  "weight": "25 lb / hand",
                   "rest": "2 min",
-                  "notes": "Groove it with 95 lb x 5 first; bumpers on the bar, pause and squeeze at the top",
-                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                  "notes": "Bench upright, ribs down, press straight up; one lighter set of 10 with 15s first",
+                  "url": "https://www.youtube.com/watch?v=b5JzUH8gsOg"
                 },
                 {
-                  "exercise": "Barbell back squat",
+                  "exercise": "Dumbbell lateral raise",
                   "sets": 3,
-                  "reps": "8",
-                  "weight": "95 lb",
-                  "rest": "2 min",
-                  "notes": "Warm up with empty bar 2 x 8, then 65 lb x 3",
-                  "url": "https://www.youtube.com/watch?v=-bJIpOq-LWk"
+                  "reps": "12",
+                  "weight": "10 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Soft elbows, lift to shoulder height, slow lower",
+                  "url": "https://www.youtube.com/watch?v=Y29xKcze8Ik"
                 },
                 {
-                  "exercise": "Dumbbell Romanian deadlift",
+                  "exercise": "Chest-supported dumbbell reverse fly",
                   "sets": 3,
-                  "reps": "10",
-                  "weight": "30 lb / hand",
-                  "rest": "90 sec",
-                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                  "reps": "12",
+                  "weight": "10 lb / hand",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=G4KcUxqcXO8"
                 },
                 {
-                  "exercise": "Dumbbell reverse lunge",
+                  "exercise": "Dumbbell split squat",
                   "sets": 2,
                   "reps": "8 / leg",
                   "weight": "15 lb / hand",
                   "rest": "90 sec",
-                  "notes": "2 sets to keep you in your time window",
-                  "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
+                  "notes": "The one lower-body piece today - steady, not a leg day",
+                  "url": "https://www.youtube.com/watch?v=Wcmg-3iHwjQ"
                 },
                 {
-                  "exercise": "Side-lying hip abduction",
-                  "sets": 2,
+                  "exercise": "Pallof press",
+                  "sets": 3,
                   "reps": "12 / side",
                   "rest": "45 sec",
-                  "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
+                  "notes": "Cable at chest height, press straight out, resist the twist",
+                  "url": "https://www.youtube.com/watch?v=HXrLaqNIkTs"
+                },
+                {
+                  "exercise": "Dead bug",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "rest": "45 sec",
+                  "notes": "Low back pressed into the floor the whole time; slow opposite arm/leg",
+                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
                 }
               ]
             },
@@ -894,25 +901,25 @@
               "name": "Cooldown",
               "items": [
                 {
-                  "exercise": "Figure-4 glute stretch",
+                  "exercise": "Cross-body shoulder stretch",
                   "sets": 2,
-                  "duration": "45 sec / side",
-                  "notes": "Lie on your back, cross one ankle over the opposite knee, pull the thigh gently toward your chest; feel it in the glute of the crossed leg; back off if the knee complains",
-                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                  "duration": "30 sec / side",
+                  "notes": "Draw one straight arm across your chest, hug it in with the other arm; feel it in the back of the shoulder; back off if the joint pinches",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
                 },
                 {
-                  "exercise": "Couch stretch",
+                  "exercise": "Kneeling lat stretch",
                   "sets": 2,
-                  "duration": "45 sec / side",
-                  "notes": "Kneel facing away from the bench, back foot up on it, hips tall, shift gently forward; feel it in the front of the hip and thigh",
-                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                  "duration": "30 sec / side",
+                  "notes": "Kneel facing the bench, one arm stretched forward on it, sink your chest toward the floor; feel it along the side of your back",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
                 },
                 {
-                  "exercise": "90/90 hip stretch",
+                  "exercise": "Overhead triceps stretch",
                   "sets": 2,
-                  "duration": "45 sec / side",
-                  "notes": "Sit with both knees bent 90 degrees, one leg in front and one to the side; chest tall, lean gently over the front shin; feel it in the outer hip",
-                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                  "duration": "30 sec / side",
+                  "notes": "Reach one arm overhead, bend the elbow behind your head, press gently with the other hand; feel it along the back of the upper arm",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
                 }
               ]
             }
