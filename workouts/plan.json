@@ -331,7 +331,7 @@
         {
           "id": "2026-10-22-back-and-bis-ztzt",
           "title": "Back and bis",
-          "notes": "Rated easy last time, so every main lift is 3 sets now and the loads step up. About 40-45 minutes including warm-up. Follow the listed order to finish dumbbells/bench before cables. Stop every set with about 3 clean reps left.",
+          "notes": "Fresh set of exercises today - no repeats from Monday's back/bis. About 40-45 minutes including warm-up. Barbell row is the one bigger lift: empty-bar groove first, stop every set with about 3 clean reps left. Order is set to finish the barbell, then cables, then the ski block.",
           "sections": [
             {
               "name": "Warm-up",
@@ -360,11 +360,12 @@
                   "url": "https://www.youtube.com/watch?v=p1UZuTf8ZEo"
                 },
                 {
-                  "exercise": "Light chest-supported dumbbell row",
-                  "sets": 1,
-                  "reps": "10",
-                  "weight": "20 lb / hand",
-                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                  "exercise": "Empty-bar bent-over row groove",
+                  "sets": 2,
+                  "reps": "8",
+                  "weight": "45 lb bar",
+                  "notes": "Rehearse the hinge and row path before loading",
+                  "url": "https://www.youtube.com/watch?v=9efgcAjQe7E"
                 }
               ]
             },
@@ -372,61 +373,70 @@
               "name": "Main",
               "items": [
                 {
-                  "exercise": "Chest-supported dumbbell row",
+                  "exercise": "Barbell bent-over row",
                   "sets": 3,
-                  "reps": "8-10",
-                  "weight": "50 lb / hand",
-                  "rest": "90 sec",
-                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                  "reps": "8",
+                  "weight": "115 lb",
+                  "rest": "2 min",
+                  "notes": "Flat back hinge, pull to lower ribs, control the lower; stop with ~3 clean reps left",
+                  "url": "https://www.youtube.com/watch?v=9efgcAjQe7E"
                 },
                 {
-                  "exercise": "Half-kneeling single-arm cable pulldown",
-                  "sets": 3,
-                  "reps": "10 / side",
-                  "rest": "75 sec",
-                  "url": "https://www.youtube.com/watch?v=56blbOF9JoE"
-                },
-                {
-                  "exercise": "Chest-supported dumbbell reverse fly",
-                  "sets": 2,
-                  "reps": "12",
-                  "weight": "15 lb / hand",
-                  "rest": "60 sec",
-                  "url": "https://www.youtube.com/watch?v=G4KcUxqcXO8"
-                },
-                {
-                  "exercise": "Seated dumbbell hammer curl",
+                  "exercise": "Seated cable row",
                   "sets": 3,
                   "reps": "10-12",
-                  "weight": "25-30 lb / hand",
-                  "rest": "75 sec",
-                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
+                  "rest": "90 sec",
+                  "notes": "Tall chest, squeeze shoulder blades at the finish, no rocking",
+                  "url": "https://www.youtube.com/watch?v=7o2oolbmzeI"
                 },
                 {
-                  "exercise": "Standing single-arm cable curl",
-                  "sets": 2,
-                  "reps": "10-12 / side",
+                  "exercise": "Straight-arm rope pulldown",
+                  "sets": 3,
+                  "reps": "12-15",
                   "rest": "60 sec",
-                  "url": "https://www.youtube.com/watch?v=njLoCel5lUI"
+                  "notes": "Soft elbows, sweep the rope to your thighs, feel lats not triceps",
+                  "url": "https://www.youtube.com/watch?v=EurcOa-r9r4"
+                },
+                {
+                  "exercise": "Incline dumbbell curl",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "20 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "Bench at ~45 deg, full stretch at the bottom, no swinging",
+                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+                },
+                {
+                  "exercise": "Barbell curl",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "50 lb",
+                  "rest": "75 sec",
+                  "notes": "Elbows pinned, strict up, 2-sec lower",
+                  "url": "https://www.youtube.com/watch?v=kwG2ipFRgfo"
                 }
               ]
             },
             {
-              "name": "Ski block",
+              "name": "Ski block: single-leg strength",
               "items": [
                 {
-                  "exercise": "Single-leg step-down off the box, slow lower",
-                  "sets": 2,
-                  "reps": "6 / leg",
-                  "notes": "Stand on the box edge, lower the free heel to the floor over 3-4 seconds, light toe touch, drive back up; hold the rack upright only if balance goes",
-                  "url": "https://www.youtube.com/watch?v=Or4C-UQ63Xc"
+                  "exercise": "Single-leg Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8 / leg",
+                  "weight": "20 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "Hips square, soft standing knee, slow 3-sec lower, dumbbells drift down the shin; builds the hamstring control you use absorbing bumps",
+                  "url": "https://www.youtube.com/watch?v=pJewPISyHjw"
                 },
                 {
-                  "exercise": "Single-leg wall sit",
+                  "exercise": "Lateral lunge to 2-second hold",
                   "sets": 2,
-                  "duration": "20 sec / leg",
-                  "notes": "Back flat on the wall, one leg lifted, hold the bottom position; this should burn",
-                  "url": "https://www.youtube.com/watch?v=7jNA-3RbnEc"
+                  "reps": "6 / side",
+                  "weight": "20 lb dumbbell, goblet",
+                  "rest": "75 sec",
+                  "notes": "Step wide, sit into the hip, hold the bottom 2 sec, drive back; mirrors edge-to-edge lateral control",
+                  "url": "https://www.youtube.com/watch?v=gwWv7aPcD88"
                 }
               ]
             }
