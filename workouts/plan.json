@@ -443,7 +443,11 @@
           ],
           "date": "2026-10-22",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-22",
+          "feedback": {
+            "rating": "right",
+            "note": "Seated incline curls should be 25lbs per hand in the future"
+          }
         }
       ],
       "history": [
@@ -477,6 +481,17 @@
           "feedback": {
             "rating": "right",
             "note": "Need more volume on calf raises to feel anything but the rest was good"
+          }
+        },
+        {
+          "id": "2026-10-22-back-and-bis-ztzt",
+          "date": "2026-10-22",
+          "planned": "2026-10-22",
+          "title": "Back and bis",
+          "reps": 264,
+          "feedback": {
+            "rating": "right",
+            "note": "Seated incline curls should be 25lbs per hand in the future"
           }
         }
       ]
