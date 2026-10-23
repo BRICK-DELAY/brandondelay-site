@@ -448,6 +448,119 @@
             "rating": "right",
             "note": "Seated incline curls should be 25lbs per hand in the future"
           }
+        },
+        {
+          "id": "2026-10-23-chest-and-tris-kmy6",
+          "title": "Chest and tris",
+          "notes": "Fresh chest/tris variant - no repeats from Tuesday. Pressing volume moderate and the warm-up is longer to look after the left shoulder. Recovery note: this post keeps your schedule intact per your call, but it is not advice to train right after wisdom-teeth surgery - strenuous work waits for your surgeon's go-ahead. About 40-45 minutes. Dumbbell bench is the one bigger lift: stop every set with about 3 clean reps left.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light rope face pull",
+                  "sets": 1,
+                  "reps": "15",
+                  "weight": "very light",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                },
+                {
+                  "exercise": "Light dumbbell bench groove",
+                  "sets": 2,
+                  "reps": "10",
+                  "weight": "20 lb / hand",
+                  "notes": "Rehearse the pressing path before loading",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Dumbbell flat bench press",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "50 lb / hand",
+                  "rest": "2 min",
+                  "notes": "Full range, controlled lower; shoulder stays comfortable or stop",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                },
+                {
+                  "exercise": "Close-grip barbell bench press",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "85 lb",
+                  "rest": "90 sec",
+                  "notes": "Hands just inside shoulder width, elbows tucked - triceps emphasis",
+                  "url": "https://www.youtube.com/watch?v=nEF0bv2FW94"
+                },
+                {
+                  "exercise": "Standing cable fly",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "60 sec",
+                  "notes": "Soft elbows, squeeze at the front, slow return",
+                  "url": "https://www.youtube.com/watch?v=ydnAMvT1Jzo"
+                },
+                {
+                  "exercise": "Single-arm cable triceps pushdown",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=Oy4-uJ35cQQ"
+                },
+                {
+                  "exercise": "Overhead rope triceps extension",
+                  "sets": 3,
+                  "reps": "12-15",
+                  "rest": "60 sec",
+                  "notes": "Keep ribs down; skip if the left shoulder pinches overhead",
+                  "url": "https://www.youtube.com/watch?v=kqidUIf1eJE"
+                }
+              ]
+            },
+            {
+              "name": "Ski block: light box work",
+              "items": [
+                {
+                  "exercise": "Low box jump, step down between reps",
+                  "sets": 2,
+                  "reps": "5",
+                  "rest": "75 sec",
+                  "notes": "Quiet soft landings, stick each one; moderate effort only",
+                  "url": "https://www.youtube.com/watch?v=G-bxQY57mKc"
+                },
+                {
+                  "exercise": "Unweighted pogo hops",
+                  "sets": 2,
+                  "reps": "15",
+                  "rest": "60 sec",
+                  "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-23",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
