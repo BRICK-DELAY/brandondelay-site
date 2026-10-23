@@ -1189,7 +1189,8 @@
                   "exercise": "Bike + band TKE",
                   "sets": 1,
                   "reps": "5 min + 2 x 15",
-                  "detail": "5 min bike, then 2 x 15"
+                  "detail": "5 min bike, then 2 x 15",
+                  "performed": "band TKE 2 x 15 done; bike skipped"
                 },
                 {
                   "exercise": "Broad jumps (bodyweight)",
@@ -1281,7 +1282,7 @@
           "id": "2026-10-22-lower-power-machines-upeb",
           "date": "2026-10-22",
           "title": "Lower Power + Machines",
-          "reps": 252
+          "reps": 282
         }
       ]
     }
