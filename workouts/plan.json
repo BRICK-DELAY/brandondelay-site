@@ -1069,6 +1069,119 @@
             "rating": "easy",
             "note": "I would like more abs in these workouts. The weights for the shoulder lifts were good."
           }
+        },
+        {
+          "id": "2026-10-23-legs-tymu",
+          "title": "Legs",
+          "notes": "Fresh leg day - different moves from Tuesday, weights up where Tuesday felt light. About 35-40 minutes including warm-up and cooldown. Hip thrust is the one bigger lift: stop every set with about 3 clean reps left. Follow the listed order: barbell first, then dumbbells and box, then cables.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front-to-back and side-to-side",
+                  "detail": "30 sec each leg, each direction",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Floor glute bridge",
+                  "sets": 1,
+                  "reps": "12",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell hip thrust, shoulders on bench",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "weight": "135 lb",
+                  "rest": "2 min",
+                  "notes": "Pause and squeeze at the top; chin tucked",
+                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                },
+                {
+                  "exercise": "Goblet squat",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "35 lb",
+                  "rest": "90 sec",
+                  "notes": "Elbows inside knees, chest tall, full depth you can control",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                },
+                {
+                  "exercise": "Dumbbell step-up",
+                  "sets": 3,
+                  "reps": "10 / leg",
+                  "weight": "10 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "Whole foot on the box, drive through the heel, slow lower",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Single-leg Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8 / leg",
+                  "weight": "15 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "Hips square, soft standing knee, 3-sec lower",
+                  "url": "https://www.youtube.com/watch?v=pJewPISyHjw"
+                },
+                {
+                  "exercise": "Cable glute kickback",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "rest": "60 sec",
+                  "notes": "Single handle low, squeeze at the top, no back arch",
+                  "url": "https://www.youtube.com/watch?v=5jJNfIlKTmg"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Back knee on the floor against the bench, shin up the pad, stand tall; feel it in the front of the hip",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                },
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "On your back, ankle over the opposite knee, draw the leg in gently; feel it deep in the glute",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "90/90 hip stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Sit with both knees bent 90 deg, fold over the front shin; keep the chest long",
+                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-23",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
