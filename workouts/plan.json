@@ -1176,6 +1176,87 @@
           "date": "2026-10-21",
           "generated_by": "Instinct",
           "completed": "2026-10-21"
+        },
+        {
+          "id": "2026-10-22-lower-power-machines-upeb",
+          "title": "Lower Power + Machines",
+          "notes": "",
+          "sections": [
+            {
+              "name": "Lower",
+              "items": [
+                {
+                  "exercise": "Bike + band TKE",
+                  "sets": 1,
+                  "reps": "5 min + 2 x 15",
+                  "detail": "5 min bike, then 2 x 15"
+                },
+                {
+                  "exercise": "Broad jumps (bodyweight)",
+                  "sets": 4,
+                  "reps": "4",
+                  "detail": "4 x 4"
+                },
+                {
+                  "exercise": "Front squat",
+                  "sets": 3,
+                  "reps": "6-8",
+                  "detail": "3 x 6-8"
+                },
+                {
+                  "exercise": "Hip thrust",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "detail": "3 x 10-12"
+                },
+                {
+                  "exercise": "Hamstring curl",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10"
+                },
+                {
+                  "exercise": "Copenhagen plank",
+                  "sets": 3,
+                  "reps": "20s / side",
+                  "detail": "3 x 20s / side"
+                },
+                {
+                  "exercise": "Hip abduction",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side"
+                },
+                {
+                  "exercise": "Ab wheel or slow plank",
+                  "sets": 3,
+                  "reps": "8-10 / 60s",
+                  "detail": "3 x 8-10 or 60s"
+                },
+                {
+                  "exercise": "Side plank + leg lift",
+                  "sets": 2,
+                  "reps": "8 / side",
+                  "detail": "2 x 8 / side"
+                },
+                {
+                  "exercise": "Bilateral leg press or goblet squat",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10"
+                },
+                {
+                  "exercise": "Leg extension (bilateral, light)",
+                  "sets": 2,
+                  "reps": "12",
+                  "detail": "2 x 12"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-22",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
