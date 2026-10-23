@@ -1231,7 +1231,8 @@
                   "exercise": "Ab wheel or slow plank",
                   "sets": 3,
                   "reps": "8-10 / 60s",
-                  "detail": "3 x 8-10 or 60s"
+                  "detail": "3 x 8-10 or 60s",
+                  "skipped": true
                 },
                 {
                   "exercise": "Side plank + leg lift",
@@ -1275,6 +1276,12 @@
           "date": "2026-10-20",
           "title": "Upper Push + Conditioning",
           "reps": 177
+        },
+        {
+          "id": "2026-10-22-lower-power-machines-upeb",
+          "date": "2026-10-22",
+          "title": "Lower Power + Machines",
+          "reps": 252
         }
       ]
     }
