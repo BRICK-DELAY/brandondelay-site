@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -563,127 +563,46 @@
           "completed": null
         },
         {
-          "id": "2026-10-24-legs-ski-prep-power-9y51",
-          "title": "Legs: ski-prep power",
-          "notes": "From the ski-prep reel you sent. This is a strenuous session saved for AFTER your wisdom-teeth recovery and your surgeon's clearance - posting keeps your schedule and streak choices intact; it is not a recommendation to train the day after surgery, and scaled-down jumps the day after are off the table too. Follow your surgeon's instructions on when to start back. When you are cleared: quiet, soft landings, step down off the box instead of jumping down. About 45 minutes. Bulgarian split squat is the one bigger lift: stop every set with about 3 clean reps left.",
+          "id": "2026-10-24-recovery-day-walk-mobility-r2x7",
+          "title": "Recovery day: easy walk and gentle mobility",
+          "notes": "Recovery day after wisdom-teeth removal - this is not a workout, and your surgeon's aftercare sheet is the boss. Swelling today and tomorrow is normal. Nothing here should raise your heart rate much: no bending over, no inversions, no jumping or jarring, no lifting. Keep your head above your heart. Stop and rest if you feel throbbing, dizziness, or new bleeding. The ski-prep leg session originally planned for today is saved and will come back after recovery and your surgeon's clearance.",
           "sections": [
             {
-              "name": "Warm-up",
+              "name": "Easy walk",
               "items": [
                 {
-                  "exercise": "Dynamic ankle and hip warm-up",
-                  "sets": 1,
-                  "detail": "1 round, ankles, calves and hips",
-                  "url": "https://www.youtube.com/watch?v=IoPvijC5TgY"
-                },
-                {
-                  "exercise": "Bodyweight squat",
-                  "sets": 1,
-                  "reps": "15",
-                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
-                },
-                {
-                  "exercise": "Unweighted hip hinges",
-                  "sets": 1,
-                  "reps": "10",
-                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
-                },
-                {
-                  "exercise": "Low pogo hops",
-                  "sets": 1,
-                  "reps": "15",
-                  "notes": "Unweighted, easy bounce",
-                  "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4"
+                  "exercise": "Easy outdoor walk",
+                  "detail": "10-15 min, flat route, slow conversational pace",
+                  "notes": "Fresh air is the goal, not exercise; cut it short if you feel lightheaded"
                 }
               ]
             },
             {
-              "name": "Power block",
+              "name": "Gentle mobility, all seated or standing upright",
               "items": [
                 {
-                  "exercise": "Depth drop to vertical jump",
-                  "sets": 2,
-                  "reps": "6",
-                  "rest": "75 sec",
-                  "notes": "Step off the low box, land soft, jump straight up",
-                  "url": "https://www.youtube.com/watch?v=Lf3aMEHR6RU"
+                  "exercise": "Seated diaphragmatic breathing",
+                  "sets": 1,
+                  "reps": "5 slow breaths",
+                  "notes": "Sit tall, breathe in through the nose, long slow exhale; never force it"
                 },
                 {
-                  "exercise": "Depth drop to broad jump",
-                  "sets": 2,
-                  "reps": "6",
-                  "rest": "75 sec",
-                  "notes": "Needs clear floor space ahead",
-                  "url": "https://www.youtube.com/watch?v=lhPnfzs0hG0"
-                },
-                {
-                  "exercise": "180 box jump",
-                  "sets": 2,
+                  "exercise": "Seated neck half-rolls",
+                  "sets": 1,
                   "reps": "5 / side",
-                  "rest": "75 sec",
-                  "notes": "Turn both directions, stick the landing",
-                  "url": "https://www.youtube.com/watch?v=fDgolYbeCY4"
+                  "notes": "Chin to chest, ear toward shoulder, gentle range only"
                 },
                 {
-                  "exercise": "Weighted pogo hops",
-                  "sets": 2,
-                  "reps": "20",
-                  "weight": "45-65 lb barbell",
-                  "rest": "60 sec",
-                  "notes": "Light bar on the back, quick ankle bounces",
-                  "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4"
-                }
-              ]
-            },
-            {
-              "name": "Strength",
-              "items": [
-                {
-                  "exercise": "Bulgarian split squat",
-                  "sets": 3,
-                  "reps": "10 / leg",
-                  "weight": "25 lb / hand",
-                  "rest": "90 sec",
-                  "notes": "The one bigger lift; rear foot on the bench, control the lower",
-                  "url": "https://www.youtube.com/watch?v=vLuhN_glFZ8"
+                  "exercise": "Shoulder rolls",
+                  "sets": 1,
+                  "reps": "8 each direction",
+                  "notes": "Slow and easy"
                 },
                 {
-                  "exercise": "Goblet cossack squat",
-                  "sets": 2,
-                  "reps": "12",
-                  "weight": "30 lb",
-                  "rest": "75 sec",
-                  "notes": "Alternating sides, sit deep into the hip",
-                  "url": "https://www.youtube.com/watch?v=JaCbmoDqUc4"
-                },
-                {
-                  "exercise": "Dumbbell squat jump",
-                  "sets": 2,
-                  "reps": "10",
-                  "weight": "10-15 lb / hand",
-                  "rest": "75 sec",
-                  "notes": "Light, crisp jumps, soft landings",
-                  "url": "https://www.youtube.com/watch?v=7qPVEUQ6vE8"
-                }
-              ]
-            },
-            {
-              "name": "Core",
-              "items": [
-                {
-                  "exercise": "Hanging knee or leg raise",
-                  "sets": 3,
-                  "reps": "10",
-                  "rest": "60 sec",
-                  "notes": "Controlled, no swinging; if the left shoulder complains swap to slow dead bugs",
-                  "url": "https://www.youtube.com/watch?v=rbOJSK07AGA"
-                },
-                {
-                  "exercise": "Dead bug (swap option)",
-                  "sets": 3,
+                  "exercise": "Seated ankle circles",
+                  "sets": 1,
                   "reps": "8 / side",
-                  "notes": "Only if hanging work bothers the shoulder",
-                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
+                  "notes": "One foot at a time while sitting"
                 }
               ]
             }
@@ -701,7 +620,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
