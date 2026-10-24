@@ -1697,14 +1697,15 @@
               "items": [
                 {
                   "exercise": "Side plank or dead bug",
-                  "detail": "Skipped; 0 reps"
+                  "detail": "Skipped; 0 reps",
+                  "skipped": true
                 }
               ]
             }
           ],
           "date": "2026-10-23",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-23"
         }
       ],
       "history": [
@@ -1729,6 +1730,12 @@
           "date": "2026-10-22",
           "title": "Lower Power + Machines",
           "reps": 282
+        },
+        {
+          "id": "2026-10-23-upper-pull-calisthenics-vs0d",
+          "date": "2026-10-23",
+          "title": "Upper Pull + Calisthenics",
+          "reps": 129
         }
       ]
     }
