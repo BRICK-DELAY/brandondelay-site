@@ -1315,6 +1315,112 @@
           "feedback": {
             "rating": "right"
           }
+        },
+        {
+          "id": "2026-10-24-back-and-bis-1fc6",
+          "title": "Back and bis",
+          "notes": "Fresh back/bis - no repeats from Monday's. About 35-40 minutes including warm-up and cooldown. One-arm row is the one bigger lift: stop every set with about 3 clean reps left. Tell me if any weight feels too light and I'll move it up next time.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Shoulder-blade squeezes",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=p1UZuTf8ZEo"
+                },
+                {
+                  "exercise": "Light one-arm row groove",
+                  "sets": 1,
+                  "reps": "10 / side",
+                  "weight": "10 lb",
+                  "notes": "Rehearse the row path before the working sets",
+                  "url": "https://www.youtube.com/watch?v=epSR-ma7BsY"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "One-arm dumbbell row, hand on bench",
+                  "sets": 3,
+                  "reps": "10 / side",
+                  "weight": "20 lb",
+                  "rest": "90 sec",
+                  "notes": "Flat back, pull to the hip, no twisting",
+                  "url": "https://www.youtube.com/watch?v=epSR-ma7BsY"
+                },
+                {
+                  "exercise": "Seated cable row",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "75 sec",
+                  "notes": "Tall chest, squeeze shoulder blades together at the finish",
+                  "url": "https://www.youtube.com/watch?v=7o2oolbmzeI"
+                },
+                {
+                  "exercise": "Straight-arm rope pulldown",
+                  "sets": 3,
+                  "reps": "12-15",
+                  "rest": "60 sec",
+                  "notes": "Soft elbows, sweep the rope to your thighs",
+                  "url": "https://www.youtube.com/watch?v=EurcOa-r9r4"
+                },
+                {
+                  "exercise": "Incline dumbbell curl",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "10 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Bench at ~45 deg, full stretch at the bottom",
+                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+                },
+                {
+                  "exercise": "Rope hammer curl",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "60 sec",
+                  "notes": "Elbows pinned, neutral grip the whole way",
+                  "url": "https://www.youtube.com/watch?v=1Quc_tOv97I"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Supported lat stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Kneel facing the bench, one arm stretched forward on it, sink your chest toward the floor; feel it along the side of your back",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                },
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Draw one straight arm across your chest, hug it in with the other arm; feel it in the back of the shoulder; back off if the joint pinches",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-24",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
