@@ -1340,6 +1340,112 @@
           "date": "2026-10-24",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-25-chest-and-tris-ccsi",
+          "title": "Chest and tris",
+          "notes": "Fresh chest/tris - different moves from Wednesday's. About 35-40 minutes including warm-up and cooldown, 3 sets per exercise per your preference. Dumbbell flat bench is the one bigger lift: stop every set with about 3 clean reps left. Weights are set off your real numbers (bench ~85 working, incline dumbbells 20) - tell me if anything feels off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light dumbbell press groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "weight": "10 lb / hand",
+                  "notes": "Rehearse the pressing path before the working sets",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Dumbbell flat bench press",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "20 lb / hand",
+                  "rest": "90 sec",
+                  "notes": "The one bigger lift; full range, control the way down",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                },
+                {
+                  "exercise": "Close-grip barbell bench press",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "65 lb",
+                  "rest": "75 sec",
+                  "notes": "Hands just inside shoulder width, elbows tuck; lighter than your flat bench",
+                  "url": "https://www.youtube.com/watch?v=nEF0bv2FW94"
+                },
+                {
+                  "exercise": "Standing cable fly",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "60 sec",
+                  "notes": "Soft elbows, hug a barrel, squeeze at the front",
+                  "url": "https://www.youtube.com/watch?v=ydnAMvT1Jzo"
+                },
+                {
+                  "exercise": "Single-arm cable pushdown",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "rest": "45 sec",
+                  "notes": "Elbow pinned at your side, full lockout",
+                  "url": "https://www.youtube.com/watch?v=Oy4-uJ35cQQ"
+                },
+                {
+                  "exercise": "Overhead rope triceps extension",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "60 sec",
+                  "notes": "Rope attachment, elbows stay up and in, stretch at the back",
+                  "url": "https://www.youtube.com/watch?v=kqidUIf1eJE"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Doorway pec stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Forearm on the door frame, step through gently; feel it across the chest, not the shoulder joint",
+                  "url": "https://www.youtube.com/watch?v=jRY9-4VTCcw"
+                },
+                {
+                  "exercise": "Overhead triceps stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Hand down your back, gentle pressure with the other hand; feel it along the back of the arm",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-25",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
