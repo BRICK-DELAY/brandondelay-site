@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -620,7 +620,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -1789,7 +1789,7 @@
         {
           "id": "2026-10-25-legs-yhst",
           "title": "Legs",
-          "notes": "Your first programmed session - welcome! Strength leg day, about 35-40 minutes including warm-up and cooldown. Starting weights are deliberately conservative; stop every set with about 3 clean reps left, and tell me after if anything felt too light so I can move it up. The back squat is the one bigger lift - light and tidy beats heavy.",
+          "notes": "Strength leg day, about 35-40 minutes including warm-up and cooldown. Weights are set off your real numbers (squat 135 for 12, hip thrust 200 for reps) - stop every set with about 3 clean reps left and tell me after how each weight felt so I can progress you. The back squat is the one bigger lift.",
           "sections": [
             {
               "name": "Warm-up",
@@ -1828,25 +1828,25 @@
                   "exercise": "Barbell back squat",
                   "sets": 3,
                   "reps": "8",
-                  "weight": "45-65 lb",
+                  "weight": "135 lb",
                   "rest": "90 sec",
-                  "notes": "The one bigger lift - start with just the bar, add weight only if every rep is clean; sit to just below parallel, drive through your whole foot",
+                  "notes": "The one bigger lift - you have 135 for 12, so 3x8 here stays tidy; sit to just below parallel, drive through your whole foot",
                   "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
                 },
                 {
                   "exercise": "Barbell hip thrust",
                   "sets": 3,
                   "reps": "10",
-                  "weight": "65 lb",
+                  "weight": "185-200 lb",
                   "rest": "75 sec",
-                  "notes": "Upper back on the bench, chin tucked, full hip squeeze at the top",
+                  "notes": "Upper back on the bench, chin tucked, full hip squeeze at the top; you rep 200, so work in this range",
                   "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
                 },
                 {
                   "exercise": "Dumbbell Romanian deadlift",
                   "sets": 3,
                   "reps": "10",
-                  "weight": "15 lb / hand",
+                  "weight": "25-30 lb / hand",
                   "rest": "75 sec",
                   "notes": "Soft knees, push hips back, feel it in the hamstrings, flat back throughout",
                   "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
@@ -1855,7 +1855,7 @@
                   "exercise": "Dumbbell step-up onto bench",
                   "sets": 3,
                   "reps": "8 / side",
-                  "weight": "10 lb / hand",
+                  "weight": "15-20 lb / hand",
                   "rest": "60 sec",
                   "notes": "Drive through the heel of the top foot; control the way down",
                   "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
