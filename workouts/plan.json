@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -620,7 +620,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -1785,8 +1785,117 @@
           "date": "2026-10-23",
           "generated_by": "Instinct",
           "completed": "2026-10-23"
+        },
+        {
+          "id": "2026-10-25-legs-yhst",
+          "title": "Legs",
+          "notes": "Your first programmed session - welcome! Strength leg day, about 35-40 minutes including warm-up and cooldown. Starting weights are deliberately conservative; stop every set with about 3 clean reps left, and tell me after if anything felt too light so I can move it up. The back squat is the one bigger lift - light and tidy beats heavy.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Glute bridge",
+                  "sets": 1,
+                  "reps": "10",
+                  "notes": "Pause and squeeze at the top",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "45-65 lb",
+                  "rest": "90 sec",
+                  "notes": "The one bigger lift - start with just the bar, add weight only if every rep is clean; sit to just below parallel, drive through your whole foot",
+                  "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
+                },
+                {
+                  "exercise": "Barbell hip thrust",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "65 lb",
+                  "rest": "75 sec",
+                  "notes": "Upper back on the bench, chin tucked, full hip squeeze at the top",
+                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "15 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "Soft knees, push hips back, feel it in the hamstrings, flat back throughout",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Dumbbell step-up onto bench",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "weight": "10 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Drive through the heel of the top foot; control the way down",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Band lateral walk",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "rest": "45 sec",
+                  "notes": "Band above the knees, half-squat, small controlled steps, knees track over toes",
+                  "url": "https://www.youtube.com/watch?v=y_bqFDQZSHQ"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Lie on your back, ankle on opposite knee, draw the legs in gently; feel it in the glute of the crossed leg",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Kneel with one shin up the bench or wall behind you, tuck your pelvis gently; feel it in the front of the hip and thigh",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-25",
+          "generated_by": "Instinct",
+          "completed": null
         }
-      ]
+      ],
+      "history": []
     }
   }
 }
