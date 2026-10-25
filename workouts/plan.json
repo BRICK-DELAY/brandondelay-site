@@ -2063,10 +2063,24 @@
           ],
           "date": "2026-10-25",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-25",
+          "feedback": {
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+          }
         }
       ],
-      "history": []
+      "history": [
+        {
+          "id": "2026-10-25-legs-yhst",
+          "date": "2026-10-25",
+          "planned": "2026-10-25",
+          "title": "Legs",
+          "reps": 250,
+          "feedback": {
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+          }
+        }
+      ]
     }
   }
 }
