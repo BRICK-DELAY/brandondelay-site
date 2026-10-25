@@ -14,7 +14,7 @@ window.Workouts = (function () {
   const KEY_STORE = "workout-github-key";
   const MAX_PENDING = 2;     // unfinished workouts a person can have queued
   const KEEP_DONE = 20;      // finished workouts kept per person (older ones live in git history)
-  const PEOPLE = { brandon: "Brandon", cecelia: "Cecelia", jose: "Jose" };
+  const PEOPLE = { brandon: "Brandon", cecelia: "Cecelia", jose: "Jose", isabelle: "Isabelle" };
 
   const pad = (n) => String(n).padStart(2, "0");
   const today = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
