@@ -1339,7 +1339,11 @@
           ],
           "date": "2026-10-24",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-25",
+          "feedback": {
+            "rating": "easy",
+            "note": "I used 15 pound dumbbells for the dumbbell rows"
+          }
         },
         {
           "id": "2026-10-25-chest-and-tris-ccsi",
@@ -1496,6 +1500,17 @@
           "reps": 266,
           "feedback": {
             "rating": "right"
+          }
+        },
+        {
+          "id": "2026-10-24-back-and-bis-1fc6",
+          "date": "2026-10-25",
+          "planned": "2026-10-24",
+          "title": "Back and bis",
+          "reps": 240,
+          "feedback": {
+            "rating": "easy",
+            "note": "I used 15 pound dumbbells for the dumbbell rows"
           }
         }
       ]
