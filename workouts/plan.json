@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -620,7 +620,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -1731,6 +1731,71 @@
           "date": "2026-10-23",
           "generated_by": "Instinct",
           "completed": "2026-10-23"
+        },
+        {
+          "id": "2026-10-24-athletic-glute-med-ski-aerobic-vris",
+          "title": "Athletic + Glute Med + Ski Aerobic",
+          "notes": "Planned session from your Instinct - mark it complete when it's done.",
+          "sections": [
+            {
+              "name": "Glute med + activation",
+              "items": [
+                {
+                  "exercise": "Banded clamshells",
+                  "sets": 3,
+                  "detail": "3 sets; reps unspecified in plan"
+                },
+                {
+                  "exercise": "Standing banded hip abduction",
+                  "sets": 3,
+                  "detail": "3 sets; reps unspecified in plan"
+                },
+                {
+                  "exercise": "Banded lateral walks",
+                  "sets": 3,
+                  "detail": "3 sets; reps unspecified in plan"
+                }
+              ]
+            },
+            {
+              "name": "Aerobic base",
+              "items": [
+                {
+                  "exercise": "Bike or jog, zone 2",
+                  "duration": "25-35 min",
+                  "detail": "25-35 min zone 2 - bike OR jog, your choice (not both)"
+                }
+              ]
+            },
+            {
+              "name": "Athletic + balance",
+              "items": [
+                {
+                  "exercise": "Bilateral snap-downs, stick the landing",
+                  "sets": 3,
+                  "reps": "5",
+                  "detail": "3 x 5"
+                },
+                {
+                  "exercise": "Single-leg balance, varied surface",
+                  "duration": "45 sec / leg",
+                  "detail": "45s per leg"
+                }
+              ]
+            },
+            {
+              "name": "Pickleball",
+              "items": [
+                {
+                  "exercise": "Doubles pickleball",
+                  "detail": "As scheduled"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-24",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
