@@ -1763,6 +1763,10 @@
           "reps": 129
         }
       ]
+    },
+    "isabelle": {
+      "name": "Isabelle",
+      "queue": []
     }
   }
 }
