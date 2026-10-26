@@ -1449,7 +1449,11 @@
           ],
           "date": "2026-10-25",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-26",
+          "feedback": {
+            "rating": "right",
+            "note": "I used 30 pounds for dumbbell bench press"
+          }
         },
         {
           "id": "2026-10-26-legs-2zy9",
@@ -1625,6 +1629,17 @@
           "feedback": {
             "rating": "easy",
             "note": "I used 15 pound dumbbells for the dumbbell rows"
+          }
+        },
+        {
+          "id": "2026-10-25-chest-and-tris-ccsi",
+          "date": "2026-10-26",
+          "planned": "2026-10-25",
+          "title": "Chest and tris",
+          "reps": 230,
+          "feedback": {
+            "rating": "right",
+            "note": "I used 30 pounds for dumbbell bench press"
           }
         }
       ]
