@@ -1450,6 +1450,120 @@
           "date": "2026-10-25",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-26-legs-2zy9",
+          "title": "Legs",
+          "notes": "Fresh leg day - new moves from Friday's and last Tuesday's. About 35-40 minutes including warm-up and cooldown, 3 sets per exercise. Bulgarian split squat is the one bigger lift: stop every set with about 3 clean reps left. The glute bridge is heavier this time per your note that dumbbell bridges were too light - tell me how 30 lb feels.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                },
+                {
+                  "exercise": "Floor glute bridge",
+                  "sets": 1,
+                  "reps": "10",
+                  "notes": "Pause and squeeze at the top",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Bulgarian split squat",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "weight": "10 lb / hand",
+                  "rest": "75 sec",
+                  "notes": "The one bigger lift; rear foot on the bench, drop straight down, drive through the front heel",
+                  "url": "https://www.youtube.com/watch?v=vLuhN_glFZ8"
+                },
+                {
+                  "exercise": "Cable pull-through",
+                  "sets": 3,
+                  "reps": "12",
+                  "rest": "60 sec",
+                  "notes": "Rope between the legs, hinge back, snap the hips through",
+                  "url": "https://www.youtube.com/watch?v=OkcryKUZTZs"
+                },
+                {
+                  "exercise": "Dumbbell sumo squat",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "30 lb",
+                  "rest": "60 sec",
+                  "notes": "Wide stance, toes out, one dumbbell held vertically at your chest",
+                  "url": "https://www.youtube.com/watch?v=wpOQEuaeRDU"
+                },
+                {
+                  "exercise": "Weighted dumbbell glute bridge",
+                  "sets": 3,
+                  "reps": "12",
+                  "weight": "30 lb",
+                  "rest": "60 sec",
+                  "notes": "Dumbbell across your hips; heavier than last week per your feedback - squeeze hard at the top",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                },
+                {
+                  "exercise": "Standing cable hip abduction",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "rest": "45 sec",
+                  "notes": "Cuff or handle on the ankle, sweep the leg out to the side, control back",
+                  "url": "https://www.youtube.com/watch?v=bGlm-qTnfTI"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Lie on your back, ankle on opposite knee, draw the legs in gently; feel it in the glute of the crossed leg",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Kneel with one shin up the bench or wall behind you, tuck your pelvis gently; feel it in the front of the hip and thigh",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                },
+                {
+                  "exercise": "90/90 hip stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Sit with both knees bent 90 degrees, lean gently over the front shin; switch sides",
+                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-26",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
