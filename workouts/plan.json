@@ -2337,7 +2337,11 @@
           ],
           "date": "2026-10-26",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-26",
+          "feedback": {
+            "rating": "right",
+            "note": "Felt like a good short workout for before a shift. For bench I did dumbell press with 35s for 10 reps. I did 20lb dumbells for incline curl. Overall I could feel my shoulder at certain points but it was t shape pain"
+          }
         }
       ],
       "history": [
@@ -2349,6 +2353,17 @@
           "reps": 250,
           "feedback": {
             "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+          }
+        },
+        {
+          "id": "2026-10-26-arms-and-abs-bbon",
+          "date": "2026-10-26",
+          "planned": "2026-10-26",
+          "title": "Arms and abs",
+          "reps": 287,
+          "feedback": {
+            "rating": "right",
+            "note": "Felt like a good short workout for before a shift. For bench I did dumbell press with 35s for 10 reps. I did 20lb dumbells for incline curl. Overall I could feel my shoulder at certain points but it was t shape pain"
           }
         }
       ]
