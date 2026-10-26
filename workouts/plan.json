@@ -2196,6 +2196,133 @@
           "feedback": {
             "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
           }
+        },
+        {
+          "id": "2026-10-26-arms-and-abs-bbon",
+          "title": "Arms and abs",
+          "notes": "Arms + abs day, about 40-45 minutes. Nothing overhead per your shoulder - all pressing is horizontal and triceps work keeps the elbow at your side or low. Close-grip bench is the one bigger lift: stop every set with about 3 clean reps left. Abs are their own block at the end; tell me how the weights feel so I can set next week's.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light dumbbell bench groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "weight": "10 lb / hand",
+                  "notes": "Rehearse the pressing path before the working sets",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Close-grip bench press",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "65 lb",
+                  "rest": "75 sec",
+                  "notes": "The one bigger lift; hands just inside shoulder width, elbows tuck to your ribs",
+                  "url": "https://www.youtube.com/watch?v=nEF0bv2FW94"
+                },
+                {
+                  "exercise": "Incline dumbbell curl",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "weight": "10 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Bench at ~45 deg, full stretch at the bottom, no swinging",
+                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+                },
+                {
+                  "exercise": "Dumbbell hammer curl",
+                  "sets": 3,
+                  "reps": "12",
+                  "weight": "15 lb / hand",
+                  "rest": "60 sec",
+                  "notes": "Neutral grip, elbows pinned",
+                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
+                },
+                {
+                  "exercise": "Band triceps pushdown",
+                  "sets": 3,
+                  "reps": "15",
+                  "rest": "45 sec",
+                  "notes": "Band anchored high, elbows pinned at your ribs, full lockout",
+                  "url": "https://www.youtube.com/watch?v=qjPN6ElNqpc"
+                },
+                {
+                  "exercise": "Dumbbell triceps kickback",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "weight": "10 lb / hand",
+                  "rest": "45 sec",
+                  "notes": "Hinge at the hips, elbow pinned high beside your torso, straighten fully",
+                  "url": "https://www.youtube.com/watch?v=6SS6K3lAwZ8"
+                }
+              ]
+            },
+            {
+              "name": "Abs",
+              "items": [
+                {
+                  "exercise": "Forearm plank",
+                  "sets": 3,
+                  "duration": "45 sec",
+                  "notes": "Ribs down, glutes tight, straight line head to heels",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                },
+                {
+                  "exercise": "Dead bug",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "notes": "Low back pressed into the floor the whole time",
+                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Gentle only with your shoulder - draw one straight arm across your chest; back off if anything pinches",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Gentle triceps stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Hand down your back, very gentle pressure; skip on the injured side if it pulls at the shoulder",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-26",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
