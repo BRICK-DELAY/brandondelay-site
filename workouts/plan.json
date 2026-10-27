@@ -2046,6 +2046,80 @@
           "date": "2026-10-24",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-26-lower-strength-plyos-33zt",
+          "title": "Lower Strength + Plyos",
+          "notes": "Session from your Instinct. Sets and reps are the planned template targets.",
+          "sections": [
+            {
+              "name": "Lower",
+              "items": [
+                {
+                  "exercise": "Band TKE",
+                  "sets": 2,
+                  "reps": "15 / side",
+                  "detail": "2 x 15 / side"
+                },
+                {
+                  "exercise": "Squat jumps (bodyweight)",
+                  "sets": 4,
+                  "reps": "4",
+                  "detail": "4 x 4"
+                },
+                {
+                  "exercise": "Back squat",
+                  "sets": 4,
+                  "reps": "6-8",
+                  "detail": "4 x 6-8"
+                },
+                {
+                  "exercise": "Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "detail": "3 x 8-10"
+                },
+                {
+                  "exercise": "Standing banded hip abduction",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side"
+                },
+                {
+                  "exercise": "Banded clamshells",
+                  "sets": 3,
+                  "reps": "15 / side",
+                  "detail": "3 x 15 / side"
+                },
+                {
+                  "exercise": "Copenhagen plank",
+                  "sets": 3,
+                  "duration": "20 sec / side",
+                  "detail": "3 x 20s / side"
+                },
+                {
+                  "exercise": "Single-leg calf raise",
+                  "sets": 3,
+                  "reps": "15 / leg",
+                  "detail": "3 x 15 / leg"
+                },
+                {
+                  "exercise": "Pallof press",
+                  "sets": 2,
+                  "reps": "12 / side",
+                  "detail": "2 x 12 / side"
+                },
+                {
+                  "exercise": "Goblet squat, heels elevated",
+                  "detail": "Skipped; 0 reps (target was 3 x 10-12)",
+                  "skipped": true
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-26",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
