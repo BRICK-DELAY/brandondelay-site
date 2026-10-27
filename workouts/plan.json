@@ -2539,6 +2539,45 @@
             "rating": "right",
             "note": "Felt like a good short workout for before a shift. For bench I did dumbell press with 35s for 10 reps. I did 20lb dumbells for incline curl. Overall I could feel my shoulder at certain points but it was not shape pain"
           }
+        },
+        {
+          "id": "2026-10-27-easy-run-svpr",
+          "title": "Easy run",
+          "notes": "Easy aerobic day between lifting sessions - 20-30 minutes outside at a conversational pace. This should feel genuinely easy; it's recovery work, not a workout to push. Short optional core finisher at the end since you said you don't mind abs sprinkled in.",
+          "sections": [
+            {
+              "name": "Run",
+              "items": [
+                {
+                  "exercise": "Easy outdoor run",
+                  "duration": "20-30 min",
+                  "detail": "20-30 min, conversational pace - you should be able to talk in full sentences the whole way"
+                }
+              ]
+            },
+            {
+              "name": "Optional core finisher",
+              "items": [
+                {
+                  "exercise": "Forearm plank",
+                  "sets": 2,
+                  "duration": "30-45 sec",
+                  "notes": "Optional; ribs down, glutes tight",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                },
+                {
+                  "exercise": "Dead bug",
+                  "sets": 2,
+                  "reps": "8 / side",
+                  "notes": "Optional; low back pressed into the floor",
+                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-27",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
