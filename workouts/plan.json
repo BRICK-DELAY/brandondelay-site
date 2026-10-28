@@ -1689,6 +1689,113 @@
           "date": "2026-10-27",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-28-back-and-bis-p76x",
+          "title": "Back and bis",
+          "notes": "Fresh back/bis - new moves from Saturday's and last Monday's. About 35-40 minutes including warm-up and cooldown, 3 sets per exercise. Bent-over row is the one bigger lift: stop every set with about 3 clean reps left. Tell me if any weight feels too light and I'll move it up.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Shoulder-blade squeezes",
+                  "sets": 1,
+                  "reps": "10",
+                  "url": "https://www.youtube.com/watch?v=p1UZuTf8ZEo"
+                },
+                {
+                  "exercise": "Light barbell row groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "weight": "Bar only",
+                  "notes": "Rehearse the hinge and row path before the working sets",
+                  "url": "https://www.youtube.com/watch?v=rqTOAM8WoeM"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell bent-over row",
+                  "sets": 3,
+                  "reps": "8",
+                  "weight": "55 lb",
+                  "rest": "90 sec",
+                  "notes": "The one bigger lift; hinge to ~45 deg, flat back, pull to your lower ribs",
+                  "url": "https://www.youtube.com/watch?v=rqTOAM8WoeM"
+                },
+                {
+                  "exercise": "Kneeling cable lat pulldown",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "rest": "60 sec",
+                  "notes": "Kneel tall facing the cable, pull to your upper chest, squeeze your lats",
+                  "url": "https://www.youtube.com/watch?v=H-s-a2r0aB4"
+                },
+                {
+                  "exercise": "Inverted row under the barbell",
+                  "sets": 3,
+                  "reps": "10",
+                  "rest": "60 sec",
+                  "notes": "Bar in the rack at hip height, body straight, chest to the bar",
+                  "url": "https://www.youtube.com/watch?v=hXTc1mDnZCw"
+                },
+                {
+                  "exercise": "Barbell curl",
+                  "sets": 3,
+                  "reps": "10",
+                  "weight": "25-30 lb",
+                  "rest": "60 sec",
+                  "notes": "Elbows pinned, no swinging; lighter end if form slips",
+                  "url": "https://www.youtube.com/watch?v=kwG2ipFRgfo"
+                },
+                {
+                  "exercise": "Concentration curl",
+                  "sets": 3,
+                  "reps": "10 / side",
+                  "weight": "10 lb",
+                  "rest": "45 sec",
+                  "notes": "Seated, elbow braced against your inner thigh, full range",
+                  "url": "https://www.youtube.com/watch?v=Jvj2wV0vOYU"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Supported lat stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Kneel facing the bench, one arm stretched forward on it, sink your chest toward the floor",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                },
+                {
+                  "exercise": "Gentle forearm and biceps stretch",
+                  "sets": 2,
+                  "duration": "30 sec / side",
+                  "notes": "Palm on the wall, turn gently away; feel it along the forearm and biceps",
+                  "url": "https://www.youtube.com/watch?v=0Ejs9YRNgFM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-28",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
