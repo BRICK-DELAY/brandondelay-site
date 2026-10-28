@@ -2187,6 +2187,62 @@
           "date": "2026-10-26",
           "generated_by": "Instinct",
           "completed": "2026-10-26"
+        },
+        {
+          "id": "2026-10-27-upper-push-conditioning-sdiq",
+          "title": "Upper Push + Conditioning",
+          "notes": "Planned session from your Instinct. Sets and reps are the planned template targets; the conditioning block is optional.",
+          "sections": [
+            {
+              "name": "Upper Push",
+              "items": [
+                {
+                  "exercise": "Band TKE",
+                  "sets": 1,
+                  "reps": "15 / side",
+                  "detail": "1 x 15 / side"
+                },
+                {
+                  "exercise": "Bench press",
+                  "sets": 4,
+                  "reps": "6-8",
+                  "detail": "4 x 6-8"
+                },
+                {
+                  "exercise": "Incline bench press",
+                  "sets": 3,
+                  "reps": "6-8",
+                  "detail": "3 x 6-8"
+                },
+                {
+                  "exercise": "Seated dumbbell overhead press",
+                  "sets": 3,
+                  "reps": "6-8",
+                  "detail": "3 x 6-8"
+                },
+                {
+                  "exercise": "Decline push-ups",
+                  "sets": 3,
+                  "reps": "14",
+                  "detail": "3 x 14"
+                },
+                {
+                  "exercise": "Band face pull",
+                  "sets": 3,
+                  "reps": "15",
+                  "detail": "3 x 15"
+                },
+                {
+                  "exercise": "Low-impact conditioning (bike or row)",
+                  "detail": "30s hard / 90s easy, optional 5-6 rounds - bike OR row, your choice (not both)",
+                  "duration": "30s hard / 90s easy"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-27",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
