@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -620,7 +620,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -2532,7 +2532,7 @@
           "generated_by": "Instinct",
           "completed": "2026-10-25",
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -2837,7 +2837,10 @@
           ],
           "date": "2026-10-28",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-28",
+          "feedback": {
+            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+          }
         }
       ],
       "history": [
@@ -2848,7 +2851,7 @@
           "title": "Legs",
           "reps": 250,
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -2870,6 +2873,16 @@
           "reps": 32,
           "feedback": {
             "rating": "right"
+          }
+        },
+        {
+          "id": "2026-10-28-hyrox-style-ladder-9bsp",
+          "date": "2026-10-28",
+          "planned": "2026-10-28",
+          "title": "HYROX-style ladder",
+          "reps": 611,
+          "feedback": {
+            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         }
       ]
