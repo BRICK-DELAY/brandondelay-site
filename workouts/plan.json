@@ -1799,6 +1799,115 @@
           "date": "2026-10-28",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-29-legs-a9pq",
+          "title": "Legs",
+          "notes": "",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - hold the rack, swing tall and easy",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - push hips back, flat back, feel the hamstrings",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Lateral lunge, bodyweight",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - sit hips back over the bent leg, other leg straight",
+                  "url": "https://www.youtube.com/watch?v=4NlJdSzHeUg"
+                },
+                {
+                  "exercise": "Floor glute bridge",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "1 x 12 - squeeze glutes hard at the top, 1-second hold",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell hip thrust, shoulders on bench",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10 - 135 lb. Warm up with the empty bar, then a light plate set, then 3 working sets. Pause and squeeze 1 second at the top; full stretch at the bottom. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                },
+                {
+                  "exercise": "Dumbbell step-up onto box",
+                  "sets": 3,
+                  "reps": "8 / leg",
+                  "detail": "3 x 8 / leg - 15 lb dumbbells. Whole foot on the box, drive through the heel, slow 3-sec lower. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Single-leg dumbbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "8 / leg",
+                  "detail": "3 x 8 / leg - 15 lb dumbbell in the opposite hand. Soft knee, hinge until the dumbbell passes the knee, keep hips square. Fingertips on the rack for balance is fine. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=pJewPISyHjw"
+                },
+                {
+                  "exercise": "Goblet squat",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10 - 30 lb dumbbell at the chest. Full comfortable depth, elbows inside the knees, drive up. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                },
+                {
+                  "exercise": "Standing dumbbell calf raise",
+                  "sets": 3,
+                  "reps": "15",
+                  "detail": "3 x 15 - 15-20 lb dumbbells. Full stretch at the bottom, pause at the top. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=hPA98_r-6e4"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull the thigh in gently",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - back knee against the bench, squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                },
+                {
+                  "exercise": "90/90 hip stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - both knees at 90 degrees, fold gently over the front leg",
+                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-29",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
