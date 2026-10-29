@@ -2363,6 +2363,63 @@
           "date": "2026-10-27",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-28-balance-glute-med-u87q",
+          "title": "Balance + Glute Med",
+          "notes": "",
+          "sections": [
+            {
+              "name": "Balance",
+              "items": [
+                {
+                  "exercise": "Single-leg stand progression",
+                  "sets": 1,
+                  "reps": "45s / leg",
+                  "detail": "45s / leg"
+                },
+                {
+                  "exercise": "Banded clamshells",
+                  "sets": 3,
+                  "reps": "15 / side",
+                  "detail": "3 x 15 / side"
+                },
+                {
+                  "exercise": "Standing banded hip abduction",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side"
+                },
+                {
+                  "exercise": "Banded lateral walks",
+                  "sets": 3,
+                  "reps": "10 / side",
+                  "detail": "3 x 10 / side"
+                },
+                {
+                  "exercise": "Single-leg RDL touchdowns",
+                  "sets": 1,
+                  "reps": "8-10 / leg",
+                  "detail": "8-10 / leg"
+                },
+                {
+                  "exercise": "Y-balance reaches",
+                  "sets": 1,
+                  "reps": "5 / direction",
+                  "detail": "5 / direction"
+                },
+                {
+                  "exercise": "Band TKE",
+                  "sets": 2,
+                  "reps": "15 / side",
+                  "detail": "2 x 15 / side"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-28",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
