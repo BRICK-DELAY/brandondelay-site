@@ -1,4 +1,431 @@
 {
-  "updated": null,
-  "weeks": []
+  "updated": "2026-10-30",
+  "weeks": [
+    {
+      "id": "2026-11-01",
+      "title": "Back-to-normal week",
+      "notes": "First full menu after wisdom-teeth recovery, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original.",
+      "order": {
+        "date": "2026-11-01",
+        "window": "5-8 pm",
+        "status": "ordered",
+        "store": "King Soopers via Instacart",
+        "url": "https://www.instacart.com/store/orders/999921555040971489124",
+        "notes": "Ordered Friday, Oct 30. Amounts are the checkout amounts at placement; the final receipt can adjust slightly after shopping (item tax, weight-based items).",
+        "items": [
+          {
+            "name": "Heritage Farm chicken breasts, boneless skinless",
+            "qty": "~5 lb",
+            "price": 14.95,
+            "category": "Meat & seafood",
+            "for": [
+              "teriyaki-chicken-bowls"
+            ],
+            "note": "extra to freeze"
+          },
+          {
+            "name": "Heritage Farm chicken thighs, boneless skinless",
+            "qty": "~2.7 lb",
+            "price": 11.21,
+            "category": "Meat & seafood",
+            "for": [
+              "honey-garlic-chicken-thighs"
+            ]
+          },
+          {
+            "name": "Kroger wild caught medium raw shrimp, peeled & deveined",
+            "qty": "12 oz",
+            "price": 7.99,
+            "category": "Meat & seafood",
+            "for": [
+              "shrimp-scampi-penne"
+            ]
+          },
+          {
+            "name": "Kroger 80/20 ground beef",
+            "qty": "1 lb",
+            "price": 6.99,
+            "category": "Meat & seafood",
+            "for": [
+              "skillet-cheeseburgers-and-fries"
+            ]
+          },
+          {
+            "name": "Kroger mild ground Italian sausage",
+            "qty": "1 lb",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "sausage-pie"
+            ]
+          },
+          {
+            "name": "Broccoli crown",
+            "qty": "~1 lb",
+            "price": 2.49,
+            "category": "Produce",
+            "for": [
+              "teriyaki-chicken-bowls"
+            ]
+          },
+          {
+            "name": "Green bell pepper",
+            "qty": "1",
+            "price": 0.99,
+            "category": "Produce",
+            "for": [
+              "sausage-pie"
+            ],
+            "note": "stands in for onion"
+          },
+          {
+            "name": "Kroger basmati rice",
+            "qty": "2 lb",
+            "price": 3.99,
+            "category": "Pantry",
+            "for": [
+              "teriyaki-chicken-bowls",
+              "honey-garlic-chicken-thighs"
+            ]
+          },
+          {
+            "name": "Betty Crocker Bisquick Original",
+            "qty": "40 oz",
+            "price": 4.99,
+            "category": "Pantry",
+            "for": [
+              "sausage-pie"
+            ],
+            "note": "plenty left over"
+          },
+          {
+            "name": "Smart Way granulated sugar",
+            "qty": "4 lb",
+            "price": 2.99,
+            "category": "Pantry",
+            "note": "pantry restock"
+          },
+          {
+            "name": "Private Selection brioche buns",
+            "qty": "8 ct",
+            "price": 2.99,
+            "category": "Bakery",
+            "for": [
+              "skillet-cheeseburgers-and-fries"
+            ]
+          },
+          {
+            "name": "Kroger half and half",
+            "qty": "1 qt",
+            "price": 2.99,
+            "category": "Dairy & eggs",
+            "note": "coffee"
+          },
+          {
+            "name": "Ore-Ida extra crispy fast food fries",
+            "qty": "26 oz",
+            "price": 4.99,
+            "category": "Frozen",
+            "for": [
+              "skillet-cheeseburgers-and-fries"
+            ]
+          },
+          {
+            "name": "Birds Eye Steamfresh cut green beans",
+            "qty": "10 oz",
+            "price": 1.69,
+            "category": "Frozen",
+            "for": [
+              "honey-garlic-chicken-thighs"
+            ]
+          },
+          {
+            "name": "Kroger 1883 vanilla ice cream (Vividly Vanilla)",
+            "qty": "48 oz",
+            "price": 3.59,
+            "category": "Frozen",
+            "note": "dessert"
+          },
+          {
+            "name": "Cheez-It Original crackers",
+            "qty": "12.4 oz",
+            "price": 4.99,
+            "category": "Snacks",
+            "note": "office snack"
+          }
+        ],
+        "subtotal": 79.62,
+        "fees": 6.24,
+        "tax": 0.57,
+        "tip": 7.96,
+        "total": 94.39
+      },
+      "days": [
+        {
+          "date": "2026-11-01",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "sausage-pie"
+            }
+          ],
+          "prep": "Groceries arrive 5-8 pm; the pie bakes in 30 minutes."
+        },
+        {
+          "date": "2026-11-02",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "teriyaki-chicken-bowls"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-03",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "skillet-cheeseburgers-and-fries"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-04",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "shrimp-scampi-penne"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "honey-garlic-chicken-thighs"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-06",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers or eat out"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-07",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers or eat out"
+            }
+          ]
+        }
+      ],
+      "recipes": [
+        {
+          "id": "sausage-pie",
+          "name": "Sausage pie",
+          "servings": 4,
+          "time_min": 45,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "mild ground Italian sausage"
+            },
+            {
+              "qty": "1",
+              "item": "green bell pepper",
+              "note": "chopped; stands in for the original onion"
+            },
+            {
+              "qty": "1 cup",
+              "item": "shredded cheddar"
+            },
+            {
+              "qty": "1 1/2 cups",
+              "item": "milk"
+            },
+            {
+              "qty": "3/4 cup",
+              "item": "Bisquick"
+            },
+            {
+              "qty": "3",
+              "item": "eggs"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 400°F and grease a 10-inch pie plate.",
+            "Brown the sausage with the bell pepper in a skillet; drain.",
+            "Spread the sausage mixture in the pie plate and sprinkle the cheese over it.",
+            "Beat the milk, Bisquick and eggs until smooth and pour over the sausage.",
+            "Bake about 30 minutes, until set and golden."
+          ],
+          "notes": "Family favorite, recipe as written with bell pepper subbed for the onion."
+        },
+        {
+          "id": "teriyaki-chicken-bowls",
+          "name": "Teriyaki chicken bowls",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "boneless skinless chicken breasts",
+              "note": "cut into bite-size pieces"
+            },
+            {
+              "qty": "1 cup",
+              "item": "basmati rice, dry"
+            },
+            {
+              "qty": "1 lb",
+              "item": "broccoli",
+              "note": "cut into florets"
+            },
+            {
+              "qty": "1/2 cup",
+              "item": "teriyaki sauce"
+            },
+            "1 tbsp oil, salt and pepper"
+          ],
+          "steps": [
+            "Cook the basmati rice.",
+            "Sear the chicken in oil over medium-high heat until cooked through, 6-8 minutes.",
+            "Steam or sauté the broccoli until crisp-tender, about 5 minutes.",
+            "Add the teriyaki sauce to the chicken and simmer 1-2 minutes.",
+            "Serve the chicken and broccoli over the rice."
+          ]
+        },
+        {
+          "id": "skillet-cheeseburgers-and-fries",
+          "name": "Skillet cheeseburgers and fries",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "80/20 ground beef"
+            },
+            {
+              "qty": "4",
+              "item": "brioche buns"
+            },
+            {
+              "qty": "4 slices",
+              "item": "cheddar or American cheese"
+            },
+            {
+              "qty": "13 oz",
+              "item": "frozen fast food fries",
+              "note": "half the bag"
+            },
+            "Salt and pepper"
+          ],
+          "steps": [
+            "Bake the fries per the package directions.",
+            "Form the beef into 4 loose balls; season with salt and pepper.",
+            "Smash each ball flat in a hot skillet and cook about 2 minutes per side.",
+            "Top with cheese to melt, then serve on the brioche buns with the fries."
+          ]
+        },
+        {
+          "id": "shrimp-scampi-penne",
+          "name": "Shrimp scampi penne",
+          "servings": 2,
+          "time_min": 20,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "8 oz",
+              "item": "penne, dry"
+            },
+            {
+              "qty": "12 oz",
+              "item": "medium raw shrimp, peeled & deveined"
+            },
+            {
+              "qty": "4 tbsp",
+              "item": "butter"
+            },
+            {
+              "qty": "4 cloves",
+              "item": "garlic",
+              "note": "minced"
+            },
+            "Salt, pepper and parsley"
+          ],
+          "steps": [
+            "Boil the penne in salted water; reserve a cup of pasta water.",
+            "Melt the butter and cook the garlic 1 minute until fragrant.",
+            "Add the shrimp and cook 2-3 minutes per side until pink.",
+            "Toss with the penne, a splash of pasta water, salt, pepper and parsley."
+          ]
+        },
+        {
+          "id": "honey-garlic-chicken-thighs",
+          "name": "Honey garlic chicken thighs",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "1 1/4 lb",
+              "item": "boneless skinless chicken thighs"
+            },
+            {
+              "qty": "1/3 cup",
+              "item": "honey"
+            },
+            {
+              "qty": "3 tbsp",
+              "item": "soy sauce"
+            },
+            {
+              "qty": "4 cloves",
+              "item": "garlic",
+              "note": "minced"
+            },
+            {
+              "qty": "1 cup",
+              "item": "basmati rice, dry"
+            },
+            {
+              "qty": "10 oz",
+              "item": "frozen cut green beans"
+            },
+            "1 tbsp oil"
+          ],
+          "steps": [
+            "Cook the basmati rice and heat the green beans per the bag.",
+            "Sear the thighs in oil over medium-high heat, 5-6 minutes per side, until cooked through.",
+            "Add the garlic, honey and soy sauce; simmer 2-3 minutes until the sauce coats the chicken.",
+            "Slice and serve over the rice with the green beans."
+          ]
+        }
+      ],
+      "pantry": [
+        "teriyaki sauce",
+        "soy sauce",
+        "honey",
+        "garlic",
+        "penne",
+        "shredded cheddar",
+        "milk",
+        "eggs",
+        "butter",
+        "salt",
+        "pepper",
+        "parsley"
+      ]
+    }
+  ]
 }
