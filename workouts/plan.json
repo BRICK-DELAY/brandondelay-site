@@ -560,7 +560,10 @@
           ],
           "date": "2026-10-23",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-30",
+          "feedback": {
+            "rating": "right"
+          }
         },
         {
           "id": "2026-10-24-recovery-day-walk-mobility-r2x7",
@@ -654,6 +657,16 @@
           "feedback": {
             "rating": "right",
             "note": "Seated incline curls should be 25lbs per hand in the future"
+          }
+        },
+        {
+          "id": "2026-10-23-chest-and-tris-kmy6",
+          "date": "2026-10-30",
+          "planned": "2026-10-23",
+          "title": "Chest and tris",
+          "reps": 289,
+          "feedback": {
+            "rating": "right"
           }
         }
       ]
