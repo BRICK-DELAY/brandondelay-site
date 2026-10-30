@@ -73,7 +73,7 @@
     </form>
   </main>
 
-  <script src="../shared.js?v=7"></script>
+  <script src="../shared.js?v=9"></script>
   <script>
     (function () {
       "use strict";
@@ -97,7 +97,11 @@
           // How their last few finished workouts felt, newest first, for planning the next one.
           const felt = (W.finished ? W.finished(p) : []).filter((h) => h.feedback).slice(-3).reverse().map((h) =>
             `<li>${esc(h.title)} (${esc(h.date)}): ${h.feedback.rating ? `<b>${esc(W.RATINGS[h.feedback.rating])}</b>` : "no rating"}${h.feedback.note ? `. “${esc(h.feedback.note)}”` : ""}</li>`).join("");
-          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.`
+          // People who pick their own rest days: how many they've used this week, and recent ones.
+          const allow = W.restAllowance ? W.restAllowance(p) : 0;
+          const rests = allow ? [...W.restDays(p)].sort().slice(-5) : [];
+          const restInfo = allow ? ` Picks own rest days: ${W.restUsed(p, W.today())} of ${allow} used this week${rests.length ? ` (recent: ${rests.map(esc).join(", ")})` : ""}; post a workout every day.` : "";
+          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.${restInfo}`
             + `${felt ? `<div class="muted" style="margin-top:4px">How recent workouts felt:</div><ul style="margin:4px 0 10px;padding-left:20px">${felt}</ul>` : ""}</div>`;
         }).join("");
       }

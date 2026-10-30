@@ -22,6 +22,12 @@ A person can have at most **2 unfinished** workouts queued. Extra posts are refu
    - **If they have 1 unfinished workout** (they missed a day): you may post the following workout as "up next". It appears only after they finish the current one. Don't repeat the missed workout; it's still there.
    - **Rest day in their plan:** post nothing for them. A rest day doesn't break their streak
      as long as nothing is left waiting, so don't post a placeholder.
+   - **People who pick their own rest days** (their entry in `plan.json` has `"rest_days_per_week"`,
+     and the status box says "Picks own rest days"; currently Isabelle): **post a workout every day**
+     and never plan rest days for them. They hold a button on their page to take up to that many
+     rest days a week (Sunday to Saturday); the day goes into their `rest` list and that day's
+     workout waits until the next day. If they already have 2 unfinished workouts, the post is
+     refused as usual; that's fine.
 4. To post: pick the person, set the **date** (today, America/Denver) and a short **title**
    (e.g. "Legs: squat focus"), paste the workout as plain text, and press **Save workout**.
    Confirm the message says **Saved**.
@@ -101,6 +107,8 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
 - To add a workout, append it to that person's `queue` with a unique `id`, today's `date`, and `"completed": null`.
 - Don't add one if that person already has 2 entries with `"completed": null`.
 - Each person may also have a `history` list of finished workouts (for the calendar, totals and streaks). Leave it alone.
+- A person may have `"rest_days_per_week": 2` (they choose their own rest days) and a `"rest"` list of
+  dates they took off. The page writes `rest`; don't change it.
 - A finished workout may have `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`, written by the page. Read it when planning; don't change it.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
   The one exception is below: checking off a workout for someone who tells you they finished it.

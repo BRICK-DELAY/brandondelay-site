@@ -246,10 +246,40 @@ window.Workouts = (function () {
     return { ...all, years };
   }
 
+  // Rest days a person takes themselves with the button on their workout page.
+  // `rest_days_per_week` (set in plan.json) turns it on; `rest` lists the dates taken.
+  // Weeks run Sunday to Saturday, like the calendar.
+  const restAllowance = (person) => Math.max(0, Number(person.rest_days_per_week) || 0);
+  const restDays = (person) => new Set(Array.isArray(person.rest) ? person.rest : []);
+  function weekOf(key) {
+    const d = new Date(key + "T12:00");
+    d.setDate(d.getDate() - d.getDay());
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+  const restUsed = (person, key) => [...restDays(person)].filter((d) => weekOf(d) === weekOf(key)).length;
+
+  // Takes (on) or gives back (off) a rest day for `date`.
+  function setRest(key, who, date, on) {
+    return update(key, `${PEOPLE[who]} ${on ? "took" : "cancelled"} a rest day (${date})`, (plan) => {
+      const person = plan.people[who], days = restDays(person);
+      if (on) {
+        if (days.has(date)) return { skip: true, reason: "already" };
+        if (restUsed(person, date) >= restAllowance(person)) return { skip: true, reason: "limit" };
+        days.add(date);
+      } else {
+        if (!days.has(date)) return { skip: true, reason: "missing" };
+        days.delete(date);
+      }
+      person.rest = [...days].sort();
+      return {};
+    });
+  }
+
   // Day streaks. A day with a finished workout adds 1. A day with nothing waiting
   // (a rest day: the agent posted nothing, and nothing earlier was left unfinished)
   // is skipped over without breaking the streak. A day where a workout was waiting
-  // and none got finished ends it. Today never ends it, since there's still time.
+  // and none got finished ends it, unless they took it as a rest day with the
+  // rest-day button. Today never ends it, since there's still time.
   function streak(person, todayKey) {
     const shift = (key, n) => { const d = new Date(key + "T12:00"); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
     const done = finished(person);
@@ -258,7 +288,8 @@ window.Workouts = (function () {
     // Every workout's [posted, finished) window; unfinished ones are still open.
     const spans = done.map((h) => [h.planned || h.date, h.date])
       .concat(pending(person).map((w) => [w.date || todayKey, null]));
-    const waiting = (day) => spans.some(([from, to]) => from <= day && (to === null || to > day));
+    const rested = restDays(person);
+    const waiting = (day) => !rested.has(day) && spans.some(([from, to]) => from <= day && (to === null || to > day));
     let run = 0, best = 0;
     for (let day = done[0].date; day <= todayKey; day = shift(day, 1)) {
       if (doneDays.has(day)) run++;
@@ -282,5 +313,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, setRest, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();

@@ -133,6 +133,18 @@
     .feel-save[disabled] { opacity: .5; cursor: wait; }
     .feel-said { margin-top: 14px; font-size: 14px; color: var(--muted); }
     .feel-said b { color: var(--accent); font-weight: 600; }
+    .restbtn {
+      position: relative; overflow: hidden; margin-top: 12px; width: 100%; padding: 14px; border-radius: 999px;
+      border: 1px dashed rgba(239,233,223,.35); background: none; color: var(--muted); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+      user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: manipulation;
+    }
+    .restbtn .fill { position: absolute; inset: 0; background: rgba(217,183,126,.28); transform: scaleX(0); transform-origin: left; }
+    .restbtn.holding .fill { transform: scaleX(1); transition: transform var(--hold, 3s) linear; }
+    .restbtn.holding { color: var(--text); border-color: var(--accent); }
+    .restbtn .lbl { position: relative; }
+    .restbtn[disabled] { opacity: .5; cursor: default; }
+    .rest-left { text-align: center; font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .cal-day.rest { border-style: dashed; border-color: var(--accent); color: var(--accent); }
     .keypanel { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
@@ -147,7 +159,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=8"></script>
+  <script src="shared.js?v=9"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -275,6 +287,7 @@
       const startEarly = {};
       function calendarHTML(person) {
         const days = W.doneDays(person);
+        const rested = W.restDays ? W.restDays(person) : new Set();
         const end = new Date(todayKey + "T12:00");
         const start = new Date(end); start.setDate(start.getDate() - 29);
         const keyOf = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -283,8 +296,9 @@
         for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
           const k = keyOf(d), titles = days.get(k);
           if (titles) count++;
-          const label = d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }) + (titles ? " · " + titles.join(" + ") : "");
-          cells += `<button type="button" class="cal-day${titles ? " done" : ""}${k === todayKey ? " today" : ""}" data-tip="${esc(label)}" aria-label="${esc(label)}"><span>${d.getDate()}</span></button>`;
+          const rest = !titles && rested.has(k);
+          const label = d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }) + (titles ? " · " + titles.join(" + ") : rest ? " · Rest day" : "");
+          cells += `<button type="button" class="cal-day${titles ? " done" : ""}${rest ? " rest" : ""}${k === todayKey ? " today" : ""}" data-tip="${esc(label)}" aria-label="${esc(label)}"><span>${d.getDate()}</span></button>`;
         }
         const heads = ["S", "M", "T", "W", "T", "F", "S"].map((h) => `<span class="cal-head">${h}</span>`).join("");
         return `<div class="cal-wrap">
@@ -362,6 +376,55 @@
           }
         };
         btn.addEventListener("click", send);
+      }
+
+      // ---- Rest days: hold the button to take one (the workout waits for tomorrow).
+      const HOLD_MS = 3000;
+      const restsLeft = (person) => W.restAllowance(person) - W.restUsed(person, todayKey);
+      async function saveRest(on) {
+        const key = W.getKey();
+        if (!key) return askKey(() => saveRest(on));
+        try {
+          const out = await W.setRest(key, who, todayKey, on);
+          plan = out.plan;
+          if (!on) startEarly[who] = false;
+          render();
+          if (out.reason === "limit") document.getElementById("keyslot").innerHTML = `<div class="err">No rest days left this week.</div>`;
+        } catch (e) {
+          render();
+          if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveRest(on), e.message); }
+          else document.getElementById("keyslot").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+        }
+      }
+      function restButtonHTML(person) {
+        if (!W.restAllowance || !W.restAllowance(person)) return "";
+        const left = restsLeft(person), max = W.restAllowance(person);
+        if (left <= 0) return `<p class="rest-left">No rest days left this week (${max} used). They reset on Sunday.</p>`;
+        return `<button type="button" class="restbtn" id="rest" style="--hold:${HOLD_MS / 1000}s"><span class="fill"></span><span class="lbl">Hold to take a rest day</span></button>
+          <p class="rest-left">${left} of ${max} rest day${max === 1 ? "" : "s"} left this week. Today's workout moves to tomorrow.</p>`;
+      }
+      function wireRestButton() {
+        const btn = document.getElementById("rest");
+        if (!btn) return;
+        const lbl = btn.querySelector(".lbl");
+        let timer = null;
+        const start = (e) => {
+          if (timer || btn.disabled) return;
+          if (e) e.preventDefault();
+          btn.classList.add("holding"); lbl.textContent = "Keep holding…";
+          timer = setTimeout(() => { timer = null; btn.disabled = true; lbl.textContent = "Saving rest day…"; saveRest(true); }, HOLD_MS);
+        };
+        const stop = () => {
+          if (!timer) return;
+          clearTimeout(timer); timer = null;
+          btn.classList.remove("holding"); lbl.textContent = "Hold to take a rest day";
+        };
+        btn.addEventListener("pointerdown", start);
+        ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => btn.addEventListener(ev, stop));
+        btn.addEventListener("contextmenu", (e) => e.preventDefault());
+        btn.addEventListener("keydown", (e) => { if ((e.key === " " || e.key === "Enter") && !e.repeat) start(e); });
+        btn.addEventListener("keyup", stop);
+        btn.addEventListener("blur", stop);
       }
 
       // ---- Leaderboard: everyone in W.PEOPLE, ranked by workouts (reps break ties; a full tie shares a rank, Cecelia listed first)
@@ -458,12 +521,14 @@
         const lastDone = [...person.queue].reverse().find((x) => x.completed);
 
         const finishedToday = lastDone && lastDone.completed === todayKey;
-        // After finishing today's workout, show the "done" screen with the calendar
-        // (the next queued workout is one tap away).
-        if (!w || (finishedToday && !startEarly[who])) {
+        const restToday = !finishedToday && !!W.restDays && W.restDays(person).has(todayKey);
+        // After finishing today's workout (or taking a rest day), show the "done" screen
+        // with the calendar (the next queued workout is one tap away).
+        if (!w || ((finishedToday || restToday) && !startEarly[who])) {
           app.innerHTML = `<div class="eyebrow">${esc(prettyDate(todayKey))} · ${esc(name)}</div>
             <div class="donebox">
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
+              : restToday ? `<div class="big">Rest day</div><p class="sec-note">${w ? `${esc(w.title)} will be waiting tomorrow.` : "Enjoy it."} ${restsLeft(person)} of ${W.restAllowance(person)} rest days left this week.</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
               ${finishedToday && W.setFeedback ? doneFeelHTML(lastDone) : ""}
               ${totalsHTML(person)}
@@ -471,6 +536,7 @@
               ${calendarHTML(person)}
               ${finishedToday && w ? `<button type="button" class="linkish" id="early">Up next: ${esc(w.title)}. Start it early</button><br>` : ""}
               ${finishedToday ? `<button type="button" class="linkish" id="undo">Oops, it's not done yet</button>` : ""}
+              ${restToday && w ? `<button type="button" class="linkish" id="unrest">Changed my mind: work out today instead</button>` : ""}
             </div><div id="keyslot"></div><footer><span data-visits hidden></span></footer>`;
           if (window.VisitCounter) VisitCounter.fill(app);
           wireCalendar();
@@ -478,6 +544,7 @@
           if (finishedToday && W.setFeedback) wireDoneFeel(lastDone);
           document.getElementById("undo")?.addEventListener("click", () => saveCompleted(lastDone.id, false));
           document.getElementById("early")?.addEventListener("click", () => { startEarly[who] = true; render(); });
+          document.getElementById("unrest")?.addEventListener("click", (e) => { e.target.disabled = true; saveRest(false); });
           document.title = `Workouts · ${name}`;
           return;
         }
@@ -487,7 +554,13 @@
         try { doneMap = JSON.parse(localStorage.getItem(doneKey)) || {}; } catch (e) { doneMap = {}; }
         const { total, html } = workoutHTML(w, doneMap);
         const waiting = W.pending(person);
-        const late = w.date && w.date < todayKey ? daysBetween(w.date, todayKey) : 0;
+        const rested = W.restDays ? W.restDays(person) : new Set();
+        let late = 0; // days it has waited, not counting rest days
+        for (let i = 0, n = w.date && w.date < todayKey ? daysBetween(w.date, todayKey) : 0; i < n; i++) {
+          const d = new Date(w.date + "T12:00"); d.setDate(d.getDate() + i);
+          const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+          if (!rested.has(k)) late++;
+        }
 
         app.innerHTML = `
           ${late ? `<p class="carry">Carried over from ${esc(prettyDate(w.date, { weekday: "long", month: "short", day: "numeric" }))}: still to do, so you don't skip it.</p>` : ""}
@@ -495,6 +568,7 @@
           ${html}
           ${W.RATINGS ? feelHTML(loadFeel(w.id), "How did it feel?", false) : ""}
           <button type="button" class="complete" id="complete">Mark workout complete</button>
+          ${!restToday && !finishedToday ? restButtonHTML(person) : ""}
           ${waiting.length > 1 ? `<p class="upnext">Up next: ${waiting.slice(1).map((x) => esc(x.title)).join(", ")}</p>` : ""}
           <div id="keyslot"></div>
           <footer><button type="button" class="linkish" id="reset">Clear checkmarks</button><span data-visits hidden style="margin-left:14px"></span></footer>`;
@@ -530,6 +604,7 @@
         const feel = loadFeel(w.id);
         wireFeel(feel, (x) => keepFeel(w.id, x));
         document.getElementById("complete").addEventListener("click", () => saveCompleted(w.id, true, feel));
+        wireRestButton();
         update();
         document.title = `${w.title} · ${name}`;
       }

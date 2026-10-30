@@ -3281,7 +3281,9 @@
             "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         }
-      ]
+      ],
+      "rest_days_per_week": 2,
+      "rest": []
     }
   }
 }
