@@ -3237,6 +3237,104 @@
           "feedback": {
             "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
+        },
+        {
+          "id": "2026-10-30-legs-b-cardio-circuit-ee9w",
+          "title": "Legs B: cardio circuit",
+          "duration_min": 30,
+          "notes": "Circuit day: one exercise after another, then rest 60-90 sec between rounds - 3 rounds total. Optional easy 15-20 min run afterward if you want more.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - full comfortable depth, warm the groove",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                },
+                {
+                  "exercise": "Glute bridge",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - squeeze hard at the top",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Circuit",
+              "rounds": 3,
+              "notes": "Back-to-back exercises, 60-90 sec rest between rounds.",
+              "items": [
+                {
+                  "exercise": "Goblet squat",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "12 reps each round - 30 lb dumbbell at the chest",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                },
+                {
+                  "exercise": "Alternating dumbbell reverse lunge",
+                  "sets": 1,
+                  "reps": "8 / leg",
+                  "detail": "8 / leg each round - 15 lb dumbbells, step back soft, drive up",
+                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "10 reps each round - 40 lb dumbbells (shoulder-friendly cap - volume comes from the rounds, not the load)",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Dumbbell step-up onto bench",
+                  "sets": 1,
+                  "reps": "10 / side",
+                  "detail": "10 / side each round - 20 lb dumbbells, controlled up and down",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Band lateral walk",
+                  "sets": 1,
+                  "reps": "12 / side",
+                  "detail": "12 / side each round - band above knees, stay low, no dragging feet",
+                  "url": "https://www.youtube.com/watch?v=y_bqFDQZSHQ"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-30",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
