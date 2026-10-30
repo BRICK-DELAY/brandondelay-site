@@ -171,7 +171,7 @@
         }
         const w = sel, cur = weeks.find(isCurrent), next = nextOrderWeek();
         const tagFor = (x) => (x === cur ? "This week" : x === next ? "Next order" : "");
-        const shown = weeks.filter((x) => span(x).end >= keyOf(new Date(Date.now() - 42 * 86400000)) || x === w); // last ~6 weeks
+        const shown = weeks; // the file keeps about 8 weeks
         const recipes = recipeMap(w), o = w.order || {};
         const dinners = (w.days || []).reduce((n, d) => n + (d.meals || []).filter((m) => !m.leftovers && (m.recipe || m.text)).length, 0);
         const total = orderTotals(w).total;
