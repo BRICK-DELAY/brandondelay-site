@@ -25,6 +25,13 @@ A person can have at most **2 unfinished** workouts queued. Extra posts are refu
      goes into their `rest` list, and that day's workout simply waits until the next day (so their
      queue may already be full; then the post is refused, which is fine). The status box shows
      each person's rest days used in the last 7 days.
+   - **People who plan ahead** (`"plan_ahead": true` in `plan.json`; the status box says
+     "Plans ahead"; currently Isabelle): keep **2** unfinished workouts waiting, today's and
+     tomorrow's. Each morning post until they have 2 (dated today and tomorrow when both are
+     missing; otherwise date the new one the day after their newest waiting one). Their page has a
+     button to swap the two, so make each workout able to stand on its own, and give every one a
+     `"duration_min"` (JSON format) so the button can show which is shorter. A swap trades the
+     two workouts' places and dates in the queue; that's expected.
 4. To post: pick the person, set the **date** (today, America/Denver) and a short **title**
    (e.g. "Legs: squat focus"), paste the workout as plain text, and press **Save workout**.
    Confirm the message says **Saved**.
@@ -109,6 +116,7 @@ Everything lives in `workouts/plan.json` in the GitHub repository **BRICK-DELAY/
   you add to it: someone without a key (Jose) tells you they're taking a rest day. Then add today's
   date, but only if they've taken fewer than 2 in the last 7 days (today and the 6 days before);
   otherwise tell them they've used both.
+- `"plan_ahead": true` on a person means they keep today's and tomorrow's workouts queued and may swap them.
 - A finished workout may have `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`, written by the page. Read it when planning; don't change it.
 - `completed` is set to a date by the page when they finish. Don't change it, and don't remove or reorder entries.
   The one exception is below: checking off a workout for someone who tells you they finished it.

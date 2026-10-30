@@ -246,6 +246,21 @@ window.Workouts = (function () {
     return { ...all, years };
   }
 
+  // People with "plan_ahead": true in plan.json keep today's and tomorrow's workouts
+  // queued and can swap them: the two trade places and dates, so tomorrow's is done
+  // today and today's waits for tomorrow.
+  const planAhead = (person) => !!person.plan_ahead;
+  function swapNext(key, who) {
+    return update(key, `${PEOPLE[who]} swapped today's and tomorrow's workouts`, (plan) => {
+      const person = plan.people[who], [a, b] = pending(person);
+      if (!a || !b) return { skip: true, reason: "nothing" };
+      const i = person.queue.indexOf(a), j = person.queue.indexOf(b);
+      person.queue[i] = b; person.queue[j] = a;
+      [a.date, b.date] = [b.date, a.date];
+      return {};
+    });
+  }
+
   // Rest days a person takes themselves with the button on their workout page.
   // Everyone gets REST_DAYS in any 7 days in a row (a person's `rest_days` in
   // plan.json overrides it; 0 turns the button off). `rest` lists the dates taken.
@@ -317,5 +332,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, restFreesOn, setRest, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, restFreesOn, setRest, planAhead, swapNext, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();

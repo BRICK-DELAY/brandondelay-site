@@ -73,7 +73,7 @@
     </form>
   </main>
 
-  <script src="../shared.js?v=10"></script>
+  <script src="../shared.js?v=11"></script>
   <script>
     (function () {
       "use strict";
@@ -101,7 +101,8 @@
           const allow = W.restAllowance ? W.restAllowance(p) : 0;
           const rests = allow ? [...W.restDays(p)].sort().slice(-5) : [];
           const restInfo = allow ? ` Rest days: ${W.restUsed(p, W.today())} of ${allow} used in the last 7 days${rests.length ? ` (recent: ${rests.map(esc).join(", ")})` : ""}.` : "";
-          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.${restInfo}`
+          const ahead = W.planAhead && W.planAhead(p) ? " Plans ahead: keep 2 waiting (today's and tomorrow's)." : "";
+          return `<div><b>${esc(name)}:</b> ${state}${last ? `. Last finished: ${esc(last.title)} on ${esc(last.completed)}` : ""}.${restInfo}${ahead}`
             + `${felt ? `<div class="muted" style="margin-top:4px">How recent workouts felt:</div><ul style="margin:4px 0 10px;padding-left:20px">${felt}</ul>` : ""}</div>`;
         }).join("");
       }
