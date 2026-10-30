@@ -61,8 +61,8 @@
     footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
     footer button { background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
 
-    .who { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; margin-bottom: 28px; }
-    .who button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; font-weight: 600; padding: 8px 18px; border-radius: 999px; cursor: pointer; }
+    .who { display: inline-flex; max-width: 100%; padding: 3px; border: 1px solid var(--line); border-radius: 999px; margin-bottom: 28px; }
+    .who button { flex: 0 1 auto; min-width: 0; border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; font-weight: 600; padding: 8px clamp(8px, 3.5vw, 18px); border-radius: 999px; cursor: pointer; white-space: nowrap; }
     .who button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
     .who button .n { font-weight: 500; opacity: .7; margin-left: 4px; }
     .carry { margin: 0 0 16px; padding: 10px 14px; border-radius: 12px; background: rgba(217,183,126,.1); color: var(--accent); font-size: 14px; }
@@ -101,16 +101,23 @@
     .periods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; }
     .periods button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 12px; font-weight: 600; padding: 6px 4px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
     .periods button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
-    .row { display: grid; grid-template-columns: 22px 1fr auto auto; align-items: baseline; gap: 12px; padding: 10px 2px; border-top: 1px solid var(--line); }
+    .row { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto auto; align-items: baseline; gap: 10px; padding: 10px 2px; border-top: 1px solid var(--line); }
     .row:last-child { border-bottom: 1px solid var(--line); }
     .row .rk { font-size: 15px; font-weight: 600; color: var(--muted); }
-    .row .nm { font-weight: 600; }
+    .row .nm { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .row .st { grid-column: 2 / -1; font-size: 12px; font-weight: 500; color: var(--muted); margin-top: -8px; }
     .row .st.hot { color: var(--accent); }
+    .row .st small { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--bg); background: var(--muted); border-radius: 4px; padding: 1px 5px; margin-right: 6px; vertical-align: 1px; }
     .row .nm small { font-weight: 500; font-size: 11px; color: var(--muted); margin-left: 6px; letter-spacing: .08em; text-transform: uppercase; }
     .row .v { font-size: 13px; color: var(--muted); text-align: right; white-space: nowrap; }
     .row .v b { color: var(--text); font-size: 16px; font-weight: 600; }
     .row.lead .rk, .row.lead .v b { color: var(--accent); }
+    @media (max-width: 360px) {
+      .donebox { padding: 18px 14px; }
+      .row { gap: 8px; }
+      .row .v { font-size: 11px; }
+      .row .v b { font-size: 14px; }
+    }
     .board-note { font-size: 12px; color: var(--muted); margin-top: 8px; text-align: center; }
     .feel { margin-top: 32px; }
     .feel-q { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0 0 10px; }
@@ -393,19 +400,20 @@
           </div>
           ${rows.map((r) => `<div class="row${a.workouts && same(r, a) ? " lead" : ""}">
             <span class="rk">${r.rank}</span>
-            <span class="nm">${esc(W.PEOPLE[r.id])}${r.id === who ? "<small>You</small>" : ""}</span>
+            <span class="nm">${esc(W.PEOPLE[r.id])}</span>
             <span class="v"><b>${n(r.workouts)}</b> workout${r.workouts === 1 ? "" : "s"}</span>
             <span class="v"><b>${n(r.reps)}</b> reps</span>
-            ${streakHTML(r.st)}
+            ${streakHTML(r.st, r.id === who)}
           </div>`).join("")}
           <div class="board-note">${esc(note)}</div>
         </div>`;
       }
-      function streakHTML(st) {
-        if (!st) return "";
+      function streakHTML(st, isYou) {
+        const you = isYou ? "<small>You</small>" : "";
+        if (!st) return isYou ? `<span class="st">${you}</span>` : "";
         const now = st.current ? `🔥 ${st.current}-day streak` : "No streak";
         const best = st.best > st.current ? ` · best ${st.best}` : "";
-        return `<span class="st${st.current ? " hot" : ""}">${now}${best}</span>`;
+        return `<span class="st${st.current ? " hot" : ""}">${you}${now}${best}</span>`;
       }
       function wireBoard() {
         app.querySelectorAll(".periods button").forEach((btn) => btn.addEventListener("click", (e) => {

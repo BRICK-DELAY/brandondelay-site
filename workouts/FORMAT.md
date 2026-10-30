@@ -1,7 +1,7 @@
 # Daily workouts: instructions for the AI agent
 
-Brandon, Cecelia and Jose each have a short queue of workouts at
-**https://www.brandondelay.com/workouts** (`#brandon` / `#cecelia` / `#jose`). Each of them
+Brandon, Cecelia, Jose and Isabelle each have a short queue of workouts at
+**https://www.brandondelay.com/workouts** (`#brandon` / `#cecelia` / `#jose` / `#isabelle`). Each of them
 sees their **oldest unfinished** workout until they press **Mark workout complete**,
 so a missed day is never skipped: that workout simply waits.
 
@@ -16,7 +16,7 @@ A person can have at most **2 unfinished** workouts queued. Extra posts are refu
    (**Too easy**, **Just right** or **Too hard**) and sometimes a note they typed (sore spots,
    swaps, requests). Use it when planning: progress when it's "Too easy", hold steady when
    "Just right", back off when "Too hard", and follow the notes (e.g. avoid an exercise that hurt).
-3. For **each person** you plan for (Brandon, Cecelia, Jose):
+3. For **each person** you plan for (Brandon, Cecelia, Jose, Isabelle):
    - **If they have 2 unfinished workouts:** post nothing for them today.
    - **If they finished yesterday's workout or have none waiting:** post the next workout in their plan.
    - **If they have 1 unfinished workout** (they missed a day): you may post the following workout as "up next". It appears only after they finish the current one. Don't repeat the missed workout; it's still there.
@@ -116,6 +116,11 @@ Only do this when the person (or their agent) says they finished. Then, in `plan
 2. Set `"completed"` to the day they finished, as `"YYYY-MM-DD"` (America/Denver). Usually today.
 3. If they said how it felt, add `"feedback": { "rating": "easy" | "right" | "hard", "note": "…" }`
    ("Too easy" = `easy`, "Just right" = `right`, "Too hard" = `hard`; the note is optional, in their words).
-4. Don't touch `history` and don't remove the entry. The page works out their reps, calendar,
-   streak and leaderboard spot from the queue.
+4. Don't remove the entry. The page works out their reps, calendar, streak and leaderboard
+   spot from the queue.
+   - If they report what they actually did, you may record it: mark exercises they skipped with
+     `"skipped": true` (and what they did instead in `"performed"`), and add or update their
+     `history` entry (`id`, `date`, `planned`, `title`) with `"reps"` set to the confirmed count.
+     A `reps` number in `history` overrides the planned count on the leaderboard, so only set it
+     when you have real numbers (0 if they confirmed doing none).
 5. Commit with a message like `Jose finished a workout`.
