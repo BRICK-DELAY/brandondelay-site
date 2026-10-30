@@ -166,7 +166,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=12"></script>
+  <script src="shared.js?v=13"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -517,10 +517,9 @@
       function streakHTML(st, isYou) {
         const you = isYou ? "<small>You</small>" : "";
         if (!st) return isYou ? `<span class="st">${you}</span>` : "";
-        const now = st.current ? `🔥 ${st.current}-week streak` : "No streak";
-        const week = st.goal ? ` · ${Math.min(st.thisWeek, st.goal)}/${st.goal} this week${st.thisWeek >= st.goal ? " ✓" : ""}` : "";
+        const now = st.current ? `🔥 ${st.current}-day streak` : "No streak";
         const best = st.best > st.current ? ` · best ${st.best}` : "";
-        return `<span class="st${st.current ? " hot" : ""}">${you}${now}${week}${best}</span>`;
+        return `<span class="st${st.current ? " hot" : ""}">${you}${now}${best}</span>`;
       }
       function wireBoard() {
         app.querySelectorAll(".periods button").forEach((btn) => btn.addEventListener("click", (e) => {
