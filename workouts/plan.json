@@ -1798,7 +1798,11 @@
           ],
           "date": "2026-10-28",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-29",
+          "feedback": {
+            "rating": "right",
+            "note": "We do not have a barbell of 20 or 30 pounds for the barbell bicep curls. I used 20 pound dumbbells which was on the upper limit for me given that many reps. I also did the barbell row with 65 pounds and 15 pound dumbbells for the concentration curls."
+          }
         },
         {
           "id": "2026-10-29-legs-a9pq",
@@ -2001,6 +2005,17 @@
           "reps": 281,
           "feedback": {
             "rating": "easy"
+          }
+        },
+        {
+          "id": "2026-10-28-back-and-bis-p76x",
+          "date": "2026-10-29",
+          "planned": "2026-10-28",
+          "title": "Back and bis",
+          "reps": 206,
+          "feedback": {
+            "rating": "right",
+            "note": "We do not have a barbell of 20 or 30 pounds for the barbell bicep curls. I used 20 pound dumbbells which was on the upper limit for me given that many reps. I also did the barbell row with 65 pounds and 15 pound dumbbells for the concentration curls."
           }
         }
       ]
