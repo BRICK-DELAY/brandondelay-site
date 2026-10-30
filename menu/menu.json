@@ -3,15 +3,15 @@
   "weeks": [
     {
       "id": "2026-11-01",
-      "title": "Back-to-normal week",
-      "notes": "First full menu after wisdom-teeth recovery, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original.",
+      "title": "Sausage pie week",
+      "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original.",
       "order": {
         "date": "2026-11-01",
         "window": "5-8 pm",
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30. Amounts are the checkout amounts at placement; the final receipt can adjust slightly after shopping (item tax, weight-based items).",
+        "notes": "Ordered Friday, Oct 30. Totals shown are the checkout estimate at placement, pending the final receipt after Sunday delivery.",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
