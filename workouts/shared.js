@@ -294,28 +294,30 @@ window.Workouts = (function () {
     });
   }
 
-  // Day streaks. A day with a finished workout adds 1. A day with nothing waiting
-  // (a rest day: the agent posted nothing, and nothing earlier was left unfinished)
-  // is skipped over without breaking the streak. A day where a workout was waiting
-  // and none got finished ends it, unless they took it as a rest day with the
-  // rest-day button. Today never ends it, since there's still time.
+  // Week streaks. Weeks run Sunday to Saturday (like the calendar and leaderboard),
+  // and a week counts once WEEK_GOAL different days have a finished workout (a
+  // person's `week_goal` overrides it). The current week can't break a streak while
+  // it's still going; it joins the streak as soon as it reaches the goal.
+  const WEEK_GOAL = 5;
   function streak(person, todayKey) {
-    const shift = (key, n) => { const d = new Date(key + "T12:00"); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
-    const done = finished(person);
-    if (!done.length) return { current: 0, best: 0 };
-    const doneDays = new Set(done.map((h) => h.date));
-    // Every workout's [posted, finished) window; unfinished ones are still open.
-    const spans = done.map((h) => [h.planned || h.date, h.date])
-      .concat(pending(person).map((w) => [w.date || todayKey, null]));
-    const rested = restDays(person);
-    const waiting = (day) => !rested.has(day) && spans.some(([from, to]) => from <= day && (to === null || to > day));
+    const goal = Math.max(1, Number(person.week_goal) || WEEK_GOAL);
+    const sunday = (key) => { const d = new Date(key + "T12:00"); return shiftDay(key, -d.getDay()); };
+    const perWeek = new Map(); // Sunday -> set of workout days
+    finished(person).forEach((h) => {
+      const wk = sunday(h.date);
+      if (!perWeek.has(wk)) perWeek.set(wk, new Set());
+      perWeek.get(wk).add(h.date);
+    });
+    const thisWeek = sunday(todayKey), soFar = (perWeek.get(thisWeek) || new Set()).size;
+    if (!perWeek.size) return { current: 0, best: 0, thisWeek: 0, goal };
     let run = 0, best = 0;
-    for (let day = done[0].date; day <= todayKey; day = shift(day, 1)) {
-      if (doneDays.has(day)) run++;
-      else if (day !== todayKey && waiting(day)) run = 0;
+    for (let wk = [...perWeek.keys()].sort()[0]; wk <= thisWeek; wk = shiftDay(wk, 7)) {
+      const hit = (perWeek.get(wk) || new Set()).size >= goal;
+      if (hit) run++;
+      else if (wk !== thisWeek) run = 0;
       best = Math.max(best, run);
     }
-    return { current: run, best };
+    return { current: run, best, thisWeek: soFar, goal };
   }
 
   // date ("YYYY-MM-DD") -> titles of workouts finished that day.
