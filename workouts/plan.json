@@ -1911,7 +1911,11 @@
           ],
           "date": "2026-10-29",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-30",
+          "feedback": {
+            "rating": "right",
+            "note": "This was very similar to last leg workout, only swapping in calf raises. I did 20 reps of glute bridges each set."
+          }
         },
         {
           "id": "2026-10-30-chest-and-tris-atic",
@@ -2118,6 +2122,17 @@
           "feedback": {
             "rating": "right",
             "note": "We do not have a barbell of 20 or 30 pounds for the barbell bicep curls. I used 20 pound dumbbells which was on the upper limit for me given that many reps. I also did the barbell row with 65 pounds and 15 pound dumbbells for the concentration curls."
+          }
+        },
+        {
+          "id": "2026-10-29-legs-a9pq",
+          "date": "2026-10-30",
+          "planned": "2026-10-29",
+          "title": "Legs",
+          "reps": 255,
+          "feedback": {
+            "rating": "right",
+            "note": "This was very similar to last leg workout, only swapping in calf raises. I did 20 reps of glute bridges each set."
           }
         }
       ]
