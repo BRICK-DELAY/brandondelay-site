@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Menu</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317181a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23d9b77e' text-anchor='middle'%3EBD%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121314; --bg-raised: #1b1c1e; --line: #2a2b2e;
+      --text: #efe9df; --muted: #a39e95; --accent: #d9b77e;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+    .site-head { display: flex; align-items: center; height: 64px; padding: 0 clamp(16px, 4vw, 48px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .site-brand { font-family: var(--serif); font-weight: 600; font-size: 26px; color: var(--text); text-decoration: none; letter-spacing: .01em; }
+    .site-brand:hover { color: var(--accent); }
+    main { max-width: 760px; margin: 0 auto; padding: clamp(24px, 5vw, 48px) 16px calc(64px + env(safe-area-inset-bottom)); }
+    button { font: inherit; }
+    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 9vw, 64px); line-height: 1.02; margin: 8px 0 12px; }
+    h2 { font-family: var(--serif); font-weight: 600; font-size: 28px; margin: 0 0 6px; }
+    .muted { color: var(--muted); }
+    .empty { margin-top: 18vh; text-align: center; color: var(--muted); }
+    .empty h1 { color: var(--text); }
+
+    /* Week picker */
+    .weeks { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin: 0 0 24px; scrollbar-width: none; }
+    .weeks::-webkit-scrollbar { display: none; }
+    .weeks button { flex: none; border: 1px solid var(--line); background: none; color: var(--muted); border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .weeks button[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+    .weeks button .tag { font-weight: 500; opacity: .75; margin-left: 4px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+    .chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--muted); }
+    .chip b { color: var(--text); font-weight: 600; }
+    .chip.status { border-color: rgba(217,183,126,.5); color: var(--accent); }
+    .intro { color: #d8d2c8; margin: 12px 0 0; white-space: pre-line; }
+
+    /* Section tabs */
+    .tabs { position: sticky; top: 0; z-index: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 3px; margin: 24px 0 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
+    .tabs button { border: 0; background: none; color: var(--muted); padding: 9px 4px; border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .tabs button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+
+    /* Plan */
+    .day { padding: 16px 0; border-top: 1px solid var(--line); }
+    .day:last-child { border-bottom: 1px solid var(--line); }
+    .day-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+    .day-head b { font-family: var(--serif); font-size: 24px; font-weight: 600; }
+    .day-head span { color: var(--muted); font-size: 13px; }
+    .day-head .today { color: #1a1408; background: var(--accent); border-radius: 999px; padding: 1px 9px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .day.past { opacity: .5; }
+    .day.is-today { border-top-color: var(--accent); }
+    .meal { display: grid; grid-template-columns: 82px 1fr; gap: 10px; align-items: baseline; padding: 6px 0; }
+    .meal .when { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .meal .what { min-width: 0; }
+    .meal button.rlink { border: 0; background: none; padding: 0; color: var(--text); font-size: 17px; font-weight: 600; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: rgba(239,233,223,.4); text-underline-offset: 4px; }
+    .meal button.rlink:hover { color: var(--accent); }
+    .meal .plain { font-size: 17px; font-weight: 600; }
+    .meal .sub { font-size: 13px; color: var(--muted); }
+    .meal .sub .left { color: var(--accent); }
+    .prep { margin-top: 6px; font-size: 13px; color: var(--accent); }
+
+    /* Groceries */
+    .order-card { margin: 16px 0 8px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-raised); }
+    .order-card .state { font-weight: 600; }
+    .order-card .state.ok { color: var(--accent); }
+    .order-card p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+    .cat { margin-top: 22px; }
+    .cat h3 { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 4px; }
+    .gi { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .gi .n { font-weight: 600; }
+    .gi .n .q { font-weight: 500; color: var(--muted); }
+    .gi .p { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .gi .f { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+    .gi .f .sw { color: var(--accent); }
+    .gi.out .n, .gi.out .p { text-decoration: line-through; opacity: .5; }
+    .totals { margin-top: 24px; border-top: 1px solid var(--text); padding-top: 10px; font-variant-numeric: tabular-nums; }
+    .totals div { display: flex; justify-content: space-between; padding: 3px 0; color: var(--muted); font-size: 15px; }
+    .totals .grand { color: var(--text); font-size: 20px; font-weight: 600; padding-top: 8px; }
+    .totals .est { font-size: 12px; color: var(--muted); text-align: right; display: block; }
+    .pantry { margin-top: 20px; font-size: 14px; color: var(--muted); }
+
+    /* Recipes */
+    details.recipe { border-top: 1px solid var(--line); }
+    details.recipe:last-of-type { border-bottom: 1px solid var(--line); }
+    details.recipe summary { list-style: none; cursor: pointer; padding: 16px 0; display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: baseline; }
+    details.recipe summary::-webkit-details-marker { display: none; }
+    details.recipe summary .rn { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.1; }
+    details.recipe summary .rm { font-size: 13px; color: var(--muted); grid-column: 1 / -1; }
+    details.recipe summary .chev { color: var(--muted); transition: transform .2s; }
+    details.recipe[open] summary .chev { transform: rotate(90deg); }
+    details.recipe .body { padding: 0 0 20px; }
+    .body h4 { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 16px 0 6px; }
+    .body ul.ing { margin: 0; padding: 0; list-style: none; columns: 2 220px; column-gap: 24px; }
+    .body ul.ing li { break-inside: avoid; padding: 4px 0; font-size: 15px; }
+    .body ul.ing li b { font-weight: 600; color: var(--accent); }
+    .body ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+    .body ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 9px 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .body ol.steps li::before { content: counter(s); width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #4a4b4f; display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--muted); }
+    .body ol.steps li.done { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(239,233,223,.35); }
+    .body ol.steps li.done::before { content: "✓"; background: var(--accent); border-color: var(--accent); color: #1a1408; }
+    .body .rnote { margin-top: 14px; padding: 10px 14px; border-radius: 12px; background: rgba(217,183,126,.1); color: var(--accent); font-size: 14px; white-space: pre-line; }
+    .body .used { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .body a { color: var(--accent); }
+    .linkish { background: none; border: 0; color: var(--muted); text-decoration: underline; font-size: 13px; cursor: pointer; padding: 0; }
+    footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header class="site-head"><a href="/" class="site-brand">Brandon DeLay</a></header>
+  <main id="app"><p class="empty">Loading…</p></main>
+
+  <script>
+    // The weekly menu from menu/menu.json (written by the agent; see menu/FORMAT.md):
+    // what's in the next grocery order and what it costs, the plan for each day,
+    // and the recipes. Ticked recipe steps are remembered on this device.
+    (function () {
+      "use strict";
+      const app = document.getElementById("app");
+      const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const pad = (n) => String(n).padStart(2, "0");
+      const keyOf = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+      const todayKey = keyOf(new Date());
+      const asDate = (k) => new Date(k + "T12:00");
+      const pretty = (k, opts) => asDate(k).toLocaleDateString(undefined, opts || { weekday: "long", month: "short", day: "numeric" });
+      const money = (n) => (typeof n === "number" && isFinite(n) ? n.toLocaleString(undefined, { style: "currency", currency: "USD" }) : "");
+      const num = (x) => (x == null || x === "" ? null : Number(String(x).replace(/[^0-9.\-]/g, "")));
+      const safeUrl = (u) => (typeof u === "string" && /^https:\/\//.test(u) ? u : "");
+      const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+      let data = null, weeks = [], sel = null, tab = "plan";
+
+      // First and last day a week covers (its meal days, plus the order date).
+      function span(w) {
+        const keys = (w.days || []).map((d) => d.date).filter(Boolean).sort();
+        const start = keys[0] || (w.order && w.order.date) || w.id, end = keys[keys.length - 1] || start;
+        return { start, end };
+      }
+      const label = (w) => {
+        const { start, end } = span(w);
+        const a = asDate(start), b = asDate(end);
+        const m = (d) => d.toLocaleDateString(undefined, { month: "short" });
+        return a.getMonth() === b.getMonth() ? `${m(a)} ${a.getDate()}–${b.getDate()}` : `${m(a)} ${a.getDate()} – ${m(b)} ${b.getDate()}`;
+      };
+      const isCurrent = (w) => { const { start, end } = span(w); return start <= todayKey && todayKey <= end; };
+      // The next grocery order: the soonest one that hasn't been delivered yet.
+      function nextOrderWeek() {
+        return weeks.filter((w) => w.order && w.order.date && w.order.date >= todayKey && w.order.status !== "delivered")
+          .sort((a, b) => (a.order.date < b.order.date ? -1 : 1))[0] || null;
+      }
+
+      function recipeMap(w) {
+        const m = new Map();
+        (w.recipes || []).forEach((r, i) => { r._id = r.id || slug(r.name || "recipe-" + i); m.set(r._id, r); });
+        return m;
+      }
+
+      // ---- Header, week picker, tabs
+      function render() {
+        if (!weeks.length) {
+          app.innerHTML = `<div class="empty"><h1>No menu yet</h1><p>When Instinct plans the week, it shows up here: the grocery order, the daily plan and the recipes.</p></div>`;
+          return;
+        }
+        const w = sel, cur = weeks.find(isCurrent), next = nextOrderWeek();
+        const tagFor = (x) => (x === cur ? "This week" : x === next ? "Next order" : "");
+        const shown = weeks.filter((x) => span(x).end >= keyOf(new Date(Date.now() - 42 * 86400000)) || x === w); // last ~6 weeks
+        const recipes = recipeMap(w), o = w.order || {};
+        const dinners = (w.days || []).reduce((n, d) => n + (d.meals || []).filter((m) => !m.leftovers && (m.recipe || m.text)).length, 0);
+        const total = orderTotals(w).total;
+        app.innerHTML = `
+          <div class="weeks" role="group" aria-label="Week">${shown.map((x) => `<button type="button" data-w="${esc(x.id)}" aria-pressed="${x === w}">${esc(label(x))}${tagFor(x) ? `<span class="tag">· ${tagFor(x)}</span>` : ""}</button>`).join("")}</div>
+          <div class="eyebrow">${esc(tagFor(w) || "Menu")} · ${esc(label(w))}</div>
+          <h1>${esc(w.title || "This week's menu")}</h1>
+          <div class="chips">
+            ${o.status ? `<span class="chip status">${esc(statusText(o).short)}</span>` : ""}
+            ${total != null ? `<span class="chip"><b>${esc(money(total))}</b>${o.total == null ? " est." : ""}</span>` : ""}
+            ${(o.items || []).length ? `<span class="chip"><b>${o.items.length}</b> items</span>` : ""}
+            ${recipes.size ? `<span class="chip"><b>${recipes.size}</b> recipe${recipes.size === 1 ? "" : "s"}</span>` : ""}
+            ${dinners ? `<span class="chip"><b>${dinners}</b> meals</span>` : ""}
+          </div>
+          ${w.notes ? `<p class="intro">${esc(w.notes)}</p>` : ""}
+          <div class="tabs" role="group" aria-label="Section">
+            ${[["plan", "Plan"], ["groceries", "Groceries"], ["recipes", "Recipes"]].map(([k, l]) => `<button type="button" data-t="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}
+          </div>
+          <div id="pane">${tab === "plan" ? planHTML(w, recipes) : tab === "groceries" ? groceriesHTML(w, recipes) : recipesHTML(w, recipes)}</div>
+          <footer>${data.updated ? `Updated ${esc(pretty(data.updated, { month: "short", day: "numeric" }))}` : ""}</footer>`;
+        app.querySelectorAll(".weeks button").forEach((b) => b.addEventListener("click", () => { go(b.dataset.w, tab); }));
+        app.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => { go(w.id, b.dataset.t); }));
+        app.querySelectorAll("button.rlink").forEach((b) => b.addEventListener("click", () => go(w.id, "recipes", b.dataset.r)));
+        app.querySelectorAll(".weeks button[aria-pressed=true]").forEach((b) => b.scrollIntoView({ inline: "center", block: "nearest" }));
+        if (tab === "recipes") wireSteps(w);
+        document.title = `Menu · ${label(w)}`;
+      }
+
+      // ---- Plan: each day's meals
+      function planHTML(w, recipes) {
+        const days = [...(w.days || [])].sort((a, b) => (a.date < b.date ? -1 : 1));
+        if (!days.length) return `<p class="muted">No daily plan for this week yet.</p>`;
+        return days.map((d) => {
+          const past = d.date < todayKey, today = d.date === todayKey;
+          const meals = (d.meals || []).map((m) => {
+            const r = m.recipe ? recipes.get(m.recipe) || [...recipes.values()].find((x) => x.name === m.recipe) : null;
+            const name = r ? `<button type="button" class="rlink" data-r="${esc(r._id)}">${esc(r.name)}</button>` : `<span class="plain">${esc(m.text || m.recipe || "")}</span>`;
+            const bits = [m.leftovers ? `<span class="left">Leftovers</span>` : "", r && !m.leftovers && (r.time_min || r.total_min) ? `${esc(r.time_min || r.total_min)} min` : "", m.note ? esc(m.note) : ""].filter(Boolean).join(" · ");
+            return `<div class="meal"><span class="when">${esc(m.meal || "")}</span><span class="what">${name}${bits ? `<div class="sub">${bits}</div>` : ""}</span></div>`;
+          }).join("");
+          return `<div class="day${past ? " past" : ""}${today ? " is-today" : ""}" ${today ? 'id="today"' : ""}>
+            <div class="day-head"><b>${esc(pretty(d.date, { weekday: "long" }))}</b><span>${esc(pretty(d.date, { month: "short", day: "numeric" }))}</span>${today ? `<span class="today">Today</span>` : ""}</div>
+            ${meals || `<p class="muted" style="margin:0">Nothing planned.</p>`}
+            ${d.prep ? `<div class="prep">Prep: ${esc(d.prep)}</div>` : ""}
+          </div>`;
+        }).join("");
+      }
+
+      // ---- Groceries: the order, by aisle, with costs
+      function statusText(o) {
+        const when = o.date ? pretty(o.date, { weekday: "short", month: "short", day: "numeric" }) + (o.window ? `, ${o.window}` : "") : "";
+        switch (o.status) {
+          case "delivered": return { short: "Delivered", long: `Delivered ${when}`, ok: true };
+          case "ordered": return { short: "Ordered", long: `Ordered · arriving ${when}`, ok: true };
+          case "in_cart": return { short: "In the cart", long: `In the Instacart cart · orders for ${when}`, ok: false };
+          default: return { short: "Planned", long: `Planned · orders for ${when}`, ok: false };
+        }
+      }
+      function orderTotals(w) {
+        const o = w.order || {}, items = o.items || [];
+        const priced = items.filter((i) => !i.unavailable && num(i.price) != null);
+        const sum = priced.reduce((n, i) => n + num(i.price), 0);
+        const subtotal = num(o.subtotal) != null ? num(o.subtotal) : priced.length ? sum : null;
+        const extras = ["fees", "tax", "tip"].map((k) => num(o[k])).filter((x) => x != null);
+        const total = num(o.total) != null ? num(o.total) : subtotal != null ? subtotal + extras.reduce((a, b) => a + b, 0) : null;
+        return { subtotal, total };
+      }
+      function groceriesHTML(w, recipes) {
+        const o = w.order;
+        if (!o) return `<p class="muted">No grocery order for this week.</p>`;
+        const st = statusText(o), items = o.items || [];
+        const cats = new Map();
+        items.forEach((i) => { const c = i.category || "Other"; if (!cats.has(c)) cats.set(c, []); cats.get(c).push(i); });
+        const forText = (i) => (Array.isArray(i.for) ? i.for : i.for ? [i.for] : []).map((id) => (recipes.get(id) || { name: id }).name).join(", ");
+        const { subtotal, total } = orderTotals(w);
+        const row = (l, v) => (num(v) != null ? `<div><span>${l}</span><span>${esc(money(num(v)))}</span></div>` : "");
+        return `<div class="order-card">
+            <div class="state${st.ok ? " ok" : ""}">${esc(st.long)}</div>
+            ${o.store ? `<p>${esc(o.store)}${safeUrl(o.url) ? ` · <a href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Open in Instacart</a>` : ""}</p>` : ""}
+            ${o.notes ? `<p>${esc(o.notes)}</p>` : ""}
+          </div>
+          ${[...cats.entries()].map(([c, list]) => `<div class="cat"><h3>${esc(c)}</h3>${list.map((i) => `
+            <div class="gi${i.unavailable ? " out" : ""}">
+              <span class="n">${esc(i.name)}${i.qty ? ` <span class="q">· ${esc(i.qty)}</span>` : ""}</span>
+              <span class="p">${num(i.price) != null ? esc(money(num(i.price))) : ""}</span>
+              ${forText(i) || i.note || i.substitute || i.unavailable ? `<span class="f">${[i.unavailable ? "Out of stock" : "", i.substitute ? `<span class="sw">Swapped for ${esc(i.substitute)}</span>` : "", forText(i) ? `For ${esc(forText(i))}` : "", i.note ? esc(i.note) : ""].filter(Boolean).join(" · ")}</span>` : ""}
+            </div>`).join("")}</div>`).join("")}
+          ${items.length ? `<div class="totals">
+            ${row("Items", subtotal)}${row("Fees", o.fees)}${row("Tax", o.tax)}${row("Tip", o.tip)}
+            ${total != null ? `<div class="grand"><span>Total</span><span>${esc(money(total))}</span></div>${o.total == null ? `<span class="est">Estimate until the order is placed</span>` : ""}` : ""}
+          </div>` : `<p class="muted">The shopping list hasn't been added yet.</p>`}
+          ${(w.pantry || []).length ? `<p class="pantry">Already at home: ${w.pantry.map(esc).join(", ")}</p>` : ""}`;
+      }
+
+      // ---- Recipes: ingredients and steps (tap a step to tick it off)
+      function recipesHTML(w, recipes) {
+        if (!recipes.size) return `<p class="muted">No recipes for this week yet.</p>`;
+        const usedOn = (id) => (w.days || []).flatMap((d) => (d.meals || []).filter((m) => m.recipe === id || m.recipe === (recipes.get(id) || {}).name)
+          .map((m) => `${pretty(d.date, { weekday: "short" })} ${String(m.meal || "").toLowerCase()}${m.leftovers ? " (leftovers)" : ""}`));
+        return [...recipes.values()].map((r) => {
+          const meta = [r.time_min || r.total_min ? `${r.time_min || r.total_min} min` : "", r.active_min ? `${r.active_min} min hands-on` : "", r.servings ? `Serves ${r.servings}` : ""].filter(Boolean).join(" · ");
+          const ing = (r.ingredients || []).map((x) => typeof x === "string" ? `<li>${esc(x)}</li>` : `<li>${x.qty ? `<b>${esc(x.qty)}</b> ` : ""}${esc(x.item || x.name || "")}${x.note ? ` <span class="muted">(${esc(x.note)})</span>` : ""}</li>`).join("");
+          const steps = (r.steps || []).map((s, i) => `<li data-i="${i}">${esc(typeof s === "string" ? s : s.text || "")}</li>`).join("");
+          const used = usedOn(r._id);
+          return `<details class="recipe" id="r-${esc(r._id)}">
+            <summary><span class="rn">${esc(r.name)}</span><span class="chev">›</span>${meta ? `<span class="rm">${esc(meta)}</span>` : ""}</summary>
+            <div class="body">
+              ${used.length ? `<div class="used">On the menu: ${esc(used.join(", "))}</div>` : ""}
+              ${ing ? `<h4>Ingredients</h4><ul class="ing">${ing}</ul>` : ""}
+              ${steps ? `<h4>Steps</h4><ol class="steps" data-r="${esc(r._id)}">${steps}</ol><button type="button" class="linkish" data-reset="${esc(r._id)}">Clear ticks</button>` : ""}
+              ${r.notes ? `<div class="rnote">${esc(r.notes)}</div>` : ""}
+              ${safeUrl(r.url) ? `<p><a href="${esc(safeUrl(r.url))}" target="_blank" rel="noopener noreferrer">Original recipe</a></p>` : ""}
+            </div>
+          </details>`;
+        }).join("");
+      }
+      function wireSteps(w) {
+        const store = (rid) => `menu-steps-${w.id}-${rid}`;
+        const load = (rid) => { try { return JSON.parse(localStorage.getItem(store(rid))) || {}; } catch (e) { return {}; } };
+        const keep = (rid, v) => { try { localStorage.setItem(store(rid), JSON.stringify(v)); } catch (e) { /* ignore */ } };
+        app.querySelectorAll("ol.steps").forEach((ol) => {
+          const rid = ol.dataset.r, ticks = load(rid);
+          ol.querySelectorAll("li").forEach((li) => {
+            li.classList.toggle("done", !!ticks[li.dataset.i]);
+            li.addEventListener("click", () => { ticks[li.dataset.i] = !ticks[li.dataset.i]; li.classList.toggle("done", ticks[li.dataset.i]); keep(rid, ticks); });
+          });
+        });
+        app.querySelectorAll("[data-reset]").forEach((b) => b.addEventListener("click", () => {
+          keep(b.dataset.reset, {});
+          app.querySelectorAll(`ol.steps[data-r="${CSS.escape(b.dataset.reset)}"] li`).forEach((li) => li.classList.remove("done"));
+        }));
+      }
+
+      // ---- Navigation: #<week id>/<plan|groceries|recipes>[/<recipe id>]
+      function go(weekId, t, recipeId) {
+        const h = `#${weekId}/${t}${recipeId ? "/" + recipeId : ""}`;
+        if (location.hash !== h) history.pushState(null, "", h);
+        route();
+      }
+      function route() {
+        const [wid, t, rid] = decodeURIComponent(location.hash.slice(1)).split("/");
+        sel = weeks.find((w) => w.id === wid) || weeks.find(isCurrent) || nextOrderWeek() || weeks[weeks.length - 1];
+        tab = ["plan", "groceries", "recipes"].includes(t) ? t : "plan";
+        render();
+        if (tab === "recipes" && rid) {
+          const d = document.getElementById("r-" + rid);
+          if (d) { d.open = true; d.scrollIntoView({ block: "start" }); }
+        } else if (tab === "plan" && sel === weeks.find(isCurrent)) {
+          const t2 = document.getElementById("today");
+          if (t2 && !wid) t2.scrollIntoView({ block: "center" });
+        }
+      }
+      window.addEventListener("popstate", route);
+
+      fetch("/menu/menu.json?t=" + Date.now(), { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : r.status === 404 ? { weeks: [] } : Promise.reject(new Error("Couldn't load the menu (" + r.status + ")"))))
+        .then((d) => {
+          data = d || {};
+          weeks = (Array.isArray(data.weeks) ? data.weeks : []).filter((w) => w && w.id).sort((a, b) => (span(a).start < span(b).start ? -1 : 1));
+          route();
+        })
+        .catch((e) => { app.innerHTML = `<div class="empty"><h1>Couldn't load</h1><p>${esc(e.message)}</p></div>`; });
+    })();
+  </script>
+</body>
+</html>
