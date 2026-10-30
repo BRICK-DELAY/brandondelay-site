@@ -247,16 +247,20 @@ window.Workouts = (function () {
   }
 
   // Rest days a person takes themselves with the button on their workout page.
-  // `rest_days_per_week` (set in plan.json) turns it on; `rest` lists the dates taken.
-  // Weeks run Sunday to Saturday, like the calendar.
-  const restAllowance = (person) => Math.max(0, Number(person.rest_days_per_week) || 0);
+  // Everyone gets REST_DAYS in any 7 days in a row (a person's `rest_days` in
+  // plan.json overrides it; 0 turns the button off). `rest` lists the dates taken.
+  const REST_DAYS = 2;
+  const shiftDay = (key, n) => { const d = new Date(key + "T12:00"); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+  const restAllowance = (person) => Math.max(0, person.rest_days == null ? REST_DAYS : Number(person.rest_days) || 0);
   const restDays = (person) => new Set(Array.isArray(person.rest) ? person.rest : []);
-  function weekOf(key) {
-    const d = new Date(key + "T12:00");
-    d.setDate(d.getDate() - d.getDay());
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  // Rest days taken in the 7 days ending on `key` (that day and the 6 before it).
+  const restWindow = (person, key) => [...restDays(person)].filter((d) => d <= key && d > shiftDay(key, -7)).sort();
+  const restUsed = (person, key) => restWindow(person, key).length;
+  // When the limit is reached: the day the oldest rest day in the window drops out.
+  function restFreesOn(person, key) {
+    const used = restWindow(person, key), allow = restAllowance(person);
+    return used.length < allow ? key : shiftDay(used[used.length - allow], 7);
   }
-  const restUsed = (person, key) => [...restDays(person)].filter((d) => weekOf(d) === weekOf(key)).length;
 
   // Takes (on) or gives back (off) a rest day for `date`.
   function setRest(key, who, date, on) {
@@ -313,5 +317,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, setRest, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, restFreesOn, setRest, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
 })();

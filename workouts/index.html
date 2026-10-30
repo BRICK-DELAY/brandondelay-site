@@ -159,7 +159,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=9"></script>
+  <script src="shared.js?v=10"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -255,7 +255,7 @@
           <p class="sec-note" style="margin-top:6px">Paste the GitHub key for the workout page so it can save your progress. It's remembered on this device.</p>
           <input type="password" id="keyIn" placeholder="github_pat_…" autocapitalize="none" spellcheck="false">
           <button type="button" id="keyGo">Save key and continue</button>
-          <p class="sec-note" style="margin-top:10px">No key? Tell your Instinct you finished (and how it felt), and it gets checked off here.</p>
+          <p class="sec-note" style="margin-top:10px">No key? Tell your Instinct instead (that you finished and how it felt, or that you're taking a rest day), and it shows up here.</p>
           ${errMsg ? `<div class="err">${esc(errMsg)}</div>` : ""}
         </div>`;
         document.getElementById("keyGo").addEventListener("click", () => {
@@ -389,19 +389,24 @@
           plan = out.plan;
           if (!on) startEarly[who] = false;
           render();
-          if (out.reason === "limit") document.getElementById("keyslot").innerHTML = `<div class="err">No rest days left this week.</div>`;
+          if (out.reason === "limit") document.getElementById("keyslot").innerHTML = `<div class="err">You've used your ${W.restAllowance(plan.people[who])} rest days for the last 7 days.</div>`;
         } catch (e) {
           render();
           if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveRest(on), e.message); }
           else document.getElementById("keyslot").innerHTML = `<div class="err">${esc(e.message)}</div>`;
         }
       }
+      // "tomorrow", "Tuesday" or "Tuesday, Nov 3": when the next rest day frees up.
+      function freeOn(person) {
+        const k = W.restFreesOn(person, todayKey), n = daysBetween(todayKey, k);
+        return n <= 0 ? "today" : n === 1 ? "tomorrow" : "on " + prettyDate(k, n < 7 ? { weekday: "long" } : { weekday: "long", month: "short", day: "numeric" });
+      }
       function restButtonHTML(person) {
         if (!W.restAllowance || !W.restAllowance(person)) return "";
         const left = restsLeft(person), max = W.restAllowance(person);
-        if (left <= 0) return `<p class="rest-left">No rest days left this week (${max} used). They reset on Sunday.</p>`;
+        if (left <= 0) return `<p class="rest-left">Both rest days used in the last 7 days. Your next one is free ${esc(freeOn(person))}.</p>`;
         return `<button type="button" class="restbtn" id="rest" style="--hold:${HOLD_MS / 1000}s"><span class="fill"></span><span class="lbl">Hold to take a rest day</span></button>
-          <p class="rest-left">${left} of ${max} rest day${max === 1 ? "" : "s"} left this week. Today's workout moves to tomorrow.</p>`;
+          <p class="rest-left">${left} of ${max} rest day${max === 1 ? "" : "s"} left (${max} in any 7 days). Today's workout moves to tomorrow.</p>`;
       }
       function wireRestButton() {
         const btn = document.getElementById("rest");
@@ -528,7 +533,7 @@
           app.innerHTML = `<div class="eyebrow">${esc(prettyDate(todayKey))} · ${esc(name)}</div>
             <div class="donebox">
               ${finishedToday ? `<div class="big">Done for today ✓</div><p class="sec-note">${esc(lastDone.title)} is checked off.${w ? "" : " The next workout shows up after it's posted."}</p>`
-              : restToday ? `<div class="big">Rest day</div><p class="sec-note">${w ? `${esc(w.title)} will be waiting tomorrow.` : "Enjoy it."} ${restsLeft(person)} of ${W.restAllowance(person)} rest days left this week.</p>`
+              : restToday ? `<div class="big">Rest day</div><p class="sec-note">${w ? `${esc(w.title)} will be waiting tomorrow.` : "Enjoy it."} ${restsLeft(person) > 0 ? `${restsLeft(person)} more rest day${restsLeft(person) === 1 ? "" : "s"} available in this 7-day stretch.` : `Next rest day is free ${esc(freeOn(person))}.`}</p>`
               : `<div class="big">No workout waiting</div><p class="sec-note">The next one will show here as soon as it's posted.</p>`}
               ${finishedToday && W.setFeedback ? doneFeelHTML(lastDone) : ""}
               ${totalsHTML(person)}
