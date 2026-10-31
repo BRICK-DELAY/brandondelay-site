@@ -11,7 +11,7 @@
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30; green chile items added Saturday, Oct 31. Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
+        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31. Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
@@ -194,13 +194,58 @@
             "qty": "13 oz",
             "price": 4.99,
             "category": "Snacks"
+          },
+          {
+            "name": "Large white eggs",
+            "qty": "12 ct",
+            "price": 1.99,
+            "category": "Dairy & eggs",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Burrito-size flour tortillas",
+            "qty": "8 ct",
+            "price": 2.59,
+            "category": "Bakery",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Pork breakfast sausage links",
+            "qty": "12 oz",
+            "price": 2.99,
+            "category": "Meat & seafood",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Thick-cut bacon",
+            "qty": "16 oz",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Shredded hash browns",
+            "qty": "30 oz",
+            "price": 3.99,
+            "category": "Frozen",
+            "for": [
+              "breakfast-burritos"
+            ]
           }
         ],
-        "subtotal": 112.13,
-        "fees": 8.79,
-        "tax": 0.8,
-        "tip": 11.21,
-        "total": 132.93
+        "subtotal": 127.68,
+        "fees": 9.99,
+        "tax": 0.91,
+        "tip": 12.77,
+        "total": 151.35
       },
       "days": [
         {
@@ -216,6 +261,10 @@
         {
           "date": "2026-11-02",
           "meals": [
+            {
+              "meal": "Breakfast",
+              "recipe": "breakfast-burritos"
+            },
             {
               "meal": "Dinner",
               "recipe": "teriyaki-chicken-bowls"
@@ -519,6 +568,49 @@
             "For spicier chile, add sauteed jalapenos."
           ],
           "notes": "Doubled from the family recipe card. Brandon already has the roasted green chiles, flour, corn starch, oil and cumin, so only the pork, tomatoes, broth and oregano are in the order."
+        },
+        {
+          "id": "breakfast-burritos",
+          "name": "Breakfast burritos",
+          "servings": 4,
+          "time_min": 30,
+          "active_min": 25,
+          "ingredients": [
+            {
+              "qty": "8",
+              "item": "eggs",
+              "note": "scrambled"
+            },
+            {
+              "qty": "12 oz",
+              "item": "breakfast sausage links",
+              "note": "crumbled and browned"
+            },
+            {
+              "qty": "4-6 slices",
+              "item": "bacon",
+              "note": "cooked and crumbled"
+            },
+            {
+              "qty": "about 3 cups",
+              "item": "shredded hash browns",
+              "note": "crisped in the pan"
+            },
+            {
+              "qty": "4-6",
+              "item": "burrito-size flour tortillas"
+            },
+            "Shredded cheddar, salsa and sour cream from the fridge"
+          ],
+          "steps": [
+            "Cook the bacon until crisp; set aside and crumble.",
+            "Brown the sausage in the same pan, breaking it up; set aside.",
+            "Crisp the hash browns in the bacon fat over medium-high heat, about 8-10 minutes.",
+            "Scramble the eggs in a separate pan.",
+            "Warm the tortillas, then fill with eggs, sausage, bacon, hash browns and cheese; add salsa and sour cream to taste.",
+            "Roll up and serve, or wrap extras in foil for later."
+          ],
+          "notes": "Brandon's Saturday add-on for breakfasts this week. Cheese, salsa and sour cream are already at home."
         }
       ],
       "pantry": [
