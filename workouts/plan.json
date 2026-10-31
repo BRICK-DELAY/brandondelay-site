@@ -2118,7 +2118,10 @@
           ],
           "date": "2026-10-30",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-31",
+          "feedback": {
+            "rating": "right"
+          }
         },
         {
           "id": "2026-10-31-shoulders-and-abs-yc6z",
@@ -2341,6 +2344,16 @@
           "feedback": {
             "rating": "right",
             "note": "This was very similar to last leg workout, only swapping in calf raises. I did 20 reps of glute bridges each set."
+          }
+        },
+        {
+          "id": "2026-10-30-chest-and-tris-atic",
+          "date": "2026-10-31",
+          "planned": "2026-10-30",
+          "title": "Chest and tris",
+          "reps": 250,
+          "feedback": {
+            "rating": "right"
           }
         }
       ]
