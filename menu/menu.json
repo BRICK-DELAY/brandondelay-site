@@ -6,12 +6,12 @@
       "title": "Sausage pie week",
       "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original. Sunday dinner is now dad's green chile (double batch, makes plenty of leftovers); sausage pie slides to an open night later in the week. Honey garlic chicken thighs pushed to next week; Thursday dinner is now the breakfast burritos (which also work any morning).",
       "order": {
-        "date": "2026-11-01",
-        "window": "5-8 pm",
+        "date": "2026-10-31",
+        "window": "by 7:37 pm",
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
+        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Delivery moved to Saturday evening, Oct 31 (arriving by 7:37 pm) at Brandon's request - the tonight window carries a $7.99 delivery fee, so fees shown are $8.99 service + $7.99 delivery. Totals are the checkout estimate; the final receipt after delivery may add a small delivery-fee tax (about $0.73).",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
@@ -223,10 +223,10 @@
           }
         ],
         "subtotal": 115.38,
-        "fees": 8.99,
+        "fees": 16.98,
         "tax": 0.82,
         "tip": 11.54,
-        "total": 136.73
+        "total": 144.72
       },
       "days": [
         {
