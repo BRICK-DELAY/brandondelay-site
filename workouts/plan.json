@@ -613,6 +613,94 @@
           "date": "2026-10-24",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-31-legs-evo1",
+          "title": "Legs",
+          "notes": "Recovery note: just over a week post-surgery - keep this submaximal, stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "10 / leg",
+                  "detail": "1 x 10 / leg each way - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - push hips back, flat back",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                },
+                {
+                  "exercise": "Light goblet squat groove",
+                  "sets": 1,
+                  "reps": "8",
+                  "detail": "1 x 8 - 20-25 lb, rehearse depth and brace",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "sets": 3,
+                  "reps": "6",
+                  "detail": "3 x 6 - 185 lb. Warm up: empty bar, 135, 155, then working sets. Rest 2-3 min.",
+                  "url": "https://www.youtube.com/watch?v=-bJIpOq-LWk"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10 - 50 lb dumbbells. Slow 3-sec lower, feel the hamstrings, squeeze glutes to stand. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Standing dumbbell calf raise",
+                  "sets": 4,
+                  "reps": "12",
+                  "detail": "4 x 12 - 40 lb dumbbells (extra set this week per your note). Full stretch at the bottom, 1-sec pause at the top. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=hPA98_r-6e4"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Weighted step-up onto box",
+                  "sets": 3,
+                  "reps": "8 / leg",
+                  "detail": "3 x 8 / leg - 25 lb dumbbells. Drive through the whole foot, then a slow 3-4 sec lower - the eccentric is the ski work. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Tibialis raise, back against wall",
+                  "sets": 2,
+                  "reps": "15",
+                  "detail": "2 x 15 - heels planted, pull toes high, control the way down",
+                  "url": "https://www.youtube.com/watch?v=RXC7tE6IQcc"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-31",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
