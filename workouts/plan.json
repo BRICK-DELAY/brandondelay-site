@@ -3720,6 +3720,121 @@
           "date": "2026-10-31",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-01-arms-and-abs-yeu7",
+          "title": "Arms and abs",
+          "duration_min": 50,
+          "notes": "Per your ask: arms and abs, about 50 minutes. Nothing overhead; shoulder stays happy. Good pick while the legs recover.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "sets": 1,
+                  "reps": "",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "detail": "1 x 6 / side - slow and long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light dumbbell bench groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - 15 lb dumbbells, rehearse the press path",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Dumbbell flat bench press",
+                  "sets": 4,
+                  "reps": "8-10",
+                  "detail": "4 x 8-10 - 35 lb dumbbells (your baseline). Full range, pause the last rep of each set at the top. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                },
+                {
+                  "exercise": "Dumbbell hammer curl",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "detail": "3 x 10-12 - 20-25 lb dumbbells, elbows pinned, no swing. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
+                },
+                {
+                  "exercise": "Band triceps pushdown",
+                  "sets": 4,
+                  "reps": "12-15",
+                  "detail": "4 x 12-15 - band anchored low-to-mid, elbows glued, full lockout squeeze. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=qjPN6ElNqpc"
+                },
+                {
+                  "exercise": "Concentration curl",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side - 15-20 lb, elbow braced on the inner thigh, slow lower. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=Jvj2wV0vOYU"
+                }
+              ]
+            },
+            {
+              "name": "Abs",
+              "items": [
+                {
+                  "exercise": "Hanging knee raise",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "detail": "3 x 10-12 - no swing, knees to chest, slow down. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=rbOJSK07AGA"
+                },
+                {
+                  "exercise": "Mountain climbers",
+                  "sets": 3,
+                  "reps": "20 / side",
+                  "detail": "3 x 20 / side - hips level, brisk but controlled. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=cnyTQDSE884"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - gentle, no forcing",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Gentle triceps stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - elbow up, hand down the back, light pressure only",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-01",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
