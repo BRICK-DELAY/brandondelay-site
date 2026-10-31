@@ -24,15 +24,6 @@
             "note": "extra to freeze"
           },
           {
-            "name": "Heritage Farm chicken thighs, boneless skinless",
-            "qty": "~2.7 lb",
-            "price": 11.21,
-            "category": "Meat & seafood",
-            "for": [
-              "honey-garlic-chicken-thighs"
-            ]
-          },
-          {
             "name": "Kroger wild caught medium raw shrimp, peeled & deveined",
             "qty": "12 oz",
             "price": 7.99,
@@ -84,8 +75,7 @@
             "price": 3.99,
             "category": "Pantry",
             "for": [
-              "teriyaki-chicken-bowls",
-              "honey-garlic-chicken-thighs"
+              "teriyaki-chicken-bowls"
             ]
           },
           {
