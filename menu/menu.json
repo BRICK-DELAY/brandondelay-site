@@ -11,7 +11,7 @@
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30. Totals shown are the checkout estimate at placement, pending the final receipt after Sunday delivery. Totals are the checkout estimate pending the final receipt; the estimate includes the unplanned chips noted below.",
+        "notes": "Ordered Friday, Oct 30; green chile items added Saturday, Oct 31. Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
@@ -193,8 +193,7 @@
             "name": "Kettle Brand potato chips, sea salt & vinegar",
             "qty": "13 oz",
             "price": 4.99,
-            "category": "Snacks",
-            "note": "Unplanned - was already in the order when the green chile items were added; confirming with Brandon."
+            "category": "Snacks"
           }
         ],
         "subtotal": 112.13,
