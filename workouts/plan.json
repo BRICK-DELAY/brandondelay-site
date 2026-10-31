@@ -3347,7 +3347,11 @@
           ],
           "date": "2026-10-30",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-30",
+          "feedback": {
+            "rating": "easy",
+            "note": "I used 35lb for goblet and RDL. For lunges and step ups I used 25lbs. My legs are feeling very sore. I want to do arms and abs tomorrow for 45min -1 hour with 15 min of yoga after."
+          }
         },
         {
           "id": "2026-10-31-legs-a-strength-0f7l",
@@ -3486,6 +3490,17 @@
           "reps": 611,
           "feedback": {
             "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+          }
+        },
+        {
+          "id": "2026-10-30-legs-b-cardio-circuit-ee9w",
+          "date": "2026-10-30",
+          "planned": "2026-10-30",
+          "title": "Legs B: cardio circuit",
+          "reps": 282,
+          "feedback": {
+            "rating": "easy",
+            "note": "I used 35lb for goblet and RDL. For lunges and step ups I used 25lbs. My legs are feeling very sore. I want to do arms and abs tomorrow for 45min -1 hour with 15 min of yoga after."
           }
         }
       ],
