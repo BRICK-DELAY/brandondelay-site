@@ -2119,6 +2119,113 @@
           "date": "2026-10-30",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-31-shoulders-and-abs-yc6z",
+          "title": "Shoulders and abs",
+          "notes": "",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "sets": 1,
+                  "reps": "",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "detail": "1 x 6 / side - slow, reach long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Seated dumbbell overhead press",
+                  "sets": 3,
+                  "reps": "8",
+                  "detail": "3 x 8 - one step heavier than last shoulder day (last time was easy). Bench upright, ribs down, press to just shy of lockout. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=b5JzUH8gsOg"
+                },
+                {
+                  "exercise": "Dumbbell lateral raise",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - same weight as last time, slight lean-forward, lead with the elbows. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=Y29xKcze8Ik"
+                },
+                {
+                  "exercise": "Chest-supported dumbbell reverse fly",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - light, chest on the incline bench, squeeze shoulder blades at the top. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=G4KcUxqcXO8"
+                }
+              ]
+            },
+            {
+              "name": "Abs",
+              "items": [
+                {
+                  "exercise": "Pallof press",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side - cable at chest height, press straight out, resist the twist. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=HXrLaqNIkTs"
+                },
+                {
+                  "exercise": "Forearm plank",
+                  "sets": 3,
+                  "reps": "",
+                  "detail": "3 x 45 sec - ribs down, glutes tight, breathe steady",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                },
+                {
+                  "exercise": "Mountain climbers",
+                  "sets": 3,
+                  "reps": "20 / side",
+                  "detail": "3 x 20 / side - hips level, quick controlled steps. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=cnyTQDSE884"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - pull the arm across the chest, no forcing",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Kneeling lat stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - hands on the bench, sink the chest down",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-31",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
