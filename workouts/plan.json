@@ -2760,6 +2760,83 @@
           "date": "2026-10-29",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-10-30-upper-pull-calisthenics-33kq",
+          "title": "Upper Pull + Calisthenics",
+          "notes": "",
+          "sections": [
+            {
+              "name": "Upper Pull",
+              "items": [
+                {
+                  "exercise": "Pull-ups",
+                  "sets": 5,
+                  "reps": "AMRAP",
+                  "detail": "5 x AMRAP"
+                },
+                {
+                  "exercise": "Bench-supported row",
+                  "sets": 4,
+                  "reps": "8-10",
+                  "detail": "4 x 8-10"
+                },
+                {
+                  "exercise": "Band face pull",
+                  "sets": 3,
+                  "reps": "15",
+                  "detail": "3 x 15"
+                },
+                {
+                  "exercise": "Dumbbell curls",
+                  "sets": 3,
+                  "reps": "10-12",
+                  "detail": "3 x 10-12"
+                }
+              ]
+            },
+            {
+              "name": "Circuit (3 rounds)",
+              "items": [
+                {
+                  "exercise": "Push-ups",
+                  "sets": 3,
+                  "reps": "13",
+                  "detail": "3 x 13"
+                },
+                {
+                  "exercise": "Inverted row",
+                  "sets": 3,
+                  "reps": "11",
+                  "detail": "3 x 11"
+                },
+                {
+                  "exercise": "Pike push-ups",
+                  "sets": 3,
+                  "reps": "8",
+                  "detail": "3 x 8"
+                },
+                {
+                  "exercise": "Hanging knee raise",
+                  "sets": 3,
+                  "reps": "11",
+                  "detail": "3 x 11"
+                }
+              ]
+            },
+            {
+              "name": "Finisher",
+              "items": [
+                {
+                  "exercise": "Side plank or dead bug",
+                  "detail": "2-3 sets; reps unspecified"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-30",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
