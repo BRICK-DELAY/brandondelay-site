@@ -3626,102 +3626,6 @@
           }
         },
         {
-          "id": "2026-10-31-legs-a-strength-0f7l",
-          "title": "Legs A: strength",
-          "duration_min": 45,
-          "notes": "Strength day. Working weights below - stop each set with 2-3 clean reps left.",
-          "sections": [
-            {
-              "name": "Warm-up",
-              "items": [
-                {
-                  "exercise": "Leg swings, front and side",
-                  "sets": 1,
-                  "reps": "8 / side",
-                  "detail": "1 x 8 / side - tall, easy swings",
-                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
-                },
-                {
-                  "exercise": "Unweighted hip hinges",
-                  "sets": 1,
-                  "reps": "10",
-                  "detail": "1 x 10 - push hips back, flat back",
-                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
-                },
-                {
-                  "exercise": "Bodyweight squat",
-                  "sets": 1,
-                  "reps": "10",
-                  "detail": "1 x 10 - full comfortable depth",
-                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
-                }
-              ]
-            },
-            {
-              "name": "Main",
-              "items": [
-                {
-                  "exercise": "Barbell back squat",
-                  "sets": 4,
-                  "reps": "6",
-                  "detail": "4 x 6 - 155 lb. Warm up: empty bar, 95, 135, then working sets. Rest 2-3 min.",
-                  "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
-                },
-                {
-                  "exercise": "Barbell hip thrust",
-                  "sets": 3,
-                  "reps": "8",
-                  "detail": "3 x 8 - 205 lb (your good-challenge weight). Pause and squeeze at the top. Rest 2 min.",
-                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
-                },
-                {
-                  "exercise": "Dumbbell Romanian deadlift",
-                  "sets": 3,
-                  "reps": "12",
-                  "detail": "3 x 12 - 40 lb dumbbells (held here on purpose for the shoulder - extra reps instead of extra weight). Rest 90 sec.",
-                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
-                },
-                {
-                  "exercise": "Bulgarian split squat, rear foot on bench",
-                  "sets": 3,
-                  "reps": "8 / side",
-                  "detail": "3 x 8 / side - 20 lb dumbbells, slow 3-sec lower. Rest 90 sec.",
-                  "url": "https://www.youtube.com/watch?v=4Qnfw1FqWxQ"
-                },
-                {
-                  "exercise": "Side-lying hip abduction",
-                  "sets": 3,
-                  "reps": "15 / side",
-                  "detail": "3 x 15 / side - top leg lifts straight up, hips stacked, no rolling back. Rest 45 sec.",
-                  "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
-                }
-              ]
-            },
-            {
-              "name": "Cooldown",
-              "items": [
-                {
-                  "exercise": "Figure-4 glute stretch",
-                  "sets": 2,
-                  "reps": "",
-                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
-                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
-                },
-                {
-                  "exercise": "Couch stretch",
-                  "sets": 2,
-                  "reps": "",
-                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
-                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
-                }
-              ]
-            }
-          ],
-          "date": "2026-10-31",
-          "generated_by": "Instinct",
-          "completed": null
-        },
-        {
           "id": "2026-11-01-arms-and-abs-yeu7",
           "title": "Arms and abs",
           "duration_min": 50,
@@ -3828,6 +3732,102 @@
                   "reps": "",
                   "detail": "2 x 30 sec / side - elbow up, hand down the back, light pressure only",
                   "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-10-31",
+          "generated_by": "Instinct",
+          "completed": null
+        },
+        {
+          "id": "2026-10-31-legs-a-strength-0f7l",
+          "title": "Legs A: strength",
+          "duration_min": 45,
+          "notes": "Strength day. Working weights below - stop each set with 2-3 clean reps left.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - push hips back, flat back",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "sets": 4,
+                  "reps": "6",
+                  "detail": "4 x 6 - 155 lb. Warm up: empty bar, 95, 135, then working sets. Rest 2-3 min.",
+                  "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
+                },
+                {
+                  "exercise": "Barbell hip thrust",
+                  "sets": 3,
+                  "reps": "8",
+                  "detail": "3 x 8 - 205 lb (your good-challenge weight). Pause and squeeze at the top. Rest 2 min.",
+                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - 40 lb dumbbells (held here on purpose for the shoulder - extra reps instead of extra weight). Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Bulgarian split squat, rear foot on bench",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "detail": "3 x 8 / side - 20 lb dumbbells, slow 3-sec lower. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=4Qnfw1FqWxQ"
+                },
+                {
+                  "exercise": "Side-lying hip abduction",
+                  "sets": 3,
+                  "reps": "15 / side",
+                  "detail": "3 x 15 / side - top leg lifts straight up, hips stacked, no rolling back. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
                 }
               ]
             }
