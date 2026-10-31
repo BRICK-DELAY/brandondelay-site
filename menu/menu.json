@@ -4,14 +4,14 @@
     {
       "id": "2026-11-01",
       "title": "Sausage pie week",
-      "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original. Sunday dinner is now dad's green chile (double batch, makes plenty of leftovers); sausage pie slides to an open night later in the week.",
+      "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original. Sunday dinner is now dad's green chile (double batch, makes plenty of leftovers); sausage pie slides to an open night later in the week. Honey garlic chicken thighs pushed to next week; Thursday dinner is now the breakfast burritos (which also work any morning).",
       "order": {
         "date": "2026-11-01",
         "window": "5-8 pm",
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31. Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
+        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Totals shown are the checkout estimate, pending the final receipt after Sunday delivery.",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
@@ -131,15 +131,6 @@
             ]
           },
           {
-            "name": "Birds Eye Steamfresh cut green beans",
-            "qty": "10 oz",
-            "price": 1.69,
-            "category": "Frozen",
-            "for": [
-              "honey-garlic-chicken-thighs"
-            ]
-          },
-          {
             "name": "Kroger 1883 vanilla ice cream (Vividly Vanilla)",
             "qty": "48 oz",
             "price": 3.59,
@@ -241,11 +232,11 @@
             ]
           }
         ],
-        "subtotal": 127.68,
-        "fees": 9.99,
-        "tax": 0.91,
-        "tip": 12.77,
-        "total": 151.35
+        "subtotal": 115.38,
+        "fees": 8.99,
+        "tax": 0.82,
+        "tip": 11.54,
+        "total": 136.73
       },
       "days": [
         {
@@ -261,10 +252,6 @@
         {
           "date": "2026-11-02",
           "meals": [
-            {
-              "meal": "Breakfast",
-              "recipe": "breakfast-burritos"
-            },
             {
               "meal": "Dinner",
               "recipe": "teriyaki-chicken-bowls"
@@ -294,7 +281,7 @@
           "meals": [
             {
               "meal": "Dinner",
-              "recipe": "honey-garlic-chicken-thighs"
+              "recipe": "breakfast-burritos"
             }
           ]
         },
@@ -459,47 +446,6 @@
             "Melt the butter and cook the garlic 1 minute until fragrant.",
             "Add the shrimp and cook 2-3 minutes per side until pink.",
             "Toss with the penne, a splash of pasta water, salt, pepper and parsley."
-          ]
-        },
-        {
-          "id": "honey-garlic-chicken-thighs",
-          "name": "Honey garlic chicken thighs",
-          "servings": 2,
-          "time_min": 30,
-          "active_min": 15,
-          "ingredients": [
-            {
-              "qty": "1 1/4 lb",
-              "item": "boneless skinless chicken thighs"
-            },
-            {
-              "qty": "1/3 cup",
-              "item": "honey"
-            },
-            {
-              "qty": "3 tbsp",
-              "item": "soy sauce"
-            },
-            {
-              "qty": "4 cloves",
-              "item": "garlic",
-              "note": "minced"
-            },
-            {
-              "qty": "1 cup",
-              "item": "basmati rice, dry"
-            },
-            {
-              "qty": "10 oz",
-              "item": "frozen cut green beans"
-            },
-            "1 tbsp oil"
-          ],
-          "steps": [
-            "Cook the basmati rice and heat the green beans per the bag.",
-            "Sear the thighs in oil over medium-high heat, 5-6 minutes per side, until cooked through.",
-            "Add the garlic, honey and soy sauce; simmer 2-3 minutes until the sauce coats the chicken.",
-            "Slice and serve over the rice with the green beans."
           ]
         },
         {
