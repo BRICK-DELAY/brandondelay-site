@@ -660,6 +660,26 @@
      "completed": null
     },
     {
+     "id": "2026-11-01-bike-ride-y4m5",
+     "title": "Bike ride",
+     "notes": "10 mile ride - cross it off when you're done.",
+     "sections": [
+      {
+       "name": "Ride",
+       "items": [
+        {
+         "exercise": "Bike ride",
+         "distance": "10 mi",
+         "detail": "10 mi"
+        }
+       ]
+      }
+     ],
+     "date": "2026-11-01",
+     "generated_by": "Instinct",
+     "completed": null
+    },
+    {
      "id": "2026-10-31-legs-evo1",
      "title": "Legs",
      "notes": "Recovery note: just over a week post-surgery - keep this submaximal, stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
@@ -743,7 +763,7 @@
        ]
       }
      ],
-     "date": "2026-11-01",
+     "date": "2026-11-02",
      "generated_by": "Instinct",
      "completed": null
     }
