@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -662,7 +662,7 @@
         {
           "id": "2026-11-01-bike-ride-y4m5",
           "title": "Bike ride",
-          "notes": "10 mile ride - cross it off when you're done.",
+          "notes": "10 mile ride, then the light leg finisher right after - cross each off as you go. Recovery note: strenuous work waits for your surgeon's go-ahead.",
           "sections": [
             {
               "name": "Ride",
@@ -671,6 +671,40 @@
                   "exercise": "Bike ride",
                   "distance": "10 mi",
                   "detail": "10 mi"
+                }
+              ]
+            },
+            {
+              "name": "Light leg finisher",
+              "notes": "Right after the ride, easy pace - legs should feel worked, not taxed.",
+              "items": [
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 2,
+                  "reps": "12",
+                  "detail": "2 x 12 - slow and controlled, full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+                },
+                {
+                  "exercise": "Alternating reverse lunge",
+                  "sets": 2,
+                  "reps": "8 / leg",
+                  "detail": "2 x 8 / leg - bodyweight, step back softly, push through the front heel",
+                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
+                },
+                {
+                  "exercise": "Wall sit",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec - back flat on the wall, thighs about parallel",
+                  "url": "https://www.youtube.com/watch?v=6Li55TURhVg"
+                },
+                {
+                  "exercise": "Tibialis raise",
+                  "sets": 2,
+                  "reps": "15",
+                  "detail": "2 x 15 - back against the wall, toes up slow",
+                  "url": "https://www.youtube.com/watch?v=RXC7tE6IQcc"
                 }
               ]
             }
@@ -776,7 +810,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -3429,7 +3463,7 @@
           "generated_by": "Instinct",
           "completed": "2026-10-25",
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -3736,7 +3770,7 @@
           "generated_by": "Instinct",
           "completed": "2026-10-28",
           "feedback": {
-            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         },
         {
@@ -4163,7 +4197,7 @@
           "title": "Legs",
           "reps": 250,
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -4194,7 +4228,7 @@
           "title": "HYROX-style ladder",
           "reps": 611,
           "feedback": {
-            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         },
         {
