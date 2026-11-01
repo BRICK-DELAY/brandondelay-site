@@ -3751,7 +3751,11 @@
           ],
           "date": "2026-10-31",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-10-31",
+          "feedback": {
+            "rating": "right",
+            "note": "I did regular bench press instead and luckily my shoulder felt good. Most weight I did was90lb for 10. I did bar bent over rows instead of curls. I cannot do hanging knee raises that hang hurts my shoulder like crazy. I also hate mountain climbers so I did my own ab routine"
+          }
         },
         {
           "id": "2026-10-31-legs-a-strength-0f7l",
@@ -3901,6 +3905,17 @@
           "feedback": {
             "rating": "easy",
             "note": "I used 35lb for goblet and RDL. For lunges and step ups I used 25lbs. My legs are feeling very sore. I want to do arms and abs tomorrow for 45min -1 hour with 15 min of yoga after."
+          }
+        },
+        {
+          "id": "2026-11-01-arms-and-abs-yeu7",
+          "date": "2026-10-31",
+          "planned": "2026-10-31",
+          "title": "Arms and abs",
+          "reps": 364,
+          "feedback": {
+            "rating": "right",
+            "note": "I did regular bench press instead and luckily my shoulder felt good. Most weight I did was90lb for 10. I did bar bent over rows instead of curls. I cannot do hanging knee raises that hang hurts my shoulder like crazy. I also hate mountain climbers so I did my own ab routine"
           }
         }
       ],
