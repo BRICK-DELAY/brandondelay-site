@@ -661,8 +661,8 @@
         },
         {
           "id": "2026-11-01-bike-ride-y4m5",
-          "title": "Bike ride",
-          "notes": "10 mile ride, then the light leg finisher right after - cross each off as you go. Recovery note: strenuous work waits for your surgeon's go-ahead.",
+          "title": "Bike ride + legs",
+          "notes": "10 mile ride, then the leg workout right after - cross each off as you go. Recovery note: just over a week post-surgery - keep this submaximal, stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
           "sections": [
             {
               "name": "Ride",
@@ -674,50 +674,6 @@
                 }
               ]
             },
-            {
-              "name": "Light leg finisher",
-              "notes": "Right after the ride, easy pace - legs should feel worked, not taxed.",
-              "items": [
-                {
-                  "exercise": "Bodyweight squat",
-                  "sets": 2,
-                  "reps": "12",
-                  "detail": "2 x 12 - slow and controlled, full comfortable depth",
-                  "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
-                },
-                {
-                  "exercise": "Alternating reverse lunge",
-                  "sets": 2,
-                  "reps": "8 / leg",
-                  "detail": "2 x 8 / leg - bodyweight, step back softly, push through the front heel",
-                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
-                },
-                {
-                  "exercise": "Wall sit",
-                  "sets": 2,
-                  "reps": "",
-                  "detail": "2 x 30 sec - back flat on the wall, thighs about parallel",
-                  "url": "https://www.youtube.com/watch?v=6Li55TURhVg"
-                },
-                {
-                  "exercise": "Tibialis raise",
-                  "sets": 2,
-                  "reps": "15",
-                  "detail": "2 x 15 - back against the wall, toes up slow",
-                  "url": "https://www.youtube.com/watch?v=RXC7tE6IQcc"
-                }
-              ]
-            }
-          ],
-          "date": "2026-11-01",
-          "generated_by": "Instinct",
-          "completed": null
-        },
-        {
-          "id": "2026-10-31-legs-evo1",
-          "title": "Legs",
-          "notes": "Recovery note: just over a week post-surgery - keep this submaximal, stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
-          "sections": [
             {
               "name": "Warm-up",
               "items": [
