@@ -657,7 +657,7 @@
           ],
           "date": "2026-10-31",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-01"
         },
         {
           "id": "2026-11-01-bike-ride-y4m5",
@@ -828,6 +828,13 @@
           "planned": "2026-10-24",
           "title": "Recovery day: easy walk and gentle mobility",
           "reps": 39
+        },
+        {
+          "id": "2026-10-31-ski-day-bcee",
+          "date": "2026-11-01",
+          "planned": "2026-10-31",
+          "title": "Ski day",
+          "reps": 50
         }
       ]
     },
