@@ -4033,6 +4033,104 @@
           "date": "2026-11-01",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-02-legs-b-circuit-2y19",
+          "title": "Legs B: circuit",
+          "duration_min": 30,
+          "notes": "Circuit: 4 rounds, station to station, 60-75 sec rest between rounds. Optional easy 15-20 min run after if you want more.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                },
+                {
+                  "exercise": "Glute bridge",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - squeeze hard at the top",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Circuit",
+              "rounds": 4,
+              "notes": "Back-to-back stations, rest 60-75 sec between rounds.",
+              "items": [
+                {
+                  "exercise": "Goblet squat",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "12 reps each round - 35 lb dumbbell at the chest",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                },
+                {
+                  "exercise": "Step-up to knee drive",
+                  "sets": 1,
+                  "reps": "10 / side",
+                  "detail": "10 / side each round - 25 lb dumbbells, drive the knee up at the top, control the way down",
+                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "12 reps each round - 40 lb dumbbells (shoulder cap holds - volume comes from rounds)",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Banded glute bridge",
+                  "sets": 1,
+                  "reps": "20",
+                  "detail": "20 reps each round - band above the knees, press out as you bridge, 1-sec squeeze",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                },
+                {
+                  "exercise": "Band lateral walk",
+                  "sets": 1,
+                  "reps": "12 / side",
+                  "detail": "12 / side each round - stay low, no dragging feet",
+                  "url": "https://www.youtube.com/watch?v=y_bqFDQZSHQ"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-02",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
