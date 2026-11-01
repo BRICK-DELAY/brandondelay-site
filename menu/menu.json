@@ -11,7 +11,7 @@
         "status": "ordered",
         "store": "King Soopers via Instacart",
         "url": "https://www.instacart.com/store/orders/999921555040971489124",
-        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Delivery moved to Saturday evening, Oct 31 (arriving by 7:37 pm) at Brandon's request with a $7.99 delivery fee. Saturday evening edits: breakfast sausage links swapped for a Jimmy Dean regular ground sausage roll (Brandon's pick for the burritos, oat-checked label) and a 12-pack of lemon-lime sparkling water added. Fees shown are $9.77 service + $7.99 delivery; tax is $0.48 sales tax + $0.89 fee tax + $0.31 CO retail delivery fee. Totals are the checkout estimate; the receipt finalizes after delivery.",
+        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Delivery moved to Saturday evening, Oct 31 (arriving by 7:37 pm) at Brandon's request with a $7.99 delivery fee. Saturday evening edits: breakfast sausage links swapped for a Jimmy Dean regular ground sausage roll, a 12-pack of lemon-lime sparkling water added, and a 4-pack of Totino's pepperoni party pizzas added. Fees shown are $10.29 service + $7.99 delivery; tax is $0.48 sales tax + $0.94 fee tax + $0.31 CO retail delivery fee. Totals are the checkout estimate; the receipt finalizes after delivery.",
         "items": [
           {
             "name": "Heritage Farm chicken breasts, boneless skinless",
@@ -227,13 +227,20 @@
             "price": 5.99,
             "category": "Beverages",
             "for": []
+          },
+          {
+            "name": "Totino's Party Pizza pepperoni multipack",
+            "qty": "4 x 10.2 oz",
+            "price": 6.69,
+            "category": "Frozen",
+            "for": []
           }
         ],
-        "subtotal": 124.57,
-        "fees": 17.76,
-        "tax": 1.68,
-        "tip": 12.46,
-        "total": 156.47
+        "subtotal": 131.26,
+        "fees": 18.28,
+        "tax": 1.73,
+        "tip": 13.13,
+        "total": 164.4
       },
       "days": [
         {
