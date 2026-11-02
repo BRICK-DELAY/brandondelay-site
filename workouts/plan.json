@@ -4051,7 +4051,11 @@
           ],
           "date": "2026-11-01",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-01",
+          "feedback": {
+            "rating": "right",
+            "note": "Workout was good but can we reassess the order of the workouts. Two leg days should not be back to back. It should be a better mix to optimize recovery, also based on how I am feeling."
+          }
         },
         {
           "id": "2026-11-02-legs-b-circuit-2y19",
@@ -4214,6 +4218,17 @@
           "feedback": {
             "rating": "right",
             "note": "I did regular bench press instead and luckily my shoulder felt good. Most weight I did was90lb for 10. I did bar bent over rows instead of curls. I cannot do hanging knee raises that hang hurts my shoulder like crazy. I also hate mountain climbers so I did my own ab routine"
+          }
+        },
+        {
+          "id": "2026-10-31-legs-a-strength-0f7l",
+          "date": "2026-11-01",
+          "planned": "2026-11-01",
+          "title": "Legs A: strength",
+          "reps": 258,
+          "feedback": {
+            "rating": "right",
+            "note": "Workout was good but can we reassess the order of the workouts. Two leg days should not be back to back. It should be a better mix to optimize recovery, also based on how I am feeling."
           }
         }
       ],
