@@ -4360,6 +4360,26 @@
           "date": "2026-11-02",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-03-easy-run-2287",
+          "title": "Easy run",
+          "duration_min": 25,
+          "notes": "Easy outdoor run, 20-30 min at a conversational pace - you should be able to talk the whole way. Keep it genuinely easy after the leg circuit.",
+          "sections": [
+            {
+              "name": "Run",
+              "items": [
+                {
+                  "exercise": "Easy outdoor run",
+                  "detail": "20-30 min, easy conversational pace"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-03",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
