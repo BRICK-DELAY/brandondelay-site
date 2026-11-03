@@ -850,7 +850,7 @@
           ],
           "date": "2026-11-02",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-02"
         }
       ],
       "history": [
@@ -927,6 +927,13 @@
           "planned": "2026-11-01",
           "title": "Bike ride + legs",
           "reps": 222
+        },
+        {
+          "id": "2026-11-02-shoulders-and-abs-8e2e",
+          "date": "2026-11-02",
+          "planned": "2026-11-02",
+          "title": "Shoulders and abs",
+          "reps": 265
         }
       ]
     },
