@@ -4374,7 +4374,7 @@
           ],
           "date": "2026-11-02",
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-02",
           "feedback": {
             "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
@@ -4473,6 +4473,16 @@
           "feedback": {
             "rating": "right",
             "note": "Workout was good but can we reassess the order of the workouts. Two leg days should not be back to back. It should be a better mix to optimize recovery, also based on how I am feeling."
+          }
+        },
+        {
+          "id": "2026-11-02-legs-b-circuit-2y19",
+          "date": "2026-11-02",
+          "planned": "2026-11-02",
+          "title": "Legs B: circuit",
+          "reps": 388,
+          "feedback": {
+            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
         }
       ],
