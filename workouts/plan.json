@@ -4616,6 +4616,132 @@
           "date": "2026-11-03",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-04-hyrox-style-pairs-5x8p",
+          "title": "HYROX-style: pairs",
+          "duration_min": 35,
+          "notes": "3 rounds of each pair before moving on, minimal rest between the two moves, 60-90 sec between pairs. Should take about 35 min.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "sets": 1,
+                  "reps": "8 / side",
+                  "detail": "1 x 8 / side - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - push hips back, flat back",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Light goblet squat groove",
+                  "sets": 1,
+                  "reps": "8",
+                  "detail": "1 x 8 - light dumbbell, groove the pattern",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                }
+              ]
+            },
+            {
+              "name": "Pair A",
+              "rounds": 3,
+              "notes": "Back and forth 3 rounds, minimal rest.",
+              "items": [
+                {
+                  "exercise": "Dumbbell swing",
+                  "sets": 1,
+                  "reps": "15",
+                  "detail": "15 reps each round - 40 lb dumbbell, snap the hips like a hinge",
+                  "url": "https://www.youtube.com/watch?v=cfYt7Q21w_0"
+                },
+                {
+                  "exercise": "Push-up",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "10 reps each round - full body line, chest to just off the floor (elevate hands on the bench if needed)",
+                  "url": "https://www.youtube.com/watch?v=WDIpL0pjun0"
+                }
+              ]
+            },
+            {
+              "name": "Pair B",
+              "rounds": 3,
+              "notes": "Back and forth 3 rounds, minimal rest.",
+              "items": [
+                {
+                  "exercise": "Goblet squat",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "12 reps each round - 40 lb dumbbell at the chest (your new baseline)",
+                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+                },
+                {
+                  "exercise": "Alternating dumbbell lunge",
+                  "sets": 1,
+                  "reps": "8 / leg",
+                  "detail": "8 / leg each round - 25 lb dumbbells, long stride, control down",
+                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
+                }
+              ]
+            },
+            {
+              "name": "Pair C",
+              "rounds": 3,
+              "notes": "Back and forth 3 rounds, minimal rest.",
+              "items": [
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "12 reps each round - 40 lb dumbbells, hips back, soft knees",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Squat jump",
+                  "sets": 1,
+                  "reps": "8",
+                  "detail": "8 reps each round - soft quiet landings, reset each rep",
+                  "url": "https://www.youtube.com/watch?v=A-cFYWvaHr0"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Couch stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                },
+                {
+                  "exercise": "90/90 hip stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - both knees at 90, fold gently over the front leg",
+                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-04",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
