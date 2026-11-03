@@ -2744,6 +2744,108 @@
           "date": "2026-11-02",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-03-chest-and-tris-vw67",
+          "title": "Chest and tris",
+          "notes": "Weights are listed for every lift - start there and adjust a step only if it feels way off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "sets": 1,
+                  "reps": "",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "detail": "1 x 6 / side - slow, reach long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light dumbbell bench groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - 10 lb dumbbells, groove the pressing path",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Dumbbell flat bench press",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "detail": "3 x 8-10 - 30 lb dumbbells. Full range, pause the last rep of each set at the bottom for a beat. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                },
+                {
+                  "exercise": "Close-grip barbell bench press",
+                  "sets": 3,
+                  "reps": "8",
+                  "detail": "3 x 8 - 65 lb (warm up with the empty 45 lb bar first). Hands just inside shoulder width, elbows tucked. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=nEF0bv2FW94"
+                },
+                {
+                  "exercise": "Low-to-high cable fly",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - about 15 lb per side on the stack. Sweep up and together, squeeze at the top. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=eQ_NBB6OBH4"
+                },
+                {
+                  "exercise": "Rope triceps pushdown",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - about 30 lb on the stack. Elbows pinned, split the rope at the bottom. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=pfUB77aCMFM"
+                },
+                {
+                  "exercise": "Overhead dumbbell triceps extension",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - one 15 lb dumbbell held with both hands, elbows by the ears, full stretch. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=bRJWHiu_J4k"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Doorway pec stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - forearm on the frame, step through gently",
+                  "url": "https://www.youtube.com/watch?v=jRY9-4VTCcw"
+                },
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - pull the arm across the chest, no forcing",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-03",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
