@@ -2743,7 +2743,10 @@
           ],
           "date": "2026-11-02",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-03",
+          "feedback": {
+            "rating": "right"
+          }
         },
         {
           "id": "2026-11-03-chest-and-tris-vw67",
@@ -2993,6 +2996,16 @@
           "feedback": {
             "rating": "right",
             "note": "Please include the weights i should be doing in each lift. You said “heavier than last time” but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
+          }
+        },
+        {
+          "id": "2026-11-02-back-and-bis-iwrd",
+          "date": "2026-11-03",
+          "planned": "2026-11-02",
+          "title": "Back and bis",
+          "reps": 240,
+          "feedback": {
+            "rating": "right"
           }
         }
       ]
