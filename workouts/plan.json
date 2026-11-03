@@ -959,7 +959,11 @@
           ],
           "date": "2026-11-03",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-03",
+          "feedback": {
+            "rating": "right",
+            "note": "I used a straight bar for the pulldowns. I prefer those. Then i did cable reverse flys. And for seated dumbell curls i used 25s"
+          }
         }
       ],
       "history": [
@@ -1043,6 +1047,17 @@
           "planned": "2026-11-02",
           "title": "Shoulders and abs",
           "reps": 265
+        },
+        {
+          "id": "2026-11-03-back-and-bis-xlo7",
+          "date": "2026-11-03",
+          "planned": "2026-11-03",
+          "title": "Back and bis",
+          "reps": 359,
+          "feedback": {
+            "rating": "right",
+            "note": "I used a straight bar for the pulldowns. I prefer those. Then i did cable reverse flys. And for seated dumbell curls i used 25s"
+          }
         }
       ]
     },
