@@ -2973,6 +2973,115 @@
           "date": "2026-11-03",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-04-shoulders-and-abs-7bsg",
+          "title": "Shoulders and abs",
+          "notes": "Weights are listed for every lift - start there and adjust a step only if it feels way off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "sets": 1,
+                  "reps": "",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "sets": 1,
+                  "reps": "6 / side",
+                  "detail": "1 x 6 / side - slow, reach long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Half-kneeling single-arm dumbbell press",
+                  "sets": 3,
+                  "reps": "8 / side",
+                  "detail": "3 x 8 / side - 15 lb dumbbell, one knee down, ribs tucked, press to just shy of lockout. Rest 75 sec.",
+                  "url": "https://www.youtube.com/watch?v=7oeFpnRCJkY"
+                },
+                {
+                  "exercise": "Cable lateral raise",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side - about 10 lb on the stack, cable behind your back, lift out to shoulder height. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=Z5FA9aq3L6A"
+                },
+                {
+                  "exercise": "Rope face pull",
+                  "sets": 3,
+                  "reps": "15",
+                  "detail": "3 x 15 - about 20 lb on the stack, pull to the forehead, elbows high, squeeze the rear delts. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                },
+                {
+                  "exercise": "Pallof press",
+                  "sets": 3,
+                  "reps": "12 / side",
+                  "detail": "3 x 12 / side - about 15 lb on the stack at chest height, press straight out, resist the twist, 2-sec hold. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=HXrLaqNIkTs"
+                },
+                {
+                  "exercise": "Hanging knee raise",
+                  "sets": 3,
+                  "reps": "10",
+                  "detail": "3 x 10 - hang from the pull-up handles, knees to chest, no swinging. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=rbOJSK07AGA"
+                },
+                {
+                  "exercise": "Forearm plank",
+                  "sets": 3,
+                  "reps": "",
+                  "detail": "3 x 45 sec - ribs down, glutes tight, breathe steady. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - pull the arm across the chest, no forcing",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Kneeling lat stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - hands on the bench, sink the chest down",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                },
+                {
+                  "exercise": "Overhead triceps stretch",
+                  "sets": 2,
+                  "reps": "",
+                  "detail": "2 x 30 sec / side - elbow up, ease it behind the head",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-04",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
