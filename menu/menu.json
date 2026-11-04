@@ -1,6 +1,486 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-04",
  "weeks": [
+  {
+   "id": "2026-11-08",
+   "title": "Honey garlic carry-over week",
+   "notes": "Green chile leftovers cover the start of the week, then five fresh dinners. Honey garlic chicken thighs finally lands - it was pushed out of last week for the green chile. Office snack: another run at the peanut butter cracker packs that sold out last Saturday.",
+   "order": {
+    "date": "2026-11-08",
+    "window": "5-8 pm",
+    "status": "planned",
+    "store": "King Soopers via Instacart",
+    "notes": "Estimated item prices until the cart is built.",
+    "items": [
+     {
+      "name": "Chicken thighs, boneless skinless",
+      "qty": "~2 lb",
+      "price": 8.0,
+      "category": "Meat & seafood",
+      "for": [
+       "honey-garlic-chicken-thighs"
+      ]
+     },
+     {
+      "name": "Green beans",
+      "qty": "~1 lb",
+      "price": 2.5,
+      "category": "Produce",
+      "for": [
+       "honey-garlic-chicken-thighs"
+      ]
+     },
+     {
+      "name": "Beef stir-fry strips",
+      "qty": "~1 lb",
+      "price": 9.0,
+      "category": "Meat & seafood",
+      "for": [
+       "beef-and-broccoli-stir-fry"
+      ]
+     },
+     {
+      "name": "Broccoli crown",
+      "qty": "~1 lb",
+      "price": 2.49,
+      "category": "Produce",
+      "for": [
+       "beef-and-broccoli-stir-fry"
+      ]
+     },
+     {
+      "name": "Chicken breasts, boneless skinless",
+      "qty": "~1.25 lb",
+      "price": 4.0,
+      "category": "Meat & seafood",
+      "for": [
+       "chicken-and-bisquick-biscuits"
+      ]
+     },
+     {
+      "name": "Carrots",
+      "qty": "1 lb bag",
+      "price": 1.29,
+      "category": "Produce",
+      "for": [
+       "chicken-and-bisquick-biscuits"
+      ]
+     },
+     {
+      "name": "Frozen corn",
+      "qty": "1 bag",
+      "price": 1.49,
+      "category": "Frozen",
+      "for": [
+       "chicken-and-bisquick-biscuits"
+      ]
+     },
+     {
+      "name": "Kroger 80/20 ground beef",
+      "qty": "1 lb",
+      "price": 6.99,
+      "category": "Meat & seafood",
+      "for": [
+       "mini-bbq-meatloaves"
+      ]
+     },
+     {
+      "name": "Boneless pork chops",
+      "qty": "~1.25 lb",
+      "price": 6.25,
+      "category": "Meat & seafood",
+      "for": [
+       "parmesan-crusted-pork-chops"
+      ]
+     },
+     {
+      "name": "Russet potatoes",
+      "qty": "5 lb bag",
+      "price": 3.99,
+      "category": "Produce",
+      "for": [
+       "mini-bbq-meatloaves",
+       "parmesan-crusted-pork-chops"
+      ]
+     },
+     {
+      "name": "Parmesan cheese, shredded",
+      "qty": "6 oz",
+      "price": 3.79,
+      "category": "Dairy & eggs",
+      "for": [
+       "parmesan-crusted-pork-chops"
+      ]
+     },
+     {
+      "name": "Plain panko breadcrumbs",
+      "qty": "8 oz",
+      "price": 2.29,
+      "category": "Pantry",
+      "for": [
+       "mini-bbq-meatloaves",
+       "parmesan-crusted-pork-chops"
+      ]
+     },
+     {
+      "name": "Keebler Toast & Peanut Butter sandwich crackers",
+      "qty": "8-pack",
+      "price": 2.99,
+      "category": "Snacks",
+      "note": "office snack; sold out last week, retrying"
+     }
+    ],
+    "subtotal": null,
+    "fees": null,
+    "tax": null,
+    "tip": null,
+    "total": null
+   },
+   "days": [
+    {
+     "date": "2026-11-08",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "text": "Green chile leftovers"
+      }
+     ],
+     "prep": "Order arrives 5-8 pm."
+    },
+    {
+     "date": "2026-11-09",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "text": "Green chile leftovers"
+      }
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "recipe": "honey-garlic-chicken-thighs"
+      }
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "recipe": "beef-and-broccoli-stir-fry"
+      }
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "recipe": "chicken-and-bisquick-biscuits"
+      }
+     ]
+    },
+    {
+     "date": "2026-11-13",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "recipe": "mini-bbq-meatloaves"
+      }
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "meals": [
+      {
+       "meal": "Dinner",
+       "recipe": "parmesan-crusted-pork-chops"
+      }
+     ]
+    }
+   ],
+   "recipes": [
+    {
+     "id": "honey-garlic-chicken-thighs",
+     "name": "Honey garlic chicken thighs",
+     "servings": 3,
+     "time_min": 30,
+     "active_min": 20,
+     "ingredients": [
+      {
+       "qty": "~2 lb",
+       "item": "boneless skinless chicken thighs"
+      },
+      {
+       "qty": "1 lb",
+       "item": "green beans",
+       "note": "ends trimmed"
+      },
+      {
+       "qty": "1/3 cup",
+       "item": "honey (at home)"
+      },
+      {
+       "qty": "1/3 cup",
+       "item": "soy sauce (at home)"
+      },
+      {
+       "qty": "4 cloves",
+       "item": "garlic, minced (at home)"
+      },
+      {
+       "qty": "1 tbsp",
+       "item": "vegetable oil (at home)"
+      },
+      {
+       "qty": "",
+       "item": "basmati rice (at home)"
+      }
+     ],
+     "steps": [
+      "Start the basmati rice.",
+      "Sear the thighs in hot oil, 5-6 minutes per side, until browned and cooked through; set aside.",
+      "In the same pan, soften the garlic for 30 seconds, then add the honey, soy sauce and a splash of water.",
+      "Simmer 2-3 minutes until syrupy, return the thighs and turn to coat in the glaze.",
+      "Microwave or saute the green beans with a little oil and salt until crisp-tender, about 5 minutes.",
+      "Serve the thighs and beans over rice, spooning extra glaze on top."
+     ],
+     "notes": "The carry-over from last week, swapped out to make room for the green chile."
+    },
+    {
+     "id": "beef-and-broccoli-stir-fry",
+     "name": "Beef and broccoli stir-fry",
+     "servings": 2,
+     "time_min": 25,
+     "active_min": 20,
+     "ingredients": [
+      {
+       "qty": "~1 lb",
+       "item": "beef stir-fry strips",
+       "note": "or flank steak sliced thin"
+      },
+      {
+       "qty": "~1 lb",
+       "item": "broccoli",
+       "note": "cut into florets"
+      },
+      {
+       "qty": "1/3 cup",
+       "item": "soy sauce (at home)"
+      },
+      {
+       "qty": "2 cloves",
+       "item": "garlic, minced (at home)"
+      },
+      {
+       "qty": "1 tbsp",
+       "item": "honey (at home)"
+      },
+      {
+       "qty": "1 tbsp",
+       "item": "corn starch (at home)"
+      },
+      {
+       "qty": "2 tbsp",
+       "item": "vegetable oil (at home)"
+      },
+      {
+       "qty": "",
+       "item": "basmati rice (at home)"
+      }
+     ],
+     "steps": [
+      "Start the basmati rice.",
+      "Toss the beef with the corn starch and a pinch of salt.",
+      "Sear the beef in hot oil in two batches, about 2 minutes; set aside.",
+      "Add the broccoli and a splash of water, cover and steam 3 minutes.",
+      "Stir in the garlic, soy sauce, honey and 1/3 cup water; simmer 1-2 minutes until glossy.",
+      "Return the beef, toss to coat, and serve over rice."
+     ]
+    },
+    {
+     "id": "chicken-and-bisquick-biscuits",
+     "name": "Chicken and Bisquick biscuits",
+     "servings": 4,
+     "time_min": 40,
+     "active_min": 20,
+     "ingredients": [
+      {
+       "qty": "~1.25 lb",
+       "item": "chicken breasts",
+       "note": "cut into bite-size pieces"
+      },
+      {
+       "qty": "3-4",
+       "item": "carrots",
+       "note": "sliced"
+      },
+      {
+       "qty": "1 cup",
+       "item": "frozen corn"
+      },
+      {
+       "qty": "2 tbsp",
+       "item": "butter (at home)"
+      },
+      {
+       "qty": "3 tbsp",
+       "item": "flour (at home)"
+      },
+      {
+       "qty": "1 1/2 cups",
+       "item": "milk (at home)"
+      },
+      {
+       "qty": "1 cup",
+       "item": "beef broth (at home - the surplus works)"
+      },
+      {
+       "qty": "2 1/4 cups",
+       "item": "Bisquick (at home)"
+      },
+      {
+       "qty": "2/3 cup",
+       "item": "milk, for the biscuits (at home)"
+      }
+     ],
+     "steps": [
+      "Heat the oven to 400F.",
+      "Melt the butter in a large oven-safe skillet and cook the chicken until no longer pink, about 5 minutes.",
+      "Stir in the carrots and flour and cook 1 minute.",
+      "Add 1 1/2 cups milk and the broth; simmer 5 minutes until thick, then stir in the corn and season with salt and pepper.",
+      "Mix the Bisquick with 2/3 cup milk into a soft dough and drop 8 spoonfuls over the filling.",
+      "Bake 18-22 minutes until the biscuits are golden and cooked through."
+     ],
+     "notes": "Pot-pie comfort without the pie crust. Uses the Bisquick from two weeks ago."
+    },
+    {
+     "id": "mini-bbq-meatloaves",
+     "name": "Mini BBQ meatloaves with potato wedges",
+     "servings": 3,
+     "time_min": 35,
+     "active_min": 15,
+     "ingredients": [
+      {
+       "qty": "1 lb",
+       "item": "80/20 ground beef"
+      },
+      {
+       "qty": "1/2 cup",
+       "item": "plain panko"
+      },
+      {
+       "qty": "1",
+       "item": "egg (at home)"
+      },
+      {
+       "qty": "1/3 cup",
+       "item": "BBQ sauce, plus more for glazing (at home)"
+      },
+      {
+       "qty": "1 tsp",
+       "item": "onion powder (at home)"
+      },
+      {
+       "qty": "3-4",
+       "item": "russet potatoes",
+       "note": "cut into wedges"
+      },
+      {
+       "qty": "2 tbsp",
+       "item": "vegetable oil (at home)"
+      }
+     ],
+     "steps": [
+      "Heat the oven to 425F. Toss the wedges with oil, salt and pepper on a sheet pan and start them first - they need about 30 minutes, flipping halfway.",
+      "Mix the beef, panko, egg, 1/3 cup BBQ sauce, onion powder, 1 tsp salt and pepper.",
+      "Shape into 4 mini loaves on a second sheet pan (or the same pan after 10 minutes).",
+      "Bake 18-20 minutes, brushing with more BBQ sauce for the last 5, until 160F inside.",
+      "Serve with the wedges and extra BBQ sauce or ranch for dipping."
+     ],
+     "notes": "Same comfort as a big meatloaf in half the time."
+    },
+    {
+     "id": "parmesan-crusted-pork-chops",
+     "name": "Parmesan-crusted pork chops with ranch potatoes",
+     "servings": 2,
+     "time_min": 35,
+     "active_min": 15,
+     "ingredients": [
+      {
+       "qty": "~1.25 lb",
+       "item": "boneless pork chops"
+      },
+      {
+       "qty": "1/2 cup",
+       "item": "plain panko"
+      },
+      {
+       "qty": "1/2 cup",
+       "item": "shredded parmesan"
+      },
+      {
+       "qty": "1",
+       "item": "egg, beaten (at home)"
+      },
+      {
+       "qty": "3-4",
+       "item": "russet potatoes",
+       "note": "cut into chunks"
+      },
+      {
+       "qty": "2 tbsp",
+       "item": "ranch (at home)"
+      },
+      {
+       "qty": "2 tbsp",
+       "item": "vegetable oil (at home)"
+      }
+     ],
+     "steps": [
+      "Heat the oven to 425F. Toss the potato chunks with oil and a few spoonfuls of ranch; roast about 30 minutes, flipping halfway.",
+      "Mix the panko and parmesan on a plate; season the pork chops with salt and pepper.",
+      "Dip each chop in the beaten egg, then press into the panko-parmesan mix on both sides.",
+      "Bake on a sheet pan 15-18 minutes (or pan-fry 4-5 minutes per side) until 145F inside and the crust is golden.",
+      "Rest 3 minutes and serve with the ranch potatoes."
+     ]
+    }
+   ],
+   "pantry": [
+    "basmati rice",
+    "Bisquick",
+    "soy sauce",
+    "teriyaki sauce",
+    "honey",
+    "garlic",
+    "corn starch",
+    "flour",
+    "salt",
+    "pepper",
+    "onion powder",
+    "butter",
+    "milk",
+    "eggs",
+    "cheese",
+    "BBQ sauce",
+    "ranch",
+    "vegetable oil",
+    "salsa",
+    "sour cream",
+    "half and half",
+    "sugar",
+    "pesto",
+    "mixed nuts",
+    "penne",
+    "cumin",
+    "oregano",
+    "beef broth (partial)",
+    "crushed tomatoes (1 can)"
+   ]
+  },
   {
    "id": "2026-11-01",
    "title": "Sausage pie week",
