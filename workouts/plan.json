@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -964,6 +964,115 @@
             "rating": "right",
             "note": "I used a straight bar for the pulldowns. I prefer those. Then i did cable reverse flys. And for seated dumbell curls i used 25s"
           }
+        },
+        {
+          "id": "2026-11-04-chest-and-tris-dy4h",
+          "title": "Chest and tris",
+          "notes": "Recovery note: keep this submaximal - stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "sets": 1,
+                  "reps": "",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Incline push-ups on bench",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - hands on the bench, slow and controlled",
+                  "url": "https://www.youtube.com/watch?v=Z0bRiVhnO8Q"
+                },
+                {
+                  "exercise": "Light rope face pull",
+                  "sets": 1,
+                  "reps": "12",
+                  "detail": "1 x 12 - light stack, pull to the forehead, elbows high",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                },
+                {
+                  "exercise": "Light dumbbell bench groove",
+                  "sets": 1,
+                  "reps": "10",
+                  "detail": "1 x 10 - 15-20 lb dumbbells, groove the pressing path",
+                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell bench press",
+                  "sets": 3,
+                  "reps": "6",
+                  "detail": "3 x 6 - 135 lb. Warm up with the empty bar, then 95, then working sets. Stop 2-3 reps shy. Rest 2 min.",
+                  "url": "https://www.youtube.com/watch?v=CjHIKDQ4RQo"
+                },
+                {
+                  "exercise": "Incline dumbbell press",
+                  "sets": 3,
+                  "reps": "8-10",
+                  "detail": "3 x 8-10 - 40 lb dumbbells, bench at about 30 deg, control down. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=OC7Qs_SAO2E"
+                },
+                {
+                  "exercise": "Standing cable fly",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - light-moderate stack, tall, sweep together at chest height, squeeze for a beat. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=ydnAMvT1Jzo"
+                },
+                {
+                  "exercise": "Rope triceps pushdown",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - moderate stack, elbows pinned, split the rope at the bottom. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=pfUB77aCMFM"
+                },
+                {
+                  "exercise": "Overhead rope triceps extension",
+                  "sets": 3,
+                  "reps": "12",
+                  "detail": "3 x 12 - light-moderate stack, facing away, elbows by the ears, full stretch. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=kqidUIf1eJE"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Low box jump, step down between reps",
+                  "sets": 2,
+                  "reps": "5",
+                  "detail": "2 x 5 - low box, quiet landings, step down and reset each rep",
+                  "url": "https://www.youtube.com/watch?v=G-bxQY57mKc"
+                },
+                {
+                  "exercise": "Unweighted pogo hops",
+                  "sets": 2,
+                  "reps": "15",
+                  "detail": "2 x 15 - small stiff-ankle hops in place, quiet contacts",
+                  "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4"
+                }
+              ]
+            }
+          ],
+          "date": "2026-11-04",
+          "generated_by": "Instinct",
+          "completed": null
         }
       ],
       "history": [
@@ -974,7 +1083,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -2646,7 +2755,7 @@
           "completed": "2026-11-02",
           "feedback": {
             "rating": "right",
-            "note": "Please include the weights i should be doing in each lift. You said “heavier than last time” but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
+            "note": "Please include the weights i should be doing in each lift. You said \u201cheavier than last time\u201d but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
           }
         },
         {
@@ -3010,7 +3119,7 @@
           "reps": 310,
           "feedback": {
             "rating": "right",
-            "note": "Please include the weights i should be doing in each lift. You said “heavier than last time” but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
+            "note": "Please include the weights i should be doing in each lift. You said \u201cheavier than last time\u201d but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
           }
         },
         {
@@ -3893,7 +4002,7 @@
           "generated_by": "Instinct",
           "completed": "2026-10-25",
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -4200,7 +4309,7 @@
           "generated_by": "Instinct",
           "completed": "2026-10-28",
           "feedback": {
-            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         },
         {
@@ -4622,7 +4731,7 @@
           "generated_by": "Instinct",
           "completed": "2026-11-02",
           "feedback": {
-            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
+            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I\u2019d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
         },
         {
@@ -4780,7 +4889,7 @@
           "title": "Legs",
           "reps": 250,
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -4811,7 +4920,7 @@
           "title": "HYROX-style ladder",
           "reps": 611,
           "feedback": {
-            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         },
         {
@@ -4854,7 +4963,7 @@
           "title": "Legs B: circuit",
           "reps": 388,
           "feedback": {
-            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
+            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I\u2019d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
         }
       ],
