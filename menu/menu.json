@@ -1,1053 +1,1055 @@
 {
- "updated": "2026-11-04",
- "weeks": [
-  {
-   "id": "2026-11-08",
-   "title": "Honey garlic carry-over week",
-   "notes": "Green chile leftovers cover the start of the week, then five fresh dinners. Honey garlic chicken thighs finally lands - it was pushed out of last week for the green chile. Office snack: another run at the peanut butter cracker packs that sold out last Saturday.",
-   "order": {
-    "date": "2026-11-08",
-    "window": "5-8 pm",
-    "status": "in_cart",
-    "store": "King Soopers via Instacart",
-    "notes": "Cart built Wednesday Nov 4 with live Instacart prices. The chicken-and-biscuits recipe uses the frozen Heritage Farm chicken breasts from the Oct 31 order, so no chicken breasts in this cart. Estimated totals until the order is placed: items $63.23, plus about $5.06 service fee (8%), about $0.30 tax, $0.31 CO retail delivery fee, and a 10% tip of $6.32, with $0 Super saver delivery Sunday 5-8 pm - about $75.22 all-in.",
-    "items": [
-     {
-      "name": "Heritage Farm boneless skinless chicken thighs",
-      "qty": "~2.84 lb pkg",
-      "price": 11.33,
-      "category": "Meat & seafood",
-      "for": [
-       "honey-garlic-chicken-thighs"
+  "updated": "2026-11-04",
+  "weeks": [
+    {
+      "id": "2026-11-08",
+      "title": "Honey garlic carry-over week",
+      "notes": "Green chile leftovers cover the start of the week, then five fresh dinners. Honey garlic chicken thighs finally lands - it was pushed out of last week for the green chile. Office snack: another run at the peanut butter cracker packs that sold out last Saturday.",
+      "order": {
+        "date": "2026-11-08",
+        "window": "5-8 pm",
+        "status": "in_cart",
+        "store": "King Soopers via Instacart",
+        "notes": "Cart built Wednesday Nov 4 with live Instacart prices. The chicken-and-biscuits recipe uses the frozen Heritage Farm chicken breasts from the Oct 31 order, so no chicken breasts in this cart. Estimated totals until the order is placed: items $63.23, plus about $5.06 service fee (8%), about $0.30 tax, $0.31 CO retail delivery fee, and a 10% tip of $6.32, with $0 Super saver delivery Sunday 5-8 pm - about $75.22 all-in.",
+        "items": [
+          {
+            "name": "Heritage Farm boneless skinless chicken thighs",
+            "qty": "~2.84 lb pkg",
+            "price": 11.33,
+            "category": "Meat & seafood",
+            "for": [
+              "honey-garlic-chicken-thighs"
+            ],
+            "note": "$3.99/lb; extra freezes"
+          },
+          {
+            "name": "Fresh bagged green beans",
+            "qty": "~1.07 lb",
+            "price": 2.13,
+            "category": "Produce",
+            "for": [
+              "honey-garlic-chicken-thighs"
+            ]
+          },
+          {
+            "name": "Kroger beef shaved steak",
+            "qty": "14 oz",
+            "price": 7.99,
+            "category": "Meat & seafood",
+            "for": [
+              "beef-and-broccoli-stir-fry"
+            ],
+            "note": "cheaper than stir-fry strips, cooks even faster"
+          },
+          {
+            "name": "Broccoli crown",
+            "qty": "~0.95 lb",
+            "price": 2.46,
+            "category": "Produce",
+            "for": [
+              "beef-and-broccoli-stir-fry"
+            ]
+          },
+          {
+            "name": "Kroger cut and peeled baby carrots",
+            "qty": "16 oz",
+            "price": 1.69,
+            "category": "Produce",
+            "for": [
+              "chicken-and-bisquick-biscuits"
+            ]
+          },
+          {
+            "name": "Kroger frozen super sweet corn",
+            "qty": "12 oz",
+            "price": 1.39,
+            "category": "Frozen",
+            "for": [
+              "chicken-and-bisquick-biscuits"
+            ]
+          },
+          {
+            "name": "Kroger 80/20 ground beef roll",
+            "qty": "3 lb",
+            "price": 18.99,
+            "category": "Meat & seafood",
+            "for": [
+              "mini-bbq-meatloaves"
+            ],
+            "note": "1 lb for the meatloaves, 2 lb to freeze"
+          },
+          {
+            "name": "Kroger boneless pork loin chops",
+            "qty": "1.25 lb",
+            "price": 5.99,
+            "category": "Meat & seafood",
+            "for": [
+              "parmesan-crusted-pork-chops"
+            ]
+          },
+          {
+            "name": "Russet potatoes bag",
+            "qty": "5 lb",
+            "price": 2.99,
+            "category": "Produce",
+            "for": [
+              "mini-bbq-meatloaves",
+              "parmesan-crusted-pork-chops"
+            ]
+          },
+          {
+            "name": "Kroger parmesan shredded cheese",
+            "qty": "6 oz",
+            "price": 2.29,
+            "category": "Dairy & eggs",
+            "for": [
+              "parmesan-crusted-pork-chops"
+            ]
+          },
+          {
+            "name": "Kikkoman panko bread crumbs",
+            "qty": "8 oz",
+            "price": 2.99,
+            "category": "Pantry",
+            "for": [
+              "mini-bbq-meatloaves",
+              "parmesan-crusted-pork-chops"
+            ],
+            "note": "label: wheat flour, cane sugar, yeast, salt - no oats"
+          },
+          {
+            "name": "Keebler Toast & Peanut Butter sandwich crackers",
+            "qty": "8-pack",
+            "price": 2.99,
+            "category": "Snacks",
+            "note": "office snack; sold out last week, retrying"
+          }
+        ],
+        "subtotal": null,
+        "fees": null,
+        "tax": null,
+        "tip": null,
+        "total": null
+      },
+      "days": [
+        {
+          "date": "2026-11-08",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Green chile (if frozen portions left)",
+              "note": "Cooked Nov 1 - only safe if portions were frozen; swap for a fresh dinner if not."
+            }
+          ],
+          "prep": "Order arrives 5-8 pm."
+        },
+        {
+          "date": "2026-11-09",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Green chile (if frozen portions left)",
+              "note": "Cooked Nov 1 - only safe if portions were frozen; swap for a fresh dinner if not."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-10",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "honey-garlic-chicken-thighs"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-11",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "beef-and-broccoli-stir-fry"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "chicken-and-bisquick-biscuits"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-13",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "mini-bbq-meatloaves"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "parmesan-crusted-pork-chops"
+            }
+          ]
+        }
       ],
-      "note": "$3.99/lb; extra freezes"
-     },
-     {
-      "name": "Fresh bagged green beans",
-      "qty": "~1.07 lb",
-      "price": 2.13,
-      "category": "Produce",
-      "for": [
-       "honey-garlic-chicken-thighs"
-      ]
-     },
-     {
-      "name": "Kroger beef shaved steak",
-      "qty": "14 oz",
-      "price": 7.99,
-      "category": "Meat & seafood",
-      "for": [
-       "beef-and-broccoli-stir-fry"
+      "recipes": [
+        {
+          "id": "honey-garlic-chicken-thighs",
+          "name": "Honey garlic chicken thighs",
+          "servings": 3,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "~2 lb",
+              "item": "boneless skinless chicken thighs"
+            },
+            {
+              "qty": "1 lb",
+              "item": "green beans",
+              "note": "ends trimmed"
+            },
+            {
+              "qty": "1/3 cup",
+              "item": "honey (at home)"
+            },
+            {
+              "qty": "1/3 cup",
+              "item": "soy sauce (at home)"
+            },
+            {
+              "qty": "4 cloves",
+              "item": "garlic, minced (at home)"
+            },
+            {
+              "qty": "1 tbsp",
+              "item": "vegetable oil (at home)"
+            },
+            {
+              "qty": "",
+              "item": "basmati rice (at home)"
+            }
+          ],
+          "steps": [
+            "Start the basmati rice.",
+            "Sear the thighs in hot oil, 5-6 minutes per side, until browned and cooked through; set aside.",
+            "In the same pan, soften the garlic for 30 seconds, then add the honey, soy sauce and a splash of water.",
+            "Simmer 2-3 minutes until syrupy, return the thighs and turn to coat in the glaze.",
+            "Microwave or saute the green beans with a little oil and salt until crisp-tender, about 5 minutes.",
+            "Serve the thighs and beans over rice, spooning extra glaze on top."
+          ],
+          "notes": "The carry-over from last week, swapped out to make room for the green chile."
+        },
+        {
+          "id": "beef-and-broccoli-stir-fry",
+          "name": "Beef and broccoli stir-fry",
+          "servings": 2,
+          "time_min": 25,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "~1 lb",
+              "item": "beef stir-fry strips",
+              "note": "or flank steak sliced thin"
+            },
+            {
+              "qty": "~1 lb",
+              "item": "broccoli",
+              "note": "cut into florets"
+            },
+            {
+              "qty": "1/3 cup",
+              "item": "soy sauce (at home)"
+            },
+            {
+              "qty": "2 cloves",
+              "item": "garlic, minced (at home)"
+            },
+            {
+              "qty": "1 tbsp",
+              "item": "honey (at home)"
+            },
+            {
+              "qty": "1 tbsp",
+              "item": "corn starch (at home)"
+            },
+            {
+              "qty": "2 tbsp",
+              "item": "vegetable oil (at home)"
+            },
+            {
+              "qty": "",
+              "item": "basmati rice (at home)"
+            }
+          ],
+          "steps": [
+            "Start the basmati rice.",
+            "Toss the beef with the corn starch and a pinch of salt.",
+            "Sear the beef in hot oil in two batches, about 2 minutes; set aside.",
+            "Add the broccoli and a splash of water, cover and steam 3 minutes.",
+            "Stir in the garlic, soy sauce, honey and 1/3 cup water; simmer 1-2 minutes until glossy.",
+            "Return the beef, toss to coat, and serve over rice."
+          ]
+        },
+        {
+          "id": "chicken-and-bisquick-biscuits",
+          "name": "Chicken and Bisquick biscuits",
+          "servings": 4,
+          "time_min": 40,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "~1.25 lb",
+              "item": "chicken breasts",
+              "note": "cut into bite-size pieces"
+            },
+            {
+              "qty": "3-4",
+              "item": "carrots",
+              "note": "sliced"
+            },
+            {
+              "qty": "1 cup",
+              "item": "frozen corn"
+            },
+            {
+              "qty": "2 tbsp",
+              "item": "butter (at home)"
+            },
+            {
+              "qty": "3 tbsp",
+              "item": "flour (at home)"
+            },
+            {
+              "qty": "1 1/2 cups",
+              "item": "milk (at home)"
+            },
+            {
+              "qty": "1 cup",
+              "item": "beef broth (at home - the surplus works)"
+            },
+            {
+              "qty": "2 1/4 cups",
+              "item": "Bisquick (at home)"
+            },
+            {
+              "qty": "2/3 cup",
+              "item": "milk, for the biscuits (at home)"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 400F.",
+            "Melt the butter in a large oven-safe skillet and cook the chicken until no longer pink, about 5 minutes.",
+            "Stir in the carrots and flour and cook 1 minute.",
+            "Add 1 1/2 cups milk and the broth; simmer 5 minutes until thick, then stir in the corn and season with salt and pepper.",
+            "Mix the Bisquick with 2/3 cup milk into a soft dough and drop 8 spoonfuls over the filling.",
+            "Bake 18-22 minutes until the biscuits are golden and cooked through."
+          ],
+          "notes": "Pot-pie comfort without the pie crust. Uses the Bisquick from two weeks ago."
+        },
+        {
+          "id": "mini-bbq-meatloaves",
+          "name": "Mini BBQ meatloaves with potato wedges",
+          "servings": 3,
+          "time_min": 35,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "80/20 ground beef"
+            },
+            {
+              "qty": "1/2 cup",
+              "item": "plain panko"
+            },
+            {
+              "qty": "1",
+              "item": "egg (at home)"
+            },
+            {
+              "qty": "1/3 cup",
+              "item": "BBQ sauce, plus more for glazing (at home)"
+            },
+            {
+              "qty": "1 tsp",
+              "item": "onion powder (at home)"
+            },
+            {
+              "qty": "3-4",
+              "item": "russet potatoes",
+              "note": "cut into wedges"
+            },
+            {
+              "qty": "2 tbsp",
+              "item": "vegetable oil (at home)"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 425F. Toss the wedges with oil, salt and pepper on a sheet pan and start them first - they need about 30 minutes, flipping halfway.",
+            "Mix the beef, panko, egg, 1/3 cup BBQ sauce, onion powder, 1 tsp salt and pepper.",
+            "Shape into 4 mini loaves on a second sheet pan (or the same pan after 10 minutes).",
+            "Bake 18-20 minutes, brushing with more BBQ sauce for the last 5, until 160F inside.",
+            "Serve with the wedges and extra BBQ sauce or ranch for dipping."
+          ],
+          "notes": "Same comfort as a big meatloaf in half the time."
+        },
+        {
+          "id": "parmesan-crusted-pork-chops",
+          "name": "Parmesan-crusted pork chops with ranch potatoes",
+          "servings": 2,
+          "time_min": 35,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "~1.25 lb",
+              "item": "boneless pork chops"
+            },
+            {
+              "qty": "1/2 cup",
+              "item": "plain panko"
+            },
+            {
+              "qty": "1/2 cup",
+              "item": "shredded parmesan"
+            },
+            {
+              "qty": "1",
+              "item": "egg, beaten (at home)"
+            },
+            {
+              "qty": "3-4",
+              "item": "russet potatoes",
+              "note": "cut into chunks"
+            },
+            {
+              "qty": "2 tbsp",
+              "item": "ranch (at home)"
+            },
+            {
+              "qty": "2 tbsp",
+              "item": "vegetable oil (at home)"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 425F. Toss the potato chunks with oil and a few spoonfuls of ranch; roast about 30 minutes, flipping halfway.",
+            "Mix the panko and parmesan on a plate; season the pork chops with salt and pepper.",
+            "Dip each chop in the beaten egg, then press into the panko-parmesan mix on both sides.",
+            "Bake on a sheet pan 15-18 minutes (or pan-fry 4-5 minutes per side) until 145F inside and the crust is golden.",
+            "Rest 3 minutes and serve with the ranch potatoes."
+          ]
+        }
       ],
-      "note": "cheaper than stir-fry strips, cooks even faster"
-     },
-     {
-      "name": "Broccoli crown",
-      "qty": "~0.95 lb",
-      "price": 2.46,
-      "category": "Produce",
-      "for": [
-       "beef-and-broccoli-stir-fry"
+      "pantry": [
+        "basmati rice",
+        "Bisquick",
+        "soy sauce",
+        "teriyaki sauce",
+        "honey",
+        "garlic",
+        "corn starch",
+        "flour",
+        "salt",
+        "pepper",
+        "onion powder",
+        "butter",
+        "milk",
+        "eggs",
+        "cheese",
+        "BBQ sauce",
+        "ranch",
+        "vegetable oil",
+        "salsa",
+        "sour cream",
+        "half and half",
+        "sugar",
+        "pesto",
+        "mixed nuts",
+        "penne",
+        "cumin",
+        "oregano",
+        "beef broth (partial)",
+        "crushed tomatoes (1 can)"
       ]
-     },
-     {
-      "name": "Kroger cut and peeled baby carrots",
-      "qty": "16 oz",
-      "price": 1.69,
-      "category": "Produce",
-      "for": [
-       "chicken-and-bisquick-biscuits"
-      ]
-     },
-     {
-      "name": "Kroger frozen super sweet corn",
-      "qty": "12 oz",
-      "price": 1.39,
-      "category": "Frozen",
-      "for": [
-       "chicken-and-bisquick-biscuits"
-      ]
-     },
-     {
-      "name": "Kroger 80/20 ground beef roll",
-      "qty": "3 lb",
-      "price": 18.99,
-      "category": "Meat & seafood",
-      "for": [
-       "mini-bbq-meatloaves"
+    },
+    {
+      "id": "2026-11-01",
+      "title": "Sausage pie week",
+      "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original. Sunday dinner is now dad's green chile (double batch, makes plenty of leftovers); sausage pie slides to an open night later in the week. Honey garlic chicken thighs pushed to next week; Thursday dinner is now the breakfast burritos (which also work any morning).",
+      "order": {
+        "date": "2026-10-31",
+        "window": "delivered Sat evening, Oct 31",
+        "status": "delivered",
+        "store": "King Soopers via Instacart",
+        "url": "https://www.instacart.com/store/orders/999921555040971489124",
+        "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Delivery moved to Saturday evening, Oct 31 (arriving by 7:37 pm) at Brandon's request with a $7.99 delivery fee. Saturday evening edits: breakfast sausage links swapped for a Jimmy Dean regular ground sausage roll, a 12-pack of lemon-lime sparkling water added, and a 4-pack of Totino's pepperoni party pizzas and an 8-pack of Keebler Toast & Peanut Butter crackers added. Delivered Saturday evening, Oct 31. During the shop, the thick-cut bacon was replaced with the same bacon in regular cut (same price), and the brioche buns and the Keebler crackers were sold out and refunded. FINAL RECEIPT: 25 items, $128.27 items, $9.99 service + $7.99 delivery fees, $1.70 total tax ($0.48 sales + $0.91 fee tax + $0.31 CO retail delivery fee), $12.83 tip (10%).",
+        "items": [
+          {
+            "name": "Heritage Farm chicken breasts, boneless skinless",
+            "qty": "~5 lb",
+            "price": 14.95,
+            "category": "Meat & seafood",
+            "for": [
+              "teriyaki-chicken-bowls"
+            ],
+            "note": "extra to freeze"
+          },
+          {
+            "name": "Kroger wild caught medium raw shrimp, peeled & deveined",
+            "qty": "12 oz",
+            "price": 7.99,
+            "category": "Meat & seafood",
+            "for": [
+              "shrimp-scampi-penne"
+            ]
+          },
+          {
+            "name": "Kroger 80/20 ground beef",
+            "qty": "1 lb",
+            "price": 6.99,
+            "category": "Meat & seafood",
+            "for": [
+              "skillet-cheeseburgers-and-fries"
+            ]
+          },
+          {
+            "name": "Kroger mild ground Italian sausage",
+            "qty": "1 lb",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "sausage-pie"
+            ]
+          },
+          {
+            "name": "Broccoli crown",
+            "qty": "~1 lb",
+            "price": 2.49,
+            "category": "Produce",
+            "for": [
+              "teriyaki-chicken-bowls"
+            ]
+          },
+          {
+            "name": "Green bell pepper",
+            "qty": "1",
+            "price": 0.99,
+            "category": "Produce",
+            "for": [
+              "sausage-pie"
+            ],
+            "note": "stands in for onion"
+          },
+          {
+            "name": "Kroger basmati rice",
+            "qty": "2 lb",
+            "price": 3.99,
+            "category": "Pantry",
+            "for": [
+              "teriyaki-chicken-bowls"
+            ]
+          },
+          {
+            "name": "Betty Crocker Bisquick Original",
+            "qty": "40 oz",
+            "price": 4.99,
+            "category": "Pantry",
+            "for": [
+              "sausage-pie"
+            ],
+            "note": "plenty left over"
+          },
+          {
+            "name": "Smart Way granulated sugar",
+            "qty": "4 lb",
+            "price": 2.99,
+            "category": "Pantry",
+            "note": "pantry restock"
+          },
+          {
+            "name": "Kroger half and half",
+            "qty": "1 qt",
+            "price": 2.99,
+            "category": "Dairy & eggs",
+            "note": "coffee"
+          },
+          {
+            "name": "Ore-Ida extra crispy fast food fries",
+            "qty": "26 oz",
+            "price": 4.99,
+            "category": "Frozen",
+            "for": [
+              "skillet-cheeseburgers-and-fries"
+            ]
+          },
+          {
+            "name": "Kroger 1883 vanilla ice cream (Vividly Vanilla)",
+            "qty": "48 oz",
+            "price": 3.59,
+            "category": "Frozen",
+            "note": "dessert"
+          },
+          {
+            "name": "Cheez-It Original crackers",
+            "qty": "12.4 oz",
+            "price": 4.99,
+            "category": "Snacks",
+            "note": "office snack"
+          },
+          {
+            "name": "Boneless pork loin chops",
+            "qty": "3 x 1.25 lb",
+            "price": 17.97,
+            "category": "Meat & seafood",
+            "for": [
+              "dads-green-chile"
+            ]
+          },
+          {
+            "name": "Crushed tomatoes",
+            "qty": "2 x 15 oz",
+            "price": 2.38,
+            "category": "Pantry",
+            "for": [
+              "dads-green-chile"
+            ]
+          },
+          {
+            "name": "Beef broth, 50% less sodium",
+            "qty": "2 x 32 oz",
+            "price": 3.38,
+            "category": "Pantry",
+            "for": [
+              "dads-green-chile"
+            ]
+          },
+          {
+            "name": "Oregano leaves",
+            "qty": "1.94 oz jar",
+            "price": 3.79,
+            "category": "Pantry",
+            "for": [
+              "dads-green-chile"
+            ]
+          },
+          {
+            "name": "Kettle Brand potato chips, sea salt & vinegar",
+            "qty": "13 oz",
+            "price": 4.99,
+            "category": "Snacks"
+          },
+          {
+            "name": "Large white eggs",
+            "qty": "12 ct",
+            "price": 1.99,
+            "category": "Dairy & eggs",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Burrito-size flour tortillas",
+            "qty": "8 ct",
+            "price": 2.59,
+            "category": "Bakery",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Kroger Naturally Hardwood Smoked Bacon",
+            "qty": "16 oz",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "breakfast-burritos"
+            ],
+            "note": "shopper replacement for the thick-cut, same price"
+          },
+          {
+            "name": "Shredded hash browns",
+            "qty": "30 oz",
+            "price": 3.99,
+            "category": "Frozen",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Jimmy Dean Premium Pork Regular Breakfast Sausage Roll",
+            "qty": "1 lb",
+            "price": 6.19,
+            "category": "Meat & seafood",
+            "for": [
+              "breakfast-burritos"
+            ]
+          },
+          {
+            "name": "Kroger caffeine-free lemon-lime sparkling water",
+            "qty": "12 x 12 fl oz",
+            "price": 5.99,
+            "category": "Beverages",
+            "for": []
+          },
+          {
+            "name": "Totino's Party Pizza pepperoni multipack",
+            "qty": "4 x 10.2 oz",
+            "price": 6.69,
+            "category": "Frozen",
+            "for": []
+          }
+        ],
+        "subtotal": 128.27,
+        "fees": 17.98,
+        "tax": 1.7,
+        "tip": 12.83,
+        "total": 160.78
+      },
+      "days": [
+        {
+          "date": "2026-11-01",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "dads-green-chile"
+            }
+          ],
+          "prep": "Everything for the green chile is at home - the pork, tomatoes, broth and oregano arrived with Saturday evening's order."
+        },
+        {
+          "date": "2026-11-02",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "teriyaki-chicken-bowls"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-03",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "skillet-cheeseburgers-and-fries"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-04",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "shrimp-scampi-penne"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "breakfast-burritos"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-06",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers or eat out"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-07",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers or eat out"
+            }
+          ]
+        }
       ],
-      "note": "1 lb for the meatloaves, 2 lb to freeze"
-     },
-     {
-      "name": "Kroger boneless pork loin chops",
-      "qty": "1.25 lb",
-      "price": 5.99,
-      "category": "Meat & seafood",
-      "for": [
-       "parmesan-crusted-pork-chops"
-      ]
-     },
-     {
-      "name": "Russet potatoes bag",
-      "qty": "5 lb",
-      "price": 2.99,
-      "category": "Produce",
-      "for": [
-       "mini-bbq-meatloaves",
-       "parmesan-crusted-pork-chops"
-      ]
-     },
-     {
-      "name": "Kroger parmesan shredded cheese",
-      "qty": "6 oz",
-      "price": 2.29,
-      "category": "Dairy & eggs",
-      "for": [
-       "parmesan-crusted-pork-chops"
-      ]
-     },
-     {
-      "name": "Kikkoman panko bread crumbs",
-      "qty": "8 oz",
-      "price": 2.99,
-      "category": "Pantry",
-      "for": [
-       "mini-bbq-meatloaves",
-       "parmesan-crusted-pork-chops"
+      "recipes": [
+        {
+          "id": "sausage-pie",
+          "name": "Sausage pie",
+          "servings": 4,
+          "time_min": 45,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "mild ground Italian sausage"
+            },
+            {
+              "qty": "1",
+              "item": "green bell pepper",
+              "note": "chopped; stands in for the original onion"
+            },
+            {
+              "qty": "1 cup",
+              "item": "shredded cheddar"
+            },
+            {
+              "qty": "1 1/2 cups",
+              "item": "milk"
+            },
+            {
+              "qty": "3/4 cup",
+              "item": "Bisquick"
+            },
+            {
+              "qty": "3",
+              "item": "eggs"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 400°F and grease a 10-inch pie plate.",
+            "Brown the sausage with the bell pepper in a skillet; drain.",
+            "Spread the sausage mixture in the pie plate and sprinkle the cheese over it.",
+            "Beat the milk, Bisquick and eggs until smooth and pour over the sausage.",
+            "Bake about 30 minutes, until set and golden."
+          ],
+          "notes": "Family favorite, recipe as written with bell pepper subbed for the onion."
+        },
+        {
+          "id": "teriyaki-chicken-bowls",
+          "name": "Teriyaki chicken bowls",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "boneless skinless chicken breasts",
+              "note": "cut into bite-size pieces"
+            },
+            {
+              "qty": "1 cup",
+              "item": "basmati rice, dry"
+            },
+            {
+              "qty": "1 lb",
+              "item": "broccoli",
+              "note": "cut into florets"
+            },
+            {
+              "qty": "1/2 cup",
+              "item": "teriyaki sauce"
+            },
+            "1 tbsp oil, salt and pepper"
+          ],
+          "steps": [
+            "Cook the basmati rice.",
+            "Sear the chicken in oil over medium-high heat until cooked through, 6-8 minutes.",
+            "Steam or sauté the broccoli until crisp-tender, about 5 minutes.",
+            "Add the teriyaki sauce to the chicken and simmer 1-2 minutes.",
+            "Serve the chicken and broccoli over the rice."
+          ]
+        },
+        {
+          "id": "skillet-cheeseburgers-and-fries",
+          "name": "Skillet cheeseburgers and fries",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "80/20 ground beef"
+            },
+            {
+              "qty": "4",
+              "item": "brioche buns"
+            },
+            {
+              "qty": "4 slices",
+              "item": "cheddar or American cheese"
+            },
+            {
+              "qty": "13 oz",
+              "item": "frozen fast food fries",
+              "note": "half the bag"
+            },
+            "Salt and pepper"
+          ],
+          "steps": [
+            "Bake the fries per the package directions.",
+            "Form the beef into 4 loose balls; season with salt and pepper.",
+            "Smash each ball flat in a hot skillet and cook about 2 minutes per side.",
+            "Top with cheese to melt, then serve on the brioche buns with the fries."
+          ]
+        },
+        {
+          "id": "shrimp-scampi-penne",
+          "name": "Shrimp scampi penne",
+          "servings": 2,
+          "time_min": 20,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "8 oz",
+              "item": "penne, dry"
+            },
+            {
+              "qty": "12 oz",
+              "item": "medium raw shrimp, peeled & deveined"
+            },
+            {
+              "qty": "4 tbsp",
+              "item": "butter"
+            },
+            {
+              "qty": "4 cloves",
+              "item": "garlic",
+              "note": "minced"
+            },
+            "Salt, pepper and parsley"
+          ],
+          "steps": [
+            "Boil the penne in salted water; reserve a cup of pasta water.",
+            "Melt the butter and cook the garlic 1 minute until fragrant.",
+            "Add the shrimp and cook 2-3 minutes per side until pink.",
+            "Toss with the penne, a splash of pasta water, salt, pepper and parsley."
+          ]
+        },
+        {
+          "id": "dads-green-chile",
+          "name": "Dad's green chile (double batch)",
+          "servings": 8,
+          "time_min": 60,
+          "active_min": 30,
+          "ingredients": [
+            {
+              "qty": "3-4 lb",
+              "item": "boneless pork chops",
+              "note": "cut into cubes"
+            },
+            {
+              "qty": "20-30",
+              "item": "roasted green chiles",
+              "note": "seeded, chopped or blended (at home)"
+            },
+            {
+              "qty": "2 x 15 oz cans",
+              "item": "crushed tomatoes"
+            },
+            {
+              "qty": "about 64 oz",
+              "item": "beef broth"
+            },
+            {
+              "qty": "2-4 cups",
+              "item": "water"
+            },
+            {
+              "qty": "1-1 1/2 cups",
+              "item": "flour (at home)"
+            },
+            {
+              "qty": "4-6 tbsp",
+              "item": "corn starch (at home)",
+              "note": "mixed into 1 cup cold water"
+            },
+            {
+              "qty": "4-6 tsp",
+              "item": "oregano"
+            },
+            {
+              "qty": "2-4 tbsp",
+              "item": "vegetable oil (at home)"
+            },
+            {
+              "qty": "4-6 tsp",
+              "item": "salt (at home)"
+            },
+            {
+              "qty": "2-4 tsp",
+              "item": "cumin, optional (at home)"
+            }
+          ],
+          "steps": [
+            "Cube the pork.",
+            "Warm the oil in a large (8 qt) pot over medium-low heat.",
+            "Brown the pork, sprinkling the flour over it as it browns, and stir.",
+            "Seed the chiles, then chop or blend them.",
+            "Once the pork and flour have browned, add the tomatoes, green chiles, beef broth, water, salt, oregano and optional cumin.",
+            "Simmer on low for 20-30 minutes, stirring occasionally.",
+            "Mix the corn starch into 1 cup cold water and stir it in to thicken to the consistency you like.",
+            "For spicier chile, add sauteed jalapenos."
+          ],
+          "notes": "Doubled from the family recipe card. Brandon already has the roasted green chiles, flour, corn starch, oil and cumin, so only the pork, tomatoes, broth and oregano are in the order."
+        },
+        {
+          "id": "breakfast-burritos",
+          "name": "Breakfast burritos",
+          "servings": 4,
+          "time_min": 30,
+          "active_min": 25,
+          "ingredients": [
+            {
+              "qty": "8",
+              "item": "eggs",
+              "note": "scrambled"
+            },
+            {
+              "qty": "12 oz",
+              "item": "breakfast sausage links",
+              "note": "crumbled and browned"
+            },
+            {
+              "qty": "4-6 slices",
+              "item": "bacon",
+              "note": "cooked and crumbled"
+            },
+            {
+              "qty": "about 3 cups",
+              "item": "shredded hash browns",
+              "note": "crisped in the pan"
+            },
+            {
+              "qty": "4-6",
+              "item": "burrito-size flour tortillas"
+            },
+            "Shredded cheddar, salsa and sour cream from the fridge"
+          ],
+          "steps": [
+            "Cook the bacon until crisp; set aside and crumble.",
+            "Brown the sausage in the same pan, breaking it up; set aside.",
+            "Crisp the hash browns in the bacon fat over medium-high heat, about 8-10 minutes.",
+            "Scramble the eggs in a separate pan.",
+            "Warm the tortillas, then fill with eggs, sausage, bacon, hash browns and cheese; add salsa and sour cream to taste.",
+            "Roll up and serve, or wrap extras in foil for later."
+          ],
+          "notes": "Brandon's Saturday add-on for breakfasts this week. Cheese, salsa and sour cream are already at home."
+        }
       ],
-      "note": "label: wheat flour, cane sugar, yeast, salt - no oats"
-     },
-     {
-      "name": "Keebler Toast & Peanut Butter sandwich crackers",
-      "qty": "8-pack",
-      "price": 2.99,
-      "category": "Snacks",
-      "note": "office snack; sold out last week, retrying"
-     }
-    ],
-    "subtotal": null,
-    "fees": null,
-    "tax": null,
-    "tip": null,
-    "total": null
-   },
-   "days": [
-    {
-     "date": "2026-11-08",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "text": "Green chile leftovers"
-      }
-     ],
-     "prep": "Order arrives 5-8 pm."
-    },
-    {
-     "date": "2026-11-09",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "text": "Green chile leftovers"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-10",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "honey-garlic-chicken-thighs"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-11",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "beef-and-broccoli-stir-fry"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-12",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "chicken-and-bisquick-biscuits"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-13",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "mini-bbq-meatloaves"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-14",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "parmesan-crusted-pork-chops"
-      }
-     ]
+      "pantry": [
+        "teriyaki sauce",
+        "soy sauce",
+        "honey",
+        "garlic",
+        "penne",
+        "shredded cheddar",
+        "milk",
+        "eggs",
+        "butter",
+        "salt",
+        "pepper",
+        "parsley",
+        "flour",
+        "corn starch",
+        "vegetable oil",
+        "cumin"
+      ]
     }
-   ],
-   "recipes": [
-    {
-     "id": "honey-garlic-chicken-thighs",
-     "name": "Honey garlic chicken thighs",
-     "servings": 3,
-     "time_min": 30,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "~2 lb",
-       "item": "boneless skinless chicken thighs"
-      },
-      {
-       "qty": "1 lb",
-       "item": "green beans",
-       "note": "ends trimmed"
-      },
-      {
-       "qty": "1/3 cup",
-       "item": "honey (at home)"
-      },
-      {
-       "qty": "1/3 cup",
-       "item": "soy sauce (at home)"
-      },
-      {
-       "qty": "4 cloves",
-       "item": "garlic, minced (at home)"
-      },
-      {
-       "qty": "1 tbsp",
-       "item": "vegetable oil (at home)"
-      },
-      {
-       "qty": "",
-       "item": "basmati rice (at home)"
-      }
-     ],
-     "steps": [
-      "Start the basmati rice.",
-      "Sear the thighs in hot oil, 5-6 minutes per side, until browned and cooked through; set aside.",
-      "In the same pan, soften the garlic for 30 seconds, then add the honey, soy sauce and a splash of water.",
-      "Simmer 2-3 minutes until syrupy, return the thighs and turn to coat in the glaze.",
-      "Microwave or saute the green beans with a little oil and salt until crisp-tender, about 5 minutes.",
-      "Serve the thighs and beans over rice, spooning extra glaze on top."
-     ],
-     "notes": "The carry-over from last week, swapped out to make room for the green chile."
-    },
-    {
-     "id": "beef-and-broccoli-stir-fry",
-     "name": "Beef and broccoli stir-fry",
-     "servings": 2,
-     "time_min": 25,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "~1 lb",
-       "item": "beef stir-fry strips",
-       "note": "or flank steak sliced thin"
-      },
-      {
-       "qty": "~1 lb",
-       "item": "broccoli",
-       "note": "cut into florets"
-      },
-      {
-       "qty": "1/3 cup",
-       "item": "soy sauce (at home)"
-      },
-      {
-       "qty": "2 cloves",
-       "item": "garlic, minced (at home)"
-      },
-      {
-       "qty": "1 tbsp",
-       "item": "honey (at home)"
-      },
-      {
-       "qty": "1 tbsp",
-       "item": "corn starch (at home)"
-      },
-      {
-       "qty": "2 tbsp",
-       "item": "vegetable oil (at home)"
-      },
-      {
-       "qty": "",
-       "item": "basmati rice (at home)"
-      }
-     ],
-     "steps": [
-      "Start the basmati rice.",
-      "Toss the beef with the corn starch and a pinch of salt.",
-      "Sear the beef in hot oil in two batches, about 2 minutes; set aside.",
-      "Add the broccoli and a splash of water, cover and steam 3 minutes.",
-      "Stir in the garlic, soy sauce, honey and 1/3 cup water; simmer 1-2 minutes until glossy.",
-      "Return the beef, toss to coat, and serve over rice."
-     ]
-    },
-    {
-     "id": "chicken-and-bisquick-biscuits",
-     "name": "Chicken and Bisquick biscuits",
-     "servings": 4,
-     "time_min": 40,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "~1.25 lb",
-       "item": "chicken breasts",
-       "note": "cut into bite-size pieces"
-      },
-      {
-       "qty": "3-4",
-       "item": "carrots",
-       "note": "sliced"
-      },
-      {
-       "qty": "1 cup",
-       "item": "frozen corn"
-      },
-      {
-       "qty": "2 tbsp",
-       "item": "butter (at home)"
-      },
-      {
-       "qty": "3 tbsp",
-       "item": "flour (at home)"
-      },
-      {
-       "qty": "1 1/2 cups",
-       "item": "milk (at home)"
-      },
-      {
-       "qty": "1 cup",
-       "item": "beef broth (at home - the surplus works)"
-      },
-      {
-       "qty": "2 1/4 cups",
-       "item": "Bisquick (at home)"
-      },
-      {
-       "qty": "2/3 cup",
-       "item": "milk, for the biscuits (at home)"
-      }
-     ],
-     "steps": [
-      "Heat the oven to 400F.",
-      "Melt the butter in a large oven-safe skillet and cook the chicken until no longer pink, about 5 minutes.",
-      "Stir in the carrots and flour and cook 1 minute.",
-      "Add 1 1/2 cups milk and the broth; simmer 5 minutes until thick, then stir in the corn and season with salt and pepper.",
-      "Mix the Bisquick with 2/3 cup milk into a soft dough and drop 8 spoonfuls over the filling.",
-      "Bake 18-22 minutes until the biscuits are golden and cooked through."
-     ],
-     "notes": "Pot-pie comfort without the pie crust. Uses the Bisquick from two weeks ago."
-    },
-    {
-     "id": "mini-bbq-meatloaves",
-     "name": "Mini BBQ meatloaves with potato wedges",
-     "servings": 3,
-     "time_min": 35,
-     "active_min": 15,
-     "ingredients": [
-      {
-       "qty": "1 lb",
-       "item": "80/20 ground beef"
-      },
-      {
-       "qty": "1/2 cup",
-       "item": "plain panko"
-      },
-      {
-       "qty": "1",
-       "item": "egg (at home)"
-      },
-      {
-       "qty": "1/3 cup",
-       "item": "BBQ sauce, plus more for glazing (at home)"
-      },
-      {
-       "qty": "1 tsp",
-       "item": "onion powder (at home)"
-      },
-      {
-       "qty": "3-4",
-       "item": "russet potatoes",
-       "note": "cut into wedges"
-      },
-      {
-       "qty": "2 tbsp",
-       "item": "vegetable oil (at home)"
-      }
-     ],
-     "steps": [
-      "Heat the oven to 425F. Toss the wedges with oil, salt and pepper on a sheet pan and start them first - they need about 30 minutes, flipping halfway.",
-      "Mix the beef, panko, egg, 1/3 cup BBQ sauce, onion powder, 1 tsp salt and pepper.",
-      "Shape into 4 mini loaves on a second sheet pan (or the same pan after 10 minutes).",
-      "Bake 18-20 minutes, brushing with more BBQ sauce for the last 5, until 160F inside.",
-      "Serve with the wedges and extra BBQ sauce or ranch for dipping."
-     ],
-     "notes": "Same comfort as a big meatloaf in half the time."
-    },
-    {
-     "id": "parmesan-crusted-pork-chops",
-     "name": "Parmesan-crusted pork chops with ranch potatoes",
-     "servings": 2,
-     "time_min": 35,
-     "active_min": 15,
-     "ingredients": [
-      {
-       "qty": "~1.25 lb",
-       "item": "boneless pork chops"
-      },
-      {
-       "qty": "1/2 cup",
-       "item": "plain panko"
-      },
-      {
-       "qty": "1/2 cup",
-       "item": "shredded parmesan"
-      },
-      {
-       "qty": "1",
-       "item": "egg, beaten (at home)"
-      },
-      {
-       "qty": "3-4",
-       "item": "russet potatoes",
-       "note": "cut into chunks"
-      },
-      {
-       "qty": "2 tbsp",
-       "item": "ranch (at home)"
-      },
-      {
-       "qty": "2 tbsp",
-       "item": "vegetable oil (at home)"
-      }
-     ],
-     "steps": [
-      "Heat the oven to 425F. Toss the potato chunks with oil and a few spoonfuls of ranch; roast about 30 minutes, flipping halfway.",
-      "Mix the panko and parmesan on a plate; season the pork chops with salt and pepper.",
-      "Dip each chop in the beaten egg, then press into the panko-parmesan mix on both sides.",
-      "Bake on a sheet pan 15-18 minutes (or pan-fry 4-5 minutes per side) until 145F inside and the crust is golden.",
-      "Rest 3 minutes and serve with the ranch potatoes."
-     ]
-    }
-   ],
-   "pantry": [
-    "basmati rice",
-    "Bisquick",
-    "soy sauce",
-    "teriyaki sauce",
-    "honey",
-    "garlic",
-    "corn starch",
-    "flour",
-    "salt",
-    "pepper",
-    "onion powder",
-    "butter",
-    "milk",
-    "eggs",
-    "cheese",
-    "BBQ sauce",
-    "ranch",
-    "vegetable oil",
-    "salsa",
-    "sour cream",
-    "half and half",
-    "sugar",
-    "pesto",
-    "mixed nuts",
-    "penne",
-    "cumin",
-    "oregano",
-    "beef broth (partial)",
-    "crushed tomatoes (1 can)"
-   ]
-  },
-  {
-   "id": "2026-11-01",
-   "title": "Sausage pie week",
-   "notes": "Five dinners, with the first family favorite (sausage pie) worked in. Office snack this week: Cheez-It Original. Sunday dinner is now dad's green chile (double batch, makes plenty of leftovers); sausage pie slides to an open night later in the week. Honey garlic chicken thighs pushed to next week; Thursday dinner is now the breakfast burritos (which also work any morning).",
-   "order": {
-    "date": "2026-10-31",
-    "window": "delivered Sat evening, Oct 31",
-    "status": "delivered",
-    "store": "King Soopers via Instacart",
-    "url": "https://www.instacart.com/store/orders/999921555040971489124",
-    "notes": "Ordered Friday, Oct 30; green chile and breakfast burrito items added Saturday, Oct 31, and the honey garlic chicken thighs were pushed to next week (thighs and green beans removed). Delivery moved to Saturday evening, Oct 31 (arriving by 7:37 pm) at Brandon's request with a $7.99 delivery fee. Saturday evening edits: breakfast sausage links swapped for a Jimmy Dean regular ground sausage roll, a 12-pack of lemon-lime sparkling water added, and a 4-pack of Totino's pepperoni party pizzas and an 8-pack of Keebler Toast & Peanut Butter crackers added. Delivered Saturday evening, Oct 31. During the shop, the thick-cut bacon was replaced with the same bacon in regular cut (same price), and the brioche buns and the Keebler crackers were sold out and refunded. FINAL RECEIPT: 25 items, $128.27 items, $9.99 service + $7.99 delivery fees, $1.70 total tax ($0.48 sales + $0.91 fee tax + $0.31 CO retail delivery fee), $12.83 tip (10%).",
-    "items": [
-     {
-      "name": "Heritage Farm chicken breasts, boneless skinless",
-      "qty": "~5 lb",
-      "price": 14.95,
-      "category": "Meat & seafood",
-      "for": [
-       "teriyaki-chicken-bowls"
-      ],
-      "note": "extra to freeze"
-     },
-     {
-      "name": "Kroger wild caught medium raw shrimp, peeled & deveined",
-      "qty": "12 oz",
-      "price": 7.99,
-      "category": "Meat & seafood",
-      "for": [
-       "shrimp-scampi-penne"
-      ]
-     },
-     {
-      "name": "Kroger 80/20 ground beef",
-      "qty": "1 lb",
-      "price": 6.99,
-      "category": "Meat & seafood",
-      "for": [
-       "skillet-cheeseburgers-and-fries"
-      ]
-     },
-     {
-      "name": "Kroger mild ground Italian sausage",
-      "qty": "1 lb",
-      "price": 3.99,
-      "category": "Meat & seafood",
-      "for": [
-       "sausage-pie"
-      ]
-     },
-     {
-      "name": "Broccoli crown",
-      "qty": "~1 lb",
-      "price": 2.49,
-      "category": "Produce",
-      "for": [
-       "teriyaki-chicken-bowls"
-      ]
-     },
-     {
-      "name": "Green bell pepper",
-      "qty": "1",
-      "price": 0.99,
-      "category": "Produce",
-      "for": [
-       "sausage-pie"
-      ],
-      "note": "stands in for onion"
-     },
-     {
-      "name": "Kroger basmati rice",
-      "qty": "2 lb",
-      "price": 3.99,
-      "category": "Pantry",
-      "for": [
-       "teriyaki-chicken-bowls"
-      ]
-     },
-     {
-      "name": "Betty Crocker Bisquick Original",
-      "qty": "40 oz",
-      "price": 4.99,
-      "category": "Pantry",
-      "for": [
-       "sausage-pie"
-      ],
-      "note": "plenty left over"
-     },
-     {
-      "name": "Smart Way granulated sugar",
-      "qty": "4 lb",
-      "price": 2.99,
-      "category": "Pantry",
-      "note": "pantry restock"
-     },
-     {
-      "name": "Kroger half and half",
-      "qty": "1 qt",
-      "price": 2.99,
-      "category": "Dairy & eggs",
-      "note": "coffee"
-     },
-     {
-      "name": "Ore-Ida extra crispy fast food fries",
-      "qty": "26 oz",
-      "price": 4.99,
-      "category": "Frozen",
-      "for": [
-       "skillet-cheeseburgers-and-fries"
-      ]
-     },
-     {
-      "name": "Kroger 1883 vanilla ice cream (Vividly Vanilla)",
-      "qty": "48 oz",
-      "price": 3.59,
-      "category": "Frozen",
-      "note": "dessert"
-     },
-     {
-      "name": "Cheez-It Original crackers",
-      "qty": "12.4 oz",
-      "price": 4.99,
-      "category": "Snacks",
-      "note": "office snack"
-     },
-     {
-      "name": "Boneless pork loin chops",
-      "qty": "3 x 1.25 lb",
-      "price": 17.97,
-      "category": "Meat & seafood",
-      "for": [
-       "dads-green-chile"
-      ]
-     },
-     {
-      "name": "Crushed tomatoes",
-      "qty": "2 x 15 oz",
-      "price": 2.38,
-      "category": "Pantry",
-      "for": [
-       "dads-green-chile"
-      ]
-     },
-     {
-      "name": "Beef broth, 50% less sodium",
-      "qty": "2 x 32 oz",
-      "price": 3.38,
-      "category": "Pantry",
-      "for": [
-       "dads-green-chile"
-      ]
-     },
-     {
-      "name": "Oregano leaves",
-      "qty": "1.94 oz jar",
-      "price": 3.79,
-      "category": "Pantry",
-      "for": [
-       "dads-green-chile"
-      ]
-     },
-     {
-      "name": "Kettle Brand potato chips, sea salt & vinegar",
-      "qty": "13 oz",
-      "price": 4.99,
-      "category": "Snacks"
-     },
-     {
-      "name": "Large white eggs",
-      "qty": "12 ct",
-      "price": 1.99,
-      "category": "Dairy & eggs",
-      "for": [
-       "breakfast-burritos"
-      ]
-     },
-     {
-      "name": "Burrito-size flour tortillas",
-      "qty": "8 ct",
-      "price": 2.59,
-      "category": "Bakery",
-      "for": [
-       "breakfast-burritos"
-      ]
-     },
-     {
-      "name": "Kroger Naturally Hardwood Smoked Bacon",
-      "qty": "16 oz",
-      "price": 3.99,
-      "category": "Meat & seafood",
-      "for": [
-       "breakfast-burritos"
-      ],
-      "note": "shopper replacement for the thick-cut, same price"
-     },
-     {
-      "name": "Shredded hash browns",
-      "qty": "30 oz",
-      "price": 3.99,
-      "category": "Frozen",
-      "for": [
-       "breakfast-burritos"
-      ]
-     },
-     {
-      "name": "Jimmy Dean Premium Pork Regular Breakfast Sausage Roll",
-      "qty": "1 lb",
-      "price": 6.19,
-      "category": "Meat & seafood",
-      "for": [
-       "breakfast-burritos"
-      ]
-     },
-     {
-      "name": "Kroger caffeine-free lemon-lime sparkling water",
-      "qty": "12 x 12 fl oz",
-      "price": 5.99,
-      "category": "Beverages",
-      "for": []
-     },
-     {
-      "name": "Totino's Party Pizza pepperoni multipack",
-      "qty": "4 x 10.2 oz",
-      "price": 6.69,
-      "category": "Frozen",
-      "for": []
-     }
-    ],
-    "subtotal": 128.27,
-    "fees": 17.98,
-    "tax": 1.7,
-    "tip": 12.83,
-    "total": 160.78
-   },
-   "days": [
-    {
-     "date": "2026-11-01",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "dads-green-chile"
-      }
-     ],
-     "prep": "Everything for the green chile is at home - the pork, tomatoes, broth and oregano arrived with Saturday evening's order."
-    },
-    {
-     "date": "2026-11-02",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "teriyaki-chicken-bowls"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "skillet-cheeseburgers-and-fries"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-04",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "shrimp-scampi-penne"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-05",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "recipe": "breakfast-burritos"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-06",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "text": "Leftovers or eat out"
-      }
-     ]
-    },
-    {
-     "date": "2026-11-07",
-     "meals": [
-      {
-       "meal": "Dinner",
-       "text": "Leftovers or eat out"
-      }
-     ]
-    }
-   ],
-   "recipes": [
-    {
-     "id": "sausage-pie",
-     "name": "Sausage pie",
-     "servings": 4,
-     "time_min": 45,
-     "active_min": 15,
-     "ingredients": [
-      {
-       "qty": "1 lb",
-       "item": "mild ground Italian sausage"
-      },
-      {
-       "qty": "1",
-       "item": "green bell pepper",
-       "note": "chopped; stands in for the original onion"
-      },
-      {
-       "qty": "1 cup",
-       "item": "shredded cheddar"
-      },
-      {
-       "qty": "1 1/2 cups",
-       "item": "milk"
-      },
-      {
-       "qty": "3/4 cup",
-       "item": "Bisquick"
-      },
-      {
-       "qty": "3",
-       "item": "eggs"
-      }
-     ],
-     "steps": [
-      "Heat the oven to 400°F and grease a 10-inch pie plate.",
-      "Brown the sausage with the bell pepper in a skillet; drain.",
-      "Spread the sausage mixture in the pie plate and sprinkle the cheese over it.",
-      "Beat the milk, Bisquick and eggs until smooth and pour over the sausage.",
-      "Bake about 30 minutes, until set and golden."
-     ],
-     "notes": "Family favorite, recipe as written with bell pepper subbed for the onion."
-    },
-    {
-     "id": "teriyaki-chicken-bowls",
-     "name": "Teriyaki chicken bowls",
-     "servings": 2,
-     "time_min": 30,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "1 lb",
-       "item": "boneless skinless chicken breasts",
-       "note": "cut into bite-size pieces"
-      },
-      {
-       "qty": "1 cup",
-       "item": "basmati rice, dry"
-      },
-      {
-       "qty": "1 lb",
-       "item": "broccoli",
-       "note": "cut into florets"
-      },
-      {
-       "qty": "1/2 cup",
-       "item": "teriyaki sauce"
-      },
-      "1 tbsp oil, salt and pepper"
-     ],
-     "steps": [
-      "Cook the basmati rice.",
-      "Sear the chicken in oil over medium-high heat until cooked through, 6-8 minutes.",
-      "Steam or sauté the broccoli until crisp-tender, about 5 minutes.",
-      "Add the teriyaki sauce to the chicken and simmer 1-2 minutes.",
-      "Serve the chicken and broccoli over the rice."
-     ]
-    },
-    {
-     "id": "skillet-cheeseburgers-and-fries",
-     "name": "Skillet cheeseburgers and fries",
-     "servings": 2,
-     "time_min": 30,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "1 lb",
-       "item": "80/20 ground beef"
-      },
-      {
-       "qty": "4",
-       "item": "brioche buns"
-      },
-      {
-       "qty": "4 slices",
-       "item": "cheddar or American cheese"
-      },
-      {
-       "qty": "13 oz",
-       "item": "frozen fast food fries",
-       "note": "half the bag"
-      },
-      "Salt and pepper"
-     ],
-     "steps": [
-      "Bake the fries per the package directions.",
-      "Form the beef into 4 loose balls; season with salt and pepper.",
-      "Smash each ball flat in a hot skillet and cook about 2 minutes per side.",
-      "Top with cheese to melt, then serve on the brioche buns with the fries."
-     ]
-    },
-    {
-     "id": "shrimp-scampi-penne",
-     "name": "Shrimp scampi penne",
-     "servings": 2,
-     "time_min": 20,
-     "active_min": 20,
-     "ingredients": [
-      {
-       "qty": "8 oz",
-       "item": "penne, dry"
-      },
-      {
-       "qty": "12 oz",
-       "item": "medium raw shrimp, peeled & deveined"
-      },
-      {
-       "qty": "4 tbsp",
-       "item": "butter"
-      },
-      {
-       "qty": "4 cloves",
-       "item": "garlic",
-       "note": "minced"
-      },
-      "Salt, pepper and parsley"
-     ],
-     "steps": [
-      "Boil the penne in salted water; reserve a cup of pasta water.",
-      "Melt the butter and cook the garlic 1 minute until fragrant.",
-      "Add the shrimp and cook 2-3 minutes per side until pink.",
-      "Toss with the penne, a splash of pasta water, salt, pepper and parsley."
-     ]
-    },
-    {
-     "id": "dads-green-chile",
-     "name": "Dad's green chile (double batch)",
-     "servings": 8,
-     "time_min": 60,
-     "active_min": 30,
-     "ingredients": [
-      {
-       "qty": "3-4 lb",
-       "item": "boneless pork chops",
-       "note": "cut into cubes"
-      },
-      {
-       "qty": "20-30",
-       "item": "roasted green chiles",
-       "note": "seeded, chopped or blended (at home)"
-      },
-      {
-       "qty": "2 x 15 oz cans",
-       "item": "crushed tomatoes"
-      },
-      {
-       "qty": "about 64 oz",
-       "item": "beef broth"
-      },
-      {
-       "qty": "2-4 cups",
-       "item": "water"
-      },
-      {
-       "qty": "1-1 1/2 cups",
-       "item": "flour (at home)"
-      },
-      {
-       "qty": "4-6 tbsp",
-       "item": "corn starch (at home)",
-       "note": "mixed into 1 cup cold water"
-      },
-      {
-       "qty": "4-6 tsp",
-       "item": "oregano"
-      },
-      {
-       "qty": "2-4 tbsp",
-       "item": "vegetable oil (at home)"
-      },
-      {
-       "qty": "4-6 tsp",
-       "item": "salt (at home)"
-      },
-      {
-       "qty": "2-4 tsp",
-       "item": "cumin, optional (at home)"
-      }
-     ],
-     "steps": [
-      "Cube the pork.",
-      "Warm the oil in a large (8 qt) pot over medium-low heat.",
-      "Brown the pork, sprinkling the flour over it as it browns, and stir.",
-      "Seed the chiles, then chop or blend them.",
-      "Once the pork and flour have browned, add the tomatoes, green chiles, beef broth, water, salt, oregano and optional cumin.",
-      "Simmer on low for 20-30 minutes, stirring occasionally.",
-      "Mix the corn starch into 1 cup cold water and stir it in to thicken to the consistency you like.",
-      "For spicier chile, add sauteed jalapenos."
-     ],
-     "notes": "Doubled from the family recipe card. Brandon already has the roasted green chiles, flour, corn starch, oil and cumin, so only the pork, tomatoes, broth and oregano are in the order."
-    },
-    {
-     "id": "breakfast-burritos",
-     "name": "Breakfast burritos",
-     "servings": 4,
-     "time_min": 30,
-     "active_min": 25,
-     "ingredients": [
-      {
-       "qty": "8",
-       "item": "eggs",
-       "note": "scrambled"
-      },
-      {
-       "qty": "12 oz",
-       "item": "breakfast sausage links",
-       "note": "crumbled and browned"
-      },
-      {
-       "qty": "4-6 slices",
-       "item": "bacon",
-       "note": "cooked and crumbled"
-      },
-      {
-       "qty": "about 3 cups",
-       "item": "shredded hash browns",
-       "note": "crisped in the pan"
-      },
-      {
-       "qty": "4-6",
-       "item": "burrito-size flour tortillas"
-      },
-      "Shredded cheddar, salsa and sour cream from the fridge"
-     ],
-     "steps": [
-      "Cook the bacon until crisp; set aside and crumble.",
-      "Brown the sausage in the same pan, breaking it up; set aside.",
-      "Crisp the hash browns in the bacon fat over medium-high heat, about 8-10 minutes.",
-      "Scramble the eggs in a separate pan.",
-      "Warm the tortillas, then fill with eggs, sausage, bacon, hash browns and cheese; add salsa and sour cream to taste.",
-      "Roll up and serve, or wrap extras in foil for later."
-     ],
-     "notes": "Brandon's Saturday add-on for breakfasts this week. Cheese, salsa and sour cream are already at home."
-    }
-   ],
-   "pantry": [
-    "teriyaki sauce",
-    "soy sauce",
-    "honey",
-    "garlic",
-    "penne",
-    "shredded cheddar",
-    "milk",
-    "eggs",
-    "butter",
-    "salt",
-    "pepper",
-    "parsley",
-    "flour",
-    "corn starch",
-    "vegetable oil",
-    "cumin"
-   ]
-  }
- ]
+  ]
 }
