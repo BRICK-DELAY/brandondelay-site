@@ -4,7 +4,7 @@
     {
       "id": "2026-11-08",
       "title": "Honey garlic carry-over week",
-      "notes": "Green chile leftovers cover the start of the week, then five fresh dinners. Honey garlic chicken thighs finally lands - it was pushed out of last week for the green chile. Office snack: another run at the peanut butter cracker packs that sold out last Saturday.",
+      "notes": "Sunday and Monday are green chile only if frozen portions are left from the Nov 1 double batch - swap for fresh dinners if not. Then five fresh dinners. Honey garlic chicken thighs finally lands - it was pushed out of last week for the green chile. Office snack: Wheat Thins Original (he grabbed the PB crackers himself); eggs and half-and-half restocked.",
       "order": {
         "date": "2026-11-08",
         "window": "5-8 pm",
@@ -118,11 +118,24 @@
             "note": "label: wheat flour, cane sugar, yeast, salt - no oats"
           },
           {
-            "name": "Keebler Toast & Peanut Butter sandwich crackers",
-            "qty": "8-pack",
+            "name": "Kroger cage free large white eggs",
+            "qty": "12 ct",
+            "price": 1.99,
+            "category": "Dairy & eggs"
+          },
+          {
+            "name": "Kroger half and half",
+            "qty": "1 qt",
             "price": 2.99,
+            "category": "Dairy & eggs",
+            "note": "coffee"
+          },
+          {
+            "name": "Wheat Thins Original crackers",
+            "qty": "8.5 oz",
+            "price": 4.99,
             "category": "Snacks",
-            "note": "office snack; sold out last week, retrying"
+            "note": "office snack"
           }
         ],
         "subtotal": null,
