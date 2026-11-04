@@ -8,95 +8,89 @@
    "order": {
     "date": "2026-11-08",
     "window": "5-8 pm",
-    "status": "planned",
+    "status": "in_cart",
     "store": "King Soopers via Instacart",
-    "notes": "Estimated item prices until the cart is built.",
+    "notes": "Cart built Wednesday Nov 4 with live Instacart prices. The chicken-and-biscuits recipe uses the frozen Heritage Farm chicken breasts from the Oct 31 order, so no chicken breasts in this cart. Estimated totals until the order is placed: items $63.23, plus about $5.06 service fee (8%), about $0.30 tax, $0.31 CO retail delivery fee, and a 10% tip of $6.32, with $0 Super saver delivery Sunday 5-8 pm - about $75.22 all-in.",
     "items": [
      {
-      "name": "Chicken thighs, boneless skinless",
-      "qty": "~2 lb",
-      "price": 8.0,
+      "name": "Heritage Farm boneless skinless chicken thighs",
+      "qty": "~2.84 lb pkg",
+      "price": 11.33,
       "category": "Meat & seafood",
       "for": [
        "honey-garlic-chicken-thighs"
-      ]
+      ],
+      "note": "$3.99/lb; extra freezes"
      },
      {
-      "name": "Green beans",
-      "qty": "~1 lb",
-      "price": 2.5,
+      "name": "Fresh bagged green beans",
+      "qty": "~1.07 lb",
+      "price": 2.13,
       "category": "Produce",
       "for": [
        "honey-garlic-chicken-thighs"
       ]
      },
      {
-      "name": "Beef stir-fry strips",
-      "qty": "~1 lb",
-      "price": 9.0,
+      "name": "Kroger beef shaved steak",
+      "qty": "14 oz",
+      "price": 7.99,
       "category": "Meat & seafood",
       "for": [
        "beef-and-broccoli-stir-fry"
-      ]
+      ],
+      "note": "cheaper than stir-fry strips, cooks even faster"
      },
      {
       "name": "Broccoli crown",
-      "qty": "~1 lb",
-      "price": 2.49,
+      "qty": "~0.95 lb",
+      "price": 2.46,
       "category": "Produce",
       "for": [
        "beef-and-broccoli-stir-fry"
       ]
      },
      {
-      "name": "Chicken breasts, boneless skinless",
-      "qty": "~1.25 lb",
-      "price": 4.0,
-      "category": "Meat & seafood",
-      "for": [
-       "chicken-and-bisquick-biscuits"
-      ]
-     },
-     {
-      "name": "Carrots",
-      "qty": "1 lb bag",
-      "price": 1.29,
+      "name": "Kroger cut and peeled baby carrots",
+      "qty": "16 oz",
+      "price": 1.69,
       "category": "Produce",
       "for": [
        "chicken-and-bisquick-biscuits"
       ]
      },
      {
-      "name": "Frozen corn",
-      "qty": "1 bag",
-      "price": 1.49,
+      "name": "Kroger frozen super sweet corn",
+      "qty": "12 oz",
+      "price": 1.39,
       "category": "Frozen",
       "for": [
        "chicken-and-bisquick-biscuits"
       ]
      },
      {
-      "name": "Kroger 80/20 ground beef",
-      "qty": "1 lb",
-      "price": 6.99,
+      "name": "Kroger 80/20 ground beef roll",
+      "qty": "3 lb",
+      "price": 18.99,
       "category": "Meat & seafood",
       "for": [
        "mini-bbq-meatloaves"
-      ]
+      ],
+      "note": "1 lb for the meatloaves, 2 lb to freeze"
      },
      {
-      "name": "Boneless pork chops",
-      "qty": "~1.25 lb",
-      "price": 6.25,
+      "name": "Kroger boneless pork loin chops",
+      "qty": "1.25 lb",
+      "price": 5.99,
       "category": "Meat & seafood",
       "for": [
        "parmesan-crusted-pork-chops"
       ]
      },
      {
-      "name": "Russet potatoes",
-      "qty": "5 lb bag",
-      "price": 3.99,
+      "name": "Russet potatoes bag",
+      "qty": "5 lb",
+      "price": 2.99,
       "category": "Produce",
       "for": [
        "mini-bbq-meatloaves",
@@ -104,23 +98,24 @@
       ]
      },
      {
-      "name": "Parmesan cheese, shredded",
+      "name": "Kroger parmesan shredded cheese",
       "qty": "6 oz",
-      "price": 3.79,
+      "price": 2.29,
       "category": "Dairy & eggs",
       "for": [
        "parmesan-crusted-pork-chops"
       ]
      },
      {
-      "name": "Plain panko breadcrumbs",
+      "name": "Kikkoman panko bread crumbs",
       "qty": "8 oz",
-      "price": 2.29,
+      "price": 2.99,
       "category": "Pantry",
       "for": [
        "mini-bbq-meatloaves",
        "parmesan-crusted-pork-chops"
-      ]
+      ],
+      "note": "label: wheat flour, cane sugar, yeast, salt - no oats"
      },
      {
       "name": "Keebler Toast & Peanut Butter sandwich crackers",
