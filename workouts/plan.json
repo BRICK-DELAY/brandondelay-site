@@ -4067,47 +4067,53 @@
           "id": "2026-10-19-lower-strength-plyos-qoxs",
           "date": "2026-10-19",
           "title": "Lower Strength + Plyos",
-          "reps": 424,
           "feedback": {
             "rating": "hard",
             "note": "Skipped goblet squat, heels elevated; not counted in reps."
-          }
+          },
+          "unreported": true
         },
         {
           "id": "2026-10-20-upper-push-conditioning-erwp",
           "date": "2026-10-20",
           "title": "Upper Push + Conditioning",
-          "reps": 177
+          "unreported": true
+        },
+        {
+          "id": "2026-10-21-balance-glute-med-f0ec",
+          "date": "2026-10-21",
+          "title": "Balance + Glute Med",
+          "unreported": true
         },
         {
           "id": "2026-10-22-lower-power-machines-upeb",
           "date": "2026-10-22",
           "title": "Lower Power + Machines",
-          "reps": 282
+          "unreported": true
         },
         {
           "id": "2026-10-23-upper-pull-calisthenics-vs0d",
           "date": "2026-10-23",
           "title": "Upper Pull + Calisthenics",
-          "reps": 129
+          "unreported": true
         },
         {
           "id": "2026-10-26-lower-strength-plyos-33zt",
           "date": "2026-10-26",
           "title": "Lower Strength + Plyos",
-          "reps": 0
+          "unreported": true
         },
         {
           "id": "2026-10-27-upper-push-conditioning-sdiq",
           "date": "2026-10-27",
           "title": "Upper Push + Conditioning",
-          "reps": 0
+          "unreported": true
         },
         {
           "id": "2026-10-28-balance-glute-med-u87q",
           "date": "2026-10-28",
           "title": "Balance + Glute Med",
-          "reps": 0
+          "unreported": true
         }
       ]
     },
