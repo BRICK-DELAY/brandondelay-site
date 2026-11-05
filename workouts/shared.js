@@ -101,7 +101,7 @@ window.Workouts = (function () {
       const h = person.history.find((x) => x.id === w.id);
       const entry = { id: w.id, date: w.completed, planned: w.date, title: w.title, reps: countReps(w), ...(w.feedback ? { feedback: w.feedback } : {}) };
       if (!h) person.history.push(entry);
-      else if (h.reps == null) Object.assign(h, { reps: entry.reps, planned: h.planned || w.date });
+      else if (h.reps == null && !h.unreported) Object.assign(h, { reps: entry.reps, planned: h.planned || w.date });
     });
     person.queue = person.queue.filter((w) => !drop.has(w));
   }
@@ -219,13 +219,14 @@ window.Workouts = (function () {
 
   // Every finished workout, oldest first: { id, date, planned, title, reps, feedback }.
   // `planned` is the day it was posted for (older entries: the date at the start of the id).
+  // `unreported` means the actual count was never reported: never fill it from planned targets.
   function finished(person) {
     const byId = new Map();
     (person.history || []).forEach((h) => { if (h.date) byId.set(h.id, { ...h }); });
     person.queue.forEach((w) => {
       if (!w.completed) return;
       const h = byId.get(w.id) || { id: w.id, date: w.completed, title: w.title };
-      if (h.reps == null) h.reps = countReps(w);
+      if (h.reps == null && !h.unreported) h.reps = countReps(w);
       if (!h.planned) h.planned = w.date;
       if (!h.feedback && w.feedback) h.feedback = w.feedback;
       byId.set(w.id, h);
@@ -236,11 +237,11 @@ window.Workouts = (function () {
 
   // Running totals: all time and per year.
   function totals(person) {
-    const all = { workouts: 0, reps: 0, since: null }, years = new Map();
+    const all = { workouts: 0, reps: 0, unreported: 0, since: null }, years = new Map();
     finished(person).forEach((h) => {
       const y = h.date.slice(0, 4);
-      if (!years.has(y)) years.set(y, { workouts: 0, reps: 0 });
-      [all, years.get(y)].forEach((t) => { t.workouts++; t.reps += h.reps || 0; });
+      if (!years.has(y)) years.set(y, { workouts: 0, reps: 0, unreported: 0 });
+      [all, years.get(y)].forEach((t) => { t.workouts++; t.reps += h.reps || 0; if (h.unreported) t.unreported++; });
       if (!all.since) all.since = h.date;
     });
     return { ...all, years };
