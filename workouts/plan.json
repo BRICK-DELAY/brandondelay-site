@@ -3171,7 +3171,11 @@
           ],
           "date": "2026-11-04",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-05",
+          "feedback": {
+            "rating": "right",
+            "note": "I did not have time for the barbell hip thrusts today, but this was a good length workout"
+          }
         },
         {
           "id": "2026-11-04-shoulders-and-abs-7bsg",
@@ -3449,6 +3453,17 @@
           "feedback": {
             "rating": "right",
             "note": "I did 12 reps of close grip bench press only using the 45 lb barbell. I used 25 lbs for the overhead tricep extension. The 30 lb dumbbells were good for the dumbbell bench."
+          }
+        },
+        {
+          "id": "2026-11-04-legs-yice",
+          "date": "2026-11-05",
+          "planned": "2026-11-04",
+          "title": "Legs",
+          "reps": 296,
+          "feedback": {
+            "rating": "right",
+            "note": "I did not have time for the barbell hip thrusts today, but this was a good length workout"
           }
         }
       ]
