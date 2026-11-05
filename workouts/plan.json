@@ -5085,6 +5085,82 @@
           }
         },
         {
+          "id": "2026-11-05-legs-a-strength-p4r8",
+          "title": "Legs A: strength",
+          "date": "2026-11-04",
+          "duration_min": 45,
+          "generated_by": "Instinct",
+          "completed": null,
+          "notes": "Strength day, second variant - same big lifts with new set/rep schemes. Working weights below; stop each set with 2-3 clean reps left.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings, front and side",
+                  "detail": "1 x 8 / side - tall, easy swings",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                },
+                {
+                  "exercise": "Unweighted hip hinges",
+                  "detail": "1 x 10 - push hips back, flat back",
+                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+                },
+                {
+                  "exercise": "Bodyweight squat",
+                  "detail": "1 x 10 - full comfortable depth",
+                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell back squat",
+                  "detail": "5 x 5 - 155 lb. Warm up: empty bar, 95, 135, then working sets. Rest 2-3 min.",
+                  "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
+                },
+                {
+                  "exercise": "Barbell hip thrust",
+                  "detail": "4 x 6 - 205 lb. Pause and squeeze at the top. Rest 2 min.",
+                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+                },
+                {
+                  "exercise": "Dumbbell Romanian deadlift",
+                  "detail": "3 x 12 - 40 lb dumbbells (held here on purpose for the shoulder - extra reps instead of extra weight). Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+                },
+                {
+                  "exercise": "Alternating dumbbell reverse lunge",
+                  "detail": "3 x 10 / leg - 25 lb dumbbells. Step back soft, drive up tall. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
+                },
+                {
+                  "exercise": "Band glute bridge",
+                  "detail": "3 x 20 - band above knees, squeeze hard at the top, slow down. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "2026-11-04-hyrox-style-pairs-5x8p",
           "title": "HYROX-style: pairs",
           "duration_min": 35,
@@ -5206,85 +5282,9 @@
               ]
             }
           ],
-          "date": "2026-11-04",
+          "date": "2026-11-05",
           "generated_by": "Instinct",
           "completed": null
-        },
-        {
-          "id": "2026-11-05-legs-a-strength-p4r8",
-          "title": "Legs A: strength",
-          "date": "2026-11-05",
-          "duration_min": 45,
-          "generated_by": "Instinct",
-          "completed": null,
-          "notes": "Strength day, second variant - same big lifts with new set/rep schemes. Working weights below; stop each set with 2-3 clean reps left.",
-          "sections": [
-            {
-              "name": "Warm-up",
-              "items": [
-                {
-                  "exercise": "Leg swings, front and side",
-                  "detail": "1 x 8 / side - tall, easy swings",
-                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
-                },
-                {
-                  "exercise": "Unweighted hip hinges",
-                  "detail": "1 x 10 - push hips back, flat back",
-                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
-                },
-                {
-                  "exercise": "Bodyweight squat",
-                  "detail": "1 x 10 - full comfortable depth",
-                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
-                }
-              ]
-            },
-            {
-              "name": "Main",
-              "items": [
-                {
-                  "exercise": "Barbell back squat",
-                  "detail": "5 x 5 - 155 lb. Warm up: empty bar, 95, 135, then working sets. Rest 2-3 min.",
-                  "url": "https://www.youtube.com/watch?v=SbgHegC6lEs"
-                },
-                {
-                  "exercise": "Barbell hip thrust",
-                  "detail": "4 x 6 - 205 lb. Pause and squeeze at the top. Rest 2 min.",
-                  "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
-                },
-                {
-                  "exercise": "Dumbbell Romanian deadlift",
-                  "detail": "3 x 12 - 40 lb dumbbells (held here on purpose for the shoulder - extra reps instead of extra weight). Rest 90 sec.",
-                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
-                },
-                {
-                  "exercise": "Alternating dumbbell reverse lunge",
-                  "detail": "3 x 10 / leg - 25 lb dumbbells. Step back soft, drive up tall. Rest 90 sec.",
-                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
-                },
-                {
-                  "exercise": "Band glute bridge",
-                  "detail": "3 x 20 - band above knees, squeeze hard at the top, slow down. Rest 45 sec.",
-                  "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
-                }
-              ]
-            },
-            {
-              "name": "Cooldown",
-              "items": [
-                {
-                  "exercise": "Figure-4 glute stretch",
-                  "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
-                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
-                },
-                {
-                  "exercise": "Couch stretch",
-                  "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
-                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
-                }
-              ]
-            }
-          ]
         }
       ],
       "history": [
