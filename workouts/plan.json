@@ -3375,6 +3375,86 @@
           "date": "2026-11-04",
           "generated_by": "Instinct",
           "completed": null
+        },
+        {
+          "id": "2026-11-06-back-and-bis-q8w2",
+          "title": "Back and bis",
+          "date": "2026-11-06",
+          "generated_by": "Instinct",
+          "completed": null,
+          "notes": "About 35-40 minutes. Weights are set from your recent sessions - adjust a step if anything feels off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "detail": "1 x 6 / side - slow and controlled",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Shoulder-blade squeezes",
+                  "detail": "1 x 10 - hold 2 sec without shrugging",
+                  "url": "https://www.youtube.com/watch?v=p1UZuTf8ZEo"
+                },
+                {
+                  "exercise": "Light chest-supported row groove",
+                  "detail": "1 x 10 / side - very light dumbbell, rehearse the pull",
+                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Chest-supported dumbbell row",
+                  "detail": "3 x 10 / side - 25 lb dumbbells, chest on the incline bench, pull to the hip, squeeze. Rest 75 sec.",
+                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ"
+                },
+                {
+                  "exercise": "Seated cable row with rope",
+                  "detail": "3 x 12 - 40 lb stack, tall chest, pull the rope to the ribs, squeeze shoulder blades. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=7o2oolbmzeI"
+                },
+                {
+                  "exercise": "Cable face pull",
+                  "detail": "3 x 15 - 20 lb stack, pull to the forehead, elbows high. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                },
+                {
+                  "exercise": "Concentration curl",
+                  "detail": "3 x 12 / side - 15 lb, elbow braced on the inner thigh, slow lower. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=Jvj2wV0vOYU"
+                },
+                {
+                  "exercise": "Standing single-arm cable curl",
+                  "detail": "3 x 10 / side - 15 lb stack, lower pulley, elbow pinned at your side. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=njLoCel5lUI"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Supported lat stretch",
+                  "detail": "2 x 20-30 sec / side - hands on the bench, sink the hips back",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                },
+                {
+                  "exercise": "Gentle forearm and biceps stretch",
+                  "detail": "2 x 20 sec / side - light pressure only",
+                  "url": "https://www.youtube.com/watch?v=0Ejs9YRNgFM"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
