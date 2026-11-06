@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "weeks": [
     {
       "id": "2026-11-08",
@@ -8,9 +8,9 @@
       "order": {
         "date": "2026-11-08",
         "window": "5-8 pm",
-        "status": "in_cart",
+        "status": "ordered",
         "store": "King Soopers via Instacart",
-        "notes": "Prices re-verified at checkout Nov 5; weighted items re-estimated by Instacart.",
+        "notes": "Ordered Fri Nov 6 (order 21615532307498144), delivery Sun Nov 8 5-8pm. Prices verified at checkout; weighted items re-estimated by Instacart.",
         "items": [
           {
             "name": "Heritage Farm boneless skinless chicken thighs",
@@ -143,13 +143,27 @@
             "price": 2.49,
             "category": "Pantry",
             "note": "cheapest 16oz jar, at his ask Nov 5"
+          },
+          {
+            "name": "King Soopers Vitamin D whole milk",
+            "qty": "0.5 gal",
+            "price": 2.99,
+            "category": "Dairy & eggs",
+            "note": "added at his ask Nov 6"
+          },
+          {
+            "name": "Kroger 1883 vanilla ice cream (Vividly Vanilla)",
+            "qty": "48 oz",
+            "price": 3.99,
+            "category": "Frozen",
+            "note": "same tub as Nov 1 order; added at his ask Nov 6"
           }
         ],
-        "subtotal": null,
-        "fees": null,
-        "tax": null,
-        "tip": null,
-        "total": null
+        "subtotal": 79.77,
+        "fees": 6.25,
+        "tax": 0.57,
+        "tip": 7.98,
+        "total": 94.57
       },
       "days": [
         {
