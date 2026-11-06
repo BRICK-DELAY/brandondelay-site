@@ -1082,7 +1082,7 @@
           "title": "Legs",
           "date": "2026-11-05",
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-05",
           "notes": "Recovery note: keep this submaximal - stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
           "sections": [
             {
@@ -1155,7 +1155,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "feedback": {
+            "rating": "right",
+            "note": "I did 110 for the cable pull throughs. Our pulley system is 2:1"
+          }
         }
       ],
       "history": [
@@ -1259,6 +1263,17 @@
           "reps": 232,
           "feedback": {
             "rating": "right"
+          }
+        },
+        {
+          "id": "2026-11-05-legs-k7d2",
+          "date": "2026-11-05",
+          "planned": "2026-11-05",
+          "title": "Legs",
+          "reps": 321,
+          "feedback": {
+            "rating": "right",
+            "note": "I did 110 for the cable pull throughs. Our pulley system is 2:1"
           }
         }
       ]
