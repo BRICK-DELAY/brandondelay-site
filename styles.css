@@ -82,6 +82,7 @@ button { font: inherit; color: inherit; }
 .nav-ig span { display: none; } /* icon only in the top bar; handle shows in the phone menu */
 @media (max-width: 820px) { .nav-ig span { display: inline; text-transform: none; letter-spacing: .02em; } .nav-ig { justify-content: flex-start !important; gap: 10px !important; } }
 .menu-toggle { display: none; }
+.nav-home { display: none !important; }
 
 @media (max-width: 820px) {
   :root { --topbar-h: 62px; }
@@ -104,6 +105,7 @@ button { font: inherit; color: inherit; }
   .menu-open .nav { opacity: 1; visibility: visible; }
   /* A blur on the bar would make the fixed menu size itself to the bar, not the screen. */
   .menu-open .topbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-home:not([hidden]) { display: inline-flex !important; }
   .nav-link, .nav-year {
     width: 100%; justify-content: space-between;
     padding: 16px 0; font-size: 15px; border-bottom: 1px solid var(--line); border-radius: 0;

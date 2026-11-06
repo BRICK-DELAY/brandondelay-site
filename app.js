@@ -86,7 +86,8 @@
     document.getElementById("brand").textContent = name;
 
     const chev = '<svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
-    let html = "";
+    // "Home" heads the phone menu on every page but the homepage (the name links home on computers).
+    let html = `<a class="nav-link nav-home" href="#/" data-route="home" hidden>Home</a>`;
     for (const y of years) {
       html += `<div class="nav-item" data-year="${y.year}">
         <button class="nav-year" aria-expanded="false" aria-haspopup="true">${y.year}${chev}</button>
@@ -147,6 +148,8 @@
 
   function setActive(route, param) {
     nav.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
+    const home = nav.querySelector(".nav-home");
+    if (home) home.hidden = !route;
     if (route === "about") nav.querySelector('[data-route="about"]')?.classList.add("active");
     let y = null;
     if (route === "year") y = param;
