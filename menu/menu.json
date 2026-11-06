@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "weeks": [
     {
       "id": "2026-11-08",
@@ -10,12 +10,12 @@
         "window": "5-8 pm",
         "status": "in_cart",
         "store": "King Soopers via Instacart",
-        "notes": "Cart built Wednesday Nov 4 with live Instacart prices. The chicken-and-biscuits recipe uses the frozen Heritage Farm chicken breasts from the Oct 31 order, so no chicken breasts in this cart. Estimated totals until the order is placed: items $63.23, plus about $5.06 service fee (8%), about $0.30 tax, $0.31 CO retail delivery fee, and a 10% tip of $6.32, with $0 Super saver delivery Sunday 5-8 pm - about $75.22 all-in.",
+        "notes": "Prices re-verified at checkout Nov 5; weighted items re-estimated by Instacart.",
         "items": [
           {
             "name": "Heritage Farm boneless skinless chicken thighs",
-            "qty": "~2.84 lb pkg",
-            "price": 11.33,
+            "qty": "~2.87 lb",
+            "price": 11.43,
             "category": "Meat & seafood",
             "for": [
               "honey-garlic-chicken-thighs"
@@ -24,8 +24,8 @@
           },
           {
             "name": "Fresh bagged green beans",
-            "qty": "~1.07 lb",
-            "price": 2.13,
+            "qty": "~1.08 lb",
+            "price": 2.15,
             "category": "Produce",
             "for": [
               "honey-garlic-chicken-thighs"
@@ -43,8 +43,8 @@
           },
           {
             "name": "Broccoli crown",
-            "qty": "~0.95 lb",
-            "price": 2.46,
+            "qty": "~0.94 lb",
+            "price": 2.43,
             "category": "Produce",
             "for": [
               "beef-and-broccoli-stir-fry"
@@ -136,6 +136,13 @@
             "price": 4.99,
             "category": "Snacks",
             "note": "office snack"
+          },
+          {
+            "name": "Kroger creamy peanut butter",
+            "qty": "16 oz",
+            "price": 2.49,
+            "category": "Pantry",
+            "note": "cheapest 16oz jar, at his ask Nov 5"
           }
         ],
         "subtotal": null,
