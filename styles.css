@@ -102,7 +102,8 @@ button { font: inherit; color: inherit; }
     opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s;
   }
   .menu-open .nav { opacity: 1; visibility: visible; }
-  .menu-open .topbar { background: var(--bg); }
+  /* A blur on the bar would make the fixed menu size itself to the bar, not the screen. */
+  .menu-open .topbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .nav-link, .nav-year {
     width: 100%; justify-content: space-between;
     padding: 16px 0; font-size: 15px; border-bottom: 1px solid var(--line); border-radius: 0;
