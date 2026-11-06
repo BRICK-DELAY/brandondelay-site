@@ -4225,6 +4225,99 @@
           "date": "2026-10-28",
           "title": "Balance + Glute Med",
           "unreported": true
+        },
+        {
+          "id": "2026-11-05-lower-power-machines-w9k3",
+          "date": "2026-11-05",
+          "planned": "2026-11-05",
+          "title": "Lower Power + Machines",
+          "reps": 234,
+          "unreported": true,
+          "actuals": [
+            {
+              "exercise": "Bike + band TKE",
+              "actualReps": [
+                15,
+                15
+              ],
+              "uncertainty": "Bike completion/duration unreported; combined label does not prove bike performed"
+            },
+            {
+              "exercise": "Broad jumps",
+              "actualReps": [
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            {
+              "exercise": "Front squat",
+              "actualReps": [
+                8,
+                8,
+                8
+              ]
+            },
+            {
+              "exercise": "Hip thrust",
+              "actualReps": [
+                12,
+                12,
+                12
+              ]
+            },
+            {
+              "exercise": "Hamstring curl",
+              "actualReps": [
+                12,
+                10,
+                10
+              ]
+            },
+            {
+              "exercise": "Copenhagen plank",
+              "actualReps": null
+            },
+            {
+              "exercise": "Hip abduction",
+              "actualReps": [
+                12,
+                12,
+                12
+              ],
+              "uncertainty": "Per-side interpretation unreported"
+            },
+            {
+              "exercise": "Ab wheel or slow plank",
+              "actualReps": null,
+              "uncertainty": "Alternative unreported"
+            },
+            {
+              "exercise": "Side plank + leg lift",
+              "actualReps": [
+                8,
+                8
+              ],
+              "uncertainty": "Per-side interpretation unreported"
+            },
+            {
+              "exercise": "Bilateral leg press or goblet squat",
+              "actualReps": [
+                10,
+                10
+              ],
+              "uncertainty": "Third set and actual alternative unreported"
+            },
+            {
+              "exercise": "Leg extension, bilateral",
+              "actualReps": [
+                12,
+                12
+              ]
+            }
+          ],
+          "source": "Jose via his Instinct, peermsg-6DBBQDGGXRTTT0H9MH0BTAN10D; literal logged reps only - no target fill, no side multiplication, alternatives/unknowns left unreported"
         }
       ]
     },
