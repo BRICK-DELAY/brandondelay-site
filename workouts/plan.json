@@ -5331,7 +5331,11 @@
           ],
           "date": "2026-11-04",
           "generated_by": "Instinct",
-          "completed": null
+          "completed": "2026-11-05",
+          "feedback": {
+            "rating": "right",
+            "note": "Good challenge with the 40s overall workout was a bit short."
+          }
         },
         {
           "id": "2026-11-05-legs-a-strength-p4r8",
@@ -5504,6 +5508,17 @@
           "feedback": {
             "rating": "right",
             "note": "Good cause I was short on time. I also did some deep core and copenhagens"
+          }
+        },
+        {
+          "id": "2026-11-04-hyrox-style-pairs-5x8p",
+          "date": "2026-11-05",
+          "planned": "2026-11-04",
+          "title": "HYROX-style: pairs",
+          "reps": 263,
+          "feedback": {
+            "rating": "right",
+            "note": "Good challenge with the 40s overall workout was a bit short."
           }
         }
       ],
