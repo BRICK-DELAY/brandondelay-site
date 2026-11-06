@@ -5567,6 +5567,102 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-06-arms-and-abs-z6t3",
+          "title": "Arms and abs",
+          "date": "2026-11-06",
+          "duration_min": 50,
+          "generated_by": "Instinct",
+          "completed": null,
+          "notes": "Longer arms day as requested. Barbell bench is back since it felt good on the shoulder - stop any set if the shoulder complains and tell Instinct.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "detail": "1 x 6 / side - slow and long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                },
+                {
+                  "exercise": "Light barbell bench groove",
+                  "detail": "1 x 10 - empty bar, rehearse the press path",
+                  "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Barbell bench press",
+                  "detail": "4 x 8 - 90 lb (your 90 x 10 felt good - 4x8 keeps 2-3 clean reps in reserve). Rest 2 min.",
+                  "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+                },
+                {
+                  "exercise": "Incline dumbbell curl",
+                  "detail": "3 x 10 / side - 20 lb dumbbells, full stretch at the bottom, no swing. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+                },
+                {
+                  "exercise": "Dumbbell hammer curl",
+                  "detail": "3 x 12 - 20 lb dumbbells, elbows pinned. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
+                },
+                {
+                  "exercise": "Band triceps pushdown",
+                  "detail": "4 x 12-15 - band anchored low-to-mid, elbows glued, full lockout squeeze. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=qjPN6ElNqpc"
+                },
+                {
+                  "exercise": "Dumbbell triceps kickback",
+                  "detail": "3 x 12 / side - 15 lb, upper arm parallel to the floor, extend fully. Rest 45 sec.",
+                  "url": "https://www.youtube.com/watch?v=6SS6K3lAwZ8"
+                }
+              ]
+            },
+            {
+              "name": "Abs (optional - light)",
+              "items": [
+                {
+                  "exercise": "Forearm plank",
+                  "detail": "2 x 45 sec - ribs down, breathe steady",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                },
+                {
+                  "exercise": "Dead bug",
+                  "detail": "2 x 8 / side - slow, low back pressed down",
+                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Cross-body shoulder stretch",
+                  "detail": "2 x 30 sec / side - gentle, no forcing",
+                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+                },
+                {
+                  "exercise": "Gentle triceps stretch",
+                  "detail": "2 x 30 sec / side - light pressure only",
+                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
