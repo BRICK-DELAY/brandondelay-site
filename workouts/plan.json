@@ -1160,6 +1160,81 @@
             "rating": "right",
             "note": "I did 110 for the cable pull throughs. Our pulley system is 2:1"
           }
+        },
+        {
+          "id": "2026-11-06-shoulders-and-abs-m4x7",
+          "title": "Shoulders and abs",
+          "date": "2026-11-06",
+          "generated_by": "Instinct",
+          "completed": null,
+          "notes": "Recovery note: keep this submaximal - stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+                },
+                {
+                  "exercise": "Standing thoracic rotations",
+                  "detail": "1 x 6 / side - slow, reach long",
+                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Seated dumbbell overhead press",
+                  "detail": "4 x 6-8 - 45 lb dumbbells, bench upright, ribs down, press to just shy of lockout. Rest 2 min.",
+                  "url": "https://www.youtube.com/watch?v=b5JzUH8gsOg"
+                },
+                {
+                  "exercise": "Single-arm cable lateral raise",
+                  "detail": "3 x 12 / side - 10-15 lb stack, stand side-on to the pulley, lead with the elbow. Rest 60 sec after both sides.",
+                  "url": "https://www.youtube.com/watch?v=RzS8TRa09Yg"
+                },
+                {
+                  "exercise": "Cable reverse fly",
+                  "detail": "3 x 12-15 - 20-30 lb stack, cables crossed or straight, wide arc, squeeze the rear delts. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=kDhyOrL_1io"
+                },
+                {
+                  "exercise": "Cable face pull",
+                  "detail": "3 x 15 - moderate stack, pull to the forehead, elbows high, pause. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+                },
+                {
+                  "exercise": "Weighted forearm plank",
+                  "detail": "3 x 40 sec - 25 lb plate on the upper back, ribs down, steady breathing. Rest 60 sec.",
+                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+                }
+              ]
+            },
+            {
+              "name": "Ski block",
+              "items": [
+                {
+                  "exercise": "Pogo hops",
+                  "detail": "2 x 15 - stiff ankles, quiet and springy, stop well fresh",
+                  "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4"
+                },
+                {
+                  "exercise": "Lateral lunge hold",
+                  "detail": "3 x 20 sec / side - sink into the side lunge and hold, chest tall",
+                  "url": "https://www.youtube.com/watch?v=gwWv7aPcD88"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
