@@ -5516,7 +5516,7 @@
           "date": "2026-11-05",
           "duration_min": 45,
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-06",
           "notes": "Strength day, second variant - same big lifts with new set/rep schemes. Working weights below; stop each set with 2-3 clean reps left.",
           "sections": [
             {
@@ -5584,7 +5584,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "feedback": {
+            "rating": "easy",
+            "note": "I did 155 for 2 sets and then 165 for 3 sets of back squat. I did 10 reps for hip thrusts. 45s for RDLs. Overall weights slightly too easy"
+          }
         },
         {
           "id": "2026-11-06-arms-and-abs-z6t3",
@@ -5788,6 +5792,17 @@
           "feedback": {
             "rating": "right",
             "note": "Good challenge with the 40s overall workout was a bit short."
+          }
+        },
+        {
+          "id": "2026-11-05-legs-a-strength-p4r8",
+          "date": "2026-11-06",
+          "planned": "2026-11-05",
+          "title": "Legs A: strength",
+          "reps": 241,
+          "feedback": {
+            "rating": "easy",
+            "note": "I did 155 for 2 sets and then 165 for 3 sets of back squat. I did 10 reps for hip thrusts. 45s for RDLs. Overall weights slightly too easy"
           }
         }
       ],
