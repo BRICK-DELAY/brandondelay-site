@@ -3542,6 +3542,85 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-07-legs-r3f9",
+     "title": "Legs",
+     "date": "2026-11-07",
+     "generated_by": "Instinct",
+     "completed": null,
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "90/90 hip stretch",
+         "detail": "1 x 30 sec / side, gentle breathing into the stretch",
+         "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+        },
+        {
+         "exercise": "Light goblet squat groove",
+         "detail": "1 x 10 - 15 lb dumbbell, sit deep, knees out",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        },
+        {
+         "exercise": "Floor glute bridge",
+         "detail": "1 x 15 - bodyweight, pause and squeeze at the top",
+         "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Barbell hip thrust, shoulders on bench",
+         "detail": "1 x 10 at 135 lb, then 2 x 8 at 155 lb - full pause at the top of every rep. Rest 2 min between sets.",
+         "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+        },
+        {
+         "exercise": "Barbell Romanian deadlift",
+         "detail": "3 x 10 - 65 lb (45 lb bar + a 10 lb plate per side), soft knees, hinge to mid-shin, flat back. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=u87dwyD3EL0"
+        },
+        {
+         "exercise": "Goblet squat",
+         "detail": "3 x 12 - 40 lb dumbbell, elbows inside knees, stand tall. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        },
+        {
+         "exercise": "Alternating dumbbell lunge",
+         "detail": "3 x 10 / leg - 20 lb dumbbells, long stride, back knee hovers. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
+        },
+        {
+         "exercise": "Standing cable hip abduction",
+         "detail": "3 x 15 / side - 15 lb stack, tall posture, controlled return. Rest 60 sec after both sides.",
+         "url": "https://www.youtube.com/watch?v=bGlm-qTnfTI"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        },
+        {
+         "exercise": "90/90 hip stretch",
+         "detail": "1 x 30 sec / side, easy",
+         "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
