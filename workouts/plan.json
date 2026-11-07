@@ -1235,6 +1235,86 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-07-back-and-bis-w5k8",
+     "title": "Back and bis",
+     "date": "2026-11-07",
+     "generated_by": "Instinct",
+     "completed": null,
+     "notes": "Recovery note: keep this submaximal - stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Arm circles and shoulder rolls",
+         "detail": "45 sec total, small pain-free circles both directions",
+         "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+        },
+        {
+         "exercise": "Scap push-ups",
+         "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+         "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+        },
+        {
+         "exercise": "Light one-arm row groove",
+         "detail": "1 x 12 / side - 15 lb dumbbell, slow, feel the shoulder blade move",
+         "url": "https://www.youtube.com/watch?v=epSR-ma7BsY"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "One-arm dumbbell row, hand on bench",
+         "detail": "4 x 8-10 / side - 60 lb dumbbell, full stretch at the bottom, elbow to hip. Rest 90 sec after both sides.",
+         "url": "https://www.youtube.com/watch?v=epSR-ma7BsY"
+        },
+        {
+         "exercise": "Straight-arm pulldown, straight bar",
+         "detail": "3 x 12-15 - 50 lb stack, arms stay straight, pull the bar to your thighs, squeeze lats. Rest 75 sec.",
+         "url": "https://www.youtube.com/watch?v=EurcOa-r9r4"
+        },
+        {
+         "exercise": "Seated cable row",
+         "detail": "3 x 12 - 90 lb stack, tall chest, pull to the ribs, pause. Rest 75 sec.",
+         "url": "https://www.youtube.com/watch?v=7o2oolbmzeI"
+        },
+        {
+         "exercise": "Cable reverse fly",
+         "detail": "3 x 12-15 - 20 lb stack, light and strict, lead with the elbows. Rest 60 sec.",
+         "url": "https://www.youtube.com/watch?v=kDhyOrL_1io"
+        },
+        {
+         "exercise": "Seated incline dumbbell curl",
+         "detail": "3 x 10 - 25 lb dumbbells, bench one notch up, full stretch at the bottom. Rest 75 sec.",
+         "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+        },
+        {
+         "exercise": "Rope hammer curl",
+         "detail": "3 x 12 - 40 lb stack, elbows pinned, squeeze at the top. Rest 60 sec.",
+         "url": "https://www.youtube.com/watch?v=1Quc_tOv97I"
+        }
+       ]
+      },
+      {
+       "name": "Ski block",
+       "items": [
+        {
+         "exercise": "Low box jump, step down between reps",
+         "detail": "2 x 5 - quiet landings, stick each one, step down (no rebound jumps)",
+         "url": "https://www.youtube.com/watch?v=G-bxQY57mKc"
+        },
+        {
+         "exercise": "Tibialis raise, back against wall",
+         "detail": "3 x 15 - slow up, slow down",
+         "url": "https://www.youtube.com/watch?v=RXC7tE6IQcc"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
