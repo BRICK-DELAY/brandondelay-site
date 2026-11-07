@@ -5904,6 +5904,87 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-07-legs-b-circuit-q7m2",
+     "title": "Legs B: circuit",
+     "date": "2026-11-07",
+     "generated_by": "Instinct",
+     "completed": null,
+     "duration_min": 30,
+     "notes": "3 rounds - 40 sec work / 20 sec rest at each station, move straight down the list. Optional easy 10-15 min run after if legs feel good.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Light goblet squat groove",
+         "detail": "1 x 10 - 20 lb dumbbell, easy depth",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        },
+        {
+         "exercise": "Alternating reverse lunge, bodyweight",
+         "detail": "1 x 8 / side, slow and controlled",
+         "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
+        },
+        {
+         "exercise": "Floor glute bridge",
+         "detail": "1 x 15 - bodyweight, squeeze at the top",
+         "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+        }
+       ]
+      },
+      {
+       "name": "Circuit",
+       "items": [
+        {
+         "exercise": "Station 1: goblet squat",
+         "detail": "40 lb dumbbell - smooth continuous reps for the 40 sec",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        },
+        {
+         "exercise": "Station 2: step-up to knee drive",
+         "detail": "25 lb dumbbells - one side per interval, swap next round",
+         "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+        },
+        {
+         "exercise": "Station 3: dumbbell Romanian deadlift",
+         "detail": "40 lb dumbbells - flat back, hinge to mid-shin",
+         "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
+        },
+        {
+         "exercise": "Station 4: banded glute bridge",
+         "detail": "band above knees + 40 lb dumbbell on hips - pause each rep",
+         "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
+        },
+        {
+         "exercise": "Station 5: band lateral walk",
+         "detail": "band above knees - half-squat, stay low, 2 steps each way",
+         "url": "https://www.youtube.com/watch?v=y_bqFDQZSHQ"
+        },
+        {
+         "exercise": "Station 6: squat jump",
+         "detail": "bodyweight - soft quiet landings, reset each rep",
+         "url": "https://www.youtube.com/watch?v=A-cFYWvaHr0"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
