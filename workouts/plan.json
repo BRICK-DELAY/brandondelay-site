@@ -1239,7 +1239,7 @@
     {
      "id": "2026-11-07-bike-ride-p6w3",
      "title": "Bike ride",
-     "notes": "50.2 miles, 3h54 moving (5h03 out the door), 12.9 mph average - recorded on Strava.",
+     "notes": "50.2 miles, 3h54 moving (5h03 out the door), 12.9 mph average - recorded on Strava. 1,000 equivalent reps credited for the effort - leaderboard convention for a long ride, not counted repetitions.",
      "sections": [
       {
        "name": "Ride",
@@ -1247,7 +1247,9 @@
         {
          "exercise": "Bike ride",
          "distance": "50.2 mi",
-         "detail": "50.2 mi"
+         "detail": "50.2 mi",
+         "sets": 1,
+         "reps": "1000"
         }
        ]
       }
