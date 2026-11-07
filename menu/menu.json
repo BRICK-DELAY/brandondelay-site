@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "weeks": [
     {
       "id": "2026-11-08",
@@ -10,7 +10,7 @@
         "window": "5-8 pm",
         "status": "ordered",
         "store": "King Soopers via Instacart",
-        "notes": "Ordered Fri Nov 6 (order 21615532307498144), delivery Sun Nov 8 5-8pm. Prices verified at checkout; weighted items re-estimated by Instacart.",
+        "notes": "Ordered Fri Nov 6 (order 21615532307498144), delivery Sun Nov 8 5-8pm. Mezzetta Hot Chili Peppers added Sat Nov 7 at his ask; totals re-verified on the order page after the add. Weighted items re-estimated by Instacart.",
         "items": [
           {
             "name": "Heritage Farm boneless skinless chicken thighs",
@@ -157,13 +157,20 @@
             "price": 3.99,
             "category": "Frozen",
             "note": "same tub as Nov 1 order; added at his ask Nov 6"
+          },
+          {
+            "name": "Mezzetta Hot Chili Peppers",
+            "qty": "16 oz",
+            "price": 3.99,
+            "category": "Condiments & sauces",
+            "note": "whole yellow chilis; added at his ask Nov 7; label checked, no oats"
           }
         ],
-        "subtotal": 79.77,
-        "fees": 6.25,
-        "tax": 0.57,
-        "tip": 7.98,
-        "total": 94.57
+        "subtotal": 83.76,
+        "fees": 6.57,
+        "tax": 0.6,
+        "tip": 8.38,
+        "total": 99.31
       },
       "days": [
         {
