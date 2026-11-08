@@ -156,6 +156,17 @@
     .keypanel input { width: 100%; padding: 12px 14px; margin: 8px 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
     .keypanel button { padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #1a1408; font: inherit; font-weight: 700; cursor: pointer; }
     .err { color: #e57a6e; font-size: 14px; margin-top: 10px; }
+    .selflog { margin-top: 28px; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; background: var(--bg-raised); }
+    .selflog summary { cursor: pointer; font-weight: 600; color: var(--accent); font-size: 15px; }
+    .selflog summary::marker { color: var(--muted); }
+    .sl-label { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+    .selflog textarea, .selflog input[type="text"] { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: 15px/1.4 var(--sans); }
+    .selflog textarea { min-height: 64px; resize: vertical; }
+    .selflog textarea::placeholder, .selflog input::placeholder { color: #77736c; }
+    .sl-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .sl-chip { border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; padding: 6px 14px; font: 14px var(--sans); cursor: pointer; }
+    .sl-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #17181a; font-weight: 600; }
+    .selflog .complete { margin-top: 16px; width: 100%; }
   </style>
 </head>
 <body>
@@ -166,7 +177,7 @@
   </main>
 
   <script src="/counter.js?v=2"></script>
-  <script src="shared.js?v=14"></script>
+  <script src="shared.js?v=15"></script>
   <script>
     // Each person's oldest unfinished workout, from workouts/plan.json (see FORMAT.md).
     // Exercise ticks are remembered on this device; "Mark workout complete" saves to
@@ -289,6 +300,55 @@
           if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveCompleted(id, done, feedback), e.message); }
           else document.getElementById("keyslot").innerHTML = `<div class="err">${esc(e.message)}</div>`;
         }
+      }
+
+      // ---- Isabelle's self-log: record a workout she did on her own, marking the day done.
+      const SL_PARTS = ["Legs", "Glutes", "Back", "Chest", "Shoulders", "Arms", "Core", "Cardio / run"];
+      function selfLogHTML() {
+        return `<details class="selflog" id="selflog">
+          <summary>Did your own workout instead? Log it here</summary>
+          <p class="sec-note" style="margin-top:10px">This marks today done. Instinct reads what you write when planning your next workouts and spotting anything you're missing.</p>
+          <label class="sl-label" for="sl-what">What did you do?</label>
+          <textarea id="sl-what" maxlength="500" placeholder="e.g. 3 mile trail run, or a full body lift at the gym"></textarea>
+          <p class="sl-label">Body parts you hit</p>
+          <div class="sl-chips">${SL_PARTS.map((p) => `<button type="button" class="sl-chip" data-p="${esc(p)}" aria-pressed="false">${esc(p)}</button>`).join("")}</div>
+          <label class="sl-label" for="sl-loads">Weights on the main lifts (optional)</label>
+          <input type="text" id="sl-loads" maxlength="300" placeholder="e.g. squat 165 x 5, bench 90 x 10">
+          <button type="button" class="complete" id="sl-save">Log it and mark today done</button>
+          <div id="sl-msg"></div>
+        </details>`;
+      }
+      async function saveSelfLog(what, parts, loads) {
+        const btn = document.getElementById("sl-save");
+        const key = W.getKey();
+        if (!key) return askKey(() => saveSelfLog(what, parts, loads));
+        if (btn) btn.disabled = true;
+        try {
+          const out = await W.addSelfLog(key, who, { what, parts, loads });
+          plan = out.plan;
+          render();
+        } catch (e) {
+          if (btn) btn.disabled = false;
+          if (/key/i.test(e.message)) { W.setKey(""); askKey(() => saveSelfLog(what, parts, loads), e.message); }
+          else document.getElementById("sl-msg").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+        }
+      }
+      function wireSelfLog() {
+        const box = document.getElementById("selflog");
+        if (!box) return;
+        box.querySelectorAll(".sl-chip").forEach((c) => c.addEventListener("click", () => {
+          c.setAttribute("aria-pressed", c.getAttribute("aria-pressed") === "true" ? "false" : "true");
+        }));
+        document.getElementById("sl-save").addEventListener("click", () => {
+          const what = document.getElementById("sl-what").value.trim();
+          const loads = document.getElementById("sl-loads").value.trim();
+          const parts = [...box.querySelectorAll('.sl-chip[aria-pressed="true"]')].map((c) => c.dataset.p);
+          if (!what && !parts.length) {
+            document.getElementById("sl-msg").innerHTML = `<div class="err">Say what you did, or tap at least one body part.</div>`;
+            return;
+          }
+          saveSelfLog(what, parts, loads);
+        });
       }
 
       // ---- 30-day calendar of finished workouts
@@ -614,6 +674,7 @@
           <button type="button" class="complete" id="complete">Mark workout complete</button>
           ${!restToday && !finishedToday ? restButtonHTML(person) : ""}
           ${waiting.length > 1 ? `<p class="upnext">Up next: ${waiting.slice(1).map((x) => esc(x.title)).join(", ")}</p>` : ""}
+          ${who === "isabelle" ? selfLogHTML() : ""}
           <div id="keyslot"></div>
           <footer><button type="button" class="linkish" id="reset">Clear checkmarks</button><span data-visits hidden style="margin-left:14px"></span></footer>`;
         if (window.VisitCounter) VisitCounter.fill(app);
@@ -650,6 +711,7 @@
         document.getElementById("complete").addEventListener("click", () => saveCompleted(w.id, true, feel));
         wireRestButton();
         document.getElementById("swap")?.addEventListener("click", saveSwap);
+        if (who === "isabelle") wireSelfLog();
         update();
         document.title = `${w.title} · ${name}`;
       }
