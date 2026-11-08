@@ -5844,7 +5844,7 @@
           "date": "2026-11-06",
           "duration_min": 50,
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-07",
           "notes": "Longer arms day as requested. Barbell bench is back since it felt good on the shoulder - stop any set if the shoulder complains and tell Instinct.",
           "sections": [
             {
@@ -5932,7 +5932,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "feedback": {
+            "note": "I did a 3 mile trail run this morning. I kind of did my own version of this. Supersetting an arm and an ab move. We can add in some shoulders now"
+          }
         },
         {
           "id": "2026-11-07-legs-b-circuit-q7m2",
@@ -6132,6 +6135,16 @@
           "feedback": {
             "rating": "easy",
             "note": "I did 155 for 2 sets and then 165 for 3 sets of back squat. I did 10 reps for hip thrusts. 45s for RDLs. Overall weights slightly too easy"
+          }
+        },
+        {
+          "id": "2026-11-06-arms-and-abs-z6t3",
+          "date": "2026-11-07",
+          "planned": "2026-11-06",
+          "title": "Arms and abs",
+          "reps": 312,
+          "feedback": {
+            "note": "I did a 3 mile trail run this morning. I kind of did my own version of this. Supersetting an arm and an ab move. We can add in some shoulders now"
           }
         }
       ],
