@@ -202,7 +202,7 @@ window.Workouts = (function () {
       };
       person.queue.push(w);
       person.history = person.history || [];
-      person.history.push({ id: w.id, date, planned: date, title: w.title, reps: 0, selflog });
+      person.history.push({ id: w.id, date, planned: date, title: w.title, unreported: true, selflog });
       prune(person);
       return { added: w };
     });
