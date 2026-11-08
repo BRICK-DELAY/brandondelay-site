@@ -5939,48 +5939,65 @@
     },
     {
      "id": "2026-11-07-legs-b-circuit-q7m2",
-     "title": "Upper body: back and chest",
-     "date": "2026-11-09",
-     "generated_by": "instinct",
-     "duration_min": 40,
-     "notes": "Gap fill from your log: you did legs and glutes on your own Sunday, and nothing has hit back or chest since early last week - flagged and filled here. Bench holds 90 (your 90x10 felt good); rows step to 30. [TEST artifact of the adaptive path - will be restored]",
+     "title": "Legs B: circuit",
+     "date": "2026-11-07",
+     "generated_by": "Instinct",
+     "completed": null,
+     "duration_min": 30,
+     "notes": "3 rounds - 40 sec work / 20 sec rest at each station, move straight down the list. Optional easy 10-15 min run after if legs feel good.",
      "sections": [
       {
        "name": "Warm-up",
        "items": [
         {
-         "exercise": "Band pull-apart",
-         "detail": "1 x 15 - light band, squeeze shoulder blades"
+         "exercise": "Light goblet squat groove",
+         "detail": "1 x 10 - 20 lb dumbbell, easy depth",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
         },
         {
-         "exercise": "Cat-cow",
-         "detail": "1 x 8 - slow, full range"
+         "exercise": "Alternating reverse lunge, bodyweight",
+         "detail": "1 x 8 / side, slow and controlled",
+         "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
+        },
+        {
+         "exercise": "Floor glute bridge",
+         "detail": "1 x 15 - bodyweight, squeeze at the top",
+         "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
         }
        ]
       },
       {
-       "name": "Main",
+       "name": "Circuit",
        "items": [
         {
-         "exercise": "Barbell bench press",
-         "detail": "4 x 8 - 90 lb",
-         "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+         "exercise": "Station 1: goblet squat",
+         "detail": "40 lb dumbbell - smooth continuous reps for the 40 sec",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
         },
         {
-         "exercise": "One-arm dumbbell row",
-         "detail": "4 x 10 / side - 30 lb"
+         "exercise": "Station 2: step-up to knee drive",
+         "detail": "25 lb dumbbells - one side per interval, swap next round",
+         "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
         },
         {
-         "exercise": "Seated dumbbell lateral raise",
-         "detail": "3 x 12 - 10 lb / hand, cap at shoulder height"
+         "exercise": "Station 3: dumbbell Romanian deadlift",
+         "detail": "40 lb dumbbells - flat back, hinge to mid-shin",
+         "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
         },
         {
-         "exercise": "Incline dumbbell curl",
-         "detail": "3 x 10 - 20 lb / hand"
+         "exercise": "Station 4: banded glute bridge",
+         "detail": "band above knees + 40 lb dumbbell on hips - pause each rep",
+         "url": "https://www.youtube.com/watch?v=Z3cY3d3BBo4"
         },
         {
-         "exercise": "Dead bug",
-         "detail": "3 x 10 / side - slow"
+         "exercise": "Station 5: band lateral walk",
+         "detail": "band above knees - half-squat, stay low, 2 steps each way",
+         "url": "https://www.youtube.com/watch?v=y_bqFDQZSHQ"
+        },
+        {
+         "exercise": "Station 6: squat jump",
+         "detail": "bodyweight - soft quiet landings, reset each rep",
+         "url": "https://www.youtube.com/watch?v=A-cFYWvaHr0"
         }
        ]
       },
@@ -5988,8 +6005,14 @@
        "name": "Cooldown",
        "items": [
         {
-         "exercise": "Doorway chest stretch",
-         "detail": "1 x 45 sec / side"
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
         }
        ]
       }
@@ -6091,32 +6114,6 @@
          "exercise": "Overhead triceps stretch",
          "detail": "1 x 30 sec / side",
          "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "2026-11-08-own-workout-hhbt",
-     "title": "Own workout",
-     "date": "2026-11-08",
-     "generated_by": "Isabelle",
-     "completed": "2026-11-08",
-     "notes": "TEST ENTRY from Instinct's requested test run - 25 min legs and glutes on my own. Will be removed.",
-     "selflog": {
-      "body_parts": [
-       "Legs",
-       "Glutes"
-      ],
-      "loads": "goblet squat 40 lb, reverse lunge 25 lb"
-     },
-     "sections": [
-      {
-       "name": "Logged",
-       "items": [
-        {
-         "exercise": "Own workout",
-         "detail": "Self-logged session"
         }
        ]
       }
@@ -6249,20 +6246,6 @@
      "reps": 312,
      "feedback": {
       "note": "I did a 3 mile trail run this morning. I kind of did my own version of this. Supersetting an arm and an ab move. We can add in some shoulders now"
-     }
-    },
-    {
-     "id": "2026-11-08-own-workout-hhbt",
-     "date": "2026-11-08",
-     "planned": "2026-11-08",
-     "title": "Own workout",
-     "unreported": true,
-     "selflog": {
-      "body_parts": [
-       "Legs",
-       "Glutes"
-      ],
-      "loads": "goblet squat 40 lb, reverse lunge 25 lb"
      }
     }
    ],
