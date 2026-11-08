@@ -6118,6 +6118,32 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-08-own-workout-hhbt",
+          "title": "Own workout",
+          "date": "2026-11-08",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-08",
+          "notes": "TEST ENTRY from Instinct's requested test run - 25 min legs and glutes on my own. Will be removed.",
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
+            ],
+            "loads": "goblet squat 40 lb, reverse lunge 25 lb"
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -6246,6 +6272,20 @@
           "reps": 312,
           "feedback": {
             "note": "I did a 3 mile trail run this morning. I kind of did my own version of this. Supersetting an arm and an ab move. We can add in some shoulders now"
+          }
+        },
+        {
+          "id": "2026-11-08-own-workout-hhbt",
+          "date": "2026-11-08",
+          "planned": "2026-11-08",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
+            ],
+            "loads": "goblet squat 40 lb, reverse lunge 25 lb"
           }
         }
       ],
