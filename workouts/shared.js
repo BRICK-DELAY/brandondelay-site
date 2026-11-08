@@ -178,6 +178,36 @@ window.Workouts = (function () {
     });
   }
 
+  // A workout someone did on their own, logged straight from the page (Isabelle's
+  // self-log): saved as a finished entry so the day counts, keeping her own text,
+  // the body parts she hit and any weights she reports for the agent's planning.
+  function addSelfLog(key, who, log) {
+    const name = PEOPLE[who];
+    return update(key, `${name} logged their own workout`, (plan) => {
+      const person = plan.people[who];
+      const date = today();
+      const what = String(log.what || "").trim().slice(0, 500);
+      const parts = (Array.isArray(log.parts) ? log.parts : []).map((p) => String(p).slice(0, 40)).slice(0, 12);
+      const loads = String(log.loads || "").trim().slice(0, 300);
+      const selflog = { ...(parts.length ? { body_parts: parts } : {}), ...(loads ? { loads } : {}) };
+      const w = {
+        id: `${date}-own-workout-${Math.random().toString(36).slice(2, 6)}`,
+        title: "Own workout",
+        date,
+        generated_by: name,
+        completed: date,
+        ...(what ? { notes: what } : {}),
+        selflog,
+        sections: [{ name: "Logged", items: [{ exercise: "Own workout", detail: "Self-logged session" }] }],
+      };
+      person.queue.push(w);
+      person.history = person.history || [];
+      person.history.push({ id: w.id, date, planned: date, title: w.title, reps: 0, selflog });
+      prune(person);
+      return { added: w };
+    });
+  }
+
   // Adds or changes the feedback on a finished workout.
   function setFeedback(key, who, id, feedback) {
     return update(key, `${PEOPLE[who]} rated a workout`, (plan) => {
@@ -333,5 +363,5 @@ window.Workouts = (function () {
     return days;
   }
 
-  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, restFreesOn, setRest, planAhead, swapNext, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted };
+  return { PEOPLE, MAX_PENDING, today, esc, doneDays, countReps, finished, totals, streak, RATINGS, setFeedback, restAllowance, restDays, restUsed, restFreesOn, setRest, planAhead, swapNext, getKey, setKey, loadPublic, pending, current, fromText, addWorkout, setCompleted, addSelfLog };
 })();
