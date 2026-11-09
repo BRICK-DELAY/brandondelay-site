@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "weeks": [
     {
       "id": "2026-11-08",
@@ -8,7 +8,7 @@
       "order": {
         "date": "2026-11-08",
         "window": "5-8 pm",
-        "status": "ordered",
+        "status": "delivered",
         "store": "King Soopers via Instacart",
         "notes": "Ordered Fri Nov 6 (order 21615532307498144), delivery Sun Nov 8 5-8pm. Mezzetta Hot Chili Peppers added Sat Nov 7 at his ask; totals re-verified on the order page after the add. Weighted items re-estimated by Instacart.",
         "items": [
@@ -20,7 +20,8 @@
             "for": [
               "honey-garlic-chicken-thighs"
             ],
-            "note": "$3.99/lb; extra freezes"
+            "note": "$3.99/lb; extra freezes",
+            "unavailable": true
           },
           {
             "name": "Fresh bagged green beans",
@@ -29,7 +30,8 @@
             "category": "Produce",
             "for": [
               "honey-garlic-chicken-thighs"
-            ]
+            ],
+            "unavailable": true
           },
           {
             "name": "Kroger beef shaved steak",
@@ -48,7 +50,8 @@
             "category": "Produce",
             "for": [
               "beef-and-broccoli-stir-fry"
-            ]
+            ],
+            "unavailable": true
           },
           {
             "name": "Kroger cut and peeled baby carrots",
@@ -85,7 +88,8 @@
             "category": "Meat & seafood",
             "for": [
               "parmesan-crusted-pork-chops"
-            ]
+            ],
+            "unavailable": true
           },
           {
             "name": "Russet potatoes bag",
@@ -286,7 +290,7 @@
             "Microwave or saute the green beans with a little oil and salt until crisp-tender, about 5 minutes.",
             "Serve the thighs and beans over rice, spooning extra glaze on top."
           ],
-          "notes": "The carry-over from last week, swapped out to make room for the green chile."
+          "notes": "The carry-over from last week, swapped out to make room for the green chile. Chicken thighs and green beans did not arrive in the Nov 8 delivery; swap or restock needed."
         },
         {
           "id": "beef-and-broccoli-stir-fry",
@@ -337,7 +341,8 @@
             "Add the broccoli and a splash of water, cover and steam 3 minutes.",
             "Stir in the garlic, soy sauce, honey and 1/3 cup water; simmer 1-2 minutes until glossy.",
             "Return the beef, toss to coat, and serve over rice."
-          ]
+          ],
+          "notes": "Broccoli did not arrive in the Nov 8 delivery; swap or restock needed."
         },
         {
           "id": "chicken-and-bisquick-biscuits",
@@ -484,7 +489,8 @@
             "Dip each chop in the beaten egg, then press into the panko-parmesan mix on both sides.",
             "Bake on a sheet pan 15-18 minutes (or pan-fry 4-5 minutes per side) until 145F inside and the crust is golden.",
             "Rest 3 minutes and serve with the ranch potatoes."
-          ]
+          ],
+          "notes": "Pork chops did not arrive in the Nov 8 delivery; swap or restock needed."
         }
       ],
       "pantry": [
