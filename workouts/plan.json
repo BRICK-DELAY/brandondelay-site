@@ -6132,6 +6132,30 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-09-own-workout-9zo8",
+          "title": "Own workout",
+          "date": "2026-11-09",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-09",
+          "notes": "I did the rear delt and back workout you wrote. I don’t know why it didn’t log correctly. The weights were too easy",
+          "selflog": {
+            "body_parts": [
+              "Back"
+            ]
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -6282,6 +6306,18 @@
           "reps": 220,
           "feedback": {
             "note": "Felt good. Could go up on weight for the rows. I did 5 min or cores after"
+          }
+        },
+        {
+          "id": "2026-11-09-own-workout-9zo8",
+          "date": "2026-11-09",
+          "planned": "2026-11-09",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Back"
+            ]
           }
         }
       ],
