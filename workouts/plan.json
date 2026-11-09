@@ -3495,7 +3495,7 @@
           "title": "Back and bis",
           "date": "2026-11-06",
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-09",
           "notes": "About 35-40 minutes. Weights are set from your recent sessions - adjust a step if anything feels off.",
           "sections": [
             {
@@ -3568,7 +3568,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "feedback": {
+            "note": "I used 40 lbs on the seated row, 70 lbs for the cable rope face pull"
+          }
         },
         {
           "id": "2026-11-07-legs-r3f9",
@@ -3838,6 +3841,16 @@
           "feedback": {
             "rating": "right",
             "note": "I used 20 lbs for the single arm DB press and 70-80 lb for the rope face pull"
+          }
+        },
+        {
+          "id": "2026-11-06-back-and-bis-q8w2",
+          "date": "2026-11-09",
+          "planned": "2026-11-06",
+          "title": "Back and bis",
+          "reps": 315,
+          "feedback": {
+            "note": "I used 40 lbs on the seated row, 70 lbs for the cable rope face pull"
           }
         }
       ],
