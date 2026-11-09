@@ -621,7 +621,7 @@
         const person = plan.people[who];
         const name = W.PEOPLE[who];
         const w = W.current(person);
-        const lastDone = [...person.queue].reverse().find((x) => x.completed);
+        const lastDone = person.queue.filter((x) => x.completed).reduce((best, x) => (!best || x.completed >= best.completed ? x : best), null);
 
         const finishedToday = lastDone && lastDone.completed === todayKey;
         const restToday = !finishedToday && !!W.restDays && W.restDays(person).has(todayKey);
