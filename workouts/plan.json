@@ -1166,7 +1166,7 @@
           "title": "Shoulders and abs",
           "date": "2026-11-06",
           "generated_by": "Instinct",
-          "completed": null,
+          "completed": "2026-11-09",
           "notes": "Recovery note: keep this submaximal - stop every set 2-3 reps shy, and anything strenuous still waits for your surgeon's go-ahead. Back off if anything feels off.",
           "sections": [
             {
@@ -1234,7 +1234,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "feedback": {
+            "rating": "right"
+          }
         },
         {
           "id": "2026-11-07-bike-ride-p6w3",
@@ -1455,6 +1458,16 @@
           "feedback": {
             "rating": "right",
             "note": "I did 110 for the cable pull throughs. Our pulley system is 2:1"
+          }
+        },
+        {
+          "id": "2026-11-06-shoulders-and-abs-m4x7",
+          "date": "2026-11-09",
+          "planned": "2026-11-06",
+          "title": "Shoulders and abs",
+          "reps": 229,
+          "feedback": {
+            "rating": "right"
           }
         }
       ],
