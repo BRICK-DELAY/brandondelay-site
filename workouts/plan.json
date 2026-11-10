@@ -1345,6 +1345,70 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-10-chest-and-tris-wvk7",
+     "title": "Chest and tris",
+     "date": "2026-11-10",
+     "generated_by": "instinct",
+     "notes": "Cleared by your surgeon - recovery note retired, ski block back to full speed. Loads held from your Nov 4 chest/tris (rated right).",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Barbell bench press, light groove",
+         "detail": "2 x 8 - empty bar, 45 lb",
+         "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Barbell bench press",
+         "detail": "4 x 8 - 135 lb",
+         "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+        },
+        {
+         "exercise": "Incline dumbbell press",
+         "detail": "3 x 10 - 40 lb / hand",
+         "url": "https://www.youtube.com/watch?v=LYZDsNv8kJ8"
+        },
+        {
+         "exercise": "Cable fly",
+         "detail": "3 x 12-15 - 40 stack",
+         "url": "https://www.youtube.com/watch?v=wDJozUD0bnQ"
+        },
+        {
+         "exercise": "Close-grip bench press",
+         "detail": "3 x 10 - 95 lb",
+         "url": "https://www.youtube.com/watch?v=UYJsFzqdgK4"
+        },
+        {
+         "exercise": "Overhead dumbbell tricep extension",
+         "detail": "3 x 12 - 40 lb",
+         "url": "https://www.youtube.com/watch?v=YM8iX9BJWjA"
+        }
+       ]
+      },
+      {
+       "name": "Ski block",
+       "items": [
+        {
+         "exercise": "Squat jump",
+         "detail": "3 x 6 - full intent, soft landings",
+         "url": "https://www.youtube.com/watch?v=A-cFYWvaHr0"
+        },
+        {
+         "exercise": "Lateral bound",
+         "detail": "3 x 8 / side - stick each landing",
+         "url": "https://www.youtube.com/watch?v=pTm9T-5f7go"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
@@ -3662,6 +3726,84 @@
          "exercise": "90/90 hip stretch",
          "detail": "1 x 30 sec / side, easy",
          "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2026-11-10-shoulders-and-abs-otbm",
+     "title": "Shoulders and abs",
+     "date": "2026-11-10",
+     "generated_by": "instinct",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Dumbbell lateral raise, light",
+         "detail": "1 x 15 - 5 lb / hand",
+         "url": "https://www.youtube.com/watch?v=WAV23unwBxY"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Single-arm dumbbell press",
+         "detail": "3 x 10 / side - 20 lb",
+         "url": "https://www.youtube.com/watch?v=KLSYjgShghk"
+        },
+        {
+         "exercise": "Dumbbell lateral raise",
+         "detail": "3 x 12 - 10 lb / hand",
+         "url": "https://www.youtube.com/watch?v=WAV23unwBxY"
+        },
+        {
+         "exercise": "Rope face pull",
+         "detail": "3 x 15 - 70 stack",
+         "url": "https://www.youtube.com/watch?v=ljgqer1ZpXg"
+        },
+        {
+         "exercise": "Dumbbell reverse fly",
+         "detail": "3 x 12 - 10 lb / hand",
+         "url": "https://www.youtube.com/watch?v=G-xcPz-0A48"
+        }
+       ]
+      },
+      {
+       "name": "Abs",
+       "items": [
+        {
+         "exercise": "Plank",
+         "detail": "3 x 40 sec",
+         "url": "https://www.youtube.com/watch?v=mwlp75MS6Rg"
+        },
+        {
+         "exercise": "Dead bug",
+         "detail": "3 x 10 / side - slow",
+         "url": "https://www.youtube.com/watch?v=JrcoGEZn6L4"
+        },
+        {
+         "exercise": "Kneeling cable crunch",
+         "detail": "3 x 15 - 30 stack",
+         "url": "https://www.youtube.com/watch?v=0KEP6A1deBE"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
         }
        ]
       }
@@ -6267,6 +6409,51 @@
         {
          "exercise": "Own workout",
          "detail": "Self-logged session"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2026-11-09-easy-run-dq9f",
+     "title": "Easy run",
+     "date": "2026-11-09",
+     "generated_by": "instinct",
+     "duration_min": 25,
+     "notes": "Recovery run before the next HYROX. Noted on your back workout - rows step up to 35 next back day.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Leg swings + brisk walk",
+         "detail": "5 min - easy to brisk",
+         "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Easy run",
+         "detail": "20 min - conversational pace",
+         "url": "https://www.youtube.com/watch?v=VDNucz6seB0"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
         }
        ]
       }
