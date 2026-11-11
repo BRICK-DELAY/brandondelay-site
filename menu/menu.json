@@ -1,6 +1,500 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "weeks": [
+    {
+      "id": "2026-11-15",
+      "title": "Pistachio pizza week",
+      "notes": "Favorite rotation lands Friday: pistachio pizza, his pick, from the ingredient list he sent Oct 28 (spicy Italian sausage + fennel, pistachios, parmesan, mozzarella, black/green olives, olive oil, pizza dough, hot honey). Fennel seeds confirmed at home. Five dinners; Thursday and Saturday open for leftovers. Office snack: sea salt roasted deluxe mixed nuts. Canola oil and pure maple syrup restocked at his ask.",
+      "order": {
+        "date": "2026-11-15",
+        "window": "5-8 pm",
+        "status": "in_cart",
+        "store": "King Soopers via Instacart",
+        "notes": "Cart staged and totals verified at the Instacart checkout screen Wed Nov 11 - NOT yet ordered, awaiting his go. Prices are cart/checkout pre-order state, not the final charge; weighted items re-estimate at shopping.",
+        "items": [
+          {
+            "name": "Kroger pure canola oil",
+            "qty": "48 fl oz",
+            "price": 3.99,
+            "category": "Pantry",
+            "for": [
+              "pantry"
+            ],
+            "note": "Requested restock"
+          },
+          {
+            "name": "Private Selection 100% pure Grade A amber maple syrup",
+            "qty": "32 fl oz",
+            "price": 16.99,
+            "category": "Pantry",
+            "for": [
+              "pantry"
+            ],
+            "note": "Requested restock; replacement locked to Spring Tree 100% pure maple 32 oz"
+          },
+          {
+            "name": "Kroger mild ground Italian sausage",
+            "qty": "16 oz",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "sheet-pan-sausage-peppers-wedges"
+            ]
+          },
+          {
+            "name": "Green bell peppers",
+            "qty": "2 ct",
+            "price": 1.98,
+            "category": "Produce",
+            "for": [
+              "sheet-pan-sausage-peppers-wedges"
+            ]
+          },
+          {
+            "name": "Choice top sirloin beef steak",
+            "qty": "~0.7 lb",
+            "price": 10.49,
+            "category": "Meat & seafood",
+            "for": [
+              "garlic-butter-steak-bites"
+            ]
+          },
+          {
+            "name": "Heritage Farm boneless skinless chicken breasts",
+            "qty": "~5.1 lb",
+            "price": 13.72,
+            "category": "Meat & seafood",
+            "for": [
+              "chicken-bacon-ranch-wraps"
+            ],
+            "note": "Pack covers wraps plus extra"
+          },
+          {
+            "name": "Kroger hickory smoked bacon",
+            "qty": "12 oz",
+            "price": 3.99,
+            "category": "Meat & seafood",
+            "for": [
+              "chicken-bacon-ranch-wraps"
+            ]
+          },
+          {
+            "name": "Mission super soft flour tortillas",
+            "qty": "10 ct",
+            "price": 2.99,
+            "category": "Dry goods",
+            "for": [
+              "chicken-bacon-ranch-wraps"
+            ]
+          },
+          {
+            "name": "Kroger hearts of romaine lettuce",
+            "qty": "9 oz",
+            "price": 3.99,
+            "category": "Produce",
+            "for": [
+              "chicken-bacon-ranch-wraps"
+            ]
+          },
+          {
+            "name": "Early California sliced ripe black olives",
+            "qty": "3.8 oz",
+            "price": 2.79,
+            "category": "Canned goods",
+            "for": [
+              "chicken-bacon-ranch-wraps",
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Ground pork",
+            "qty": "1 lb",
+            "price": 6.99,
+            "category": "Meat & seafood",
+            "for": [
+              "ground-pork-fried-rice"
+            ]
+          },
+          {
+            "name": "Carrots",
+            "qty": "2 lb bag",
+            "price": 2.59,
+            "category": "Produce",
+            "for": [
+              "ground-pork-fried-rice"
+            ]
+          },
+          {
+            "name": "Kroger cage free large white eggs",
+            "qty": "12 ct",
+            "price": 1.99,
+            "category": "Dairy & eggs",
+            "for": [
+              "ground-pork-fried-rice"
+            ]
+          },
+          {
+            "name": "Kroger frozen super sweet corn",
+            "qty": "12 oz",
+            "price": 1.39,
+            "category": "Frozen",
+            "for": [
+              "ground-pork-fried-rice"
+            ]
+          },
+          {
+            "name": "Russet potatoes",
+            "qty": "5 lb bag",
+            "price": 2.99,
+            "category": "Produce",
+            "for": [
+              "sheet-pan-sausage-peppers-wedges",
+              "garlic-butter-steak-bites"
+            ]
+          },
+          {
+            "name": "Simple Truth sea salt roasted deluxe mixed nuts",
+            "qty": "16 oz",
+            "price": 9.99,
+            "category": "Snacks",
+            "for": [
+              "office-snack"
+            ]
+          },
+          {
+            "name": "Johnsonville hot Italian ground sausage",
+            "qty": "16 oz",
+            "price": 4.99,
+            "category": "Meat & seafood",
+            "for": [
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Simple Truth shelled roasted & salted pistachios",
+            "qty": "8 oz",
+            "price": 3.99,
+            "category": "Snacks",
+            "for": [
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Kroger low-moisture part skim shredded mozzarella",
+            "qty": "16 oz",
+            "price": 3.99,
+            "category": "Dairy & eggs",
+            "for": [
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Kroger shredded parmesan",
+            "qty": "6 oz",
+            "price": 3.99,
+            "category": "Dairy & eggs",
+            "for": [
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Kroger pizza dough",
+            "qty": "16 oz",
+            "price": 3.39,
+            "category": "Deli",
+            "for": [
+              "pistachio-pizza"
+            ]
+          },
+          {
+            "name": "Kroger hot honey",
+            "qty": "12 oz",
+            "price": 5.99,
+            "category": "Condiments",
+            "for": [
+              "pistachio-pizza"
+            ]
+          }
+        ],
+        "subtotal": 117.2,
+        "fees": 8.61,
+        "tax": 0.79,
+        "tip": 11.72,
+        "total": 138.32
+      },
+      "days": [
+        {
+          "date": "2026-11-15",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "sheet-pan-sausage-peppers-wedges"
+            }
+          ],
+          "prep": "Order arrives 5-8 pm."
+        },
+        {
+          "date": "2026-11-16",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "garlic-butter-steak-bites"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "chicken-bacon-ranch-wraps"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-18",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "ground-pork-fried-rice"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers / open"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-20",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "pistachio-pizza"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-21",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "text": "Leftovers / open"
+            }
+          ]
+        }
+      ],
+      "recipes": [
+        {
+          "id": "sheet-pan-sausage-peppers-wedges",
+          "name": "Sheet-pan Italian sausage, peppers and potato wedges",
+          "servings": 2,
+          "time_min": 35,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "16 oz",
+              "item": "mild Italian sausage"
+            },
+            {
+              "qty": "2",
+              "item": "green bell peppers, sliced"
+            },
+            {
+              "qty": "2-3",
+              "item": "russet potatoes, cut into wedges"
+            },
+            {
+              "qty": "",
+              "item": "canola oil, salt, pepper (at home)"
+            }
+          ],
+          "steps": [
+            "Heat the oven to 425F. Toss the potato wedges with oil, salt and pepper; roast 15 minutes.",
+            "Crumble the sausage onto the pan with the sliced peppers, toss, and roast 15-20 minutes more until the sausage is cooked through and the wedges are crisp."
+          ]
+        },
+        {
+          "id": "garlic-butter-steak-bites",
+          "name": "Garlic butter steak bites with crispy potato wedges",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "~0.7 lb",
+              "item": "top sirloin steak, cut into 1-inch cubes"
+            },
+            {
+              "qty": "2-3",
+              "item": "russet potatoes, cut into wedges"
+            },
+            {
+              "qty": "",
+              "item": "butter, garlic powder, salt, pepper, oil (at home)"
+            }
+          ],
+          "steps": [
+            "Toss the wedges with oil, salt and pepper; roast at 425F for 25-30 minutes, flipping once.",
+            "Season the steak cubes with salt, pepper and garlic powder; sear in a hot oiled skillet, 2-3 minutes per side.",
+            "Drop the heat, add butter and more garlic powder, and toss a minute to coat. Serve over the wedges."
+          ]
+        },
+        {
+          "id": "chicken-bacon-ranch-wraps",
+          "name": "Chicken bacon ranch wraps",
+          "servings": 2,
+          "time_min": 25,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "~1 lb",
+              "item": "boneless skinless chicken breasts"
+            },
+            {
+              "qty": "4-6 slices",
+              "item": "bacon"
+            },
+            {
+              "qty": "4",
+              "item": "flour tortillas"
+            },
+            {
+              "qty": "",
+              "item": "romaine, chopped"
+            },
+            {
+              "qty": "",
+              "item": "sliced black olives"
+            },
+            {
+              "qty": "",
+              "item": "ranch, salt, pepper, onion powder (at home)"
+            }
+          ],
+          "steps": [
+            "Season the chicken with salt, pepper and onion powder; cook in a skillet 6-7 minutes per side, then slice. Cook the bacon and crumble it.",
+            "Fill the tortillas with chicken, bacon, romaine, black olives and ranch. Fold and serve."
+          ]
+        },
+        {
+          "id": "ground-pork-fried-rice",
+          "name": "Ground pork fried rice",
+          "servings": 2,
+          "time_min": 25,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "ground pork"
+            },
+            {
+              "qty": "2",
+              "item": "eggs"
+            },
+            {
+              "qty": "1-2",
+              "item": "carrots, diced"
+            },
+            {
+              "qty": "1 cup",
+              "item": "frozen corn"
+            },
+            {
+              "qty": "",
+              "item": "basmati rice (at home)"
+            },
+            {
+              "qty": "",
+              "item": "soy sauce, oil (at home)"
+            }
+          ],
+          "steps": [
+            "Cook the basmati rice (day-old cold rice is even better). Scramble the eggs in a large skillet and set aside.",
+            "Brown the ground pork, breaking it up. Add the carrot and corn; cook 3-4 minutes.",
+            "Add the rice and a few tablespoons of soy sauce, stir-fry until hot, then stir the eggs back in."
+          ],
+          "note": "No peas."
+        },
+        {
+          "id": "pistachio-pizza",
+          "name": "Pistachio pizza",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 15,
+          "ingredients": [
+            {
+              "qty": "16 oz",
+              "item": "spicy Italian sausage"
+            },
+            {
+              "qty": "",
+              "item": "fennel seeds (at home)"
+            },
+            {
+              "qty": "",
+              "item": "shelled pistachios, chopped"
+            },
+            {
+              "qty": "",
+              "item": "shredded mozzarella"
+            },
+            {
+              "qty": "",
+              "item": "shredded parmesan"
+            },
+            {
+              "qty": "",
+              "item": "sliced black olives"
+            },
+            {
+              "qty": "16 oz",
+              "item": "pizza dough"
+            },
+            {
+              "qty": "",
+              "item": "olive oil (at home)"
+            },
+            {
+              "qty": "",
+              "item": "hot honey"
+            }
+          ],
+          "steps": [
+            "His list, Oct 28: spicy Italian sausage + fennel, pistachios, parmesan, mozzarella, black/green olives, olive oil, pizza dough, hot honey.",
+            "Heat the oven to the dough package temperature (about 450F). Brown the sausage with a pinch of fennel seeds and drain.",
+            "Stretch the dough on an oiled sheet pan. Brush with olive oil, scatter mozzarella and parmesan, then the sausage.",
+            "Bake per the dough package, about 12-15 minutes, until golden. Top with pistachios, black olives and a hot honey drizzle."
+          ],
+          "note": "Favorite rotation - his pick for this week."
+        }
+      ],
+      "pantry": [
+        "basmati rice",
+        "soy sauce",
+        "honey",
+        "garlic",
+        "flour",
+        "salt",
+        "pepper",
+        "onion powder",
+        "butter",
+        "BBQ sauce",
+        "ranch",
+        "vegetable oil",
+        "olive oil",
+        "fennel seeds",
+        "bay leaf",
+        "thyme",
+        "parsley",
+        "cumin",
+        "corn starch"
+      ]
+    },
     {
       "id": "2026-11-08",
       "title": "Honey garlic carry-over week",
@@ -859,7 +1353,7 @@
             }
           ],
           "steps": [
-            "Heat the oven to 400°F and grease a 10-inch pie plate.",
+            "Heat the oven to 400\u00b0F and grease a 10-inch pie plate.",
             "Brown the sausage with the bell pepper in a skillet; drain.",
             "Spread the sausage mixture in the pie plate and sprinkle the cheese over it.",
             "Beat the milk, Bisquick and eggs until smooth and pour over the sausage.",
@@ -897,7 +1391,7 @@
           "steps": [
             "Cook the basmati rice.",
             "Sear the chicken in oil over medium-high heat until cooked through, 6-8 minutes.",
-            "Steam or sauté the broccoli until crisp-tender, about 5 minutes.",
+            "Steam or saut\u00e9 the broccoli until crisp-tender, about 5 minutes.",
             "Add the teriyaki sauce to the chicken and simmer 1-2 minutes.",
             "Serve the chicken and broccoli over the rice."
           ]
