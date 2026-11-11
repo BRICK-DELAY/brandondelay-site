@@ -3812,6 +3812,69 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-11-back-and-bis-8a8d",
+     "title": "Back and bis",
+     "date": "2026-11-11",
+     "generated_by": "instinct",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Light one-arm row groove",
+         "detail": "1 x 12 / side - 15 lb",
+         "url": "https://www.youtube.com/watch?v=epSR-ma7BsY"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Barbell bent-over row",
+         "detail": "3 x 8 - 65 lb",
+         "url": "https://www.youtube.com/watch?v=9efgcAjQe7E"
+        },
+        {
+         "exercise": "Seated cable row",
+         "detail": "3 x 12 - 40 stack",
+         "url": "https://www.youtube.com/watch?v=7o2oolbmzeI"
+        },
+        {
+         "exercise": "Rope face pull",
+         "detail": "3 x 15 - 70 stack",
+         "url": "https://www.youtube.com/watch?v=0Po47vvj9g4"
+        },
+        {
+         "exercise": "Incline dumbbell curl",
+         "detail": "3 x 12 - 15 lb / hand",
+         "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
+        },
+        {
+         "exercise": "Rope hammer curl",
+         "detail": "3 x 12 - 20 stack",
+         "url": "https://www.youtube.com/watch?v=1Quc_tOv97I"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
@@ -6457,6 +6520,74 @@
          "exercise": "Easy run",
          "detail": "20 min - conversational pace",
          "url": "https://www.youtube.com/watch?v=VDNucz6seB0"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2026-11-10-hyrox-style-emom-5v6l",
+     "title": "HYROX-style: EMOM",
+     "date": "2026-11-10",
+     "generated_by": "instinct",
+     "duration_min": 30,
+     "notes": "New HYROX format - EMOM: at the top of each minute start the movement, rest whatever time is left in the minute. 5 rounds through the 4 movements = 20 minutes of work. Nothing overhead, nothing hanging.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Leg swings + brisk walk",
+         "detail": "5 min - easy to brisk",
+         "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+        }
+       ]
+      },
+      {
+       "name": "EMOM x 5 rounds",
+       "items": [
+        {
+         "exercise": "Minute 1 - Goblet squat",
+         "sets": 5,
+         "reps": "12",
+         "detail": "5 x 12 - 40 lb",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        },
+        {
+         "exercise": "Minute 2 - Push-up",
+         "sets": 5,
+         "reps": "10",
+         "detail": "5 x 10",
+         "url": "https://www.youtube.com/watch?v=WDIpL0pjun0"
+        },
+        {
+         "exercise": "Minute 3 - Dumbbell swing",
+         "sets": 5,
+         "reps": "15",
+         "detail": "5 x 15 - 40 lb",
+         "url": "https://www.youtube.com/watch?v=cfYt7Q21w_0"
+        },
+        {
+         "exercise": "Minute 4 - Alternating reverse lunge",
+         "sets": 5,
+         "reps": "8 / side",
+         "detail": "5 x 8 / side - 25 lb / hand",
+         "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
         }
        ]
       },
