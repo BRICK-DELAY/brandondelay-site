@@ -3780,6 +3780,70 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-12-legs-5d6p",
+     "title": "Legs",
+     "date": "2026-11-12",
+     "generated_by": "instinct",
+     "notes": "Hip thrusts your way - 3 x 20 at 135. Accessories rotated per your ask.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Light goblet squat groove",
+         "detail": "1 x 10 - 15 lb",
+         "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Barbell hip thrust",
+         "detail": "3 x 20 - 135 lb",
+         "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE"
+        },
+        {
+         "exercise": "Dumbbell step-up onto box",
+         "detail": "3 x 10 / leg - 15 lb / hand",
+         "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
+        },
+        {
+         "exercise": "Dumbbell sumo squat",
+         "detail": "3 x 12 - 40 lb",
+         "url": "https://www.youtube.com/watch?v=wpOQEuaeRDU"
+        },
+        {
+         "exercise": "Cable pull-through",
+         "detail": "3 x 15 - 30 stack",
+         "url": "https://www.youtube.com/watch?v=OkcryKUZTZs"
+        },
+        {
+         "exercise": "Side-lying hip abduction",
+         "detail": "3 x 15 / side",
+         "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
