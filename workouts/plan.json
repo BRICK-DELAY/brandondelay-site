@@ -6437,54 +6437,9 @@
           ]
         },
         {
-          "id": "2026-11-09-easy-run-dq9f",
-          "title": "Easy run",
-          "date": "2026-11-09",
-          "generated_by": "instinct",
-          "duration_min": 25,
-          "notes": "Recovery run before the next HYROX. Noted on your back workout - rows step up to 35 next back day.",
-          "sections": [
-            {
-              "name": "Warm-up",
-              "items": [
-                {
-                  "exercise": "Leg swings + brisk walk",
-                  "detail": "5 min - easy to brisk",
-                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
-                }
-              ]
-            },
-            {
-              "name": "Main",
-              "items": [
-                {
-                  "exercise": "Easy run",
-                  "detail": "20 min - conversational pace",
-                  "url": "https://www.youtube.com/watch?v=VDNucz6seB0"
-                }
-              ]
-            },
-            {
-              "name": "Cooldown",
-              "items": [
-                {
-                  "exercise": "Figure-4 glute stretch",
-                  "detail": "1 x 45 sec / side",
-                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
-                },
-                {
-                  "exercise": "Couch stretch",
-                  "detail": "1 x 45 sec / side",
-                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "2026-11-10-hyrox-style-emom-5v6l",
           "title": "HYROX-style: EMOM",
-          "date": "2026-11-10",
+          "date": "2026-11-09",
           "generated_by": "instinct",
           "duration_min": 30,
           "notes": "New HYROX format - EMOM: at the top of each minute start the movement, rest whatever time is left in the minute. 5 rounds through the 4 movements = 20 minutes of work. Nothing overhead, nothing hanging.",
@@ -6529,6 +6484,51 @@
                   "reps": "8 / side",
                   "detail": "5 x 8 / side - 25 lb / hand",
                   "url": "https://www.youtube.com/watch?v=sjlsISvHyZs"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "detail": "1 x 45 sec / side",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                },
+                {
+                  "exercise": "Couch stretch",
+                  "detail": "1 x 45 sec / side",
+                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2026-11-09-easy-run-dq9f",
+          "title": "Easy run",
+          "date": "2026-11-10",
+          "generated_by": "instinct",
+          "duration_min": 25,
+          "notes": "Recovery run before the next HYROX. Noted on your back workout - rows step up to 35 next back day.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Leg swings + brisk walk",
+                  "detail": "5 min - easy to brisk",
+                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+                }
+              ]
+            },
+            {
+              "name": "Main",
+              "items": [
+                {
+                  "exercise": "Easy run",
+                  "detail": "20 min - conversational pace",
+                  "url": "https://www.youtube.com/watch?v=VDNucz6seB0"
                 }
               ]
             },
