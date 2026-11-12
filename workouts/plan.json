@@ -6479,7 +6479,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "completed": "2026-11-12",
+          "feedback": {
+            "rating": "right"
+          }
         },
         {
           "id": "2026-11-10-hyrox-style-emom-5v6l",
@@ -6718,6 +6722,16 @@
           "planned": "2026-11-08",
           "title": "Arms and abs",
           "reps": 267,
+          "feedback": {
+            "rating": "right"
+          }
+        },
+        {
+          "id": "2026-11-09-easy-run-dq9f",
+          "date": "2026-11-12",
+          "planned": "2026-11-09",
+          "title": "Easy run",
+          "reps": 0,
           "feedback": {
             "rating": "right"
           }
