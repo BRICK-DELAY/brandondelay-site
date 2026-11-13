@@ -3733,6 +3733,95 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-13-chest-and-tris-fexe",
+     "title": "Chest and tris",
+     "date": "2026-11-13",
+     "generated_by": "instinct",
+     "notes": "Flat bench stays your anchor - incline press, overhead rope extension and single-arm pushdown rotate in so nothing repeats from earlier this week. Weights listed for every lift.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Arm circles and shoulder rolls",
+         "detail": "45 sec total, small pain-free circles both directions",
+         "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+        },
+        {
+         "exercise": "Scap push-ups",
+         "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+         "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+        },
+        {
+         "exercise": "Incline push-ups on bench",
+         "detail": "1 x 8 - hands on the bench, slow and controlled",
+         "url": "https://www.youtube.com/watch?v=Z0bRiVhnO8Q"
+        },
+        {
+         "exercise": "Light dumbbell press groove",
+         "detail": "1 x 10 - 10 lb dumbbells, rehearse the pressing path before loading",
+         "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Dumbbell flat bench press",
+         "detail": "3 x 8-10 - 30 lb dumbbells. Full range, pause the last rep of each set at the bottom for a beat. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=i1fywF_g-1U",
+         "sets": 3,
+         "reps": "8-10"
+        },
+        {
+         "exercise": "Incline dumbbell press",
+         "detail": "3 x 10 - 25 lb dumbbells. Bench one notch up, lower to chest level. Rest 75 sec.",
+         "url": "https://www.youtube.com/watch?v=OC7Qs_SAO2E",
+         "sets": 3,
+         "reps": "10"
+        },
+        {
+         "exercise": "Standing cable fly",
+         "detail": "3 x 12 - 20 stack. Squeeze the chest for a beat at the front. Rest 60 sec.",
+         "url": "https://www.youtube.com/watch?v=ydnAMvT1Jzo",
+         "sets": 3,
+         "reps": "12"
+        },
+        {
+         "exercise": "Overhead rope triceps extension",
+         "detail": "3 x 12 - 20 stack. Elbows by your ears, full stretch at the bottom. Rest 60 sec.",
+         "url": "https://www.youtube.com/watch?v=kqidUIf1eJE",
+         "sets": 3,
+         "reps": "12"
+        },
+        {
+         "exercise": "Single-arm cable pushdown",
+         "detail": "3 x 12 / side - 15 stack. Elbow glued to your side, full lockout. Rest 45 sec.",
+         "url": "https://www.youtube.com/watch?v=Oy4-uJ35cQQ",
+         "sets": 3,
+         "reps": "12 / side"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Doorway pec stretch",
+         "detail": "2 x 30 sec / side - forearm on the frame, step through gently",
+         "url": "https://www.youtube.com/watch?v=jRY9-4VTCcw"
+        },
+        {
+         "exercise": "Cross-body shoulder stretch",
+         "detail": "2 x 30 sec / side - pull the arm across the chest, no forcing",
+         "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
@@ -6648,6 +6737,91 @@
         {
          "exercise": "Couch stretch",
          "detail": "1 x 45 sec / side",
+         "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2026-11-11-legs-a-strength-xsfq",
+     "title": "Legs A: strength",
+     "date": "2026-11-11",
+     "generated_by": "instinct",
+     "duration_min": 45,
+     "notes": "Legs A, third variant - squat steps to 170 after last time felt easy, hip thrust moves to sets of 10 at 205, and short-lever Copenhagens join as the finisher since you are doing them anyway. Nothing overhead, nothing hanging.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Leg swings, front and side",
+         "detail": "1 x 8 / side - tall, easy swings",
+         "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
+        },
+        {
+         "exercise": "Unweighted hip hinges",
+         "detail": "1 x 10 - push hips back, flat back",
+         "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
+        },
+        {
+         "exercise": "Bodyweight squat",
+         "detail": "1 x 10 - full comfortable depth",
+         "url": "https://www.youtube.com/watch?v=m0GcZ24pK6k"
+        }
+       ]
+      },
+      {
+       "name": "Main",
+       "items": [
+        {
+         "exercise": "Barbell back squat",
+         "detail": "4 x 6 - 170 lb. Warm up: empty bar, 95, 135, 155, then working sets. Rest 2-3 min.",
+         "url": "https://www.youtube.com/watch?v=-bJIpOq-LWk",
+         "sets": 4,
+         "reps": "6"
+        },
+        {
+         "exercise": "Barbell hip thrust",
+         "detail": "4 x 10 - 205 lb. Pause and squeeze at the top. Rest 2 min.",
+         "url": "https://www.youtube.com/watch?v=Zp26q4BY5HE",
+         "sets": 4,
+         "reps": "10"
+        },
+        {
+         "exercise": "Dumbbell Romanian deadlift",
+         "detail": "3 x 10 - 50 lb dumbbells. If the shoulder grumbles, stay at 45s and keep the reps. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=hQgFixeXdZo",
+         "sets": 3,
+         "reps": "10"
+        },
+        {
+         "exercise": "Bulgarian split squat, rear foot on bench",
+         "detail": "3 x 8 / side - 25 lb dumbbells, slow 3-sec lower. Rest 90 sec.",
+         "url": "https://www.youtube.com/watch?v=4Qnfw1FqWxQ",
+         "sets": 3,
+         "reps": "8 / side"
+        },
+        {
+         "exercise": "Copenhagen side plank, short lever",
+         "detail": "3 x 20 sec / side - top knee on the bench, bottom leg tucked, hips high. Rest 45 sec.",
+         "url": "https://www.youtube.com/watch?v=khX9SaB0QEs",
+         "sets": 3,
+         "reps": "20 sec / side"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Figure-4 glute stretch",
+         "detail": "2 x 30 sec / side - lie back, ankle on opposite knee, pull in gently",
+         "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+        },
+        {
+         "exercise": "Couch stretch",
+         "detail": "2 x 30 sec / side - squeeze the glute, stand tall",
          "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
         }
        ]
