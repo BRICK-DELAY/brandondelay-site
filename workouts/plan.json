@@ -6641,7 +6641,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "completed": "2026-11-13",
+          "feedback": {
+            "rating": "easy",
+            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I’d like to slowly add in moves that might test its readiness"
+          }
         },
         {
           "id": "2026-11-11-legs-a-strength-xsfq",
@@ -6909,6 +6914,17 @@
           "reps": 0,
           "feedback": {
             "rating": "right"
+          }
+        },
+        {
+          "id": "2026-11-10-hyrox-style-emom-5v6l",
+          "date": "2026-11-13",
+          "planned": "2026-11-10",
+          "title": "HYROX-style: EMOM",
+          "reps": 265,
+          "feedback": {
+            "rating": "easy",
+            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I’d like to slowly add in moves that might test its readiness"
           }
         }
       ],
