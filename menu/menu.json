@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "weeks": [
   {
    "id": "2026-11-15",
@@ -8,9 +8,9 @@
    "order": {
     "date": "2026-11-15",
     "window": "5-8 pm",
-    "status": "in_cart",
+    "status": "ordered",
     "store": "King Soopers via Instacart",
-    "notes": "Cart re-staged after his Nov 11 edits (salmon replaces chicken bacon ranch wraps; eggs and mixed nuts removed - both already at home / not loved; green peppers swapped to red; hot honey kept per his correction - they have regular honey, not hot honey). Totals verified at the Instacart checkout screen Wed Nov 11 - NOT yet ordered, awaiting his go. Prices are cart/checkout pre-order state, not the final charge; weighted items re-estimate at shopping.",
+    "notes": "Ordered Thu Nov 12 ~6pm MT (order 21669466497488752) after his 'Looks good' on the proceed-vs-trim check; checkout re-verified live at placement: 19 items $105.10, $0 Super saver delivery Sun 5-8pm, $7.72 service fee, $0.71 fee tax, $10.51 tip - $124.04 all-in. Johnsonville hot Italian sausage was flagged likely out of stock; named replacement set: Boulder Hot Italian Bulk Sausage 14oz ($8.99, +$4.00 if substituted, oat-checked). Pure-maple replacement lock also on the syrup. Final charge adjusts only for replacements/weighted items.",
     "items": [
      {
       "name": "Kroger pure canola oil",
@@ -195,7 +195,8 @@
     "fees": 7.72,
     "tax": 0.71,
     "tip": 10.51,
-    "total": 124.04
+    "total": 124.04,
+    "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752"
    },
    "days": [
     {
