@@ -3647,7 +3647,7 @@
      "title": "Chest and tris",
      "date": "2026-11-13",
      "generated_by": "instinct",
-     "notes": "Rebuilt for variety - the barbell bench leads this week instead of dumbbells, and every accessory is rotated. Weights listed for every lift.",
+     "notes": "Rebuilt for variety - the barbell bench leads at a heavier 4 x 6 scheme, then two superset stations (A then B, rest after each pair) and a push-up finisher replace the usual five straight sets.",
      "sections": [
       {
        "name": "Warm-up",
@@ -3675,42 +3675,52 @@
        ]
       },
       {
-       "name": "Main",
+       "name": "Main lift",
        "items": [
         {
          "exercise": "Barbell bench press",
-         "detail": "3 x 8 - 80 lb. Warm up with the empty 45 lb bar, then 65 lb, then working sets. Stop each set with 2-3 reps in reserve. Rest 90 sec.",
+         "detail": "4 x 6 - 85 lb. Warm up with the empty 45 lb bar, then 65, then working sets. Heavier scheme this week - stop each set with 2 reps in reserve. Rest 2 min.",
          "url": "https://www.youtube.com/watch?v=CjHIKDQ4RQo",
-         "sets": 3,
-         "reps": "8"
-        },
+         "sets": 4,
+         "reps": "6"
+        }
+       ]
+      },
+      {
+       "name": "Superset 1 (A then B, rest after the pair)",
+       "items": [
         {
-         "exercise": "Incline dumbbell press",
-         "detail": "3 x 10 - 25 lb dumbbells. Bench one notch up, lower to chest level. Rest 75 sec.",
-         "url": "https://www.youtube.com/watch?v=OC7Qs_SAO2E",
-         "sets": 3,
-         "reps": "10"
-        },
-        {
-         "exercise": "Standing cable fly",
-         "detail": "3 x 12 - 20 stack. Squeeze the chest for a beat at the front. Rest 60 sec.",
-         "url": "https://www.youtube.com/watch?v=ydnAMvT1Jzo",
+         "exercise": "A: low-to-high cable fly",
+         "detail": "3 x 12 - 15 stack. Sweep up and together, squeeze at the top.",
+         "url": "https://www.youtube.com/watch?v=eQ_NBB6OBH4",
          "sets": 3,
          "reps": "12"
         },
         {
-         "exercise": "Overhead rope triceps extension",
-         "detail": "3 x 12 - 20 stack. Elbows by your ears, full stretch at the bottom. Rest 60 sec.",
-         "url": "https://www.youtube.com/watch?v=kqidUIf1eJE",
+         "exercise": "B: rope triceps pushdown",
+         "detail": "3 x 12 - 30 stack. Elbows pinned, split the rope at the bottom. Rest 60 sec after each pair.",
+         "url": "https://www.youtube.com/watch?v=pfUB77aCMFM",
+         "sets": 3,
+         "reps": "12"
+        }
+       ]
+      },
+      {
+       "name": "Superset 2 (A then B, rest after the pair)",
+       "items": [
+        {
+         "exercise": "A: overhead dumbbell triceps extension",
+         "detail": "3 x 12 - one 15 lb dumbbell held with both hands, elbows by the ears, full stretch.",
+         "url": "https://www.youtube.com/watch?v=bRJWHiu_J4k",
          "sets": 3,
          "reps": "12"
         },
         {
-         "exercise": "Single-arm cable pushdown",
-         "detail": "3 x 12 / side - 15 stack. Elbow glued to your side, full lockout. Rest 45 sec.",
-         "url": "https://www.youtube.com/watch?v=Oy4-uJ35cQQ",
+         "exercise": "B: incline push-up finisher",
+         "detail": "3 x 8-12 - hands on the bench, stop each set 2 reps shy of failure. Rest 60 sec after each pair.",
+         "url": "https://www.youtube.com/watch?v=Z0bRiVhnO8Q",
          "sets": 3,
-         "reps": "12 / side"
+         "reps": "8-12"
         }
        ]
       },
