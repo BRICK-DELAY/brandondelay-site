@@ -10,7 +10,7 @@
     "window": "6-8 pm",
     "status": "ordered",
     "store": "King Soopers via Instacart",
-    "notes": "Ordered Thu Nov 12 (order 21669466497488752); delivery moved from Sun Nov 15 to Sat Nov 14 6-8pm at Cecelia's ask (relayed by her Instinct) under Brandon's standing okay for Cecelia-requested grocery changes. Every same-day window listed a $7.99 delivery fee but the post-change order receipt shows no delivery-fee line; totals here are the current merchant receipt and the final charge adjusts at shopping. Milk: Simple Truth organic whole gallon removed, King Soopers City Market 2% gallon added at Cecelia's pick. Earlier Sat adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap. Other household items on the order (half and half, floss, toothpaste) and a corn removal left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup. Later Sat: Cecelia added buffalo-chicken-dip items to the same order (Frank's RedHot 12 oz, ranch x2 incl. an explicit extra fridge bottle, 2 cream cheese bricks); chicken already at home.",
+    "notes": "Ordered Thu Nov 12 (order 21669466497488752); delivery moved from Sun Nov 15 to Sat Nov 14 6-8pm at Cecelia's ask (relayed by her Instinct) under Brandon's standing okay for Cecelia-requested grocery changes. Every same-day window listed a $7.99 delivery fee but the post-change order receipt shows no delivery-fee line; totals here are the current merchant receipt and the final charge adjusts at shopping. Milk: Simple Truth organic whole gallon removed, King Soopers City Market 2% gallon added at Cecelia's pick. Earlier Sat adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap. Other household items on the order (half and half, floss, toothpaste) and a corn removal left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup. Later Sat: Cecelia added buffalo-chicken-dip items to the same order (Frank's RedHot 12 oz, ranch x2 incl. an explicit extra fridge bottle, 2 cream cheese bricks); chicken already at home. Plus a family-size Juantonio's Fiesta tortilla bag at Cecelia's ask.",
     "items": [
      {
       "name": "Kroger pure canola oil",
@@ -251,15 +251,25 @@
        "buffalo-chicken-dip"
       ],
       "note": "Cecelia's dip add; no chicken or cheddar - she has chicken already"
+     },
+     {
+      "name": "Juantonio's gluten-free Fiesta tortilla bag",
+      "qty": "24 oz (family size)",
+      "price": 5.99,
+      "category": "Snacks",
+      "for": [
+       "household"
+      ],
+      "note": "Cecelia's ask Sat afternoon; the household's usual ('buy it again'); Running low, replacement left at best match"
      }
     ],
-    "subtotal": 154.47,
-    "fees": 11.35,
-    "tax": 1.47,
-    "tip": 15.45,
-    "total": 184.08,
+    "subtotal": 160.46,
+    "fees": 11.79,
+    "tax": 1.46,
+    "tip": 16.05,
+    "total": 191.15,
     "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752",
-    "fee_tax": 1.03,
+    "fee_tax": 1.08,
     "co_fee": 0.31
    },
    "days": [
