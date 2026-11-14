@@ -10,7 +10,7 @@
     "window": "6-8 pm",
     "status": "ordered",
     "store": "King Soopers via Instacart",
-    "notes": "Ordered Thu Nov 12 (order 21669466497488752); delivery moved from Sun Nov 15 to Sat Nov 14 6-8pm at Cecelia's ask (relayed by her Instinct) under Brandon's standing okay for Cecelia-requested grocery changes. Every same-day window listed a $7.99 delivery fee but the post-change order receipt shows no delivery-fee line; totals here are the current merchant receipt and the final charge adjusts at shopping. Milk: Simple Truth organic whole gallon removed, King Soopers City Market 2% gallon added at Cecelia's pick. Earlier Sat adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap. Other household items on the order (half and half, floss, toothpaste) and a corn removal left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup.",
+    "notes": "Ordered Thu Nov 12 (order 21669466497488752); delivery moved from Sun Nov 15 to Sat Nov 14 6-8pm at Cecelia's ask (relayed by her Instinct) under Brandon's standing okay for Cecelia-requested grocery changes. Every same-day window listed a $7.99 delivery fee but the post-change order receipt shows no delivery-fee line; totals here are the current merchant receipt and the final charge adjusts at shopping. Milk: Simple Truth organic whole gallon removed, King Soopers City Market 2% gallon added at Cecelia's pick. Earlier Sat adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap. Other household items on the order (half and half, floss, toothpaste) and a corn removal left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup. Later Sat: Cecelia added buffalo-chicken-dip items to the same order (Frank's RedHot 12 oz, ranch x2 incl. an explicit extra fridge bottle, 2 cream cheese bricks); chicken already at home.",
     "items": [
      {
       "name": "Kroger pure canola oil",
@@ -220,15 +220,46 @@
        "household"
       ],
       "note": "Added Sat at his ask; ingredient list oat-checked"
+     },
+     {
+      "name": "Frank's RedHot Original cayenne pepper sauce",
+      "qty": "12 fl oz",
+      "price": 4.99,
+      "category": "Condiments & sauces",
+      "for": [
+       "buffalo-chicken-dip"
+      ],
+      "note": "Cecelia's dip add; 12 oz = 1.5 cups, covers the 1 cup the recipe needs"
+     },
+     {
+      "name": "Hidden Valley Original Ranch",
+      "qty": "2 x 16 fl oz",
+      "price": 9.98,
+      "category": "Condiments & sauces",
+      "for": [
+       "buffalo-chicken-dip",
+       "household"
+      ],
+      "note": "One for the dip, one extra bottle for the fridge at Cecelia's explicit ask (not a duplicate); label checked, no oat"
+     },
+     {
+      "name": "Kroger original cream cheese brick",
+      "qty": "2 x 8 oz",
+      "price": 4.98,
+      "category": "Dairy & eggs",
+      "for": [
+       "buffalo-chicken-dip"
+      ],
+      "note": "Cecelia's dip add; no chicken or cheddar - she has chicken already"
      }
     ],
-    "subtotal": 134.52,
-    "fees": 9.89,
-    "tax": 1.45,
-    "tip": 13.45,
-    "total": 160.53,
+    "subtotal": 154.47,
+    "fees": 11.35,
+    "tax": 1.47,
+    "tip": 15.45,
+    "total": 184.08,
     "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752",
-    "fee_tax": 0.91,
+    "fee_tax": 1.03,
     "co_fee": 0.31
    },
    "days": [
