@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-14",
  "weeks": [
   {
    "id": "2026-11-15",
    "title": "Pistachio pizza week",
    "notes": "Favorite rotation lands Friday: pistachio pizza, his pick, from the ingredient list he sent Oct 28 (spicy Italian sausage + fennel, pistachios, parmesan, mozzarella, black/green olives, olive oil, pizza dough, hot honey). Fennel seeds, eggs and regular honey confirmed at home; hot honey bought (they don't have it). Tuesday's chicken bacon ranch wraps swapped for honey garlic glazed salmon at his ask. Bell peppers red - green is their least favorite. Five dinners; Thursday and Saturday open for leftovers. Office snack: SkinnyPop original single-serve bags (mixed nuts dropped - he doesn't love them). Canola oil and pure maple syrup restocked at his ask.",
    "order": {
-    "date": "2026-11-15",
-    "window": "5-8 pm",
+    "date": "2026-11-14",
+    "window": "6-8 pm",
     "status": "ordered",
     "store": "King Soopers via Instacart",
-    "notes": "Ordered Thu Nov 12 (order 21669466497488752), delivery Sun Nov 15 5-8pm Super saver $0. Sat Nov 14 adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap, and milk made a full gallon (Simple Truth whole milk 1 gal; store-brand and Darigold gallons out of stock - gallon is Running low, replacement left at best match). Other household items on the order (half and half, floss, toothpaste) and a corn removal were left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup. Totals shown are the current order-page receipt; final charge adjusts for replacements/weighted items.",
+    "notes": "Ordered Thu Nov 12 (order 21669466497488752); delivery moved from Sun Nov 15 to Sat Nov 14 6-8pm at Cecelia's ask (relayed by her Instinct) under Brandon's standing okay for Cecelia-requested grocery changes. Every same-day window listed a $7.99 delivery fee but the post-change order receipt shows no delivery-fee line; totals here are the current merchant receipt and the final charge adjusts at shopping. Milk: Simple Truth organic whole gallon removed, King Soopers City Market 2% gallon added at Cecelia's pick. Earlier Sat adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap. Other household items on the order (half and half, floss, toothpaste) and a corn removal left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup.",
     "items": [
      {
       "name": "Kroger pure canola oil",
@@ -202,14 +202,14 @@
       "note": "Added Sat for the group-event mashed potatoes; oat-checked: cultured cream, skim milk, enzymes"
      },
      {
-      "name": "Simple Truth Organic vitamin D whole milk",
-      "qty": "1 gal",
-      "price": 7.99,
+      "name": "King Soopers City Market 2% reduced fat milk",
+      "qty": "1 gal (128 fl oz)",
+      "price": 3.99,
       "category": "Dairy & eggs",
       "for": [
        "household"
       ],
-      "note": "Swapped to a full gallon Sat at his ask (replaces the 59 oz whole milk); only whole-milk gallon in stock"
+      "note": "Cecelia picked a standard 2% gallon Sat (replacing the organic whole gallon) when she asked to move delivery up"
      },
      {
       "name": "Mrs. Meyer's Clean Day hand soap, lavender",
@@ -222,13 +222,13 @@
       "note": "Added Sat at his ask; ingredient list oat-checked"
      }
     ],
-    "subtotal": 138.52,
-    "fees": 10.18,
-    "tax": 1.46,
-    "tip": 13.85,
-    "total": 165.25,
+    "subtotal": 134.52,
+    "fees": 9.89,
+    "tax": 1.45,
+    "tip": 13.45,
+    "total": 160.53,
     "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752",
-    "fee_tax": 0.93,
+    "fee_tax": 0.91,
     "co_fee": 0.31
    },
    "days": [
