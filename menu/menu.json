@@ -10,7 +10,7 @@
     "window": "5-8 pm",
     "status": "ordered",
     "store": "King Soopers via Instacart",
-    "notes": "Ordered Thu Nov 12 ~6pm MT (order 21669466497488752) after his 'Looks good' on the proceed-vs-trim check; checkout re-verified live at placement: 19 items $105.10, $0 Super saver delivery Sun 5-8pm, $7.72 service fee, $0.71 fee tax, $10.51 tip - $124.04 all-in. Johnsonville hot Italian sausage was flagged likely out of stock; named replacement set: Boulder Hot Italian Bulk Sausage 14oz ($8.99, +$4.00 if substituted, oat-checked). Pure-maple replacement lock also on the syrup. Final charge adjusts only for replacements/weighted items.",
+    "notes": "Ordered Thu Nov 12 (order 21669466497488752), delivery Sun Nov 15 5-8pm Super saver $0. Sat Nov 14 adds at his ask: second bag of russet potatoes + sour cream (mashed potatoes for a group event), Mrs. Meyer's lavender hand soap, and milk made a full gallon (Simple Truth whole milk 1 gal; store-brand and Darigold gallons out of stock - gallon is Running low, replacement left at best match). Other household items on the order (half and half, floss, toothpaste) and a corn removal were left untouched. Johnsonville hot Italian sausage still flagged likely out of stock with Boulder Hot Italian Bulk locked as replacement (+$4.00 if substituted); pure-maple lock on the syrup. Totals shown are the current order-page receipt; final charge adjusts for replacements/weighted items.",
     "items": [
      {
       "name": "Kroger pure canola oil",
@@ -88,13 +88,14 @@
      },
      {
       "name": "Russet potatoes",
-      "qty": "5 lb bag",
-      "price": 2.99,
+      "qty": "2 x 5 lb bags",
+      "price": 5.98,
       "category": "Produce",
       "for": [
        "sheet-pan-sausage-peppers-wedges",
        "garlic-butter-steak-bites"
-      ]
+      ],
+      "note": "Second bag added Sat for mashed potatoes for a group event"
      },
      {
       "name": "Johnsonville hot Italian ground sausage",
@@ -189,14 +190,46 @@
        "office-snack"
       ],
       "note": "Oat-checked label: popcorn, sunflower oil, salt. Replaces mixed nuts (he doesn't love them as the office snack)"
+     },
+     {
+      "name": "Kroger original sour cream",
+      "qty": "16 oz",
+      "price": 1.89,
+      "category": "Dairy & eggs",
+      "for": [
+       "mashed-potatoes-event"
+      ],
+      "note": "Added Sat for the group-event mashed potatoes; oat-checked: cultured cream, skim milk, enzymes"
+     },
+     {
+      "name": "Simple Truth Organic vitamin D whole milk",
+      "qty": "1 gal",
+      "price": 7.99,
+      "category": "Dairy & eggs",
+      "for": [
+       "household"
+      ],
+      "note": "Swapped to a full gallon Sat at his ask (replaces the 59 oz whole milk); only whole-milk gallon in stock"
+     },
+     {
+      "name": "Mrs. Meyer's Clean Day hand soap, lavender",
+      "qty": "12.5 fl oz",
+      "price": 5.99,
+      "category": "Household",
+      "for": [
+       "household"
+      ],
+      "note": "Added Sat at his ask; ingredient list oat-checked"
      }
     ],
-    "subtotal": 105.1,
-    "fees": 7.72,
-    "tax": 0.71,
-    "tip": 10.51,
-    "total": 124.04,
-    "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752"
+    "subtotal": 138.52,
+    "fees": 10.18,
+    "tax": 1.46,
+    "tip": 13.85,
+    "total": 165.25,
+    "url": "https://www.instacart.com/store/orders/999921669466497488752?legacy_order_id=21669466497488752",
+    "fee_tax": 0.93,
+    "co_fee": 0.31
    },
    "days": [
     {
