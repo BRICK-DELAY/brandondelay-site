@@ -6853,6 +6853,116 @@
        ]
       }
      ]
+    },
+    {
+     "id": "2026-11-12-arms-and-abs-a-vt7x",
+     "title": "Arms and abs",
+     "date": "2026-11-12",
+     "generated_by": "instinct",
+     "duration_min": 40,
+     "notes": "Arms and abs A - superset format like you ran before, but every pair is new: barbell bench steps to 95, skull crushers and concentration curls swap in, and side plank plus Pallof press are fresh abs. Nothing overhead, nothing hanging.",
+     "sections": [
+      {
+       "name": "Warm-up",
+       "items": [
+        {
+         "exercise": "Arm circles and shoulder rolls",
+         "detail": "45 sec total, easy pain-free circles",
+         "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+        },
+        {
+         "exercise": "Scap push-ups",
+         "detail": "1 x 10 - arms straight, shoulder blades glide",
+         "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
+        },
+        {
+         "exercise": "Light barbell bench groove",
+         "detail": "1 x 10 - empty bar, rehearse the press path",
+         "url": "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+        }
+       ]
+      },
+      {
+       "name": "Superset A",
+       "items": [
+        {
+         "exercise": "A1: barbell bench press",
+         "detail": "3 x 8 - 95 lb. Your 90 x 10 felt good, so this steps up slightly - keep 2 clean reps in reserve. Straight into A2.",
+         "url": "https://www.youtube.com/watch?v=CjHIKDQ4RQo",
+         "sets": 3,
+         "reps": "8"
+        },
+        {
+         "exercise": "A2: side plank",
+         "detail": "3 x 25 sec / side - hips high, straight line head to heels. Rest 60-90 sec after the pair.",
+         "url": "https://www.youtube.com/watch?v=rCxF2nG9vQ0"
+        }
+       ]
+      },
+      {
+       "name": "Superset B",
+       "items": [
+        {
+         "exercise": "B1: dumbbell skull crusher",
+         "detail": "3 x 10-12 - 15 lb dumbbells, lying on the bench, elbows point at the ceiling, lower beside your ears. Straight into B2.",
+         "url": "https://www.youtube.com/watch?v=ir5PsbniVSc",
+         "sets": 3,
+         "reps": "10-12"
+        },
+        {
+         "exercise": "B2: pallof press",
+         "detail": "3 x 10 / side - band anchored at chest height, press straight out and resist the twist. Rest 60 sec after the pair.",
+         "url": "https://www.youtube.com/watch?v=HXrLaqNIkTs",
+         "sets": 3,
+         "reps": "10 / side"
+        }
+       ]
+      },
+      {
+       "name": "Superset C",
+       "items": [
+        {
+         "exercise": "C1: concentration curl",
+         "detail": "3 x 12 / side - 15 lb dumbbell, elbow braced on the inner thigh, slow down. Straight into C2.",
+         "url": "https://www.youtube.com/watch?v=Jvj2wV0vOYU",
+         "sets": 3,
+         "reps": "12 / side"
+        },
+        {
+         "exercise": "C2: forearm plank",
+         "detail": "3 x 40 sec - ribs down, glutes on. Rest 60 sec after the pair.",
+         "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
+        }
+       ]
+      },
+      {
+       "name": "Shoulders (light)",
+       "items": [
+        {
+         "exercise": "Dumbbell lateral raise",
+         "detail": "3 x 15 - 10 lb dumbbells, lead with the elbow to shoulder height, no swinging. Rest 45 sec.",
+         "url": "https://www.youtube.com/watch?v=Y29xKcze8Ik",
+         "sets": 3,
+         "reps": "15"
+        }
+       ]
+      },
+      {
+       "name": "Cooldown",
+       "items": [
+        {
+         "exercise": "Cross-body shoulder stretch",
+         "detail": "1 x 30 sec / side, gentle",
+         "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
+        },
+        {
+         "exercise": "Gentle triceps stretch",
+         "detail": "1 x 30 sec / side",
+         "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
+        }
+       ]
+      }
+     ]
     }
    ],
    "history": [
