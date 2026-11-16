@@ -6842,6 +6842,30 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-15-own-workout-bn74",
+          "title": "Own workout",
+          "date": "2026-11-15",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-15",
+          "notes": "1 hour walk + 45 min bike ride + 1 hour of singles pickleball",
+          "selflog": {
+            "body_parts": [
+              "Cardio / run"
+            ]
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -7035,6 +7059,18 @@
           "feedback": {
             "rating": "easy",
             "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I’d like to slowly add in moves that might test its readiness"
+          }
+        },
+        {
+          "id": "2026-11-15-own-workout-bn74",
+          "date": "2026-11-15",
+          "planned": "2026-11-15",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Cardio / run"
+            ]
           }
         }
       ],
