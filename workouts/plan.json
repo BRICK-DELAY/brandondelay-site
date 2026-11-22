@@ -5094,137 +5094,6 @@
       "name": "Isabelle",
       "queue": [
         {
-          "id": "2026-10-26-arms-and-abs-bbon",
-          "title": "Arms and abs",
-          "notes": "Arms + abs day, about 40-45 minutes. Nothing overhead per your shoulder - all pressing is horizontal and triceps work keeps the elbow at your side or low. Close-grip bench is the one bigger lift: stop every set with about 3 clean reps left. Abs are their own block at the end; tell me how the weights feel so I can set next week's.",
-          "sections": [
-            {
-              "name": "Warm-up",
-              "items": [
-                {
-                  "exercise": "Arm circles and shoulder rolls",
-                  "detail": "45 sec total, small pain-free circles",
-                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
-                },
-                {
-                  "exercise": "Scap push-ups",
-                  "sets": 1,
-                  "reps": "10",
-                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg"
-                },
-                {
-                  "exercise": "Standing thoracic rotations",
-                  "sets": 1,
-                  "reps": "6 / side",
-                  "url": "https://www.youtube.com/watch?v=PWmNVcs8rJY"
-                },
-                {
-                  "exercise": "Light dumbbell bench groove",
-                  "sets": 1,
-                  "reps": "10",
-                  "weight": "10 lb / hand",
-                  "notes": "Rehearse the pressing path before the working sets",
-                  "url": "https://www.youtube.com/watch?v=i1fywF_g-1U"
-                }
-              ]
-            },
-            {
-              "name": "Main",
-              "items": [
-                {
-                  "exercise": "Close-grip bench press",
-                  "sets": 3,
-                  "reps": "8",
-                  "weight": "65 lb",
-                  "rest": "75 sec",
-                  "notes": "The one bigger lift; hands just inside shoulder width, elbows tuck to your ribs",
-                  "url": "https://www.youtube.com/watch?v=nEF0bv2FW94"
-                },
-                {
-                  "exercise": "Incline dumbbell curl",
-                  "sets": 3,
-                  "reps": "10-12",
-                  "weight": "10 lb / hand",
-                  "rest": "60 sec",
-                  "notes": "Bench at ~45 deg, full stretch at the bottom, no swinging",
-                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8"
-                },
-                {
-                  "exercise": "Dumbbell hammer curl",
-                  "sets": 3,
-                  "reps": "12",
-                  "weight": "15 lb / hand",
-                  "rest": "60 sec",
-                  "notes": "Neutral grip, elbows pinned",
-                  "url": "https://www.youtube.com/watch?v=obovFxPjXSM"
-                },
-                {
-                  "exercise": "Band triceps pushdown",
-                  "sets": 3,
-                  "reps": "15",
-                  "rest": "45 sec",
-                  "notes": "Band anchored high, elbows pinned at your ribs, full lockout",
-                  "url": "https://www.youtube.com/watch?v=qjPN6ElNqpc"
-                },
-                {
-                  "exercise": "Dumbbell triceps kickback",
-                  "sets": 3,
-                  "reps": "12 / side",
-                  "weight": "10 lb / hand",
-                  "rest": "45 sec",
-                  "notes": "Hinge at the hips, elbow pinned high beside your torso, straighten fully",
-                  "url": "https://www.youtube.com/watch?v=6SS6K3lAwZ8"
-                }
-              ]
-            },
-            {
-              "name": "Abs",
-              "items": [
-                {
-                  "exercise": "Forearm plank",
-                  "sets": 3,
-                  "duration": "45 sec",
-                  "notes": "Ribs down, glutes tight, straight line head to heels",
-                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
-                },
-                {
-                  "exercise": "Dead bug",
-                  "sets": 3,
-                  "reps": "8 / side",
-                  "notes": "Low back pressed into the floor the whole time",
-                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
-                }
-              ]
-            },
-            {
-              "name": "Cooldown",
-              "items": [
-                {
-                  "exercise": "Cross-body shoulder stretch",
-                  "sets": 2,
-                  "duration": "30 sec / side",
-                  "notes": "Gentle only with your shoulder - draw one straight arm across your chest; back off if anything pinches",
-                  "url": "https://www.youtube.com/watch?v=O5bFanxcpWE"
-                },
-                {
-                  "exercise": "Gentle triceps stretch",
-                  "sets": 2,
-                  "duration": "30 sec / side",
-                  "notes": "Hand down your back, very gentle pressure; skip on the injured side if it pulls at the shoulder",
-                  "url": "https://www.youtube.com/watch?v=cPTrm13hSSo"
-                }
-              ]
-            }
-          ],
-          "date": "2026-10-26",
-          "generated_by": "Instinct",
-          "completed": "2026-10-26",
-          "feedback": {
-            "rating": "right",
-            "note": "Felt like a good short workout for before a shift. For bench I did dumbell press with 35s for 10 reps. I did 20lb dumbells for incline curl. Overall I could feel my shoulder at certain points but it was not shape pain"
-          }
-        },
-        {
           "id": "2026-10-27-easy-run-svpr",
           "title": "Easy run",
           "notes": "Easy aerobic day between lifting sessions - 20-30 minutes outside at a conversational pace. This should feel genuinely easy; it's recovery work, not a workout to push. Short optional core finisher at the end since you said you don't mind abs sprinkled in.",
@@ -6823,6 +6692,31 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-21-own-workout-rnos",
+          "title": "Own workout",
+          "date": "2026-11-21",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-21",
+          "notes": "I did a 30 min Adrian Williams glutes and legs peloton strength class",
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
+            ]
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -7057,6 +6951,19 @@
           "feedback": {
             "rating": "right",
             "note": "I took this week off cause I was sick. I feel better now. I used 30lb for the skull crusher and 20lbs for curls. Also 45 min walk and 1 hr singles pickleball"
+          }
+        },
+        {
+          "id": "2026-11-21-own-workout-rnos",
+          "date": "2026-11-21",
+          "planned": "2026-11-21",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
+            ]
           }
         }
       ],
