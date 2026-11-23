@@ -5315,48 +5315,6 @@
       "name": "Isabelle",
       "queue": [
         {
-          "id": "2026-10-27-easy-run-svpr",
-          "title": "Easy run",
-          "notes": "Easy aerobic day between lifting sessions - 20-30 minutes outside at a conversational pace. This should feel genuinely easy; it's recovery work, not a workout to push. Short optional core finisher at the end since you said you don't mind abs sprinkled in.",
-          "sections": [
-            {
-              "name": "Run",
-              "items": [
-                {
-                  "exercise": "Easy outdoor run",
-                  "duration": "20-30 min",
-                  "detail": "20-30 min, conversational pace - you should be able to talk in full sentences the whole way"
-                }
-              ]
-            },
-            {
-              "name": "Optional core finisher",
-              "items": [
-                {
-                  "exercise": "Forearm plank",
-                  "sets": 2,
-                  "duration": "30-45 sec",
-                  "notes": "Optional; ribs down, glutes tight",
-                  "url": "https://www.youtube.com/watch?v=wCBOqf-HrTI"
-                },
-                {
-                  "exercise": "Dead bug",
-                  "sets": 2,
-                  "reps": "8 / side",
-                  "notes": "Optional; low back pressed into the floor",
-                  "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws"
-                }
-              ]
-            }
-          ],
-          "date": "2026-10-27",
-          "generated_by": "Instinct",
-          "completed": "2026-10-27",
-          "feedback": {
-            "rating": "right"
-          }
-        },
-        {
           "id": "2026-10-28-hyrox-style-ladder-9bsp",
           "title": "HYROX-style ladder",
           "notes": "Your HYROX day, station-style: every round is a DIFFERENT movement, then 1 lap (~400 m) easy. Reps descend 100, 90, 80 ... 10 like you specced. Break every round into sets - nobody does 100 unbroken - and run the laps easy; they're recovery between stations. About 40-45 minutes. Nothing overhead per your shoulder; the swings stop at chest height. Pick weights you can move for sets of 15-25 without grinding.",
@@ -6998,6 +6956,33 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-23-own-workout-6src",
+          "title": "Own workout",
+          "date": "2026-11-23",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-23",
+          "notes": "I did arms. I did Arnold press with 30lbs. I did bench supported rows with 35s and DB bench with 40s. My shoulder felt great",
+          "selflog": {
+            "body_parts": [
+              "Back",
+              "Chest",
+              "Shoulders",
+              "Arms"
+            ]
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -7244,6 +7229,21 @@
             "body_parts": [
               "Legs",
               "Glutes"
+            ]
+          }
+        },
+        {
+          "id": "2026-11-23-own-workout-6src",
+          "date": "2026-11-23",
+          "planned": "2026-11-23",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Back",
+              "Chest",
+              "Shoulders",
+              "Arms"
             ]
           }
         }
