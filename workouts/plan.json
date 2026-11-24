@@ -104,7 +104,7 @@
           "completed": "2026-10-19",
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -1525,7 +1525,7 @@
           "reps": 224,
           "feedback": {
             "rating": "easy",
-            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won\u2019t do cool down stretches so probably not worth adding."
+            "note": "Two sets seems to be too few. This workout took 34 minutes and I did not do the cool down and I probably won’t do cool down stretches so probably not worth adding."
           }
         },
         {
@@ -2331,7 +2331,7 @@
           "completed": "2026-11-02",
           "feedback": {
             "rating": "right",
-            "note": "Please include the weights i should be doing in each lift. You said \u201cheavier than last time\u201d but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
+            "note": "Please include the weights i should be doing in each lift. You said “heavier than last time” but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
           }
         },
         {
@@ -4015,7 +4015,7 @@
           "reps": 310,
           "feedback": {
             "rating": "right",
-            "note": "Please include the weights i should be doing in each lift. You said \u201cheavier than last time\u201d but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
+            "note": "Please include the weights i should be doing in each lift. You said “heavier than last time” but i would prefer a specific weight. I did 25lb dumbbells for overhead press, 10lbs for lateral raise, and 10lbs for reverse fly"
           }
         },
         {
@@ -5457,140 +5457,6 @@
       "name": "Isabelle",
       "queue": [
         {
-          "id": "2026-10-28-hyrox-style-ladder-9bsp",
-          "title": "HYROX-style ladder",
-          "notes": "Your HYROX day, station-style: every round is a DIFFERENT movement, then 1 lap (~400 m) easy. Reps descend 100, 90, 80 ... 10 like you specced. Break every round into sets - nobody does 100 unbroken - and run the laps easy; they're recovery between stations. About 40-45 minutes. Nothing overhead per your shoulder; the swings stop at chest height. Pick weights you can move for sets of 15-25 without grinding.",
-          "sections": [
-            {
-              "name": "Warm-up",
-              "items": [
-                {
-                  "exercise": "Leg swings, front and side",
-                  "sets": 1,
-                  "reps": "8 / side",
-                  "url": "https://www.youtube.com/watch?v=naW8u72lOzI"
-                },
-                {
-                  "exercise": "Bodyweight squat",
-                  "sets": 1,
-                  "reps": "15",
-                  "url": "https://www.youtube.com/watch?v=P-yaD24bUE8"
-                },
-                {
-                  "exercise": "Unweighted hip hinges",
-                  "sets": 1,
-                  "reps": "10",
-                  "url": "https://www.youtube.com/watch?v=kDso8FRbpmU"
-                },
-                {
-                  "exercise": "Light goblet squat groove",
-                  "sets": 2,
-                  "reps": "10",
-                  "weight": "10 lb",
-                  "notes": "Rehearse the squat path at ladder pace before the work starts",
-                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
-                }
-              ]
-            },
-            {
-              "name": "The ladder - new station every round, then 1 lap (~400 m) easy",
-              "items": [
-                {
-                  "exercise": "Round 1: Goblet squat",
-                  "reps": "100",
-                  "weight": "15-20 lb",
-                  "notes": "Then 1 lap; break into sets of 15-25",
-                  "url": "https://www.youtube.com/watch?v=6mf0oa2GGUc"
-                },
-                {
-                  "exercise": "Round 2: Alternating dumbbell lunge",
-                  "reps": "90",
-                  "weight": "10 lb / hand",
-                  "notes": "45 per leg total, then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=Tc_w71tB7Hw"
-                },
-                {
-                  "exercise": "Round 3: Mountain climber",
-                  "reps": "80",
-                  "notes": "80 total, 40 per leg; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=cnyTQDSE884"
-                },
-                {
-                  "exercise": "Round 4: Dumbbell Romanian deadlift",
-                  "reps": "70",
-                  "weight": "25-30 lb / hand",
-                  "notes": "Hip hinge, flat back; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=hQgFixeXdZo"
-                },
-                {
-                  "exercise": "Round 5: Dumbbell swing",
-                  "reps": "60",
-                  "weight": "20-25 lb",
-                  "notes": "Snap the hips, stop at CHEST height - never overhead; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=cfYt7Q21w_0"
-                },
-                {
-                  "exercise": "Round 6: Push-up",
-                  "reps": "50",
-                  "notes": "Break into sets of 8-12, full range; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=WDIpL0pjun0"
-                },
-                {
-                  "exercise": "Round 7: Dumbbell step-up onto bench",
-                  "reps": "40",
-                  "weight": "20 lb / hand",
-                  "notes": "20 per leg, drive through the top foot; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=DxUNi119Qzs"
-                },
-                {
-                  "exercise": "Round 8: Squat jump",
-                  "reps": "30",
-                  "notes": "Bodyweight, soft quiet landings; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=A-cFYWvaHr0"
-                },
-                {
-                  "exercise": "Round 9: Dumbbell split squat",
-                  "reps": "20",
-                  "weight": "15 lb / hand",
-                  "notes": "10 per leg, controlled; then 1 lap",
-                  "url": "https://www.youtube.com/watch?v=Wcmg-3iHwjQ"
-                },
-                {
-                  "exercise": "Round 10: Burpee broad jump",
-                  "reps": "10",
-                  "notes": "HYROX finisher - chest to floor, jump forward far, land soft; then the final lap",
-                  "url": "https://www.youtube.com/watch?v=W5gc1Inyha0"
-                }
-              ]
-            },
-            {
-              "name": "Cooldown",
-              "items": [
-                {
-                  "exercise": "Couch stretch",
-                  "sets": 2,
-                  "duration": "30 sec / side",
-                  "notes": "Kneel with one shin up the bench or wall behind you, tuck your pelvis gently",
-                  "url": "https://www.youtube.com/watch?v=B8ABCwZaSyM"
-                },
-                {
-                  "exercise": "90/90 hip stretch",
-                  "sets": 2,
-                  "duration": "30 sec / side",
-                  "notes": "Sit with both knees bent 90 degrees, lean gently over the front shin; switch sides",
-                  "url": "https://www.youtube.com/watch?v=2uW-9KD5XOM"
-                }
-              ]
-            }
-          ],
-          "date": "2026-10-28",
-          "generated_by": "Instinct",
-          "completed": "2026-10-28",
-          "feedback": {
-            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
-          }
-        },
-        {
           "id": "2026-10-30-legs-b-cardio-circuit-ee9w",
           "title": "Legs B: cardio circuit",
           "duration_min": 30,
@@ -6009,7 +5875,7 @@
           "generated_by": "Instinct",
           "completed": "2026-11-02",
           "feedback": {
-            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I\u2019d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
+            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
         },
         {
@@ -6548,7 +6414,7 @@
           "date": "2026-11-09",
           "generated_by": "Isabelle",
           "completed": "2026-11-09",
-          "notes": "I did the rear delt and back workout you wrote. I don\u2019t know why it didn\u2019t log correctly. The weights were too easy",
+          "notes": "I did the rear delt and back workout you wrote. I don’t know why it didn’t log correctly. The weights were too easy",
           "selflog": {
             "body_parts": [
               "Back"
@@ -6685,7 +6551,7 @@
           "completed": "2026-11-13",
           "feedback": {
             "rating": "easy",
-            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I\u2019d like to slowly add in moves that might test its readiness"
+            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I’d like to slowly add in moves that might test its readiness"
           }
         },
         {
@@ -7125,6 +6991,31 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-24-own-workout-xb5b",
+          "title": "Own workout",
+          "date": "2026-11-24",
+          "generated_by": "Isabelle",
+          "completed": "2026-11-24",
+          "notes": "1hr leg lift",
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
+            ]
+          },
+          "sections": [
+            {
+              "name": "Logged",
+              "items": [
+                {
+                  "exercise": "Own workout",
+                  "detail": "Self-logged session"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
@@ -7135,7 +7026,7 @@
           "title": "Legs",
           "reps": 250,
           "feedback": {
-            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don\u2019t get bored. I also don\u2019t mind if core/abs in sprinkled into workouts."
+            "note": "I did 165lbs for the back squat. 205 for the hip thrust which was a good challenge weight. 40lb dumbells for RDL which is slightly too easy but was kind of irritating my shoulder if I went heavier. 20s for step ups was good for controlled reps. As you plan for the future. I like when the workout template feels slightly different so I don’t get bored. I also don’t mind if core/abs in sprinkled into workouts."
           }
         },
         {
@@ -7166,7 +7057,7 @@
           "title": "HYROX-style ladder",
           "reps": 611,
           "feedback": {
-            "note": "Too long. It doesn\u2019t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
+            "note": "Too long. It doesn’t have to be this exact format. Use this as inspiration for full body hydroxide style (cardio+strength) workouts in the future"
           }
         },
         {
@@ -7209,7 +7100,7 @@
           "title": "Legs B: circuit",
           "reps": 388,
           "feedback": {
-            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I\u2019d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
+            "note": "I did 40lb for goblet squat and put a 40lb dumbell on my hips for glute band bridge. And the last round I kept the band on the whole time. Overall good but make sure you are mixing up body categories cause I ended up doing legs two days in a row. I think I’d like to mix in more arms. Maybe rotate through 2 legs, 2 arms, 1 run, 1 Hyrox style. But obviously not in that order, have it be mixed up. Then I can take a max of 2 rest days to keep my streak. Also for the Hyrox I want different formats"
           }
         },
         {
@@ -7317,7 +7208,7 @@
           "reps": 265,
           "feedback": {
             "rating": "easy",
-            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I\u2019d like to slowly add in moves that might test its readiness"
+            "note": "It was pretty easy but nice that it was so quick since I snoozed once this morning. My shoulder is feeling good. I’d like to slowly add in moves that might test its readiness"
           }
         },
         {
@@ -7386,6 +7277,19 @@
               "Chest",
               "Shoulders",
               "Arms"
+            ]
+          }
+        },
+        {
+          "id": "2026-11-24-own-workout-xb5b",
+          "date": "2026-11-24",
+          "planned": "2026-11-24",
+          "title": "Own workout",
+          "unreported": true,
+          "selflog": {
+            "body_parts": [
+              "Legs",
+              "Glutes"
             ]
           }
         }
