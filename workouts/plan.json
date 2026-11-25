@@ -1430,7 +1430,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "completed": "2026-11-25",
+          "feedback": {
+            "note": "Weights were good but i could have gone heavier after the first set of barbell bench. Chest was definitely tired by the end of the workout though."
+          }
         },
         {
           "id": "2026-11-24-legs-h3qn",
@@ -1650,6 +1654,16 @@
           "reps": 299,
           "feedback": {
             "rating": "right"
+          }
+        },
+        {
+          "id": "2026-11-10-chest-and-tris-wvk7",
+          "date": "2026-11-25",
+          "planned": "2026-11-10",
+          "title": "Chest and tris",
+          "reps": 246,
+          "feedback": {
+            "note": "Weights were good but i could have gone heavier after the first set of barbell bench. Chest was definitely tired by the end of the workout though."
           }
         }
       ],
