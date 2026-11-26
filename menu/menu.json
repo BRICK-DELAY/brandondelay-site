@@ -1,6 +1,329 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-26",
   "weeks": [
+    {
+      "id": "2026-11-29",
+      "title": "Ramen, cheesesteaks and quesadillas",
+      "notes": "Three dinners for two plus an office snack (Goldfish Cheddar). Brandon swapped pork chops and honey garlic thighs for Philly cheesesteaks and chicken alfredo; Cecelia then dropped shrimp scampi and the alfredo, and removed the pork tenderloin, ginger, black olives and others from the cart. Ramen now uses chicken thighs instead of pork and skips fresh ginger. Cecelia added coffee and a salad kit.",
+      "order": {
+        "date": "2026-11-29",
+        "window": "Sunday evening, not yet selected",
+        "status": "in_cart",
+        "store": "King Soopers via Instacart",
+        "notes": "Draft cart only, not ordered. Item subtotal after loyalty savings; Sunday delivery window and final all-in not available yet.",
+        "items": [
+          {
+            "name": "Heritage Farm boneless skinless chicken thighs",
+            "qty": "about 2.86 lb",
+            "price": 11.41,
+            "category": "Meat & seafood",
+            "for": [
+              "spicy-chicken-ramen",
+              "chicken-quesadillas"
+            ]
+          },
+          {
+            "name": "Kroger beef shaved steak",
+            "qty": "14 oz",
+            "price": 7.99,
+            "category": "Meat & seafood",
+            "for": [
+              "philly-cheesesteaks"
+            ],
+            "note": "Single ingredient: beef"
+          },
+          {
+            "name": "Red hothouse bell pepper",
+            "qty": "1 each",
+            "price": 1.69,
+            "category": "Produce",
+            "for": [
+              "philly-cheesesteaks"
+            ]
+          },
+          {
+            "name": "Green onions",
+            "qty": "1 bunch",
+            "price": 1.39,
+            "category": "Produce",
+            "for": [
+              "spicy-chicken-ramen"
+            ]
+          },
+          {
+            "name": "Kroger shredded carrots",
+            "qty": "10 oz",
+            "price": 1.99,
+            "category": "Produce",
+            "for": [
+              "spicy-chicken-ramen"
+            ]
+          },
+          {
+            "name": "Taylor Farms Green Goddess chopped salad kit",
+            "qty": "1 kit",
+            "price": 3.99,
+            "category": "Produce",
+            "for": [],
+            "note": "Added by Cecelia; dressing lists pea protein"
+          },
+          {
+            "name": "Kroger smoke flavored provolone slices",
+            "qty": "6 oz",
+            "price": 2.29,
+            "category": "Dairy",
+            "for": [
+              "philly-cheesesteaks",
+              "chicken-quesadillas"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "Maruchan chicken yakisoba noodles",
+            "qty": "2 x 4 oz",
+            "price": 3.18,
+            "category": "Pantry",
+            "for": [
+              "spicy-chicken-ramen"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "Swanson chicken broth",
+            "qty": "32 oz",
+            "price": 2.19,
+            "category": "Pantry",
+            "for": [
+              "spicy-chicken-ramen"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "La Choy bean sprouts",
+            "qty": "14 oz can",
+            "price": 1.89,
+            "category": "Pantry",
+            "for": [
+              "spicy-chicken-ramen"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "Fruitful Island hot chili oil",
+            "qty": "7.3 fl oz",
+            "price": 7.99,
+            "category": "Pantry",
+            "for": [
+              "spicy-chicken-ramen"
+            ],
+            "note": "Oat-checked label; replaced the unavailable Sun Luck oil"
+          },
+          {
+            "name": "Starbucks Espresso Roast whole bean coffee",
+            "qty": "18 oz",
+            "price": 17.99,
+            "category": "Pantry",
+            "for": [],
+            "note": "Added by Cecelia"
+          },
+          {
+            "name": "Pepperidge Farm white hoagie rolls with sesame",
+            "qty": "6 ct, 14.5 oz",
+            "price": 4.99,
+            "category": "Bakery",
+            "for": [
+              "philly-cheesesteaks"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "Mission flour fajita tortillas",
+            "qty": "10 ct",
+            "price": 2.99,
+            "category": "Bakery",
+            "for": [
+              "chicken-quesadillas"
+            ],
+            "note": "Oat-checked label"
+          },
+          {
+            "name": "Goldfish Cheddar crackers",
+            "qty": "1 bag",
+            "price": 2.79,
+            "category": "Snacks",
+            "for": [],
+            "note": "Office snack"
+          }
+        ],
+        "subtotal": 74.76
+      },
+      "days": [
+        {
+          "date": "2026-11-29",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "spicy-chicken-ramen"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-30",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "philly-cheesesteaks"
+            }
+          ]
+        },
+        {
+          "date": "2026-12-03",
+          "meals": [
+            {
+              "meal": "Dinner",
+              "recipe": "chicken-quesadillas"
+            }
+          ]
+        }
+      ],
+      "recipes": [
+        {
+          "id": "spicy-chicken-ramen",
+          "name": "Spicy chicken ramen",
+          "servings": 2,
+          "time_min": 30,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1 lb",
+              "item": "boneless chicken thighs",
+              "note": "thinly sliced"
+            },
+            {
+              "qty": "2 packs",
+              "item": "Maruchan chicken yakisoba"
+            },
+            {
+              "qty": "3 cups",
+              "item": "chicken broth"
+            },
+            {
+              "qty": "1 tbsp",
+              "item": "chili oil"
+            },
+            {
+              "qty": "1 cup",
+              "item": "shredded carrots"
+            },
+            {
+              "qty": "1 cup",
+              "item": "bean sprouts"
+            },
+            {
+              "qty": "2",
+              "item": "green onions"
+            },
+            {
+              "qty": "2",
+              "item": "eggs",
+              "note": "at home"
+            },
+            {
+              "qty": "to taste",
+              "item": "soy sauce, chili powder, garlic",
+              "note": "at home"
+            }
+          ],
+          "steps": [
+            "Boil the eggs 6.5 minutes, cool in cold water and peel.",
+            "Sear the chicken slices with salt and chili powder, 4 to 5 minutes. Set aside.",
+            "Cook a little minced garlic 30 seconds, add the broth, a splash of soy sauce and the yakisoba seasoning packets. Simmer.",
+            "Add the noodles, carrots and sprouts, cook 3 minutes.",
+            "Bowl up with the chicken, halved eggs, green onion and chili oil."
+          ],
+          "notes": "Pork tenderloin and fresh ginger were removed from the cart by Cecelia, so chicken thighs stand in for the pork."
+        },
+        {
+          "id": "philly-cheesesteaks",
+          "name": "Philly cheesesteaks with red peppers",
+          "servings": 2,
+          "time_min": 20,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "14 oz",
+              "item": "shaved steak"
+            },
+            {
+              "qty": "1",
+              "item": "red bell pepper",
+              "note": "sliced thin"
+            },
+            {
+              "qty": "4",
+              "item": "hoagie rolls"
+            },
+            {
+              "qty": "6 slices",
+              "item": "provolone"
+            },
+            {
+              "qty": "",
+              "item": "oil, salt, pepper",
+              "note": "at home"
+            }
+          ],
+          "steps": [
+            "Cook the pepper strips in a little oil, 4 to 5 minutes. Set aside.",
+            "Cook the shaved steak in two batches with salt and pepper, 2 to 3 minutes.",
+            "Return the peppers, lay the provolone on top, cover 1 minute to melt.",
+            "Toast the split rolls and fill."
+          ]
+        },
+        {
+          "id": "chicken-quesadillas",
+          "name": "Chicken quesadillas",
+          "servings": 2,
+          "time_min": 25,
+          "active_min": 20,
+          "ingredients": [
+            {
+              "qty": "1.3 lb",
+              "item": "chicken thighs",
+              "note": "diced; the rest of the pack"
+            },
+            {
+              "qty": "4",
+              "item": "flour fajita tortillas"
+            },
+            {
+              "qty": "",
+              "item": "provolone left from Monday, or shredded cheese from home"
+            },
+            {
+              "qty": "",
+              "item": "salt, pepper, oil",
+              "note": "at home"
+            }
+          ],
+          "steps": [
+            "Sear the diced chicken with salt and pepper, about 8 minutes.",
+            "Fill each tortilla with cheese and chicken and fold.",
+            "Cook 2 to 3 minutes per side until crisp."
+          ],
+          "notes": "Black olives were removed from the cart by Cecelia."
+        }
+      ],
+      "pantry": [
+        "soy sauce",
+        "garlic",
+        "eggs",
+        "chili powder",
+        "salt",
+        "pepper",
+        "vegetable oil"
+      ]
+    },
     {
       "id": "2026-11-22",
       "title": "Brothy beef bowls week",
