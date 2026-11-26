@@ -4,7 +4,7 @@
     {
       "id": "2026-11-29",
       "title": "Ramen, cheesesteaks and quesadillas",
-      "notes": "Three dinners for two plus an office snack (Goldfish Cheddar). Brandon swapped pork chops and honey garlic thighs for Philly cheesesteaks and chicken alfredo; Cecelia then dropped shrimp scampi and the alfredo, and removed the pork tenderloin, ginger, black olives and others from the cart. Ramen now uses chicken thighs instead of pork and skips fresh ginger. Cecelia added coffee and a salad kit.",
+      "notes": "Three dinners for two plus an office snack (Goldfish Cheddar). Brandon swapped pork chops and honey garlic thighs for Philly cheesesteaks and chicken alfredo; Cecelia then dropped shrimp scampi and the alfredo, and removed the pork tenderloin, ginger, black olives and others from the cart. Ramen uses leftover pork chops from home and skips fresh ginger. Cecelia added coffee and a salad kit.",
       "order": {
         "date": "2026-11-29",
         "window": "Sunday evening, not yet selected",
@@ -13,12 +13,12 @@
         "notes": "Draft cart only, not ordered. Item subtotal after loyalty savings; Sunday delivery window and final all-in not available yet.",
         "items": [
           {
-            "name": "Heritage Farm boneless skinless chicken thighs",
-            "qty": "about 2.86 lb",
-            "price": 11.41,
+            "name": "Perdue fresh boneless skinless chicken thighs",
+            "qty": "about 1.8 lb",
+            "price": 8.98,
             "category": "Meat & seafood",
             "for": [
-              "spicy-chicken-ramen",
+              "spicy-pork-ramen",
               "chicken-quesadillas"
             ]
           },
@@ -47,7 +47,7 @@
             "price": 1.39,
             "category": "Produce",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ]
           },
           {
@@ -56,7 +56,7 @@
             "price": 1.99,
             "category": "Produce",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ]
           },
           {
@@ -84,7 +84,7 @@
             "price": 3.18,
             "category": "Pantry",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ],
             "note": "Oat-checked label"
           },
@@ -94,7 +94,7 @@
             "price": 2.19,
             "category": "Pantry",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ],
             "note": "Oat-checked label"
           },
@@ -104,7 +104,7 @@
             "price": 1.89,
             "category": "Pantry",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ],
             "note": "Oat-checked label"
           },
@@ -114,7 +114,7 @@
             "price": 7.99,
             "category": "Pantry",
             "for": [
-              "spicy-chicken-ramen"
+              "spicy-pork-ramen"
             ],
             "note": "Oat-checked label; replaced the unavailable Sun Luck oil"
           },
@@ -155,7 +155,7 @@
             "note": "Office snack"
           }
         ],
-        "subtotal": 74.76
+        "subtotal": 72.33
       },
       "days": [
         {
@@ -163,7 +163,7 @@
           "meals": [
             {
               "meal": "Dinner",
-              "recipe": "spicy-chicken-ramen"
+              "recipe": "spicy-pork-ramen"
             }
           ]
         },
@@ -188,16 +188,16 @@
       ],
       "recipes": [
         {
-          "id": "spicy-chicken-ramen",
-          "name": "Spicy chicken ramen",
+          "id": "spicy-pork-ramen",
+          "name": "Spicy pork ramen",
           "servings": 2,
           "time_min": 30,
           "active_min": 20,
           "ingredients": [
             {
-              "qty": "1 lb",
-              "item": "boneless chicken thighs",
-              "note": "thinly sliced"
+              "qty": "about 1 lb",
+              "item": "leftover pork chops",
+              "note": "from home, thinly sliced"
             },
             {
               "qty": "2 packs",
@@ -236,12 +236,12 @@
           ],
           "steps": [
             "Boil the eggs 6.5 minutes, cool in cold water and peel.",
-            "Sear the chicken slices with salt and chili powder, 4 to 5 minutes. Set aside.",
+            "Sear the pork slices with salt and chili powder, 3 to 4 minutes (already cooked, so brown and warm). Set aside.",
             "Cook a little minced garlic 30 seconds, add the broth, a splash of soy sauce and the yakisoba seasoning packets. Simmer.",
             "Add the noodles, carrots and sprouts, cook 3 minutes.",
-            "Bowl up with the chicken, halved eggs, green onion and chili oil."
+            "Bowl up with the pork, halved eggs, green onion and chili oil."
           ],
-          "notes": "Pork tenderloin and fresh ginger were removed from the cart by Cecelia, so chicken thighs stand in for the pork."
+          "notes": "Uses leftover pork chops from home. Fresh ginger was removed from the cart by Cecelia, so it is skipped."
         },
         {
           "id": "philly-cheesesteaks",
@@ -290,7 +290,7 @@
             {
               "qty": "1.3 lb",
               "item": "chicken thighs",
-              "note": "diced; the rest of the pack"
+              "note": "diced"
             },
             {
               "qty": "4",
