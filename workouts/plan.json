@@ -3882,6 +3882,104 @@
               ]
             }
           ]
+        },
+        {
+          "id": "2026-11-28-back-and-bis-tyie",
+          "title": "Back and bis",
+          "date": "2026-11-28",
+          "generated_by": "Instinct",
+          "notes": "Barbell row leads this time (one-arm rows led the last back day). Two supersets, each pairing one cable move with one dumbbell move, so the cable station is used once per round. None of these lifts ran earlier this week.",
+          "sections": [
+            {
+              "name": "Warm-up",
+              "items": [
+                {
+                  "exercise": "Arm circles and shoulder rolls",
+                  "detail": "45 sec total, small pain-free circles both directions",
+                  "url": "https://www.youtube.com/watch?v=3STTSi_jdHk"
+                },
+                {
+                  "exercise": "Scap push-ups",
+                  "detail": "1 x 10 - arms straight, shoulder blades glide together and apart",
+                  "url": "https://www.youtube.com/watch?v=iQP1BBmwAgg",
+                  "sets": 1,
+                  "reps": "10"
+                },
+                {
+                  "exercise": "Light barbell row groove",
+                  "detail": "1 x 10 - empty bar, flat back, pull to the lower ribs",
+                  "url": "https://www.youtube.com/watch?v=rqTOAM8WoeM",
+                  "sets": 1,
+                  "reps": "10"
+                }
+              ]
+            },
+            {
+              "name": "Main lift",
+              "items": [
+                {
+                  "exercise": "Barbell bent-over row",
+                  "detail": "3 x 8 - 70 lb. Flat back, pull to the lower ribs, about 3 reps in reserve. Rest 90 sec.",
+                  "url": "https://www.youtube.com/watch?v=rqTOAM8WoeM",
+                  "sets": 3,
+                  "reps": "8"
+                }
+              ]
+            },
+            {
+              "name": "Superset A (cable + dumbbell, rest after the pair)",
+              "items": [
+                {
+                  "exercise": "A: rope face pull",
+                  "detail": "3 x 15 - 70 stack. Pull to your forehead, elbows high, squeeze the rear delts; go straight to B.",
+                  "url": "https://www.youtube.com/watch?v=0Po47vvj9g4",
+                  "sets": 3,
+                  "reps": "15"
+                },
+                {
+                  "exercise": "B: chest-supported dumbbell row",
+                  "detail": "3 x 10 - 25 lb dumbbells, chest on the bench, elbows to the hips; rest 60-75 sec, then back to A.",
+                  "url": "https://www.youtube.com/watch?v=ro2vfHfD0DQ",
+                  "sets": 3,
+                  "reps": "10"
+                }
+              ]
+            },
+            {
+              "name": "Superset B (cable + dumbbell, rest after the pair)",
+              "items": [
+                {
+                  "exercise": "A: standing single-arm cable curl",
+                  "detail": "3 x 12 / side - 15 stack. Elbow pinned, slow lower; go straight to B.",
+                  "url": "https://www.youtube.com/watch?v=njLoCel5lUI",
+                  "sets": 3,
+                  "reps": "12 / side"
+                },
+                {
+                  "exercise": "B: incline dumbbell curl",
+                  "detail": "3 x 12 - 15 lb dumbbells, bench one notch up, full stretch at the bottom; rest 60 sec, then back to A.",
+                  "url": "https://www.youtube.com/watch?v=b4jOP-spQW8",
+                  "sets": 3,
+                  "reps": "12"
+                }
+              ]
+            },
+            {
+              "name": "Cooldown",
+              "items": [
+                {
+                  "exercise": "Supported lat stretch",
+                  "detail": "2 x 30 sec / side",
+                  "url": "https://www.youtube.com/watch?v=XJ6_0Pi0ysM"
+                },
+                {
+                  "exercise": "Figure-4 glute stretch",
+                  "detail": "1 x 45 sec / side",
+                  "url": "https://www.youtube.com/watch?v=VgjgTGnBkx0"
+                }
+              ]
+            }
+          ]
         }
       ],
       "history": [
